@@ -61,3 +61,33 @@ The first-score embedded repeat and reversed-order flags failed because a checkp
 ## Verification and publication
 
 Pending narrow tests, all six experiment suites, exact committed-range whitespace check, remote tree equality, pull request URL, and GitHub Actions on final head. Human merge authority is retained.
+
+## Local verification amendment — 2026-09-02 UTC
+
+```text
+Experiment 01: 8/8 PASS
+Experiment 02: 6/6 PASS
+Experiment 03: 11/11 PASS
+Experiment 04: 11/11 PASS
+Experiment 05: 11/11 PASS
+Experiment 06: 11/11 PASS
+Total: 58/58 PASS
+
+post-score normalized repeat replay: PASS
+post-score reversed registration/order: PASS
+all ten unique minimized counterexamples: PASS
+raw/report crosscheck: PASS
+first-score evidence hashes: PASS
+freeze plus receipted EOF normalization: PASS
+JSON/JSONL parse: PASS
+```
+
+The required committed-range check first failed at `20d2ca4d6d9b5a3d066ee42b010d8582d771da87` with 15 added EOF blank lines. That failure was retained. Commit `e28e6c6b69a5509a911eb464c48af68a2da637d1` removed only those EOF blank lines and added evidence support for verifying original frozen blobs against their normalized form. Receipt commit `80515aaae912755835346ac22cd6ee55286d12ef` records every before/after hash.
+
+```text
+exact command:
+git diff --check 7ba2b1d42891074856ad274d00dc3985ef5e1d27..HEAD
+result after correction receipt: PASS
+```
+
+Remote publication, exact remote-ref range check, remote/local tree equality, pull request, and GitHub Actions remain pending. Human merge authority is unchanged.
