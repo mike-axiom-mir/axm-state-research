@@ -90,3 +90,22 @@ remote CI: pending at time of this amendment
 ```
 
 The publication commit differs from the local commit only in commit metadata; their trees are identical. This amendment changes only the lane receipt. Human merge authority is retained.
+
+## Remote verification amendment — 2026-09-02 UTC
+
+```text
+GitHub Actions workflow: State research tests
+run: 10
+verified head: 91cbf550124755ab4259bdd6862120831bf6aa27
+verified tree: b952b9d5b60321e1fbd6a0b4ae7b289d1a211a5c
+State Floor: PASS
+Workfloor Sentinel: PASS
+Wakeup Fuzzer: PASS
+Adaptive Closure Verifier: PASS
+Real-Project Closure Trial: PASS
+overall conclusion: SUCCESS
+pull request: https://github.com/mike-axiom-mir/axm-state-research/pull/7
+pull request state: OPEN; intentionally stacked; not merged
+```
+
+The PR currently reports non-mergeable while its prerequisite stack is still outside `main`; this is not treated as experiment evidence or as permission to merge. Human merge authority is unchanged.
