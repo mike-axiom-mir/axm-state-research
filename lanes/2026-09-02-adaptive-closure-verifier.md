@@ -87,3 +87,19 @@ pull request: https://github.com/mike-axiom-mir/axm-state-research/pull/6
 pull request state: OPEN; intentionally stacked; not merged
 remote CI: pending at time of this amendment
 ```
+
+## Remote verification amendment — 2026-09-02 UTC
+
+```text
+GitHub Actions workflow: State research tests
+run: 7
+verified head: 5bcdce9a390d6cd42860ff9ef643225ec34a8a42
+State Floor: PASS
+Workfloor Sentinel: PASS
+Wakeup Fuzzer: PASS
+Adaptive Closure Verifier: PASS
+overall conclusion: SUCCESS
+pull request mergeability observed after publication: TRUE
+```
+
+This final amendment records the successful remote run. Its own change is receipt-only; no experiment source, raw evidence, report, or claim is changed. PR #6 remains open and unmerged for human authority.
