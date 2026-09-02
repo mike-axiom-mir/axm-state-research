@@ -79,4 +79,3 @@ Sparse executions are reported separately. Full-oracle policy work counts all 1,
 ## Counterexample minimization
 
 Every silent stale occurrence is recorded. The minimizer greedily removes held-out mutations while replaying the complete fixed training phase until the named check's silent mismatch no longer reproduces. Each occurrence retains its minimized mutation IDs and runnable command. In this fixture, the 21 occurrences reduce to five unique policy/check reproductions, each containing one held-out mutation.
-

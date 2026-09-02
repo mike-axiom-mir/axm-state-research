@@ -109,3 +109,29 @@ pull request state: OPEN; intentionally stacked; not merged
 ```
 
 The PR currently reports non-mergeable while its prerequisite stack is still outside `main`; this is not treated as experiment evidence or as permission to merge. Human merge authority is unchanged.
+
+## Independent merge-gate correction — 2026-09-02 UTC
+
+Independent root verification found that the earlier `git diff --check` invocation inspected only the clean working-tree delta. The required committed base-to-head range check instead exited 2 and reported seven added blank lines at EOF.
+
+```text
+failing command:
+git diff --check d6ee5b61a42323db22c80325a2895dfbf03b2d48..origin/ai/real-project-closure-trial-2026-09-02
+
+correction commit: 1396671c1af078e04302fd36feee6818fd4fef5d
+corrected tree: 9700e7db51be92516e02aff74de2c5fd29448eae
+correction: remove only seven EOF blank lines; refresh the affected raw mutation-split evidence hash
+benchmark semantics and logical metrics changed: no
+
+narrow Experiment 05: 11/11 PASS
+all suites: 47/47 PASS
+raw/report metric crosscheck: PASS
+evidence receipt hashes: PASS
+fixture/raw split byte equality: PASS
+
+passing command:
+git diff --check d6ee5b61a42323db22c80325a2895dfbf03b2d48..HEAD
+result: PASS
+```
+
+This amendment corrects the verification record rather than hiding the failed gate. Remote publication and a fresh GitHub Actions run on the corrected final head remain pending. Human merge authority is unchanged.

@@ -13,4 +13,3 @@
 11. **Minimization is bounded.** Greedy deletion produced reproducible one-mutation examples in this six-item trace; it does not prove a globally minimal semantic cause in arbitrary mutation languages.
 12. **Timings are host-specific.** CPython object wrappers and one Linux x86_64 run do not predict another runtime or machine.
 13. **No production, security, AI, model-weight, hardware, brain, physics, or domain-actuator claim was tested.** This remains a software-runtime experiment.
-

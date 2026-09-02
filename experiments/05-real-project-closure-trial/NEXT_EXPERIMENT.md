@@ -21,4 +21,3 @@ Unlike Experiment 05, count sparse executions in the primary work gate. Report s
 ## Failure rule
 
 Freeze the challenge before its first scored run. Publish and minimize every miss. Do not relabel held-out changes, widen risk declarations, or modify a fixture merely to turn failure into a pass.
-
