@@ -32,7 +32,7 @@ Additive research-only lane covering:
 - `logs/2026-09-02-state-friction-evolution-machine-layer.txt`
 - `research/2026-09-02-state-level-specialist-fabric.md`
 - `research/2026-09-02-prior-art-convergence.md`
-- `visuals/2026-09-02-state-friction-visual-log.webp`
+- `visuals/2026-09-02-state-friction-visual-log.md`
 
 ## Merge discipline
 
