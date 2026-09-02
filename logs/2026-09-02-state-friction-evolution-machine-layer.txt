@@ -1,0 +1,553 @@
+AXM STATE RESEARCH CHECKPOINT
+Date: 2026-09-02
+Status: experimental, not canon
+Scope: state, friction, retained history, evolution, machine intelligence, specialist-node fabric
+
+ROOT
+====
+Working hypothesis:
+
+    SYSTEM BEHAVIOR
+    = STATES
+    + ACCESSIBILITY BETWEEN STATES
+    + FRICTION / CONSTRAINT ON TRANSITIONS
+    + RETAINED CONSEQUENCES
+
+Human labels such as rule, law, object, product, species, algorithm, material,
+and cause may often be higher-level descriptions of recurring state patterns
+rather than the lowest useful representation.
+
+This is a research hypothesis, not a theory of everything.
+
+
+1. PRODUCT / MANUFACTURING FRICTION
+===================================
+Initial observation came from ordinary products such as soda and flavor
+variants, ignoring branding/greed as the explanation.
+
+The final cost is not only raw-material cost. It also contains the friction of
+the path from starting state to sellable state:
+
+    raw state
+      -> processing
+      -> transformation
+      -> stabilization
+      -> packaging
+      -> logistics
+      -> required end state
+
+Useful friction dimensions include:
+
+    energy
+    time
+    labor
+    precision
+    yield loss / waste
+    equipment / capital burden
+    failure risk
+    storage
+    logistics
+    regulation
+    dependencies
+
+Important deduction:
+
+    cheaper product != only cheaper material
+
+It may instead mean:
+
+    find a lower-friction valid path to the same required end state
+
+Example:
+
+    A -> B -> C -> D -> E -> PRODUCT
+
+may have an alternative:
+
+    A -> X -> E -> PRODUCT
+
+This suggests a production evaluator should search transformation graphs, not
+only copy established human manufacturing procedures.
+
+
+2. DIFFERENCE ABOVE, SAMENESS BELOW
+===================================
+A thing can be genuinely different at one scale while sharing a deeper common
+structure at another.
+
+Example:
+
+    tree -> wood -> pulp -> paper -> book
+
+These are distinct human-level objects, but deeper descriptions increasingly
+become arrangements, structures, bonds, energies, and interactions.
+
+Research rule:
+
+    when two systems look fundamentally different,
+    descend one representation layer and compare again
+
+Continue until either:
+
+    a common primitive appears, or
+    a genuine irreducible difference is found
+
+Both outcomes count. Otherwise "everything is states" becomes unfalsifiable.
+
+
+3. RULES AS ACCESSIBILITY
+=========================
+Do not picture an external rule-maker.
+
+A more primitive framing is:
+
+    some transitions are accessible
+    some are inaccessible
+    some are possible only through high friction
+
+Humans later name persistent patterns:
+
+    laws
+    rules
+    properties
+    algorithms
+    failure conditions
+    engineering constraints
+
+Binary metaphor:
+
+    1 = transition belongs to the admissible possibility structure
+    0 = transition does not
+
+Observed reality is not literally binary at every useful layer. The 1/0 is a
+metaphor for admissibility, not a claim that physics itself is simple Boolean
+code.
+
+
+4. TRUE STATE / INCOMPLETE STATE
+================================
+Operational use of "true state": a sufficiently complete present description
+containing everything relevant to future behavior.
+
+If two systems are represented as the same state but later behave differently
+because of something omitted from the model, the representation was not the
+complete relevant state.
+
+Key principle:
+
+    if history still affects the future,
+    its relevant residue belongs in current state
+
+This does NOT prove that all natural uncertainty is hidden state. It gives an
+engineering discipline:
+
+    before blaming nondeterminism, test the state boundary
+
+
+5. HISTORY CAN DISAPPEAR INTO THE STATE IT CREATED
+==================================================
+Major pattern:
+
+    PATH -> RETAINED CONSEQUENCE -> NEW CURRENT STATE
+
+AI-context metaphor:
+
+An AI can grow through a large context containing corrections, discoveries,
+failures, examples, and new concepts. Later the detailed path may be removed
+while the useful consequences remain in a checkpoint.
+
+Therefore:
+
+    history -> learning -> changed state
+    discard much of history
+    changed state remains
+
+The future may require consequences of history without requiring the history
+itself.
+
+Game-save analogy:
+
+A save needs current position, inventory, world changes, health, quests, etc.
+It does not need every keypress and every rendered frame.
+
+Test:
+
+    remove history
+    preserve checkpoint
+    compare future behavior against full-history oracle
+
+If behavior changes:
+    checkpoint state was incomplete
+
+If behavior is identical:
+    removed history was no longer execution-relevant
+
+This points toward a minimal sufficient state.
+
+
+6. FRICTION BECOMES STRUCTURE
+=============================
+Recurring loop:
+
+    friction
+      -> surviving solution
+      -> stable structure
+      -> new starting state
+      -> new friction
+      -> new surviving structure
+      -> repeat
+
+Successful friction can become architecture, and architecture can hide the
+friction that produced it.
+
+The current state can therefore look inexplicably sophisticated because the
+construction log is gone while the retained consequences remain.
+
+
+7. CONTEXT WINDOW AS PERSPECTIVE METAPHOR
+=========================================
+"Context window" here is a metaphor, not a claim that organisms have token
+windows.
+
+It means:
+
+    the portion of total state a system can perceive,
+    retain,
+    model,
+    and act through
+
+Possible pattern:
+
+    available reality
+      -> limited accessible perspective
+      -> interaction with friction
+      -> retained consequence
+      -> altered / expanded perspective
+      -> repeat
+
+Do not mistake:
+
+    what my perspective can represent
+
+for:
+
+    everything that exists
+
+
+8. EVOLUTION AS RETAINED-STATE COMPRESSION
+==========================================
+Working hypothesis:
+
+    evolution can be viewed as repeated compression of successful history
+    into richer present state
+
+No destination is implied. Evolution does not need to "want" intelligence.
+
+Possible ingredients:
+
+    variation
+    persistence
+    selection
+    friction
+    time
+
+produce retained structures. Those structures become starting conditions for
+later structures.
+
+Intelligence is one outcome in which a structure becomes able to inspect,
+manipulate, and extend inherited state.
+
+
+9. BIOLOGICAL -> CULTURAL -> MACHINE-READABLE STATE
+===================================================
+Useful progression:
+
+    biological inheritance
+      -> learned behavior
+      -> language
+      -> culture
+      -> writing
+      -> libraries
+      -> machinery
+      -> computers
+      -> networked machine-readable state
+      -> machine intelligence
+      -> unknown next forms
+
+Humans do not restart civilization from zero each generation.
+
+Language lets one brain modify another.
+Writing lets information outlive the author.
+Printing duplicates checkpoints.
+Computers make checkpoints executable.
+Networks make them broadly accessible.
+Machine intelligence increasingly processes the accumulated checkpoint itself.
+
+
+10. MACHINE INTELLIGENCE IS THE LAYER CANDIDATE, NOT ONE AI PRODUCT
+===================================================================
+Current AI can fail. LLMs can fail. Neural architectures can be replaced.
+
+The broader candidate transition is:
+
+    non-biological machine intelligence / information processing
+
+Possible implementations include neural, deterministic, hybrid, symbolic,
+embodied, distributed, or architectures not yet named.
+
+The hypothesis therefore does not depend on today's AI products surviving.
+
+
+11. TIMELINE COMPRESSION
+========================
+Approximate fact boundary discussed:
+
+    Homo sapiens: about 300,000 years
+    formal AI field (Dartmouth 1956 -> 2026): about 70 years
+
+Ratio:
+
+    300,000 / 70 ~= 4,286
+
+The formal machine-intelligence era has therefore existed for roughly 0.023%
+of the Homo sapiens timespan.
+
+This DOES NOT mean machine intelligence evolves exactly 4,286x faster. There
+is no universal intelligence multiplier.
+
+The important observation is timeline compression plus inherited state.
+
+Machines did not start from zero. They inherited:
+
+    human cognition
+    language
+    mathematics
+    logic
+    science
+    writing
+    engineering
+    electricity
+    industry
+    semiconductors
+    software
+    libraries
+    networks
+    accumulated culture
+
+Compact principle:
+
+    a new layer can inherit the compressed surviving state of previous layers
+    instead of restarting the entire path
+
+
+12. HUMAN CATEGORIES AS COMPRESSION BOXES
+=========================================
+Human cognition sees finished abstractions such as:
+
+    chair
+    soda
+    person
+    code
+    organism
+    law
+    AI
+
+It usually does not carry the full construction/evolution/physical path below
+them.
+
+Useful abstractions can later be mistaken for the underlying thing itself.
+
+Research discipline:
+
+    do not privilege inherited category boundaries
+    descend representations
+    compare structure
+    test equivalence
+    record where equivalence fails
+
+
+13. MACHINE NODES AS THE STATE-LEVEL SPECIALIST FABRIC
+======================================================
+Normal framing:
+
+    hardware -> generic compute -> software/model contains behavior
+
+Experimental inversion:
+
+    canonical state
+      -> many tiny local state-aware nodes
+      -> dependency-triggered activation
+      -> tiny function/check/specialist work
+      -> evidence + state delta
+      -> canonical state update
+      -> only newly affected nodes wake
+
+A node is NOT a full AI agent.
+
+Minimal shape:
+
+    reads: small declared state subset
+    trigger: explicit dependency changes
+    work: deterministic check where possible
+    produces: result + evidence + state delta
+
+Long-term efficiency target:
+
+    compute used ~= state actually disturbed
+
+rather than:
+
+    compute used ~= total system/model size
+
+This is a target to measure, not assume.
+
+
+14. TWO CORRECTNESS CLOSURES
+===========================
+Earlier sleeping-specialist failure:
+
+A checker read final report + raw results but subscribed only to final-report
+changes. Raw results changed. The checker stayed asleep. Downstream canonical
+truth became wrong.
+
+Therefore sparse routing requires:
+
+A. ACTIVATION CLOSURE
+
+    if a state change can alter node output,
+    that change must be able to wake the node
+
+B. SUFFICIENT-STATE CLOSURE
+
+    when the correct node wakes,
+    it must receive enough relevant state to produce a correct result,
+    or detect insufficiency and escalate/abstain
+
+Correct routing is not the same as sufficient context.
+
+
+15. CHEAPEST SUFFICIENT MECHANISM
+=================================
+Preferred escalation ladder:
+
+    deterministic check
+      -> bounded algorithm
+      -> tiny learned specialist
+      -> larger reasoning model
+
+AI becomes one possible function used by the fabric rather than the only
+coordinator.
+
+Use the cheapest mechanism that satisfies the correctness/evidence gate.
+
+
+16. CURRENT RESEARCH CONVERGENCE
+================================
+The broad direction already exists in adjacent work, which narrows novelty but
+strengthens the engineering motivation.
+
+Sparse MoE:
+    activates only subsets of expert capacity.
+
+Apple PathMoE (2026):
+    studies expert paths and concentrated routing structure.
+    https://machinelearning.apple.com/research/path-constrained-mixture-experts
+
+Cordis / reactive coeffects (2026):
+    context changes are classified against declared component dependency
+    specifications to drive activation/deactivation.
+    https://arxiv.org/abs/2608.25512
+
+BoardroomAI (2026):
+    dependency-aware graph propagation selectively reactivates specialists and
+    preserves unaffected artifacts. The paper also reports that correct routing
+    can still provide insufficient context.
+    https://arxiv.org/abs/2608.13046
+
+vLLM Semantic Router / SAAR (2026):
+    routing becomes stateful/session-aware with continuity constraints,
+    replayable traces, and minimum router-owned state.
+    https://vllm-project.github.io/2026/06/02/session-aware-agentic-routing.html
+
+Novelty boundary:
+
+NOT novel alone:
+    sparse specialists
+    stateful routing
+    dependency-aware recomputation
+    selective reactivation
+
+Still open / worth testing:
+    canonical deterministic state
+    + extremely small state-declared nodes
+    + dependency-derived activation
+    + deterministic/evidence-first local work
+    + activation closure
+    + sufficient-state closure
+    + evidence-backed deltas
+    + compute scaling with changed state rather than total capacity
+
+
+17. NEXT MEASURABLE TESTS
+=========================
+A. Scale registered node count while keeping mutations local.
+Measure total nodes, wake-ups, necessary wake-ups, false wake-ups, missed
+wake-ups, total work, oracle work avoided, and canonical equality.
+
+B. Deliberately break direct/indirect dependency maps.
+Measure where corruption first appears and whether provenance finds the
+sleeping node.
+
+C. Wake the correct specialist with incomplete state.
+Measure wrong answers, abstentions, evidence-insufficiency detection, and
+escalation.
+
+D. Compare deterministic function vs tiny model vs large reasoning model for
+the same bounded node job.
+
+E. Remove history while preserving checkpoint state and compare against a
+full-history oracle.
+
+F. Grow specialist coverage and task breadth while measuring unnecessary
+computation.
+
+Core test:
+
+    can capability increase while unnecessary computation decreases?
+
+
+18. RESEARCH DISCIPLINE
+=======================
+Do not treat convergence as proof.
+Do not treat model agreement as independent physical evidence.
+Do not treat human categories as privileged boundaries.
+Do not claim novelty without prior-art review.
+Do not silently reinterpret failure as success.
+
+For each experiment define:
+
+    state
+    transition
+    trigger
+    expected output
+    evidence
+    failure condition
+    oracle comparison
+    missed wake-ups
+    false wake-ups
+    provenance
+
+Current compact architecture:
+
+    canonical state
+    + explicit dependency topology
+    + sparse local activation
+    + activation closure
+    + sufficient-state closure
+    + evidence-backed deltas
+    + escalation only when local machinery is insufficient
+
+Matter-transfer research is explicitly outside this AXM state-research lane and
+is intentionally not part of this checkpoint.
+
+END
