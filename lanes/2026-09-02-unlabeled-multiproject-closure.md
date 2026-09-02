@@ -109,3 +109,9 @@ pull request: #8, open, unmerged, target main
 ```
 
 This documentation-only receipt amendment changes no policy, manifest, fixture, held-out input, label, checkpoint behavior, score, or evidence. It becomes the final connector-published head; its GitHub Actions result is recorded on the pull request after completion rather than changing the tested head. Human merge authority is unchanged.
+
+## Retained connector-verifier failure — 2026-09-02 UTC
+
+The first detached rerun of exact remote head `a1c0234126006972032080369e32a2ae7d08de30` passed Experiments 01–05 (47/47) but produced three Experiment 06 errors. The freeze verifier required local semantic-freeze commit `d804cc5f4a2bc863f2f2177daa89d77c1dcdc524` to be an ancestor; connector publication preserved tree `007e947b466883ed74cba317a8195f2e962e3322` at remote commit `0ca3c69dfa8d278ef3c89e8779d59de9971ed868` instead.
+
+The explicitly receipted correction changes only evidence verification and CI checkout depth. The verifier now finds the recorded frozen tree in reachable ancestry, continues to check the declared local commit/tree pair when that object is available, and verifies every frozen blob, SHA-256 value, and EOF-correction receipt from the reachable frozen tree. Policy semantics, risk inference, manifests, fixtures, labels, checkpoint behavior, scoring, and raw first-score evidence remain unchanged.

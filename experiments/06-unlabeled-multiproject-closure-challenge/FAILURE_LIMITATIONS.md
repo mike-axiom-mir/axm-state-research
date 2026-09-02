@@ -26,3 +26,4 @@ After the first scored held-out run, no policy semantics, structural inference, 
 15. Structural-only passed with 595 executions, two fewer than the 597-execution named candidate. The combined policy is not claimed as universally optimal.
 16. Reconstruction was 391 of the candidate's 597 check executions. With fewer subsequent mutations, recovery can erase the work advantage.
 17. The two held-out checkpoint faults were recoverable because the canonical repository subtrees were trusted and locally available. The unresolved/no-source path is tested but not part of the passing held-out score.
+18. The first exact connector-published rerun exposed three Experiment 06 verifier errors because the verifier coupled ancestry to a local commit identifier. The failure is retained. A receipted non-semantic packaging correction now requires the recorded frozen tree in reachable full history and continues to verify the recorded frozen file hashes.

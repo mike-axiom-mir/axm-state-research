@@ -37,6 +37,22 @@ def _sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def _reachable_commit_for_tree(tree: str) -> str:
+    """Resolve a frozen tree in HEAD ancestry without trusting a publisher's commit ID."""
+    history = subprocess.run(
+        ["git", "log", "--format=%H%x00%T", "HEAD"],
+        cwd=REPOSITORY_ROOT,
+        check=True,
+        capture_output=True,
+        text=True,
+    ).stdout
+    for line in history.splitlines():
+        commit, candidate_tree = line.split("\x00", 1)
+        if candidate_tree == tree:
+            return commit
+    raise RuntimeError(f"semantic freeze tree is not reachable from HEAD: {tree}")
+
+
 def verify_freeze() -> dict[str, Any]:
     if not FREEZE_SUMS_PATH.is_file() or not FREEZE_RECEIPT_PATH.is_file():
         raise RuntimeError("pre-score SHA-256 manifest and receipt must exist before scoring")
@@ -46,6 +62,24 @@ def verify_freeze() -> dict[str, Any]:
         if WHITESPACE_CORRECTION_PATH.is_file()
         else None
     )
+    declared_commit = receipt["semantic_freeze_commit"]
+    semantic_tree = receipt["semantic_freeze_tree"]
+    declared_exists = subprocess.run(
+        ["git", "cat-file", "-e", f"{declared_commit}^{{commit}}"],
+        cwd=REPOSITORY_ROOT,
+        capture_output=True,
+    ).returncode == 0
+    if declared_exists:
+        declared_tree = subprocess.run(
+            ["git", "rev-parse", f"{declared_commit}^{{tree}}"],
+            cwd=REPOSITORY_ROOT,
+            check=True,
+            capture_output=True,
+            text=True,
+        ).stdout.strip()
+        if declared_tree != semantic_tree:
+            raise RuntimeError("declared semantic freeze commit has the wrong tree")
+    freeze_source_commit = _reachable_commit_for_tree(semantic_tree)
     checked: dict[str, str] = {}
     corrected: dict[str, str] = {}
     for line in FREEZE_SUMS_PATH.read_text(encoding="utf-8").splitlines():
@@ -59,7 +93,7 @@ def verify_freeze() -> dict[str, Any]:
                 raise RuntimeError(f"frozen input changed without a correction receipt: {relative}")
             repository_relative = path.relative_to(REPOSITORY_ROOT).as_posix()
             original = subprocess.run(
-                ["git", "show", f"{receipt['semantic_freeze_commit']}:{repository_relative}"],
+                ["git", "show", f"{freeze_source_commit}:{repository_relative}"],
                 cwd=REPOSITORY_ROOT,
                 check=True,
                 capture_output=True,
@@ -78,12 +112,6 @@ def verify_freeze() -> dict[str, Any]:
         raise RuntimeError("pre-score receipt differs from SHA-256 manifest")
     if correction is not None and set(corrected) != set(correction["corrected_frozen_files"]):
         raise RuntimeError("whitespace correction frozen-file set mismatch")
-    commit = receipt["semantic_freeze_commit"]
-    subprocess.run(
-        ["git", "merge-base", "--is-ancestor", commit, "HEAD"],
-        cwd=REPOSITORY_ROOT,
-        check=True,
-    )
     return receipt
 
 

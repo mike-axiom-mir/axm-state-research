@@ -15,6 +15,7 @@
 - Broken sparse/no-audit retained 32 silent stale occurrences and ended unequal.
 - Observed reads retained eight silent opaque-helper stale occurrences. They later self-healed, so final equality alone hid the damage.
 - The first-score embedded repeat and reversed-order flags were both false because the logical hash retained a checkpoint-validation provenance hash derived from host timing. The original raw failure remains unchanged. A separate post-score evidence verifier removed only measurements and their derived hash, then passed repeat/order verification.
+- The first exact connector-published rerun passed Experiments 01–05 but produced three Experiment 06 verifier errors. The verifier required the local freeze commit identifier to be an ancestor even though connector publication preserved its tree under a different commit identifier. The failed remote head is retained in a receipt; the non-semantic correction resolves the frozen tree in reachable history and still checks every frozen blob and SHA-256 value.
 - Full oracle used 1,955 held-out check executions and also incurred the same 391 checkpoint reconstruction executions in the policy comparison, for 2,346 total.
 
 ## MEASURED
@@ -53,6 +54,8 @@ Structural audit alone used two fewer executions than the combined candidate (59
 More importantly, observed-only ended oracle-equal despite eight silent stale occurrences. Final equality again overstated what the policy knew during the trace.
 
 The raw replay flag failure was an evidence-design warning: even a provenance hash becomes non-deterministic when it commits to timing. Retaining that failed flag and adding a bounded independent normalizer was safer than rewriting the first score.
+
+The connector rerun exposed a second evidence-design warning: a commit identifier is publication metadata, while the frozen Git tree and its independently recorded file hashes are the content identity. The verifier now requires the frozen tree to be reachable and the workflow fetches full ancestry.
 
 ## NEXT
 

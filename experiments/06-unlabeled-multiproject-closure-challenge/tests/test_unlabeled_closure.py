@@ -12,6 +12,7 @@ from run_benchmarks import (
     FREEZE_RECEIPT_PATH,
     RAW_DIR,
     REPORT_PATH,
+    _reachable_commit_for_tree,
     crosscheck_report,
     markdown_report,
     run_all,
@@ -147,7 +148,8 @@ class UnlabeledClosureTests(unittest.TestCase):
             self.assertGreater(project["metrics"]["reconstruction_check_executions"], 0)
 
     def test_freeze_and_committed_raw_evidence_crosscheck(self) -> None:
-        self.assertTrue(verify_freeze())
+        freeze = verify_freeze()
+        self.assertTrue(_reachable_commit_for_tree(freeze["semantic_freeze_tree"]))
         if not (RAW_DIR / "benchmark_results.json").exists():
             self.skipTest("first score has not yet been persisted")
         raw = json.loads((RAW_DIR / "benchmark_results.json").read_text(encoding="utf-8"))
