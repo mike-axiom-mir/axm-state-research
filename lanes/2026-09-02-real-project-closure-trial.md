@@ -75,3 +75,18 @@ unexplained generated files: none
 ```
 
 Commit, publication, remote-tree, pull request, and remote CI evidence remain pending. Human merge authority is unchanged.
+
+## Publication amendment — 2026-09-02 UTC
+
+```text
+locally verified experiment commit: 5adf3c226dc2d40e6f1c1f8eed0c604606fcd8e2
+locally verified tree: 014baa1e4653154017550ca07b142eefac69b33d
+remote publication commit: 00842caa1c45d42f48265199a6f67b5f2ffc96eb
+remote publication tree: 014baa1e4653154017550ca07b142eefac69b33d
+remote tree equals locally verified tree: PASS
+pull request: https://github.com/mike-axiom-mir/axm-state-research/pull/7
+pull request state: OPEN; intentionally stacked; not merged
+remote CI: pending at time of this amendment
+```
+
+The publication commit differs from the local commit only in commit metadata; their trees are identical. This amendment changes only the lane receipt. Human merge authority is retained.
