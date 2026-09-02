@@ -24,6 +24,8 @@ jobs:
             directory: experiments/03-wakeup-fuzzer
           - name: Adaptive Closure Verifier
             directory: experiments/04-adaptive-closure-verifier
+          - name: Real-Project Closure Trial
+            directory: experiments/05-real-project-closure-trial
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5

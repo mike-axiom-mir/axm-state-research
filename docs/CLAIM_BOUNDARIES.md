@@ -14,6 +14,8 @@
 - Adaptive Closure's broken control failed; five audited policies explicitly repaired/replayed to final equality in a six-node fixture.
 - Adaptive Closure measured nonzero residual damage windows for fixed and sampled auditing and retained an unresolved dormant-state quarantine.
 - One implicit-default fixture reduced measured Python object/checkpoint bytes while preserving its defined output and replay.
+- In one frozen six-mutation held-out trial over Sentinel's canonical 242 checks, combined declared-risk and observed-read auditing left zero silent stale outputs, ended oracle-equal, retained repair provenance, and used 110 audit+replay check executions versus 1,452 full-oracle executions.
+- The same Real-Project Closure fixture retained 18 silent stale occurrences for broken/no-audit and three for observed-only; every occurrence was minimized to a runnable one-mutation counterexample.
 
 ## Not demonstrated
 
@@ -28,6 +30,8 @@
 - Periodic, sampled, risk-adaptive, and observed-read auditing have not proven dependency or sufficient-state completeness.
 - The State Debt fixture does not show that explicit zeros/defaults are universally wasteful or that implicit reconstruction is always cheaper.
 - No model-weight editing or domain actuator was implemented in Adaptive Closure.
+- Experiment 05 does not prove dependency completeness beyond its six held-out mutations, validate untrusted risk tags, remove the need for an offline scoring oracle, or establish that observed reads cover opaque or unexecuted accesses.
+- Experiment 05 is a bounded integration and measurement of existing deterministic routing, tracing, auditing, replay, and minimization ideas; it makes no component-novelty claim.
 
 ## Use these terms
 

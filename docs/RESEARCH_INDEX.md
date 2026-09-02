@@ -83,6 +83,27 @@ A bounded State Debt fixture compared 10,000 explicit values/edges with 80 mater
 - [Raw fault matrix](../experiments/04-adaptive-closure-verifier/results/raw/fault_matrix.json)
 - [Failures and limitations](../experiments/04-adaptive-closure-verifier/FAILURE_LIMITATIONS.md)
 
+## Experiment 05 — AXM Real-Project Closure Trial
+
+Experiment 05 imported Sentinel's canonical 242 checks and 24 evaluator forms without copying source. It planted five metadata/evidence fault types, trained on six mutations, froze metadata, then scored six disjoint held-out mutations without held-out oracle answers entering routing or repair.
+
+| Held-out policy | Sparse checks | Audit checks | Replay checks | Missed wakes | Silent stale outputs | Final equality | Audit + replay |
+|---|---:|---:|---:|---:|---:|:---:|---:|
+| Broken/no audit | 41 | 0 | 0 | 3 | 18 | FAIL | 0 |
+| Declared risk | 44 | 80 | 1 | 1 | 0 | PASS | 81 |
+| Observed reads | 44 | 44 | 0 | 1 | 3 | FAIL | 44 |
+| Combined risk + observed | 44 | 109 | 1 | 1 | 0 | PASS | 110 |
+| Full oracle | 0 | 1,452 | 0 | 0 | 0 | PASS | 1,452 |
+
+The frozen combined gate passed: zero silent stale outputs, exact final equality, provenance on every learned repair, and 92.4242% fewer audit+replay check executions than the 1,452-check full-oracle reference. It learned three edges and one permitted field across both phases and retained one dormant invalid metadata quarantine/unresolved item. Repeat and reversed-registration replay passed. Broken and observed-only failures produced 21 occurrence receipts, all minimized to reproducible one-mutation counterexamples.
+
+This is a bounded integration/measurement result over one controlled split, not a novelty or completeness claim.
+
+- [Final report](../experiments/05-real-project-closure-trial/FINAL_REPORT.md)
+- [Raw benchmark JSON](../experiments/05-real-project-closure-trial/results/raw/benchmark_results.json)
+- [Raw counterexamples](../experiments/05-real-project-closure-trial/results/raw/counterexamples.json)
+- [Failures and limitations](../experiments/05-real-project-closure-trial/FAILURE_LIMITATIONS.md)
+
 ## Current strongest target
 
-**Real-project closure trial:** apply declared-risk and observed-read reconciliation to Workfloor Sentinel's real checks, then attack them with a held-out mutation set. Publish every miss and minimize it.
+**Unlabeled multi-project closure challenge:** remove favorable declared risk labels, include opaque/config-generator and longer rename/delete chains, freeze before scoring, and compare total policy check work—not only audit+replay—with the full oracle.
