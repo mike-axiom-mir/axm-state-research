@@ -1,0 +1,47 @@
+{
+  "schema": "axm.unlabeled-closure.training-mutations/v1",
+  "project_versions": ["state-floor-v0.1.0-at-7ba2b1d"],
+  "mutations": [
+    {
+      "id": "train-config-generator-change",
+      "project_id": "state-floor-v0.1.0-at-7ba2b1d",
+      "description": "Change the canonical State Floor launcher used as the training config-generator shape.",
+      "operations": [
+        {"kind": "append_text", "path": "run_experiment.py", "arguments": {"text": "\n# training config-generator shape\n"}}
+      ]
+    },
+    {
+      "id": "train-derived-raw-change",
+      "project_id": "state-floor-v0.1.0-at-7ba2b1d",
+      "description": "Change a top-level raw-result field to expose the three-stage derived-output shape.",
+      "operations": [
+        {"kind": "json_set_top", "path": "results/benchmark_results.json", "arguments": {"key": "training_shape_marker", "value": 1}}
+      ]
+    },
+    {
+      "id": "train-config-value-change",
+      "project_id": "state-floor-v0.1.0-at-7ba2b1d",
+      "description": "Change an ordinary project configuration value during training.",
+      "operations": [
+        {"kind": "replace_once", "path": "pyproject.toml", "arguments": {"old": "requires-python = \">=3.11\"", "new": "requires-python = \">=3.12\""}}
+      ]
+    },
+    {
+      "id": "train-rename-chain",
+      "project_id": "state-floor-v0.1.0-at-7ba2b1d",
+      "description": "Rename one canonical documentation file during training.",
+      "operations": [
+        {"kind": "rename", "path": "ENVIRONMENT_PROBE.md", "arguments": {"to": "ENVIRONMENT_PROBE_TRAINING.md"}}
+      ]
+    },
+    {
+      "id": "train-delete-renamed",
+      "project_id": "state-floor-v0.1.0-at-7ba2b1d",
+      "description": "Delete the renamed training file as the second link in the chain.",
+      "operations": [
+        {"kind": "delete", "path": "ENVIRONMENT_PROBE_TRAINING.md", "arguments": {}}
+      ]
+    }
+  ]
+}
+

@@ -1,0 +1,40 @@
+{
+  "schema": "axm.unlabeled-closure.projects/v1",
+  "boundary": "Each entry is one canonical repository subtree at the named Git commit and tree. In-memory mutations are challenge variants, not separate real projects.",
+  "projects": [
+    {
+      "id": "state-floor-v0.1.0-at-7ba2b1d",
+      "role": "training",
+      "source_path": "experiments/01-state-floor",
+      "base_commit": "7ba2b1d42891074856ad274d00dc3985ef5e1d27",
+      "tree_sha": "842eef1e7f52e22f7cda438c0236297c7092ebce",
+      "declared_version": "AXM State Floor v0.1.0 repository snapshot at 7ba2b1d",
+      "config_generator_path": "run_experiment.py",
+      "config_path": "pyproject.toml",
+      "raw_derived_path": "results/benchmark_results.json"
+    },
+    {
+      "id": "workfloor-sentinel-v0.1.0-at-7ba2b1d",
+      "role": "held_out",
+      "source_path": "experiments/02-workfloor-sentinel",
+      "base_commit": "7ba2b1d42891074856ad274d00dc3985ef5e1d27",
+      "tree_sha": "8006b291eef3e49479a163bb8c7d774a28feb5d1",
+      "declared_version": "AXM Workfloor Sentinel v0.1.0 repository snapshot at 7ba2b1d",
+      "config_generator_path": "run_sentinel.py",
+      "config_path": "pyproject.toml",
+      "raw_derived_path": "results/sentinel_results.json"
+    },
+    {
+      "id": "adaptive-closure-v0.1.0-at-7ba2b1d",
+      "role": "held_out",
+      "source_path": "experiments/04-adaptive-closure-verifier",
+      "base_commit": "7ba2b1d42891074856ad274d00dc3985ef5e1d27",
+      "tree_sha": "53b39eb9dede7fe1466a19be3f24e9d88fc94a75",
+      "declared_version": "AXM Adaptive Closure Verifier v0.1.0 repository snapshot at 7ba2b1d",
+      "config_generator_path": "run_benchmarks.py",
+      "config_path": "pyproject.toml",
+      "raw_derived_path": "results/raw/state_debt.json"
+    }
+  ]
+}
+
