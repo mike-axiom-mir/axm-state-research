@@ -9,7 +9,7 @@ visible ChatGPT conversation lanes: this is an explicitly allowed new bounded co
 delegation boundary: delegated builders are hands in that conversation, not separate user-visible chat instances
 pull requests allowed for this bounded continuation: 1
 merge authority: human maintainer
-status: semantic freeze and first score complete; post-score evidence/docs/tests and publication verification pending
+status: semantic freeze, first score, post-score verification, and connector publication complete; final-head Actions pending
 ```
 
 ## Bounded scope
@@ -60,7 +60,7 @@ The first-score embedded repeat and reversed-order flags failed because a checkp
 
 ## Verification and publication
 
-Pending narrow tests, all six experiment suites, exact committed-range whitespace check, remote tree equality, pull request URL, and GitHub Actions on final head. Human merge authority is retained.
+Narrow tests, all six experiment suites, the exact committed-range whitespace check, connector-published tree equality, and the exact remote-ref range check passed. Exactly one pull request is open: [PR #8](https://github.com/mike-axiom-mir/axm-state-research/pull/8), targeting `main` as the intentional stack. Human merge authority is retained.
 
 ## Local verification amendment — 2026-09-02 UTC
 
@@ -90,4 +90,22 @@ git diff --check 7ba2b1d42891074856ad274d00dc3985ef5e1d27..HEAD
 result after correction receipt: PASS
 ```
 
-Remote publication, exact remote-ref range check, remote/local tree equality, pull request, and GitHub Actions remain pending. Human merge authority is unchanged.
+## Connector publication amendment — 2026-09-02 UTC
+
+The connector mirrored each local commit onto the remote branch with the same Git tree. Connector-created commit identifiers differ because the connector supplies publication metadata; the content-addressed tree identifiers match exactly.
+
+```text
+local d804cc5f4a2bc863f2f2177daa89d77c1dcdc524 -> remote 0ca3c69dfa8d278ef3c89e8779d59de9971ed868; tree 007e947b466883ed74cba317a8195f2e962e3322
+local 2c0731d846605f9b8f4e5b85d55e270fea5c277a -> remote d0249a957424d2d0962e5f6ef704a5d9eb8560a2; tree ca4beb136846c7766af5c4f5c1906272bbdd326d
+local dd645e35d2958165b845e998ba74d0f20018a8bf -> remote 7e8b351ab1037393dc2657a1f81f0e3f51f2e20f; tree d06ac7580d01371762116ba3355fa77aaaf10ae5
+local 20d2ca4d6d9b5a3d066ee42b010d8582d771da87 -> remote 3ecf9456afb0d25778a5dccd9b899f8031594cdf; tree 4887f014a258c26de761d8de7f192884189b0558
+local e28e6c6b69a5509a911eb464c48af68a2da637d1 -> remote 6971f2ad133486c65a318d98207eb95cee29b653; tree c06a92efdb9e915794ba647b5b83ed91f5b3684c
+local 80515aaae912755835346ac22cd6ee55286d12ef -> remote 67ce1169ece16217b33422af51b41e52a106edfd; tree 0cd006813b0d489fe3970624ff8bc562ccca86d0
+local 4188330f3a658a63fa9d97e87f52927ea5c25bb1 -> remote f76d2b617ca36ecc89e71f667a432ad701e8c0b5; tree d4a872aca961ab4c20b07bfeb5a34180d8f00b68
+
+git diff --exit-code HEAD^{tree} origin/ai/unlabeled-multiproject-closure-2026-09-02^{tree}: PASS
+git diff --check 7ba2b1d42891074856ad274d00dc3985ef5e1d27..origin/ai/unlabeled-multiproject-closure-2026-09-02: PASS
+pull request: #8, open, unmerged, target main
+```
+
+This documentation-only receipt amendment changes no policy, manifest, fixture, held-out input, label, checkpoint behavior, score, or evidence. It becomes the final connector-published head; its GitHub Actions result is recorded on the pull request after completion rather than changing the tested head. Human merge authority is unchanged.
