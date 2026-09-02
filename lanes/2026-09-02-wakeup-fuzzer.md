@@ -7,7 +7,7 @@ base: ai/state-research-import-2026-09-02@a82db47736a4a32572357db536714b1c8cf0cb
 chat lanes claimed: 1
 pull requests allowed for this chat: 1
 merge authority: human maintainer
-status: pull request open; GitHub Actions pending; human merge required
+status: pull request open; GitHub Actions run 4 PASS; human merge required
 pull request: https://github.com/mike-axiom-mir/axm-state-research/pull/5
 ```
 
@@ -44,6 +44,7 @@ reversed registration: PASS
 repaired output equivalence: PASS
 broken omission detection: PASS
 counterexample 32 -> 1 mutation: PASS
+GitHub Actions run 4 on PR head 892cdfc: PASS
 ```
 
 This lane intentionally does not edit general conceptual-note files because another user-directed chat owns that separate work. Pull request #5 is stacked on PR #3 and its apparent base diff will shrink after PR #3 merges. Human merge authority is unchanged; append a dated amendment if remote verification later fails or the lane is handed off.
