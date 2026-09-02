@@ -1,0 +1,793 @@
+{
+  "configuration": {
+    "change_trace_kind": "deterministic adversarial fixtures applied in memory to a real project snapshot",
+    "oracle": "recompute every registered check against a shared immutable snapshot",
+    "replay_runs": 3
+  },
+  "dependency_bug_run": {
+    "dependency_key_count": 30,
+    "final_oracle_check_results_hash": "ce6b78506418fe8ad3794f2b291d3414ae90355764474a2bfe6e653cf5ce2a9a",
+    "final_sparse_check_results_hash": "1df545142128e8544df4bdd3735a99c5785542be88e2ee39e999f380c32d2d0e",
+    "final_state_bytes": 236036,
+    "initial_fail_count": 9,
+    "initial_pass_count": 233,
+    "initialization_time_ns": 105503380,
+    "initialized_state_bytes": 236924,
+    "logical_replay_hash": "e7eba2ab3c8057e6129d4d6f3e1474ac469965d28004a21de321f6163b040349",
+    "perspective_count": 21,
+    "process_rss_after_variant_bytes": 17989632,
+    "registered_checks": 242,
+    "registry_router_bytes_estimate": 81750,
+    "repaired_dependencies": false,
+    "steps": [
+      {
+        "awakened_check_ids": [
+          "aggregate--all-markdown-h1",
+          "boundary--software-not-hardware",
+          "digest--README__md",
+          "line-bound--README__md",
+          "markdown-fences--README__md",
+          "markdown-h1--README__md",
+          "markdown-headings--README__md",
+          "nonempty--README__md",
+          "present--README__md",
+          "tabs--README__md"
+        ],
+        "awakened_count": 10,
+        "change_id": "remove-software-boundary",
+        "changed_receipt_count": 4,
+        "description": "Reverse the explicit software-not-hardware claim boundary.",
+        "duplicated_output_equivalent_to_oracle": true,
+        "duplicated_packet_bytes": 57381104,
+        "duplicated_packet_full_scan_time_ns": 515889616,
+        "false_wakeup_count": 6,
+        "false_wakeup_ids": [
+          "aggregate--all-markdown-h1",
+          "markdown-fences--README__md",
+          "markdown-h1--README__md",
+          "markdown-headings--README__md",
+          "present--README__md",
+          "tabs--README__md"
+        ],
+        "missed_check_ids": [],
+        "missed_count": 0,
+        "necessary_check_ids": [
+          "boundary--software-not-hardware",
+          "digest--README__md",
+          "line-bound--README__md",
+          "nonempty--README__md"
+        ],
+        "necessary_count": 4,
+        "operation": "update",
+        "path": "README.md",
+        "route_keys": [
+          "category:markdown",
+          "directory:.",
+          "file:README.md"
+        ],
+        "sequence": 0,
+        "shared_snapshot_full_scan_time_ns": 101978700,
+        "sparse_execution_and_merge_time_ns": 5329562,
+        "sparse_output_equivalent_to_oracle": true,
+        "sparse_output_mismatch_ids": [],
+        "sparse_routing_time_ns": 10549
+      },
+      {
+        "awakened_check_ids": [
+          "aggregate--all-python-parse",
+          "digest--axm_state_floor__runtime__py",
+          "line-bound--axm_state_floor__runtime__py",
+          "nonempty--axm_state_floor__runtime__py",
+          "present--axm_state_floor__runtime__py",
+          "python-ast--axm_state_floor__runtime__py",
+          "python-docstring--axm_state_floor__runtime__py",
+          "python-no-eval--axm_state_floor__runtime__py",
+          "python-no-wildcard--axm_state_floor__runtime__py",
+          "python-symbols--axm_state_floor__runtime__py",
+          "tabs--axm_state_floor__runtime__py"
+        ],
+        "awakened_count": 11,
+        "change_id": "inject-dynamic-eval",
+        "changed_receipt_count": 3,
+        "description": "Inject a syntactically valid dynamic eval call.",
+        "duplicated_output_equivalent_to_oracle": true,
+        "duplicated_packet_bytes": 57438942,
+        "duplicated_packet_full_scan_time_ns": 502489981,
+        "false_wakeup_count": 8,
+        "false_wakeup_ids": [
+          "aggregate--all-python-parse",
+          "line-bound--axm_state_floor__runtime__py",
+          "present--axm_state_floor__runtime__py",
+          "python-ast--axm_state_floor__runtime__py",
+          "python-docstring--axm_state_floor__runtime__py",
+          "python-no-wildcard--axm_state_floor__runtime__py",
+          "python-symbols--axm_state_floor__runtime__py",
+          "tabs--axm_state_floor__runtime__py"
+        ],
+        "missed_check_ids": [],
+        "missed_count": 0,
+        "necessary_check_ids": [
+          "digest--axm_state_floor__runtime__py",
+          "nonempty--axm_state_floor__runtime__py",
+          "python-no-eval--axm_state_floor__runtime__py"
+        ],
+        "necessary_count": 3,
+        "operation": "update",
+        "path": "axm_state_floor/runtime.py",
+        "route_keys": [
+          "category:python",
+          "directory:axm_state_floor",
+          "file:axm_state_floor/runtime.py"
+        ],
+        "sequence": 1,
+        "shared_snapshot_full_scan_time_ns": 108988204,
+        "sparse_execution_and_merge_time_ns": 37581923,
+        "sparse_output_equivalent_to_oracle": true,
+        "sparse_output_mismatch_ids": [],
+        "sparse_routing_time_ns": 12160
+      },
+      {
+        "awakened_check_ids": [
+          "aggregate--all-json-parse",
+          "digest--results__benchmark_results__json",
+          "json-schema--results__benchmark_results__json",
+          "json-timings--results__benchmark_results__json",
+          "json-valid--results__benchmark_results__json",
+          "line-bound--results__benchmark_results__json",
+          "nonempty--results__benchmark_results__json",
+          "present--results__benchmark_results__json",
+          "tabs--results__benchmark_results__json"
+        ],
+        "awakened_count": 9,
+        "change_id": "break-output-equivalence-claim",
+        "changed_receipt_count": 2,
+        "description": "Change one raw equivalence flag without editing the report.",
+        "duplicated_output_equivalent_to_oracle": true,
+        "duplicated_packet_bytes": 57486858,
+        "duplicated_packet_full_scan_time_ns": 540778962,
+        "false_wakeup_count": 7,
+        "false_wakeup_ids": [
+          "aggregate--all-json-parse",
+          "json-schema--results__benchmark_results__json",
+          "json-timings--results__benchmark_results__json",
+          "json-valid--results__benchmark_results__json",
+          "line-bound--results__benchmark_results__json",
+          "present--results__benchmark_results__json",
+          "tabs--results__benchmark_results__json"
+        ],
+        "missed_check_ids": [
+          "cross--report-matches-raw-results"
+        ],
+        "missed_count": 1,
+        "necessary_check_ids": [
+          "cross--report-matches-raw-results",
+          "digest--results__benchmark_results__json",
+          "nonempty--results__benchmark_results__json"
+        ],
+        "necessary_count": 3,
+        "operation": "update",
+        "path": "results/benchmark_results.json",
+        "route_keys": [
+          "category:json",
+          "directory:results",
+          "file:results/benchmark_results.json"
+        ],
+        "sequence": 2,
+        "shared_snapshot_full_scan_time_ns": 99938526,
+        "sparse_execution_and_merge_time_ns": 5780585,
+        "sparse_output_equivalent_to_oracle": false,
+        "sparse_output_mismatch_ids": [
+          "cross--report-matches-raw-results"
+        ],
+        "sparse_routing_time_ns": 9610
+      },
+      {
+        "awakened_check_ids": [
+          "aggregate--all-python-parse",
+          "digest--tests__test_runtime__py",
+          "guard--conflicts-remain-explicit",
+          "line-bound--tests__test_runtime__py",
+          "nonempty--tests__test_runtime__py",
+          "present--tests__test_runtime__py",
+          "python-ast--tests__test_runtime__py",
+          "python-docstring--tests__test_runtime__py",
+          "python-no-eval--tests__test_runtime__py",
+          "python-no-wildcard--tests__test_runtime__py",
+          "python-symbols--tests__test_runtime__py",
+          "tabs--tests__test_runtime__py"
+        ],
+        "awakened_count": 12,
+        "change_id": "remove-conflict-test-name",
+        "changed_receipt_count": 3,
+        "description": "Remove the named explicit-conflict regression test.",
+        "duplicated_output_equivalent_to_oracle": true,
+        "duplicated_packet_bytes": 57524610,
+        "duplicated_packet_full_scan_time_ns": 521372087,
+        "false_wakeup_count": 9,
+        "false_wakeup_ids": [
+          "aggregate--all-python-parse",
+          "line-bound--tests__test_runtime__py",
+          "present--tests__test_runtime__py",
+          "python-ast--tests__test_runtime__py",
+          "python-docstring--tests__test_runtime__py",
+          "python-no-eval--tests__test_runtime__py",
+          "python-no-wildcard--tests__test_runtime__py",
+          "python-symbols--tests__test_runtime__py",
+          "tabs--tests__test_runtime__py"
+        ],
+        "missed_check_ids": [],
+        "missed_count": 0,
+        "necessary_check_ids": [
+          "digest--tests__test_runtime__py",
+          "guard--conflicts-remain-explicit",
+          "nonempty--tests__test_runtime__py"
+        ],
+        "necessary_count": 3,
+        "operation": "update",
+        "path": "tests/test_runtime.py",
+        "route_keys": [
+          "category:python",
+          "directory:tests",
+          "file:tests/test_runtime.py"
+        ],
+        "sequence": 3,
+        "shared_snapshot_full_scan_time_ns": 98996984,
+        "sparse_execution_and_merge_time_ns": 19408633,
+        "sparse_output_equivalent_to_oracle": false,
+        "sparse_output_mismatch_ids": [
+          "cross--report-matches-raw-results"
+        ],
+        "sparse_routing_time_ns": 10738
+      },
+      {
+        "awakened_check_ids": [
+          "digest--LICENSE",
+          "license--apache-text",
+          "line-bound--LICENSE",
+          "nonempty--LICENSE",
+          "present--LICENSE",
+          "tabs--LICENSE"
+        ],
+        "awakened_count": 6,
+        "change_id": "delete-license",
+        "changed_receipt_count": 6,
+        "description": "Delete the license text.",
+        "duplicated_output_equivalent_to_oracle": true,
+        "duplicated_packet_bytes": 57263976,
+        "duplicated_packet_full_scan_time_ns": 509201189,
+        "false_wakeup_count": 0,
+        "false_wakeup_ids": [],
+        "missed_check_ids": [],
+        "missed_count": 0,
+        "necessary_check_ids": [
+          "digest--LICENSE",
+          "license--apache-text",
+          "line-bound--LICENSE",
+          "nonempty--LICENSE",
+          "present--LICENSE",
+          "tabs--LICENSE"
+        ],
+        "necessary_count": 6,
+        "operation": "delete",
+        "path": "LICENSE",
+        "route_keys": [
+          "category:license",
+          "directory:.",
+          "file:LICENSE"
+        ],
+        "sequence": 4,
+        "shared_snapshot_full_scan_time_ns": 116162735,
+        "sparse_execution_and_merge_time_ns": 5245531,
+        "sparse_output_equivalent_to_oracle": false,
+        "sparse_output_mismatch_ids": [
+          "cross--report-matches-raw-results"
+        ],
+        "sparse_routing_time_ns": 8804
+      },
+      {
+        "awakened_check_ids": [
+          "digest--pyproject__toml",
+          "line-bound--pyproject__toml",
+          "nonempty--pyproject__toml",
+          "present--pyproject__toml",
+          "tabs--pyproject__toml",
+          "toml-license--pyproject__toml",
+          "toml-name--pyproject__toml",
+          "toml-python--pyproject__toml",
+          "toml-valid--pyproject__toml"
+        ],
+        "awakened_count": 9,
+        "change_id": "raise-python-requirement",
+        "changed_receipt_count": 3,
+        "description": "Change the supported Python requirement to an impossible floor.",
+        "duplicated_output_equivalent_to_oracle": true,
+        "duplicated_packet_bytes": 57306326,
+        "duplicated_packet_full_scan_time_ns": 528554904,
+        "false_wakeup_count": 6,
+        "false_wakeup_ids": [
+          "line-bound--pyproject__toml",
+          "present--pyproject__toml",
+          "tabs--pyproject__toml",
+          "toml-license--pyproject__toml",
+          "toml-name--pyproject__toml",
+          "toml-valid--pyproject__toml"
+        ],
+        "missed_check_ids": [],
+        "missed_count": 0,
+        "necessary_check_ids": [
+          "digest--pyproject__toml",
+          "nonempty--pyproject__toml",
+          "toml-python--pyproject__toml"
+        ],
+        "necessary_count": 3,
+        "operation": "update",
+        "path": "pyproject.toml",
+        "route_keys": [
+          "category:toml",
+          "directory:.",
+          "file:pyproject.toml"
+        ],
+        "sequence": 5,
+        "shared_snapshot_full_scan_time_ns": 138671560,
+        "sparse_execution_and_merge_time_ns": 5174411,
+        "sparse_output_equivalent_to_oracle": false,
+        "sparse_output_mismatch_ids": [
+          "cross--report-matches-raw-results"
+        ],
+        "sparse_routing_time_ns": 102605
+      },
+      {
+        "awakened_check_ids": [
+          "aggregate--all-python-parse"
+        ],
+        "awakened_count": 1,
+        "change_id": "add-invalid-python-file",
+        "changed_receipt_count": 1,
+        "description": "Add a new Python file that cannot parse.",
+        "duplicated_output_equivalent_to_oracle": true,
+        "duplicated_packet_bytes": 57410386,
+        "duplicated_packet_full_scan_time_ns": 502454415,
+        "false_wakeup_count": 0,
+        "false_wakeup_ids": [],
+        "missed_check_ids": [],
+        "missed_count": 0,
+        "necessary_check_ids": [
+          "aggregate--all-python-parse"
+        ],
+        "necessary_count": 1,
+        "operation": "add",
+        "path": "axm_state_floor/ghost.py",
+        "route_keys": [
+          "category:python",
+          "directory:axm_state_floor",
+          "file:axm_state_floor/ghost.py"
+        ],
+        "sequence": 6,
+        "shared_snapshot_full_scan_time_ns": 107111915,
+        "sparse_execution_and_merge_time_ns": 13843717,
+        "sparse_output_equivalent_to_oracle": false,
+        "sparse_output_mismatch_ids": [
+          "cross--report-matches-raw-results"
+        ],
+        "sparse_routing_time_ns": 9031
+      }
+    ],
+    "totals": {
+      "duplicated_full_scan_over_sparse_ratio": 39.1314,
+      "duplicated_packet_bytes": 401812202,
+      "duplicated_packet_full_scan_time_ns": 3620741154,
+      "false_wakeup_percentage_of_sparse": 62.069,
+      "false_wakeups": 36,
+      "final_sparse_output_equivalent_to_oracle": false,
+      "missed_wakeups": 1,
+      "necessary_wakeups": 23,
+      "shared_full_scan_over_sparse_ratio": 8.3418,
+      "shared_snapshot_full_scan_time_ns": 771848624,
+      "sparse_evaluation_reduction_vs_full_scan_percentage": 96.5762,
+      "sparse_execution_and_merge_time_ns": 92364362,
+      "sparse_routing_time_ns": 163497,
+      "sparse_total_time_ns": 92527859,
+      "sparse_wakeups": 58,
+      "trace_changes": 7
+    }
+  },
+  "determinism": {
+    "logical_replay_hashes": [
+      "5fc8eabc174050830cee61d8700cf3342346922c64f4df15efe7a3528c934ef6",
+      "5fc8eabc174050830cee61d8700cf3342346922c64f4df15efe7a3528c934ef6",
+      "5fc8eabc174050830cee61d8700cf3342346922c64f4df15efe7a3528c934ef6"
+    ],
+    "registration_order_invariance_success": true,
+    "repeated_replay_success": true,
+    "reversed_registration_hash": "5fc8eabc174050830cee61d8700cf3342346922c64f4df15efe7a3528c934ef6"
+  },
+  "environment": {
+    "logical_cpus": 9,
+    "platform": "Linux-6.18.35-x86_64-with-glibc2.39",
+    "process_rss_at_start_bytes": 14340096,
+    "python": "3.12.13 (main, Aug  7 2026, 02:25:39) [Clang 22.1.3 ]"
+  },
+  "foundation": {
+    "name": "AXM State Floor",
+    "source_archive_sha256": "bbdeefe7cecc79bd9096d7c9db6a2462833b1319ec8e350eef2bb121a0b7854d",
+    "version": "0.1.0"
+  },
+  "repaired_run": {
+    "dependency_key_count": 30,
+    "final_oracle_check_results_hash": "ce6b78506418fe8ad3794f2b291d3414ae90355764474a2bfe6e653cf5ce2a9a",
+    "final_sparse_check_results_hash": "ce6b78506418fe8ad3794f2b291d3414ae90355764474a2bfe6e653cf5ce2a9a",
+    "final_state_bytes": 236140,
+    "initial_fail_count": 9,
+    "initial_pass_count": 233,
+    "initialization_time_ns": 108971388,
+    "initialized_state_bytes": 237027,
+    "logical_replay_hash": "5fc8eabc174050830cee61d8700cf3342346922c64f4df15efe7a3528c934ef6",
+    "perspective_count": 21,
+    "process_rss_after_variant_bytes": 18067456,
+    "registered_checks": 242,
+    "registry_router_bytes_estimate": 81842,
+    "repaired_dependencies": true,
+    "steps": [
+      {
+        "awakened_check_ids": [
+          "aggregate--all-markdown-h1",
+          "boundary--software-not-hardware",
+          "digest--README__md",
+          "line-bound--README__md",
+          "markdown-fences--README__md",
+          "markdown-h1--README__md",
+          "markdown-headings--README__md",
+          "nonempty--README__md",
+          "present--README__md",
+          "tabs--README__md"
+        ],
+        "awakened_count": 10,
+        "change_id": "remove-software-boundary",
+        "changed_receipt_count": 4,
+        "description": "Reverse the explicit software-not-hardware claim boundary.",
+        "duplicated_output_equivalent_to_oracle": true,
+        "duplicated_packet_bytes": 57406030,
+        "duplicated_packet_full_scan_time_ns": 523892632,
+        "false_wakeup_count": 6,
+        "false_wakeup_ids": [
+          "aggregate--all-markdown-h1",
+          "markdown-fences--README__md",
+          "markdown-h1--README__md",
+          "markdown-headings--README__md",
+          "present--README__md",
+          "tabs--README__md"
+        ],
+        "missed_check_ids": [],
+        "missed_count": 0,
+        "necessary_check_ids": [
+          "boundary--software-not-hardware",
+          "digest--README__md",
+          "line-bound--README__md",
+          "nonempty--README__md"
+        ],
+        "necessary_count": 4,
+        "operation": "update",
+        "path": "README.md",
+        "route_keys": [
+          "category:markdown",
+          "directory:.",
+          "file:README.md"
+        ],
+        "sequence": 0,
+        "shared_snapshot_full_scan_time_ns": 116555451,
+        "sparse_execution_and_merge_time_ns": 6203988,
+        "sparse_output_equivalent_to_oracle": true,
+        "sparse_output_mismatch_ids": [],
+        "sparse_routing_time_ns": 10744
+      },
+      {
+        "awakened_check_ids": [
+          "aggregate--all-python-parse",
+          "digest--axm_state_floor__runtime__py",
+          "line-bound--axm_state_floor__runtime__py",
+          "nonempty--axm_state_floor__runtime__py",
+          "present--axm_state_floor__runtime__py",
+          "python-ast--axm_state_floor__runtime__py",
+          "python-docstring--axm_state_floor__runtime__py",
+          "python-no-eval--axm_state_floor__runtime__py",
+          "python-no-wildcard--axm_state_floor__runtime__py",
+          "python-symbols--axm_state_floor__runtime__py",
+          "tabs--axm_state_floor__runtime__py"
+        ],
+        "awakened_count": 11,
+        "change_id": "inject-dynamic-eval",
+        "changed_receipt_count": 3,
+        "description": "Inject a syntactically valid dynamic eval call.",
+        "duplicated_output_equivalent_to_oracle": true,
+        "duplicated_packet_bytes": 57463868,
+        "duplicated_packet_full_scan_time_ns": 542322347,
+        "false_wakeup_count": 8,
+        "false_wakeup_ids": [
+          "aggregate--all-python-parse",
+          "line-bound--axm_state_floor__runtime__py",
+          "present--axm_state_floor__runtime__py",
+          "python-ast--axm_state_floor__runtime__py",
+          "python-docstring--axm_state_floor__runtime__py",
+          "python-no-wildcard--axm_state_floor__runtime__py",
+          "python-symbols--axm_state_floor__runtime__py",
+          "tabs--axm_state_floor__runtime__py"
+        ],
+        "missed_check_ids": [],
+        "missed_count": 0,
+        "necessary_check_ids": [
+          "digest--axm_state_floor__runtime__py",
+          "nonempty--axm_state_floor__runtime__py",
+          "python-no-eval--axm_state_floor__runtime__py"
+        ],
+        "necessary_count": 3,
+        "operation": "update",
+        "path": "axm_state_floor/runtime.py",
+        "route_keys": [
+          "category:python",
+          "directory:axm_state_floor",
+          "file:axm_state_floor/runtime.py"
+        ],
+        "sequence": 1,
+        "shared_snapshot_full_scan_time_ns": 99459093,
+        "sparse_execution_and_merge_time_ns": 38343739,
+        "sparse_output_equivalent_to_oracle": true,
+        "sparse_output_mismatch_ids": [],
+        "sparse_routing_time_ns": 9780
+      },
+      {
+        "awakened_check_ids": [
+          "aggregate--all-json-parse",
+          "cross--report-matches-raw-results",
+          "digest--results__benchmark_results__json",
+          "json-schema--results__benchmark_results__json",
+          "json-timings--results__benchmark_results__json",
+          "json-valid--results__benchmark_results__json",
+          "line-bound--results__benchmark_results__json",
+          "nonempty--results__benchmark_results__json",
+          "present--results__benchmark_results__json",
+          "tabs--results__benchmark_results__json"
+        ],
+        "awakened_count": 10,
+        "change_id": "break-output-equivalence-claim",
+        "changed_receipt_count": 3,
+        "description": "Change one raw equivalence flag without editing the report.",
+        "duplicated_output_equivalent_to_oracle": true,
+        "duplicated_packet_bytes": 57512026,
+        "duplicated_packet_full_scan_time_ns": 553751941,
+        "false_wakeup_count": 7,
+        "false_wakeup_ids": [
+          "aggregate--all-json-parse",
+          "json-schema--results__benchmark_results__json",
+          "json-timings--results__benchmark_results__json",
+          "json-valid--results__benchmark_results__json",
+          "line-bound--results__benchmark_results__json",
+          "present--results__benchmark_results__json",
+          "tabs--results__benchmark_results__json"
+        ],
+        "missed_check_ids": [],
+        "missed_count": 0,
+        "necessary_check_ids": [
+          "cross--report-matches-raw-results",
+          "digest--results__benchmark_results__json",
+          "nonempty--results__benchmark_results__json"
+        ],
+        "necessary_count": 3,
+        "operation": "update",
+        "path": "results/benchmark_results.json",
+        "route_keys": [
+          "category:json",
+          "directory:results",
+          "file:results/benchmark_results.json"
+        ],
+        "sequence": 2,
+        "shared_snapshot_full_scan_time_ns": 109111362,
+        "sparse_execution_and_merge_time_ns": 7906329,
+        "sparse_output_equivalent_to_oracle": true,
+        "sparse_output_mismatch_ids": [],
+        "sparse_routing_time_ns": 40146
+      },
+      {
+        "awakened_check_ids": [
+          "aggregate--all-python-parse",
+          "digest--tests__test_runtime__py",
+          "guard--conflicts-remain-explicit",
+          "line-bound--tests__test_runtime__py",
+          "nonempty--tests__test_runtime__py",
+          "present--tests__test_runtime__py",
+          "python-ast--tests__test_runtime__py",
+          "python-docstring--tests__test_runtime__py",
+          "python-no-eval--tests__test_runtime__py",
+          "python-no-wildcard--tests__test_runtime__py",
+          "python-symbols--tests__test_runtime__py",
+          "tabs--tests__test_runtime__py"
+        ],
+        "awakened_count": 12,
+        "change_id": "remove-conflict-test-name",
+        "changed_receipt_count": 3,
+        "description": "Remove the named explicit-conflict regression test.",
+        "duplicated_output_equivalent_to_oracle": true,
+        "duplicated_packet_bytes": 57549778,
+        "duplicated_packet_full_scan_time_ns": 519411538,
+        "false_wakeup_count": 9,
+        "false_wakeup_ids": [
+          "aggregate--all-python-parse",
+          "line-bound--tests__test_runtime__py",
+          "present--tests__test_runtime__py",
+          "python-ast--tests__test_runtime__py",
+          "python-docstring--tests__test_runtime__py",
+          "python-no-eval--tests__test_runtime__py",
+          "python-no-wildcard--tests__test_runtime__py",
+          "python-symbols--tests__test_runtime__py",
+          "tabs--tests__test_runtime__py"
+        ],
+        "missed_check_ids": [],
+        "missed_count": 0,
+        "necessary_check_ids": [
+          "digest--tests__test_runtime__py",
+          "guard--conflicts-remain-explicit",
+          "nonempty--tests__test_runtime__py"
+        ],
+        "necessary_count": 3,
+        "operation": "update",
+        "path": "tests/test_runtime.py",
+        "route_keys": [
+          "category:python",
+          "directory:tests",
+          "file:tests/test_runtime.py"
+        ],
+        "sequence": 3,
+        "shared_snapshot_full_scan_time_ns": 117035037,
+        "sparse_execution_and_merge_time_ns": 20890388,
+        "sparse_output_equivalent_to_oracle": true,
+        "sparse_output_mismatch_ids": [],
+        "sparse_routing_time_ns": 10351
+      },
+      {
+        "awakened_check_ids": [
+          "digest--LICENSE",
+          "license--apache-text",
+          "line-bound--LICENSE",
+          "nonempty--LICENSE",
+          "present--LICENSE",
+          "tabs--LICENSE"
+        ],
+        "awakened_count": 6,
+        "change_id": "delete-license",
+        "changed_receipt_count": 6,
+        "description": "Delete the license text.",
+        "duplicated_output_equivalent_to_oracle": true,
+        "duplicated_packet_bytes": 57289144,
+        "duplicated_packet_full_scan_time_ns": 544530934,
+        "false_wakeup_count": 0,
+        "false_wakeup_ids": [],
+        "missed_check_ids": [],
+        "missed_count": 0,
+        "necessary_check_ids": [
+          "digest--LICENSE",
+          "license--apache-text",
+          "line-bound--LICENSE",
+          "nonempty--LICENSE",
+          "present--LICENSE",
+          "tabs--LICENSE"
+        ],
+        "necessary_count": 6,
+        "operation": "delete",
+        "path": "LICENSE",
+        "route_keys": [
+          "category:license",
+          "directory:.",
+          "file:LICENSE"
+        ],
+        "sequence": 4,
+        "shared_snapshot_full_scan_time_ns": 111367030,
+        "sparse_execution_and_merge_time_ns": 4789430,
+        "sparse_output_equivalent_to_oracle": true,
+        "sparse_output_mismatch_ids": [],
+        "sparse_routing_time_ns": 8782
+      },
+      {
+        "awakened_check_ids": [
+          "digest--pyproject__toml",
+          "line-bound--pyproject__toml",
+          "nonempty--pyproject__toml",
+          "present--pyproject__toml",
+          "tabs--pyproject__toml",
+          "toml-license--pyproject__toml",
+          "toml-name--pyproject__toml",
+          "toml-python--pyproject__toml",
+          "toml-valid--pyproject__toml"
+        ],
+        "awakened_count": 9,
+        "change_id": "raise-python-requirement",
+        "changed_receipt_count": 3,
+        "description": "Change the supported Python requirement to an impossible floor.",
+        "duplicated_output_equivalent_to_oracle": true,
+        "duplicated_packet_bytes": 57331494,
+        "duplicated_packet_full_scan_time_ns": 572917291,
+        "false_wakeup_count": 6,
+        "false_wakeup_ids": [
+          "line-bound--pyproject__toml",
+          "present--pyproject__toml",
+          "tabs--pyproject__toml",
+          "toml-license--pyproject__toml",
+          "toml-name--pyproject__toml",
+          "toml-valid--pyproject__toml"
+        ],
+        "missed_check_ids": [],
+        "missed_count": 0,
+        "necessary_check_ids": [
+          "digest--pyproject__toml",
+          "nonempty--pyproject__toml",
+          "toml-python--pyproject__toml"
+        ],
+        "necessary_count": 3,
+        "operation": "update",
+        "path": "pyproject.toml",
+        "route_keys": [
+          "category:toml",
+          "directory:.",
+          "file:pyproject.toml"
+        ],
+        "sequence": 5,
+        "shared_snapshot_full_scan_time_ns": 116752757,
+        "sparse_execution_and_merge_time_ns": 5224277,
+        "sparse_output_equivalent_to_oracle": true,
+        "sparse_output_mismatch_ids": [],
+        "sparse_routing_time_ns": 8404
+      },
+      {
+        "awakened_check_ids": [
+          "aggregate--all-python-parse"
+        ],
+        "awakened_count": 1,
+        "change_id": "add-invalid-python-file",
+        "changed_receipt_count": 1,
+        "description": "Add a new Python file that cannot parse.",
+        "duplicated_output_equivalent_to_oracle": true,
+        "duplicated_packet_bytes": 57435554,
+        "duplicated_packet_full_scan_time_ns": 559616687,
+        "false_wakeup_count": 0,
+        "false_wakeup_ids": [],
+        "missed_check_ids": [],
+        "missed_count": 0,
+        "necessary_check_ids": [
+          "aggregate--all-python-parse"
+        ],
+        "necessary_count": 1,
+        "operation": "add",
+        "path": "axm_state_floor/ghost.py",
+        "route_keys": [
+          "category:python",
+          "directory:axm_state_floor",
+          "file:axm_state_floor/ghost.py"
+        ],
+        "sequence": 6,
+        "shared_snapshot_full_scan_time_ns": 124862549,
+        "sparse_execution_and_merge_time_ns": 18158452,
+        "sparse_output_equivalent_to_oracle": true,
+        "sparse_output_mismatch_ids": [],
+        "sparse_routing_time_ns": 8926
+      }
+    ],
+    "totals": {
+      "duplicated_full_scan_over_sparse_ratio": 37.5583,
+      "duplicated_packet_bytes": 401987894,
+      "duplicated_packet_full_scan_time_ns": 3816443370,
+      "false_wakeup_percentage_of_sparse": 61.0169,
+      "false_wakeups": 36,
+      "final_sparse_output_equivalent_to_oracle": true,
+      "missed_wakeups": 0,
+      "necessary_wakeups": 23,
+      "shared_full_scan_over_sparse_ratio": 7.8252,
+      "shared_snapshot_full_scan_time_ns": 795143279,
+      "sparse_evaluation_reduction_vs_full_scan_percentage": 96.5171,
+      "sparse_execution_and_merge_time_ns": 101516603,
+      "sparse_routing_time_ns": 97133,
+      "sparse_total_time_ns": 101613736,
+      "sparse_wakeups": 59,
+      "trace_changes": 7
+    }
+  },
+  "schema": "axm.workfloor-sentinel-results/v1",
+  "suite_wall_time_ns": 12457363214
+}
