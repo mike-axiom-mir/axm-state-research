@@ -1,0 +1,13 @@
+{
+  "files": {
+    "benchmark_results.json": "9424d24281f587c54429ff12f52bcba3da5db31ca3d211dd4069b2caccc4b4e8",
+    "captured_100.json": "c2b179c39e7917b7fe5c12a3c42fa35b6d92a571ab4a089e583bfa65ffdfaa57",
+    "fault_matrix.json": "d7be1221975bbaa3e16b937c3b6e37c0d0071b2d45ff270cba8f76f841e3427f",
+    "state_debt.json": "fe1ff4f208e1a862dafd6a1d62a263fbf01bfd868c6d659b41ed65af91cb4fd4",
+    "transition_receipts_100.jsonl": "15f39aa27cd2754939c83ac44faf422f133e932baaa66e6e89541838db6b5a9c"
+  },
+  "logical_replay_hash": "91af65a4d2f6c0de6e4226917c36d85d6f30908d049ab9f345776081e6a0bc9e",
+  "schema": "axm.adaptive-closure.evidence-receipt/v1",
+  "seed": 20260902,
+  "source_notes": "PR #2 research files were read at commit 2c71d11 and were not copied or modified"
+}
