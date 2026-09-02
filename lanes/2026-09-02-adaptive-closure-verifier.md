@@ -77,3 +77,13 @@ remote CI: pending
 ```
 
 The receipt amendment changes only this lane record. It does not alter the verified experiment source or raw evidence. The PR remains intentionally stacked on PR #5 and targets `main`; its displayed diff should shrink after prerequisite lanes merge.
+
+## Publication amendment — 2026-09-02 UTC
+
+```text
+remote publication commit: 14f1f7cba6342174e1620d0d964fc70d06a8bc99
+remote tree equals locally verified tree: PASS
+pull request: https://github.com/mike-axiom-mir/axm-state-research/pull/6
+pull request state: OPEN; intentionally stacked; not merged
+remote CI: pending at time of this amendment
+```
