@@ -16,6 +16,9 @@ Additive research-only lane covering:
 - machine intelligence as a possible new non-biological state-processing substrate;
 - machine-node inversion into tiny state-level specialist nodes;
 - activation-closure and sufficient-state-closure gates;
+- implicit-zero / positive-state propagation;
+- State Debt: lifetime cost of retained state that no longer helps reproduce the correct future;
+- minimum-sufficient-state and on-demand perspective materialization experiments;
 - current adjacent research / prior-art convergence;
 - state compiler + domain actuator architecture;
 - food/drink sensory-state and sensory-trajectory formulation;
@@ -36,6 +39,7 @@ Additive research-only lane covering:
 
 - `logs/2026-09-02-state-friction-evolution-machine-layer.txt`
 - `research/2026-09-02-state-level-specialist-fabric.md`
+- `research/2026-09-02-implicit-zero-positive-state-propagation.md`
 - `research/2026-09-02-prior-art-convergence.md`
 - `research/2026-09-02-state-compiler-domain-actuators.md`
 - `research/2026-09-02-research-preservation-and-source-integrity.md`
