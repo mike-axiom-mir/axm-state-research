@@ -1,0 +1,36 @@
+name: State research tests
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  experiments:
+    name: ${{ matrix.name }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: State Floor
+            directory: experiments/01-state-floor
+          - name: Workfloor Sentinel
+            directory: experiments/02-workfloor-sentinel
+          - name: Wakeup Fuzzer
+            directory: experiments/03-wakeup-fuzzer
+          - name: Adaptive Closure Verifier
+            directory: experiments/04-adaptive-closure-verifier
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run tests
+        run: python -m unittest discover -s tests -v
+        working-directory: ${{ matrix.directory }}
+        env:
+          PYTHONDONTWRITEBYTECODE: "1"
