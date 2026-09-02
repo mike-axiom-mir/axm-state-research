@@ -1,0 +1,36 @@
+{
+  "schema": "axm.unlabeled-closure.post-score-nonsemantic-receipt/v1",
+  "date_utc": "2026-09-02",
+  "semantic_freeze_commit": "d804cc5f4a2bc863f2f2177daa89d77c1dcdc524",
+  "pre_score_receipt_commit": "2c0731d846605f9b8f4e5b85d55e270fea5c277a",
+  "first_score_evidence_commit": "dd645e35d2958165b845e998ba74d0f20018a8bf",
+  "first_score_evidence_tree": "d06ac7580d01371762116ba3355fa77aaaf10ae5",
+  "frozen_semantics_and_manifests_changed_after_score": false,
+  "allowed_post_score_changes": [
+    "raw first-score evidence and reports",
+    "independent measurement-only replay verifier",
+    "tests for freeze, evidence, checkpoint, counterexample, and replay verification",
+    "experiment and root documentation/indexes",
+    "CI matrix entry",
+    "one lane receipt"
+  ],
+  "retained_issue": "The first-score embedded repeat and reverse flags remain false because checkpoint-validation provenance included host timing.",
+  "nonsemantic_correction": "An independent verifier removed only measurement fields, embedded logical hashes, and the provenance hash derived from validation timing; it did not change routing, audit selection, repair, fixtures, labels, checkpoints, or outputs.",
+  "verification": {
+    "narrow_experiment_06": "11/11 PASS",
+    "all_experiment_suites": "58/58 PASS",
+    "freeze_hashes": "PASS",
+    "raw_report_crosscheck": "PASS",
+    "first_score_evidence_hashes": "PASS",
+    "normalized_repeat_and_reverse": "PASS",
+    "ten_unique_minimized_counterexamples": "PASS"
+  },
+  "hashes": {
+    "benchmark_results.json": "dd609ce6efbc11e4de6b2e4bba04ea08afbb0331822ca7e5f5eb433637d4c929",
+    "first_score_receipt.json": "411f0836752d045624c744d8a76a2a6c3217564fe00e633a244966d2f67f0c38",
+    "post_score_verification.json": "536ebddd26ee38a2d25876969ae249e45572cbeb0fd6108fe0592acca8bad385",
+    "FINAL_REPORT.md": "4adc46ba8bd0a7d25e2a8681145ef7404b99a8532aad94baab1cb15ea86cf478",
+    "verify_evidence.py": "d0a76a37fdb5f64f84c04721c8603d6b824d6c3490d47b5586dcb3f9237b9ecf",
+    "tests/test_unlabeled_closure.py": "aad3f945f3076ba4bee3be93209343fcc1f227bd0393f09b82224bb42d1a826b"
+  }
+}
