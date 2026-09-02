@@ -64,6 +64,25 @@ The deliberately incomplete dependency map missed one necessary check. Repairing
 - [Failures and limitations](../experiments/02-workfloor-sentinel/FAILURE_LIMITATIONS.md)
 - [Next experiment proposed at completion](../experiments/02-workfloor-sentinel/NEXT_EXPERIMENT.md)
 
+## Experiment 03 — AXM Wakeup Fuzzer
+
+At 256 registered checks and 10,000 mutations, declared sparse performed 80,000 handlers and completed in 1,311.057 ms versus polling's 8,458.360 ms. Polling asked 2,560,000 relevance questions; 2,480,000 were negative. A missing dependency caused 64 incorrect transitions and minimized to one mutation. Observed reads repaired that static omission but used a 105,717-byte registry versus 24,432 bytes for declared sparse.
+
+- [Final report](../experiments/03-wakeup-fuzzer/FINAL_REPORT.md)
+- [Raw benchmark JSON](../experiments/03-wakeup-fuzzer/results/raw/benchmark_results.json)
+- [Failures and limitations](../experiments/03-wakeup-fuzzer/FAILURE_LIMITATIONS.md)
+
+## Experiment 04 — AXM Adaptive Closure Verifier
+
+At 10,000 transitions, the broken sparse control ended unequal. Fixed interval, seeded sample, declared risk, full oracle, and observed reconciliation all repaired/replayed to final equality, but maximum damage windows were 25, 131, 1, 1, and 0 transitions respectively. The observed policy used 13,436 audit handlers; declared risk used 30,216; full oracle used 60,000. These are six-node controlled-fixture results, not completeness proof.
+
+A bounded State Debt fixture compared 10,000 explicit values/edges with 80 materialized positive values. Measured resident object bytes fell from 885,657 to 7,325 and JSON checkpoint bytes from 110,001 to 881 with exact output/replay equality.
+
+- [Final report](../experiments/04-adaptive-closure-verifier/FINAL_REPORT.md)
+- [Raw benchmark JSON](../experiments/04-adaptive-closure-verifier/results/raw/benchmark_results.json)
+- [Raw fault matrix](../experiments/04-adaptive-closure-verifier/results/raw/fault_matrix.json)
+- [Failures and limitations](../experiments/04-adaptive-closure-verifier/FAILURE_LIMITATIONS.md)
+
 ## Current strongest target
 
-**AXM Wakeup Fuzzer:** generate dependency-aware source and state mutations, compare sparse execution against a full oracle, minimize any missed-wake counterexample, and measure whether false wake-ups can fall without allowing misses.
+**Real-project closure trial:** apply declared-risk and observed-read reconciliation to Workfloor Sentinel's real checks, then attack them with a held-out mutation set. Publish every miss and minimize it.

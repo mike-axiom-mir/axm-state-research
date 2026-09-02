@@ -22,6 +22,8 @@ jobs:
             directory: experiments/02-workfloor-sentinel
           - name: Wakeup Fuzzer
             directory: experiments/03-wakeup-fuzzer
+          - name: Adaptive Closure Verifier
+            directory: experiments/04-adaptive-closure-verifier
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5

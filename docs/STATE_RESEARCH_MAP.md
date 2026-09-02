@@ -8,11 +8,14 @@
 - Current state can replace history for some predicates only when the canonical schema retains every decision-relevant fact.
 - A missing routing dependency can leave a necessary check asleep even when the scheduler and handler are otherwise deterministic.
 - A full-scan oracle can expose both missed wake-ups and unnecessary wake-ups.
+- Activation closure and sufficient-state closure fail independently: the correct node may sleep, or it may wake without enough evidence.
+- In one six-node fixture, traced missing edges/fields plus checkpoint replay restored exact output after planted faults; periodic and sampled audits still allowed bounded wrong-state intervals.
+- Implicit defaults reduced resident/checkpoint bytes in one favorable 10,000-perspective State Debt fixture while preserving exact replay.
 
 ## Active hypotheses
 
-1. Dependency completeness can be tested more aggressively with generated and minimized mutations.
-2. False wake-ups can be reduced through finer dependency declarations without increasing missed wake-ups.
+1. A combination of declared risk and observed reads can expose real-project dependency omissions with materially less work than a full oracle.
+2. Held-out mutation sets can distinguish genuine closure improvement from fitting known planted faults.
 3. Canonical state can remain compact if temporal facts are represented as typed summaries rather than duplicated raw histories.
 4. An expensive reasoning capability can operate on only the unresolved queue while deterministic work remains reproducible.
 5. Receipts can support incremental verification without becoming the next dominant memory cost.
@@ -27,6 +30,8 @@
 - State schemas that silently discard decision-relevant temporal information.
 - Generated variants that look numerous but exercise too little behavioral diversity.
 - Cross-process and cross-machine canonicalization differences.
+- Auditors that pass final equality while never observing a dormant unresolved item.
+- Learned dependencies that are valid for one branch but unsafe or incomplete elsewhere.
 
 ## Longer-range questions
 

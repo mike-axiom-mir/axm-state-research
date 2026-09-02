@@ -25,6 +25,8 @@ flowchart TD
 |---|---|---|
 | [01 — AXM State Floor](experiments/01-state-floor/) | Can 10,000 registered perspective variants coexist while only relevant nodes wake? | 10,000 registered; 159 triggered; 9 changed state; deterministic replay and baseline output equivalence passed. |
 | [02 — AXM Workfloor Sentinel](experiments/02-workfloor-sentinel/) | Can sparse routing avoid leaving a necessary real-project check asleep? | A planted dependency omission caused one genuine miss; the repaired map reached zero misses across seven controlled changes, with 61% false wake-ups still exposed. |
+| [03 — AXM Wakeup Fuzzer](experiments/03-wakeup-fuzzer/) | Is positive activation cheaper than polling every registered check, and can a missing edge be minimized? | At 10,000 mutations, declared sparse was 6.45× faster than polling on one host; one omission caused 64 wrong transitions and minimized to one mutation. |
+| [04 — AXM Adaptive Closure Verifier](experiments/04-adaptive-closure-verifier/) | Can sparse routing audit and repair activation and state-slice closure failures? | The broken control failed; audited policies repaired/replayed to equality with damage windows from 0 to 131 transitions in the controlled fixture. |
 
 See the [Research Index](docs/RESEARCH_INDEX.md) for exact metrics, the [State Research Map](docs/STATE_RESEARCH_MAP.md) for the hypothesis tree, and [Claim Boundaries](docs/CLAIM_BOUNDARIES.md) for what has not been established.
 
@@ -37,6 +39,12 @@ cd experiments/01-state-floor
 python3 -m unittest discover -s tests -v
 
 cd ../02-workfloor-sentinel
+python3 -m unittest discover -s tests -v
+
+cd ../03-wakeup-fuzzer
+python3 -m unittest discover -s tests -v
+
+cd ../04-adaptive-closure-verifier
 python3 -m unittest discover -s tests -v
 ```
 

@@ -10,6 +10,10 @@
 - Sentinel's planted dependency omission produced one real missed wake-up and a final mismatch.
 - Repairing that edge produced zero missed wake-ups across the same seven controlled changes.
 - The measured Sentinel sparse run executed fewer checks and completed faster than both measured full-scan modes on one host.
+- Wakeup Fuzzer measured 2,480,000 negative polling probes and a 6.45× host-specific sparse/polling timing difference in its 10,000-mutation fixture.
+- Adaptive Closure's broken control failed; five audited policies explicitly repaired/replayed to final equality in a six-node fixture.
+- Adaptive Closure measured nonzero residual damage windows for fixed and sampled auditing and retained an unresolved dormant-state quarantine.
+- One implicit-default fixture reduced measured Python object/checkpoint bytes while preserving its defined output and replay.
 
 ## Not demonstrated
 
@@ -21,6 +25,9 @@
 - Sentinel has not proven complete dependency routing beyond its registry and seven-change fixture.
 - The experiments do not establish production reliability, security, distributed coordination, or unbounded convergence.
 - No real AI escalation capability has yet been integrated or measured.
+- Periodic, sampled, risk-adaptive, and observed-read auditing have not proven dependency or sufficient-state completeness.
+- The State Debt fixture does not show that explicit zeros/defaults are universally wasteful or that implicit reconstruction is always cheaper.
+- No model-weight editing or domain actuator was implemented in Adaptive Closure.
 
 ## Use these terms
 

@@ -1,0 +1,3302 @@
+{
+  "environment": {
+    "implementation": "CPython",
+    "platform": "Linux-6.18.35-x86_64-with-glibc2.39",
+    "processor": "x86_64",
+    "python": "3.12.13"
+  },
+  "policies": [
+    "NO_AUDIT",
+    "FIXED_INTERVAL",
+    "SEEDED_SAMPLE",
+    "RISK_ADAPTIVE",
+    "FULL_ORACLE",
+    "OBSERVED_RECONCILE"
+  ],
+  "replay": {
+    "hash": "91af65a4d2f6c0de6e4226917c36d85d6f30908d049ab9f345776081e6a0bc9e",
+    "identical_repeat": true,
+    "registration_order_invariant": true
+  },
+  "scales": {
+    "100": {
+      "FIXED_INTERVAL": {
+        "abstentions": 8,
+        "audit_handler_executions": 24,
+        "audits": 4,
+        "corrupted_output_transitions": 30,
+        "corrupted_outputs": 62,
+        "detection_latency_transitions": 45,
+        "detections": 4,
+        "evidence": [
+          {
+            "action": "repair_then_replay",
+            "after": {
+              "declared": [
+                "direct_a",
+                "direct_b"
+              ],
+              "permitted": [
+                "direct_a",
+                "direct_b"
+              ]
+            },
+            "before": {
+              "declared": [
+                "direct_a"
+              ],
+              "permitted": [
+                "direct_a",
+                "direct_b"
+              ]
+            },
+            "current": 56,
+            "missing_edges": [
+              "direct_b"
+            ],
+            "missing_fields": [],
+            "node": "direct",
+            "oracle": 43,
+            "runtime_reads": [],
+            "traced_reads": [
+              "direct_a",
+              "direct_b"
+            ],
+            "transition": 24
+          },
+          {
+            "action": "quarantine_unresolved",
+            "after": {
+              "declared": [
+                "dormant_enabled",
+                "dormant_value"
+              ],
+              "permitted": [
+                "dormant_enabled",
+                "dormant_value"
+              ]
+            },
+            "before": {
+              "declared": [
+                "dormant_enabled",
+                "dormant_value"
+              ],
+              "permitted": [
+                "dormant_enabled",
+                "dormant_value"
+              ]
+            },
+            "current": "ABSTAIN:invalid_dormant_value",
+            "missing_edges": [],
+            "missing_fields": [],
+            "node": "dormant",
+            "oracle": "ABSTAIN:invalid_dormant_value",
+            "runtime_reads": [],
+            "traced_reads": [
+              "dormant_enabled",
+              "dormant_value"
+            ],
+            "transition": 24
+          },
+          {
+            "action": "repair_then_replay",
+            "after": {
+              "declared": [
+                "slice_a",
+                "slice_evidence"
+              ],
+              "permitted": [
+                "slice_a",
+                "slice_evidence"
+              ]
+            },
+            "before": {
+              "declared": [
+                "slice_a",
+                "slice_evidence"
+              ],
+              "permitted": [
+                "slice_a"
+              ]
+            },
+            "current": "ABSTAIN:missing:slice_evidence",
+            "missing_edges": [],
+            "missing_fields": [
+              "slice_evidence"
+            ],
+            "node": "slice",
+            "oracle": 43,
+            "runtime_reads": [],
+            "traced_reads": [
+              "slice_a",
+              "slice_evidence"
+            ],
+            "transition": 24
+          },
+          {
+            "action": "repair_then_replay",
+            "after": {
+              "declared": [
+                "@chain_producer",
+                "chain_bias"
+              ],
+              "permitted": [
+                "@chain_producer",
+                "chain_bias"
+              ]
+            },
+            "before": {
+              "declared": [
+                "chain_bias"
+              ],
+              "permitted": [
+                "@chain_producer",
+                "chain_bias"
+              ]
+            },
+            "current": 37,
+            "missing_edges": [
+              "@chain_producer"
+            ],
+            "missing_fields": [],
+            "node": "chain_consumer",
+            "oracle": 64,
+            "runtime_reads": [],
+            "traced_reads": [
+              "@chain_producer",
+              "chain_bias"
+            ],
+            "transition": 49
+          }
+        ],
+        "faults": [
+          "branch",
+          "direct",
+          "dormant",
+          "indirect",
+          "slice"
+        ],
+        "final_equality": true,
+        "final_output_hash": "bdc42df3cd144a0fd6e032556d79219669e2820fa445cc2ac90097b93fd41bdd",
+        "full_audits": 4,
+        "handler_executions": 92,
+        "learned_edges": 2,
+        "learned_fields": 1,
+        "maximum_damage_window": 25,
+        "observed_read_set_changes": 0,
+        "oracle_measurement_time_ns": 3106322,
+        "oracle_output_hash": "bdc42df3cd144a0fd6e032556d79219669e2820fa445cc2ac90097b93fd41bdd",
+        "policy": "FIXED_INTERVAL",
+        "policy_work_time_ns": 1157094,
+        "proactive_reconciliations": 0,
+        "quarantines": 1,
+        "replay_handler_executions": 60,
+        "replay_hash": "8b8b676885c6f663b9b9eb76549beef665f7856ace864dc62788f0d8f7280323",
+        "rollback_events": 50,
+        "startup_trace_handler_executions": 0,
+        "transitions": 100,
+        "undetected_self_heals": 1,
+        "unresolved_items": 1,
+        "wall_time_ns": 4263416
+      },
+      "FULL_ORACLE": {
+        "abstentions": 1,
+        "audit_handler_executions": 600,
+        "audits": 100,
+        "corrupted_output_transitions": 3,
+        "corrupted_outputs": 4,
+        "detection_latency_transitions": 3,
+        "detections": 5,
+        "evidence": [
+          {
+            "action": "repair_then_replay",
+            "after": {
+              "declared": [
+                "direct_a",
+                "direct_b"
+              ],
+              "permitted": [
+                "direct_a",
+                "direct_b"
+              ]
+            },
+            "before": {
+              "declared": [
+                "direct_a"
+              ],
+              "permitted": [
+                "direct_a",
+                "direct_b"
+              ]
+            },
+            "current": 3,
+            "missing_edges": [
+              "direct_b"
+            ],
+            "missing_fields": [],
+            "node": "direct",
+            "oracle": 10,
+            "runtime_reads": [],
+            "traced_reads": [
+              "direct_a",
+              "direct_b"
+            ],
+            "transition": 0
+          },
+          {
+            "action": "repair_then_replay",
+            "after": {
+              "declared": [
+                "@chain_producer",
+                "chain_bias"
+              ],
+              "permitted": [
+                "@chain_producer",
+                "chain_bias"
+              ]
+            },
+            "before": {
+              "declared": [
+                "chain_bias"
+              ],
+              "permitted": [
+                "@chain_producer",
+                "chain_bias"
+              ]
+            },
+            "current": 7,
+            "missing_edges": [
+              "@chain_producer"
+            ],
+            "missing_fields": [],
+            "node": "chain_consumer",
+            "oracle": 25,
+            "runtime_reads": [],
+            "traced_reads": [
+              "@chain_producer",
+              "chain_bias"
+            ],
+            "transition": 1
+          },
+          {
+            "action": "repair_then_replay",
+            "after": {
+              "declared": [
+                "slice_a",
+                "slice_evidence"
+              ],
+              "permitted": [
+                "slice_a",
+                "slice_evidence"
+              ]
+            },
+            "before": {
+              "declared": [
+                "slice_a",
+                "slice_evidence"
+              ],
+              "permitted": [
+                "slice_a"
+              ]
+            },
+            "current": "ABSTAIN:missing:slice_evidence",
+            "missing_edges": [],
+            "missing_fields": [
+              "slice_evidence"
+            ],
+            "node": "slice",
+            "oracle": 8,
+            "runtime_reads": [],
+            "traced_reads": [
+              "slice_a",
+              "slice_evidence"
+            ],
+            "transition": 1
+          },
+          {
+            "action": "repair_then_replay",
+            "after": {
+              "declared": [
+                "branch_p",
+                "branch_q",
+                "mode"
+              ],
+              "permitted": [
+                "mode",
+                "branch_p",
+                "branch_q"
+              ]
+            },
+            "before": {
+              "declared": [
+                "mode",
+                "branch_p"
+              ],
+              "permitted": [
+                "mode",
+                "branch_p",
+                "branch_q"
+              ]
+            },
+            "current": 11,
+            "missing_edges": [
+              "branch_q"
+            ],
+            "missing_fields": [],
+            "node": "branch",
+            "oracle": 19,
+            "runtime_reads": [],
+            "traced_reads": [
+              "branch_q",
+              "mode"
+            ],
+            "transition": 4
+          },
+          {
+            "action": "quarantine_unresolved",
+            "after": {
+              "declared": [
+                "dormant_enabled",
+                "dormant_value"
+              ],
+              "permitted": [
+                "dormant_enabled",
+                "dormant_value"
+              ]
+            },
+            "before": {
+              "declared": [
+                "dormant_enabled",
+                "dormant_value"
+              ],
+              "permitted": [
+                "dormant_enabled",
+                "dormant_value"
+              ]
+            },
+            "current": "ABSTAIN:invalid_dormant_value",
+            "missing_edges": [],
+            "missing_fields": [],
+            "node": "dormant",
+            "oracle": "ABSTAIN:invalid_dormant_value",
+            "runtime_reads": [
+              "dormant_enabled",
+              "dormant_value"
+            ],
+            "traced_reads": [
+              "dormant_enabled",
+              "dormant_value"
+            ],
+            "transition": 6
+          }
+        ],
+        "faults": [
+          "branch",
+          "direct",
+          "dormant",
+          "indirect",
+          "slice"
+        ],
+        "final_equality": true,
+        "final_output_hash": "bdc42df3cd144a0fd6e032556d79219669e2820fa445cc2ac90097b93fd41bdd",
+        "full_audits": 100,
+        "handler_executions": 105,
+        "learned_edges": 3,
+        "learned_fields": 1,
+        "maximum_damage_window": 1,
+        "observed_read_set_changes": 0,
+        "oracle_measurement_time_ns": 3107851,
+        "oracle_output_hash": "bdc42df3cd144a0fd6e032556d79219669e2820fa445cc2ac90097b93fd41bdd",
+        "policy": "FULL_ORACLE",
+        "policy_work_time_ns": 2163295,
+        "proactive_reconciliations": 0,
+        "quarantines": 1,
+        "replay_handler_executions": 30,
+        "replay_hash": "9257e49f5a14779ad0de8a2b825ac954b6247df6a18084507e1b9bda0b4dbb00",
+        "rollback_events": 5,
+        "startup_trace_handler_executions": 0,
+        "transitions": 100,
+        "undetected_self_heals": 0,
+        "unresolved_items": 1,
+        "wall_time_ns": 5271146
+      },
+      "NO_AUDIT": {
+        "abstentions": 20,
+        "audit_handler_executions": 0,
+        "audits": 0,
+        "corrupted_output_transitions": 100,
+        "corrupted_outputs": 222,
+        "detection_latency_transitions": 0,
+        "detections": 0,
+        "evidence": [],
+        "faults": [
+          "branch",
+          "direct",
+          "dormant",
+          "indirect",
+          "slice"
+        ],
+        "final_equality": false,
+        "final_output_hash": "55c9e7d2d7c1e8bfdfca58ef52512584f196eb6745258fa35271f9c226f561bb",
+        "full_audits": 0,
+        "handler_executions": 77,
+        "learned_edges": 0,
+        "learned_fields": 0,
+        "maximum_damage_window": 0,
+        "observed_read_set_changes": 0,
+        "oracle_measurement_time_ns": 3071568,
+        "oracle_output_hash": "bdc42df3cd144a0fd6e032556d79219669e2820fa445cc2ac90097b93fd41bdd",
+        "policy": "NO_AUDIT",
+        "policy_work_time_ns": 692298,
+        "proactive_reconciliations": 0,
+        "quarantines": 0,
+        "replay_handler_executions": 0,
+        "replay_hash": "1f4922b7a6ba113803db30273cd05025367cccac11a0d2f50cbfeeddc438d1ea",
+        "rollback_events": 0,
+        "startup_trace_handler_executions": 0,
+        "transitions": 100,
+        "undetected_self_heals": 0,
+        "unresolved_items": 0,
+        "wall_time_ns": 3763866
+      },
+      "OBSERVED_RECONCILE": {
+        "abstentions": 1,
+        "audit_handler_executions": 139,
+        "audits": 100,
+        "corrupted_output_transitions": 0,
+        "corrupted_outputs": 0,
+        "detection_latency_transitions": 0,
+        "detections": 5,
+        "evidence": [
+          {
+            "action": "observed_read_cold_start_reconciliation",
+            "after": {
+              "declared": [
+                "@chain_producer",
+                "chain_bias"
+              ],
+              "permitted": [
+                "@chain_producer",
+                "chain_bias"
+              ]
+            },
+            "before": {
+              "declared": [
+                "chain_bias"
+              ],
+              "permitted": [
+                "@chain_producer",
+                "chain_bias"
+              ]
+            },
+            "current": 7,
+            "missing_edges": [
+              "@chain_producer"
+            ],
+            "missing_fields": [],
+            "node": "chain_consumer",
+            "oracle": 7,
+            "runtime_reads": [
+              "@chain_producer",
+              "chain_bias"
+            ],
+            "traced_reads": [
+              "@chain_producer",
+              "chain_bias"
+            ],
+            "transition": -1
+          },
+          {
+            "action": "observed_read_cold_start_reconciliation",
+            "after": {
+              "declared": [
+                "direct_a",
+                "direct_b"
+              ],
+              "permitted": [
+                "direct_a",
+                "direct_b"
+              ]
+            },
+            "before": {
+              "declared": [
+                "direct_a"
+              ],
+              "permitted": [
+                "direct_a",
+                "direct_b"
+              ]
+            },
+            "current": 3,
+            "missing_edges": [
+              "direct_b"
+            ],
+            "missing_fields": [],
+            "node": "direct",
+            "oracle": 3,
+            "runtime_reads": [
+              "direct_a",
+              "direct_b"
+            ],
+            "traced_reads": [
+              "direct_a",
+              "direct_b"
+            ],
+            "transition": -1
+          },
+          {
+            "action": "observed_read_cold_start_reconciliation",
+            "after": {
+              "declared": [
+                "slice_a",
+                "slice_evidence"
+              ],
+              "permitted": [
+                "slice_a",
+                "slice_evidence"
+              ]
+            },
+            "before": {
+              "declared": [
+                "slice_a",
+                "slice_evidence"
+              ],
+              "permitted": [
+                "slice_a"
+              ]
+            },
+            "current": 8,
+            "missing_edges": [],
+            "missing_fields": [
+              "slice_evidence"
+            ],
+            "node": "slice",
+            "oracle": 8,
+            "runtime_reads": [
+              "slice_a",
+              "slice_evidence"
+            ],
+            "traced_reads": [
+              "slice_a",
+              "slice_evidence"
+            ],
+            "transition": -1
+          },
+          {
+            "action": "observed_read_reconciliation",
+            "after": {
+              "declared": [
+                "branch_p",
+                "branch_q",
+                "mode"
+              ],
+              "permitted": [
+                "mode",
+                "branch_p",
+                "branch_q"
+              ]
+            },
+            "before": {
+              "declared": [
+                "mode",
+                "branch_p"
+              ],
+              "permitted": [
+                "mode",
+                "branch_p",
+                "branch_q"
+              ]
+            },
+            "current": 11,
+            "missing_edges": [
+              "branch_q"
+            ],
+            "missing_fields": [],
+            "node": "branch",
+            "oracle": 11,
+            "runtime_reads": [
+              "branch_q",
+              "mode"
+            ],
+            "traced_reads": [
+              "branch_q",
+              "mode"
+            ],
+            "transition": 3
+          },
+          {
+            "action": "quarantine_unresolved",
+            "after": {
+              "declared": [
+                "dormant_enabled",
+                "dormant_value"
+              ],
+              "permitted": [
+                "dormant_enabled",
+                "dormant_value"
+              ]
+            },
+            "before": {
+              "declared": [
+                "dormant_enabled",
+                "dormant_value"
+              ],
+              "permitted": [
+                "dormant_enabled",
+                "dormant_value"
+              ]
+            },
+            "current": "ABSTAIN:invalid_dormant_value",
+            "missing_edges": [],
+            "missing_fields": [],
+            "node": "dormant",
+            "oracle": "ABSTAIN:invalid_dormant_value",
+            "runtime_reads": [
+              "dormant_enabled",
+              "dormant_value"
+            ],
+            "traced_reads": [
+              "dormant_enabled",
+              "dormant_value"
+            ],
+            "transition": 6
+          }
+        ],
+        "faults": [
+          "branch",
+          "direct",
+          "dormant",
+          "indirect",
+          "slice"
+        ],
+        "final_equality": true,
+        "final_output_hash": "bdc42df3cd144a0fd6e032556d79219669e2820fa445cc2ac90097b93fd41bdd",
+        "full_audits": 5,
+        "handler_executions": 108,
+        "learned_edges": 3,
+        "learned_fields": 1,
+        "maximum_damage_window": 0,
+        "observed_read_set_changes": 8,
+        "oracle_measurement_time_ns": 3252249,
+        "oracle_output_hash": "bdc42df3cd144a0fd6e032556d79219669e2820fa445cc2ac90097b93fd41bdd",
+        "policy": "OBSERVED_RECONCILE",
+        "policy_work_time_ns": 1377158,
+        "proactive_reconciliations": 4,
+        "quarantines": 1,
+        "replay_handler_executions": 14,
+        "replay_hash": "a67d4c6ff1eec8b33d2319bf0b0d03f346d9b97c170d594fc0678e79fe47065c",
+        "rollback_events": 7,
+        "startup_trace_handler_executions": 6,
+        "transitions": 100,
+        "undetected_self_heals": 0,
+        "unresolved_items": 1,
+        "wall_time_ns": 4629407
+      },
+      "RISK_ADAPTIVE": {
+        "abstentions": 1,
+        "audit_handler_executions": 366,
+        "audits": 61,
+        "corrupted_output_transitions": 3,
+        "corrupted_outputs": 4,
+        "detection_latency_transitions": 3,
+        "detections": 5,
+        "evidence": [
+          {
+            "action": "repair_then_replay",
+            "after": {
+              "declared": [
+                "direct_a",
+                "direct_b"
+              ],
+              "permitted": [
+                "direct_a",
+                "direct_b"
+              ]
+            },
+            "before": {
+              "declared": [
+                "direct_a"
+              ],
+              "permitted": [
+                "direct_a",
+                "direct_b"
+              ]
+            },
+            "current": 3,
+            "missing_edges": [
+              "direct_b"
+            ],
+            "missing_fields": [],
+            "node": "direct",
+            "oracle": 10,
+            "runtime_reads": [],
+            "traced_reads": [
+              "direct_a",
+              "direct_b"
+            ],
+            "transition": 0
+          },
+          {
+            "action": "repair_then_replay",
+            "after": {
+              "declared": [
+                "@chain_producer",
+                "chain_bias"
+              ],
+              "permitted": [
+                "@chain_producer",
+                "chain_bias"
+              ]
+            },
+            "before": {
+              "declared": [
+                "chain_bias"
+              ],
+              "permitted": [
+                "@chain_producer",
+                "chain_bias"
+              ]
+            },
+            "current": 7,
+            "missing_edges": [
+              "@chain_producer"
+            ],
+            "missing_fields": [],
+            "node": "chain_consumer",
+            "oracle": 25,
+            "runtime_reads": [],
+            "traced_reads": [
+              "@chain_producer",
+              "chain_bias"
+            ],
+            "transition": 1
+          },
+          {
+            "action": "repair_then_replay",
+            "after": {
+              "declared": [
+                "slice_a",
+                "slice_evidence"
+              ],
+              "permitted": [
+                "slice_a",
+                "slice_evidence"
+              ]
+            },
+            "before": {
+              "declared": [
+                "slice_a",
+                "slice_evidence"
+              ],
+              "permitted": [
+                "slice_a"
+              ]
+            },
+            "current": "ABSTAIN:missing:slice_evidence",
+            "missing_edges": [],
+            "missing_fields": [
+              "slice_evidence"
+            ],
+            "node": "slice",
+            "oracle": 8,
+            "runtime_reads": [],
+            "traced_reads": [
+              "slice_a",
+              "slice_evidence"
+            ],
+            "transition": 1
+          },
+          {
+            "action": "repair_then_replay",
+            "after": {
+              "declared": [
+                "branch_p",
+                "branch_q",
+                "mode"
+              ],
+              "permitted": [
+                "mode",
+                "branch_p",
+                "branch_q"
+              ]
+            },
+            "before": {
+              "declared": [
+                "mode",
+                "branch_p"
+              ],
+              "permitted": [
+                "mode",
+                "branch_p",
+                "branch_q"
+              ]
+            },
+            "current": 11,
+            "missing_edges": [
+              "branch_q"
+            ],
+            "missing_fields": [],
+            "node": "branch",
+            "oracle": 19,
+            "runtime_reads": [],
+            "traced_reads": [
+              "branch_q",
+              "mode"
+            ],
+            "transition": 4
+          },
+          {
+            "action": "quarantine_unresolved",
+            "after": {
+              "declared": [
+                "dormant_enabled",
+                "dormant_value"
+              ],
+              "permitted": [
+                "dormant_enabled",
+                "dormant_value"
+              ]
+            },
+            "before": {
+              "declared": [
+                "dormant_enabled",
+                "dormant_value"
+              ],
+              "permitted": [
+                "dormant_enabled",
+                "dormant_value"
+              ]
+            },
+            "current": "ABSTAIN:invalid_dormant_value",
+            "missing_edges": [],
+            "missing_fields": [],
+            "node": "dormant",
+            "oracle": "ABSTAIN:invalid_dormant_value",
+            "runtime_reads": [
+              "dormant_enabled",
+              "dormant_value"
+            ],
+            "traced_reads": [
+              "dormant_enabled",
+              "dormant_value"
+            ],
+            "transition": 6
+          }
+        ],
+        "faults": [
+          "branch",
+          "direct",
+          "dormant",
+          "indirect",
+          "slice"
+        ],
+        "final_equality": true,
+        "final_output_hash": "bdc42df3cd144a0fd6e032556d79219669e2820fa445cc2ac90097b93fd41bdd",
+        "full_audits": 61,
+        "handler_executions": 105,
+        "learned_edges": 3,
+        "learned_fields": 1,
+        "maximum_damage_window": 1,
+        "observed_read_set_changes": 0,
+        "oracle_measurement_time_ns": 3166620,
+        "oracle_output_hash": "bdc42df3cd144a0fd6e032556d79219669e2820fa445cc2ac90097b93fd41bdd",
+        "policy": "RISK_ADAPTIVE",
+        "policy_work_time_ns": 1842028,
+        "proactive_reconciliations": 0,
+        "quarantines": 1,
+        "replay_handler_executions": 30,
+        "replay_hash": "0cc1cc5283f66205ec915c2bb4b3fc785ad0532a9ded6843ab341d409e86106e",
+        "rollback_events": 5,
+        "startup_trace_handler_executions": 0,
+        "transitions": 100,
+        "undetected_self_heals": 0,
+        "unresolved_items": 1,
+        "wall_time_ns": 5008648
+      },
+      "SEEDED_SAMPLE": {
+        "abstentions": 2,
+        "audit_handler_executions": 25,
+        "audits": 25,
+        "corrupted_output_transitions": 25,
+        "corrupted_outputs": 38,
+        "detection_latency_transitions": 40,
+        "detections": 3,
+        "evidence": [
+          {
+            "action": "repair_then_replay",
+            "after": {
+              "declared": [
+                "slice_a",
+                "slice_evidence"
+              ],
+              "permitted": [
+                "slice_a",
+                "slice_evidence"
+              ]
+            },
+            "before": {
+              "declared": [
+                "slice_a",
+                "slice_evidence"
+              ],
+              "permitted": [
+                "slice_a"
+              ]
+            },
+            "current": "ABSTAIN:missing:slice_evidence",
+            "missing_edges": [],
+            "missing_fields": [
+              "slice_evidence"
+            ],
+            "node": "slice",
+            "oracle": 15,
+            "runtime_reads": [],
+            "traced_reads": [
+              "slice_a",
+              "slice_evidence"
+            ],
+            "transition": 4
+          },
+          {
+            "action": "repair_then_replay",
+            "after": {
+              "declared": [
+                "direct_a",
+                "direct_b"
+              ],
+              "permitted": [
+                "direct_a",
+                "direct_b"
+              ]
+            },
+            "before": {
+              "declared": [
+                "direct_a"
+              ],
+              "permitted": [
+                "direct_a",
+                "direct_b"
+              ]
+            },
+            "current": 3,
+            "missing_edges": [
+              "direct_b"
+            ],
+            "missing_fields": [],
+            "node": "direct",
+            "oracle": 10,
+            "runtime_reads": [],
+            "traced_reads": [
+              "direct_a",
+              "direct_b"
+            ],
+            "transition": 16
+          },
+          {
+            "action": "repair_then_replay",
+            "after": {
+              "declared": [
+                "@chain_producer",
+                "chain_bias"
+              ],
+              "permitted": [
+                "@chain_producer",
+                "chain_bias"
+              ]
+            },
+            "before": {
+              "declared": [
+                "chain_bias"
+              ],
+              "permitted": [
+                "@chain_producer",
+                "chain_bias"
+              ]
+            },
+            "current": 37,
+            "missing_edges": [
+              "@chain_producer"
+            ],
+            "missing_fields": [],
+            "node": "chain_consumer",
+            "oracle": 64,
+            "runtime_reads": [],
+            "traced_reads": [
+              "@chain_producer",
+              "chain_bias"
+            ],
+            "transition": 52
+          }
+        ],
+        "faults": [
+          "branch",
+          "direct",
+          "dormant",
+          "indirect",
+          "slice"
+        ],
+        "final_equality": true,
+        "final_output_hash": "bdc42df3cd144a0fd6e032556d79219669e2820fa445cc2ac90097b93fd41bdd",
+        "full_audits": 0,
+        "handler_executions": 95,
+        "learned_edges": 2,
+        "learned_fields": 1,
+        "maximum_damage_window": 23,
+        "observed_read_set_changes": 0,
+        "oracle_measurement_time_ns": 3104598,
+        "oracle_output_hash": "bdc42df3cd144a0fd6e032556d79219669e2820fa445cc2ac90097b93fd41bdd",
+        "policy": "SEEDED_SAMPLE",
+        "policy_work_time_ns": 1418281,
+        "proactive_reconciliations": 0,
+        "quarantines": 0,
+        "replay_handler_executions": 88,
+        "replay_hash": "518017e14183927017b57124e3e8e57a1446cfbd80459c74ee6992186bdeb3e5",
+        "rollback_events": 75,
+        "startup_trace_handler_executions": 0,
+        "transitions": 100,
+        "undetected_self_heals": 0,
+        "unresolved_items": 0,
+        "wall_time_ns": 4522879
+      }
+    },
+    "1000": {
+      "FIXED_INTERVAL": {
+        "abstentions": 8,
+        "audit_handler_executions": 240,
+        "audits": 40,
+        "corrupted_output_transitions": 79,
+        "corrupted_outputs": 111,
+        "detection_latency_transitions": 49,
+        "detections": 5,
+        "evidence": [
+          {
+            "action": "repair_then_replay",
+            "after": {
+              "declared": [
+                "direct_a",
+                "direct_b"
+              ],
+              "permitted": [
+                "direct_a",
+                "direct_b"
+              ]
+            },
+            "before": {
+              "declared": [
+                "direct_a"
+              ],
+              "permitted": [
+                "direct_a",
+                "direct_b"
+              ]
+            },
+            "current": 56,
+            "missing_edges": [
+              "direct_b"
+            ],
+            "missing_fields": [],
+            "node": "direct",
+            "oracle": 43,
+            "runtime_reads": [],
+            "traced_reads": [
+              "direct_a",
+              "direct_b"
+            ],
+            "transition": 24
+          },
+          {
+            "action": "quarantine_unresolved",
+            "after": {
+              "declared": [
+                "dormant_enabled",
+                "dormant_value"
+              ],
+              "permitted": [
+                "dormant_enabled",
+                "dormant_value"
+              ]
+            },
+            "before": {
+              "declared": [
+                "dormant_enabled",
+                "dormant_value"
+              ],
+              "permitted": [
+                "dormant_enabled",
+                "dormant_value"
+              ]
+            },
+            "current": "ABSTAIN:invalid_dormant_value",
+            "missing_edges": [],
+            "missing_fields": [],
+            "node": "dormant",
+            "oracle": "ABSTAIN:invalid_dormant_value",
+            "runtime_reads": [],
+            "traced_reads": [
+              "dormant_enabled",
+              "dormant_value"
+            ],
+            "transition": 24
+          },
+          {
+            "action": "repair_then_replay",
+            "after": {
+              "declared": [
+                "slice_a",
+                "slice_evidence"
+              ],
+              "permitted": [
+                "slice_a",
+                "slice_evidence"
+              ]
+            },
+            "before": {
+              "declared": [
+                "slice_a",
+                "slice_evidence"
+              ],
+              "permitted": [
+                "slice_a"
+              ]
+            },
+            "current": "ABSTAIN:missing:slice_evidence",
+            "missing_edges": [],
+            "missing_fields": [
+              "slice_evidence"
+            ],
+            "node": "slice",
+            "oracle": 43,
+            "runtime_reads": [],
+            "traced_reads": [
+              "slice_a",
+              "slice_evidence"
+            ],
+            "transition": 24
+          },
+          {
+            "action": "repair_then_replay",
+            "after": {
+              "declared": [
+                "@chain_producer",
+                "chain_bias"
+              ],
+              "permitted": [
+                "@chain_producer",
+                "chain_bias"
+              ]
+            },
+            "before": {
+              "declared": [
+                "chain_bias"
+              ],
+              "permitted": [
+                "@chain_producer",
+                "chain_bias"
+              ]
+            },
+            "current": 37,
+            "missing_edges": [
+              "@chain_producer"
+            ],
+            "missing_fields": [],
+            "node": "chain_consumer",
+            "oracle": 64,
+            "runtime_reads": [],
+            "traced_reads": [
+              "@chain_producer",
+              "chain_bias"
+            ],
+            "transition": 49
+          },
+          {
+            "action": "repair_then_replay",
+            "after": {
+              "declared": [
+                "branch_p",
+                "branch_q",
+                "mode"
+              ],
+              "permitted": [
+                "mode",
+                "branch_p",
+                "branch_q"
+              ]
+            },
+            "before": {
+              "declared": [
+                "mode",
+                "branch_p"
+              ],
+              "permitted": [
+                "mode",
+                "branch_p",
+                "branch_q"
+              ]
+            },
+            "current": 15,
+            "missing_edges": [
+              "branch_q"
+            ],
+            "missing_fields": [],
+            "node": "branch",
+            "oracle": 28,
+            "runtime_reads": [],
+            "traced_reads": [
+              "branch_q",
+              "mode"
+            ],
+            "transition": 499
+          }
+        ],
+        "faults": [
+          "branch",
+          "direct",
+          "dormant",
+          "indirect",
+          "slice"
+        ],
+        "final_equality": true,
+        "final_output_hash": "6fdd142fa320c2330d037420d7e2fde78599d8ed97d28e80815e6742fced10f9",
+        "full_audits": 40,
+        "handler_executions": 1039,
+        "learned_edges": 3,
+        "learned_fields": 1,
+        "maximum_damage_window": 25,
+        "observed_read_set_changes": 0,
+        "oracle_measurement_time_ns": 30351214,
+        "oracle_output_hash": "6fdd142fa320c2330d037420d7e2fde78599d8ed97d28e80815e6742fced10f9",
+        "policy": "FIXED_INTERVAL",
+        "policy_work_time_ns": 8607114,
+        "proactive_reconciliations": 0,
+        "quarantines": 1,
+        "replay_handler_executions": 92,
+        "replay_hash": "1a48e64498be5f4f5ba6331ded8cb3cc8ed61d59811917a9c0bfe92ce9220fee",
+        "rollback_events": 75,
+        "startup_trace_handler_executions": 0,
+        "transitions": 1000,
+        "undetected_self_heals": 9,
+        "unresolved_items": 1,
+        "wall_time_ns": 38958328
+      },
+      "FULL_ORACLE": {
+        "abstentions": 1,
+        "audit_handler_executions": 6000,
+        "audits": 1000,
+        "corrupted_output_transitions": 3,
+        "corrupted_outputs": 4,
+        "detection_latency_transitions": 3,
+        "detections": 5,
+        "evidence": [
+          {
+            "action": "repair_then_replay",
+            "after": {
+              "declared": [
+                "direct_a",
+                "direct_b"
+              ],
+              "permitted": [
+                "direct_a",
+                "direct_b"
+              ]
+            },
+            "before": {
+              "declared": [
+                "direct_a"
+              ],
+              "permitted": [
+                "direct_a",
+                "direct_b"
+              ]
+            },
+            "current": 3,
+            "missing_edges": [
+              "direct_b"
+            ],
+            "missing_fields": [],
+            "node": "direct",
+            "oracle": 10,
+            "runtime_reads": [],
+            "traced_reads": [
+              "direct_a",
+              "direct_b"
+            ],
+            "transition": 0
+          },
+          {
+            "action": "repair_then_replay",
+            "after": {
+              "declared": [
+                "@chain_producer",
+                "chain_bias"
+              ],
+              "permitted": [
+                "@chain_producer",
+                "chain_bias"
+              ]
+            },
+            "before": {
+              "declared": [
+                "chain_bias"
+              ],
+              "permitted": [
+                "@chain_producer",
+                "chain_bias"
+              ]
+            },
+            "current": 7,
+            "missing_edges": [
+              "@chain_producer"
+            ],
+            "missing_fields": [],
+            "node": "chain_consumer",
+            "oracle": 25,
+            "runtime_reads": [],
+            "traced_reads": [
+              "@chain_producer",
+              "chain_bias"
+            ],
+            "transition": 1
+          },
+          {
+            "action": "repair_then_replay",
+            "after": {
+              "declared": [
+                "slice_a",
+                "slice_evidence"
+              ],
+              "permitted": [
+                "slice_a",
+                "slice_evidence"
+              ]
+            },
+            "before": {
+              "declared": [
+                "slice_a",
+                "slice_evidence"
+              ],
+              "permitted": [
+                "slice_a"
+              ]
+            },
+            "current": "ABSTAIN:missing:slice_evidence",
+            "missing_edges": [],
+            "missing_fields": [
+              "slice_evidence"
+            ],
+            "node": "slice",
+            "oracle": 8,
+            "runtime_reads": [],
+            "traced_reads": [
+              "slice_a",
+              "slice_evidence"
+            ],
+            "transition": 1
+          },
+          {
+            "action": "repair_then_replay",
+            "after": {
+              "declared": [
+                "branch_p",
+                "branch_q",
+                "mode"
+              ],
+              "permitted": [
+                "mode",
+                "branch_p",
+                "branch_q"
+              ]
+            },
+            "before": {
+              "declared": [
+                "mode",
+                "branch_p"
+              ],
+              "permitted": [
+                "mode",
+                "branch_p",
+                "branch_q"
+              ]
+            },
+            "current": 11,
+            "missing_edges": [
+              "branch_q"
+            ],
+            "missing_fields": [],
+            "node": "branch",
+            "oracle": 19,
+            "runtime_reads": [],
+            "traced_reads": [
+              "branch_q",
+              "mode"
+            ],
+            "transition": 4
+          },
+          {
+            "action": "quarantine_unresolved",
+            "after": {
+              "declared": [
+                "dormant_enabled",
+                "dormant_value"
+              ],
+              "permitted": [
+                "dormant_enabled",
+                "dormant_value"
+              ]
+            },
+            "before": {
+              "declared": [
+                "dormant_enabled",
+                "dormant_value"
+              ],
+              "permitted": [
+                "dormant_enabled",
+                "dormant_value"
+              ]
+            },
+            "current": "ABSTAIN:invalid_dormant_value",
+            "missing_edges": [],
+            "missing_fields": [],
+            "node": "dormant",
+            "oracle": "ABSTAIN:invalid_dormant_value",
+            "runtime_reads": [
+              "dormant_enabled",
+              "dormant_value"
+            ],
+            "traced_reads": [
+              "dormant_enabled",
+              "dormant_value"
+            ],
+            "transition": 6
+          }
+        ],
+        "faults": [
+          "branch",
+          "direct",
+          "dormant",
+          "indirect",
+          "slice"
+        ],
+        "final_equality": true,
+        "final_output_hash": "6fdd142fa320c2330d037420d7e2fde78599d8ed97d28e80815e6742fced10f9",
+        "full_audits": 1000,
+        "handler_executions": 1093,
+        "learned_edges": 3,
+        "learned_fields": 1,
+        "maximum_damage_window": 1,
+        "observed_read_set_changes": 0,
+        "oracle_measurement_time_ns": 30510672,
+        "oracle_output_hash": "6fdd142fa320c2330d037420d7e2fde78599d8ed97d28e80815e6742fced10f9",
+        "policy": "FULL_ORACLE",
+        "policy_work_time_ns": 21817891,
+        "proactive_reconciliations": 0,
+        "quarantines": 1,
+        "replay_handler_executions": 30,
+        "replay_hash": "52bf5496660fc686193134e892e3e7c43aeb204b1f0d668e9a77f662c92fa210",
+        "rollback_events": 5,
+        "startup_trace_handler_executions": 0,
+        "transitions": 1000,
+        "undetected_self_heals": 0,
+        "unresolved_items": 1,
+        "wall_time_ns": 52328563
+      },
+      "NO_AUDIT": {
+        "abstentions": 189,
+        "audit_handler_executions": 0,
+        "audits": 0,
+        "corrupted_output_transitions": 1000,
+        "corrupted_outputs": 2190,
+        "detection_latency_transitions": 0,
+        "detections": 0,
+        "evidence": [],
+        "faults": [
+          "branch",
+          "direct",
+          "dormant",
+          "indirect",
+          "slice"
+        ],
+        "final_equality": false,
+        "final_output_hash": "8372bab2fad9c45d3b3eacbfd3f26858be2bf44d5843123fc5ba0bc08ef7c515",
+        "full_audits": 0,
+        "handler_executions": 794,
+        "learned_edges": 0,
+        "learned_fields": 0,
+        "maximum_damage_window": 0,
+        "observed_read_set_changes": 0,
+        "oracle_measurement_time_ns": 31306592,
+        "oracle_output_hash": "6fdd142fa320c2330d037420d7e2fde78599d8ed97d28e80815e6742fced10f9",
+        "policy": "NO_AUDIT",
+        "policy_work_time_ns": 7003698,
+        "proactive_reconciliations": 0,
+        "quarantines": 0,
+        "replay_handler_executions": 0,
+        "replay_hash": "804db856d92529a6b5525aaa705fc889d92282025407144b65be9d24eac6731b",
+        "rollback_events": 0,
+        "startup_trace_handler_executions": 0,
+        "transitions": 1000,
+        "undetected_self_heals": 0,
+        "unresolved_items": 0,
+        "wall_time_ns": 38310290
+      },
+      "OBSERVED_RECONCILE": {
+        "abstentions": 1,
+        "audit_handler_executions": 1352,
+        "audits": 1000,
+        "corrupted_output_transitions": 0,
+        "corrupted_outputs": 0,
+        "detection_latency_transitions": 0,
+        "detections": 5,
+        "evidence": [
+          {
+            "action": "observed_read_cold_start_reconciliation",
+            "after": {
+              "declared": [
+                "@chain_producer",
+                "chain_bias"
+              ],
+              "permitted": [
+                "@chain_producer",
+                "chain_bias"
+              ]
+            },
+            "before": {
+              "declared": [
+                "chain_bias"
+              ],
+              "permitted": [
+                "@chain_producer",
+                "chain_bias"
+              ]
+            },
+            "current": 7,
+            "missing_edges": [
+              "@chain_producer"
+            ],
+            "missing_fields": [],
+            "node": "chain_consumer",
+            "oracle": 7,
+            "runtime_reads": [
+              "@chain_producer",
+              "chain_bias"
+            ],
+            "traced_reads": [
+              "@chain_producer",
+              "chain_bias"
+            ],
+            "transition": -1
+          },
+          {
+            "action": "observed_read_cold_start_reconciliation",
+            "after": {
+              "declared": [
+                "direct_a",
+                "direct_b"
+              ],
+              "permitted": [
+                "direct_a",
+                "direct_b"
+              ]
+            },
+            "before": {
+              "declared": [
+                "direct_a"
+              ],
+              "permitted": [
+                "direct_a",
+                "direct_b"
+              ]
+            },
+            "current": 3,
+            "missing_edges": [
+              "direct_b"
+            ],
+            "missing_fields": [],
+            "node": "direct",
+            "oracle": 3,
+            "runtime_reads": [
+              "direct_a",
+              "direct_b"
+            ],
+            "traced_reads": [
+              "direct_a",
+              "direct_b"
+            ],
+            "transition": -1
+          },
+          {
+            "action": "observed_read_cold_start_reconciliation",
+            "after": {
+              "declared": [
+                "slice_a",
+                "slice_evidence"
+              ],
+              "permitted": [
+                "slice_a",
+                "slice_evidence"
+              ]
+            },
+            "before": {
+              "declared": [
+                "slice_a",
+                "slice_evidence"
+              ],
+              "permitted": [
+                "slice_a"
+              ]
+            },
+            "current": 8,
+            "missing_edges": [],
+            "missing_fields": [
+              "slice_evidence"
+            ],
+            "node": "slice",
+            "oracle": 8,
+            "runtime_reads": [
+              "slice_a",
+              "slice_evidence"
+            ],
+            "traced_reads": [
+              "slice_a",
+              "slice_evidence"
+            ],
+            "transition": -1
+          },
+          {
+            "action": "observed_read_reconciliation",
+            "after": {
+              "declared": [
+                "branch_p",
+                "branch_q",
+                "mode"
+              ],
+              "permitted": [
+                "mode",
+                "branch_p",
+                "branch_q"
+              ]
+            },
+            "before": {
+              "declared": [
+                "mode",
+                "branch_p"
+              ],
+              "permitted": [
+                "mode",
+                "branch_p",
+                "branch_q"
+              ]
+            },
+            "current": 11,
+            "missing_edges": [
+              "branch_q"
+            ],
+            "missing_fields": [],
+            "node": "branch",
+            "oracle": 11,
+            "runtime_reads": [
+              "branch_q",
+              "mode"
+            ],
+            "traced_reads": [
+              "branch_q",
+              "mode"
+            ],
+            "transition": 3
+          },
+          {
+            "action": "quarantine_unresolved",
+            "after": {
+              "declared": [
+                "dormant_enabled",
+                "dormant_value"
+              ],
+              "permitted": [
+                "dormant_enabled",
+                "dormant_value"
+              ]
+            },
+            "before": {
+              "declared": [
+                "dormant_enabled",
+                "dormant_value"
+              ],
+              "permitted": [
+                "dormant_enabled",
+                "dormant_value"
+              ]
+            },
+            "current": "ABSTAIN:invalid_dormant_value",
+            "missing_edges": [],
+            "missing_fields": [],
+            "node": "dormant",
+            "oracle": "ABSTAIN:invalid_dormant_value",
+            "runtime_reads": [
+              "dormant_enabled",
+              "dormant_value"
+            ],
+            "traced_reads": [
+              "dormant_enabled",
+              "dormant_value"
+            ],
+            "transition": 6
+          }
+        ],
+        "faults": [
+          "branch",
+          "direct",
+          "dormant",
+          "indirect",
+          "slice"
+        ],
+        "final_equality": true,
+        "final_output_hash": "6fdd142fa320c2330d037420d7e2fde78599d8ed97d28e80815e6742fced10f9",
+        "full_audits": 50,
+        "handler_executions": 1096,
+        "learned_edges": 3,
+        "learned_fields": 1,
+        "maximum_damage_window": 0,
+        "observed_read_set_changes": 57,
+        "oracle_measurement_time_ns": 32900303,
+        "oracle_output_hash": "6fdd142fa320c2330d037420d7e2fde78599d8ed97d28e80815e6742fced10f9",
+        "policy": "OBSERVED_RECONCILE",
+        "policy_work_time_ns": 14603043,
+        "proactive_reconciliations": 4,
+        "quarantines": 1,
+        "replay_handler_executions": 14,
+        "replay_hash": "bb49298d25d210da5512883256333e415cb9e27d3e203ac2feb5684b31e28362",
+        "rollback_events": 7,
+        "startup_trace_handler_executions": 6,
+        "transitions": 1000,
+        "undetected_self_heals": 0,
+        "unresolved_items": 1,
+        "wall_time_ns": 47503346
+      },
+      "RISK_ADAPTIVE": {
+        "abstentions": 1,
+        "audit_handler_executions": 2976,
+        "audits": 496,
+        "corrupted_output_transitions": 3,
+        "corrupted_outputs": 4,
+        "detection_latency_transitions": 3,
+        "detections": 5,
+        "evidence": [
+          {
+            "action": "repair_then_replay",
+            "after": {
+              "declared": [
+                "direct_a",
+                "direct_b"
+              ],
+              "permitted": [
+                "direct_a",
+                "direct_b"
+              ]
+            },
+            "before": {
+              "declared": [
+                "direct_a"
+              ],
+              "permitted": [
+                "direct_a",
+                "direct_b"
+              ]
+            },
+            "current": 3,
+            "missing_edges": [
+              "direct_b"
+            ],
+            "missing_fields": [],
+            "node": "direct",
+            "oracle": 10,
+            "runtime_reads": [],
+            "traced_reads": [
+              "direct_a",
+              "direct_b"
+            ],
+            "transition": 0
+          },
+          {
+            "action": "repair_then_replay",
+            "after": {
+              "declared": [
+                "@chain_producer",
+                "chain_bias"
+              ],
+              "permitted": [
+                "@chain_producer",
+                "chain_bias"
+              ]
+            },
+            "before": {
+              "declared": [
+                "chain_bias"
+              ],
+              "permitted": [
+                "@chain_producer",
+                "chain_bias"
+              ]
+            },
+            "current": 7,
+            "missing_edges": [
+              "@chain_producer"
+            ],
+            "missing_fields": [],
+            "node": "chain_consumer",
+            "oracle": 25,
+            "runtime_reads": [],
+            "traced_reads": [
+              "@chain_producer",
+              "chain_bias"
+            ],
+            "transition": 1
+          },
+          {
+            "action": "repair_then_replay",
+            "after": {
+              "declared": [
+                "slice_a",
+                "slice_evidence"
+              ],
+              "permitted": [
+                "slice_a",
+                "slice_evidence"
+              ]
+            },
+            "before": {
+              "declared": [
+                "slice_a",
+                "slice_evidence"
+              ],
+              "permitted": [
+                "slice_a"
+              ]
+            },
+            "current": "ABSTAIN:missing:slice_evidence",
+            "missing_edges": [],
+            "missing_fields": [
+              "slice_evidence"
+            ],
+            "node": "slice",
+            "oracle": 8,
+            "runtime_reads": [],
+            "traced_reads": [
+              "slice_a",
+              "slice_evidence"
+            ],
+            "transition": 1
+          },
+          {
+            "action": "repair_then_replay",
+            "after": {
+              "declared": [
+                "branch_p",
+                "branch_q",
+                "mode"
+              ],
+              "permitted": [
+                "mode",
+                "branch_p",
+                "branch_q"
+              ]
+            },
+            "before": {
+              "declared": [
+                "mode",
+                "branch_p"
+              ],
+              "permitted": [
+                "mode",
+                "branch_p",
+                "branch_q"
+              ]
+            },
+            "current": 11,
+            "missing_edges": [
+              "branch_q"
+            ],
+            "missing_fields": [],
+            "node": "branch",
+            "oracle": 19,
+            "runtime_reads": [],
+            "traced_reads": [
+              "branch_q",
+              "mode"
+            ],
+            "transition": 4
+          },
+          {
+            "action": "quarantine_unresolved",
+            "after": {
+              "declared": [
+                "dormant_enabled",
+                "dormant_value"
+              ],
+              "permitted": [
+                "dormant_enabled",
+                "dormant_value"
+              ]
+            },
+            "before": {
+              "declared": [
+                "dormant_enabled",
+                "dormant_value"
+              ],
+              "permitted": [
+                "dormant_enabled",
+                "dormant_value"
+              ]
+            },
+            "current": "ABSTAIN:invalid_dormant_value",
+            "missing_edges": [],
+            "missing_fields": [],
+            "node": "dormant",
+            "oracle": "ABSTAIN:invalid_dormant_value",
+            "runtime_reads": [
+              "dormant_enabled",
+              "dormant_value"
+            ],
+            "traced_reads": [
+              "dormant_enabled",
+              "dormant_value"
+            ],
+            "transition": 6
+          }
+        ],
+        "faults": [
+          "branch",
+          "direct",
+          "dormant",
+          "indirect",
+          "slice"
+        ],
+        "final_equality": true,
+        "final_output_hash": "6fdd142fa320c2330d037420d7e2fde78599d8ed97d28e80815e6742fced10f9",
+        "full_audits": 496,
+        "handler_executions": 1093,
+        "learned_edges": 3,
+        "learned_fields": 1,
+        "maximum_damage_window": 1,
+        "observed_read_set_changes": 0,
+        "oracle_measurement_time_ns": 30774959,
+        "oracle_output_hash": "6fdd142fa320c2330d037420d7e2fde78599d8ed97d28e80815e6742fced10f9",
+        "policy": "RISK_ADAPTIVE",
+        "policy_work_time_ns": 15182030,
+        "proactive_reconciliations": 0,
+        "quarantines": 1,
+        "replay_handler_executions": 30,
+        "replay_hash": "557abe656b2f0caad043247314f82b2c392b2912e385d21d75cf9708ec60ba1e",
+        "rollback_events": 5,
+        "startup_trace_handler_executions": 0,
+        "transitions": 1000,
+        "undetected_self_heals": 0,
+        "unresolved_items": 1,
+        "wall_time_ns": 45956989
+      },
+      "SEEDED_SAMPLE": {
+        "abstentions": 2,
+        "audit_handler_executions": 250,
+        "audits": 250,
+        "corrupted_output_transitions": 42,
+        "corrupted_outputs": 55,
+        "detection_latency_transitions": 171,
+        "detections": 4,
+        "evidence": [
+          {
+            "action": "repair_then_replay",
+            "after": {
+              "declared": [
+                "slice_a",
+                "slice_evidence"
+              ],
+              "permitted": [
+                "slice_a",
+                "slice_evidence"
+              ]
+            },
+            "before": {
+              "declared": [
+                "slice_a",
+                "slice_evidence"
+              ],
+              "permitted": [
+                "slice_a"
+              ]
+            },
+            "current": "ABSTAIN:missing:slice_evidence",
+            "missing_edges": [],
+            "missing_fields": [
+              "slice_evidence"
+            ],
+            "node": "slice",
+            "oracle": 15,
+            "runtime_reads": [],
+            "traced_reads": [
+              "slice_a",
+              "slice_evidence"
+            ],
+            "transition": 4
+          },
+          {
+            "action": "repair_then_replay",
+            "after": {
+              "declared": [
+                "direct_a",
+                "direct_b"
+              ],
+              "permitted": [
+                "direct_a",
+                "direct_b"
+              ]
+            },
+            "before": {
+              "declared": [
+                "direct_a"
+              ],
+              "permitted": [
+                "direct_a",
+                "direct_b"
+              ]
+            },
+            "current": 3,
+            "missing_edges": [
+              "direct_b"
+            ],
+            "missing_fields": [],
+            "node": "direct",
+            "oracle": 10,
+            "runtime_reads": [],
+            "traced_reads": [
+              "direct_a",
+              "direct_b"
+            ],
+            "transition": 16
+          },
+          {
+            "action": "repair_then_replay",
+            "after": {
+              "declared": [
+                "@chain_producer",
+                "chain_bias"
+              ],
+              "permitted": [
+                "@chain_producer",
+                "chain_bias"
+              ]
+            },
+            "before": {
+              "declared": [
+                "chain_bias"
+              ],
+              "permitted": [
+                "@chain_producer",
+                "chain_bias"
+              ]
+            },
+            "current": 37,
+            "missing_edges": [
+              "@chain_producer"
+            ],
+            "missing_fields": [],
+            "node": "chain_consumer",
+            "oracle": 64,
+            "runtime_reads": [],
+            "traced_reads": [
+              "@chain_producer",
+              "chain_bias"
+            ],
+            "transition": 52
+          },
+          {
+            "action": "repair_then_replay",
+            "after": {
+              "declared": [
+                "branch_p",
+                "branch_q",
+                "mode"
+              ],
+              "permitted": [
+                "mode",
+                "branch_p",
+                "branch_q"
+              ]
+            },
+            "before": {
+              "declared": [
+                "mode",
+                "branch_p"
+              ],
+              "permitted": [
+                "mode",
+                "branch_p",
+                "branch_q"
+              ]
+            },
+            "current": 8,
+            "missing_edges": [
+              "branch_q"
+            ],
+            "missing_fields": [],
+            "node": "branch",
+            "oracle": 11,
+            "runtime_reads": [],
+            "traced_reads": [
+              "branch_q",
+              "mode"
+            ],
+            "transition": 212
+          }
+        ],
+        "faults": [
+          "branch",
+          "direct",
+          "dormant",
+          "indirect",
+          "slice"
+        ],
+        "final_equality": true,
+        "final_output_hash": "6fdd142fa320c2330d037420d7e2fde78599d8ed97d28e80815e6742fced10f9",
+        "full_audits": 0,
+        "handler_executions": 1065,
+        "learned_edges": 3,
+        "learned_fields": 1,
+        "maximum_damage_window": 131,
+        "observed_read_set_changes": 0,
+        "oracle_measurement_time_ns": 31208815,
+        "oracle_output_hash": "6fdd142fa320c2330d037420d7e2fde78599d8ed97d28e80815e6742fced10f9",
+        "policy": "SEEDED_SAMPLE",
+        "policy_work_time_ns": 12769328,
+        "proactive_reconciliations": 0,
+        "quarantines": 0,
+        "replay_handler_executions": 326,
+        "replay_hash": "b823fc6f90c2f95cc1a8f63c5e1fa5016ff5d16196f1bf54f2cc1ed52a99ce51",
+        "rollback_events": 288,
+        "startup_trace_handler_executions": 0,
+        "transitions": 1000,
+        "undetected_self_heals": 0,
+        "unresolved_items": 0,
+        "wall_time_ns": 43978143
+      }
+    },
+    "10000": {
+      "FIXED_INTERVAL": {
+        "abstentions": 8,
+        "audit_handler_executions": 2400,
+        "audits": 400,
+        "corrupted_output_transitions": 79,
+        "corrupted_outputs": 111,
+        "detection_latency_transitions": 49,
+        "detections": 5,
+        "evidence": [
+          {
+            "action": "repair_then_replay",
+            "after": {
+              "declared": [
+                "direct_a",
+                "direct_b"
+              ],
+              "permitted": [
+                "direct_a",
+                "direct_b"
+              ]
+            },
+            "before": {
+              "declared": [
+                "direct_a"
+              ],
+              "permitted": [
+                "direct_a",
+                "direct_b"
+              ]
+            },
+            "current": 56,
+            "missing_edges": [
+              "direct_b"
+            ],
+            "missing_fields": [],
+            "node": "direct",
+            "oracle": 43,
+            "runtime_reads": [],
+            "traced_reads": [
+              "direct_a",
+              "direct_b"
+            ],
+            "transition": 24
+          },
+          {
+            "action": "quarantine_unresolved",
+            "after": {
+              "declared": [
+                "dormant_enabled",
+                "dormant_value"
+              ],
+              "permitted": [
+                "dormant_enabled",
+                "dormant_value"
+              ]
+            },
+            "before": {
+              "declared": [
+                "dormant_enabled",
+                "dormant_value"
+              ],
+              "permitted": [
+                "dormant_enabled",
+                "dormant_value"
+              ]
+            },
+            "current": "ABSTAIN:invalid_dormant_value",
+            "missing_edges": [],
+            "missing_fields": [],
+            "node": "dormant",
+            "oracle": "ABSTAIN:invalid_dormant_value",
+            "runtime_reads": [],
+            "traced_reads": [
+              "dormant_enabled",
+              "dormant_value"
+            ],
+            "transition": 24
+          },
+          {
+            "action": "repair_then_replay",
+            "after": {
+              "declared": [
+                "slice_a",
+                "slice_evidence"
+              ],
+              "permitted": [
+                "slice_a",
+                "slice_evidence"
+              ]
+            },
+            "before": {
+              "declared": [
+                "slice_a",
+                "slice_evidence"
+              ],
+              "permitted": [
+                "slice_a"
+              ]
+            },
+            "current": "ABSTAIN:missing:slice_evidence",
+            "missing_edges": [],
+            "missing_fields": [
+              "slice_evidence"
+            ],
+            "node": "slice",
+            "oracle": 43,
+            "runtime_reads": [],
+            "traced_reads": [
+              "slice_a",
+              "slice_evidence"
+            ],
+            "transition": 24
+          },
+          {
+            "action": "repair_then_replay",
+            "after": {
+              "declared": [
+                "@chain_producer",
+                "chain_bias"
+              ],
+              "permitted": [
+                "@chain_producer",
+                "chain_bias"
+              ]
+            },
+            "before": {
+              "declared": [
+                "chain_bias"
+              ],
+              "permitted": [
+                "@chain_producer",
+                "chain_bias"
+              ]
+            },
+            "current": 37,
+            "missing_edges": [
+              "@chain_producer"
+            ],
+            "missing_fields": [],
+            "node": "chain_consumer",
+            "oracle": 64,
+            "runtime_reads": [],
+            "traced_reads": [
+              "@chain_producer",
+              "chain_bias"
+            ],
+            "transition": 49
+          },
+          {
+            "action": "repair_then_replay",
+            "after": {
+              "declared": [
+                "branch_p",
+                "branch_q",
+                "mode"
+              ],
+              "permitted": [
+                "mode",
+                "branch_p",
+                "branch_q"
+              ]
+            },
+            "before": {
+              "declared": [
+                "mode",
+                "branch_p"
+              ],
+              "permitted": [
+                "mode",
+                "branch_p",
+                "branch_q"
+              ]
+            },
+            "current": 15,
+            "missing_edges": [
+              "branch_q"
+            ],
+            "missing_fields": [],
+            "node": "branch",
+            "oracle": 28,
+            "runtime_reads": [],
+            "traced_reads": [
+              "branch_q",
+              "mode"
+            ],
+            "transition": 499
+          }
+        ],
+        "faults": [
+          "branch",
+          "direct",
+          "dormant",
+          "indirect",
+          "slice"
+        ],
+        "final_equality": true,
+        "final_output_hash": "416f0090860ba263900210e31394895c454a9b3f8111cdd2ebc1ee10a64cda70",
+        "full_audits": 400,
+        "handler_executions": 10873,
+        "learned_edges": 3,
+        "learned_fields": 1,
+        "maximum_damage_window": 25,
+        "observed_read_set_changes": 0,
+        "oracle_measurement_time_ns": 314764652,
+        "oracle_output_hash": "416f0090860ba263900210e31394895c454a9b3f8111cdd2ebc1ee10a64cda70",
+        "policy": "FIXED_INTERVAL",
+        "policy_work_time_ns": 87140385,
+        "proactive_reconciliations": 0,
+        "quarantines": 1,
+        "replay_handler_executions": 92,
+        "replay_hash": "0ada39b0e89cf979b7493086b3b7c19c4cd1d920cd0b2bdb993a2c9b5eaa3822",
+        "rollback_events": 75,
+        "startup_trace_handler_executions": 0,
+        "transitions": 10000,
+        "undetected_self_heals": 9,
+        "unresolved_items": 1,
+        "wall_time_ns": 401905037
+      },
+      "FULL_ORACLE": {
+        "abstentions": 1,
+        "audit_handler_executions": 60000,
+        "audits": 10000,
+        "corrupted_output_transitions": 3,
+        "corrupted_outputs": 4,
+        "detection_latency_transitions": 3,
+        "detections": 5,
+        "evidence": [
+          {
+            "action": "repair_then_replay",
+            "after": {
+              "declared": [
+                "direct_a",
+                "direct_b"
+              ],
+              "permitted": [
+                "direct_a",
+                "direct_b"
+              ]
+            },
+            "before": {
+              "declared": [
+                "direct_a"
+              ],
+              "permitted": [
+                "direct_a",
+                "direct_b"
+              ]
+            },
+            "current": 3,
+            "missing_edges": [
+              "direct_b"
+            ],
+            "missing_fields": [],
+            "node": "direct",
+            "oracle": 10,
+            "runtime_reads": [],
+            "traced_reads": [
+              "direct_a",
+              "direct_b"
+            ],
+            "transition": 0
+          },
+          {
+            "action": "repair_then_replay",
+            "after": {
+              "declared": [
+                "@chain_producer",
+                "chain_bias"
+              ],
+              "permitted": [
+                "@chain_producer",
+                "chain_bias"
+              ]
+            },
+            "before": {
+              "declared": [
+                "chain_bias"
+              ],
+              "permitted": [
+                "@chain_producer",
+                "chain_bias"
+              ]
+            },
+            "current": 7,
+            "missing_edges": [
+              "@chain_producer"
+            ],
+            "missing_fields": [],
+            "node": "chain_consumer",
+            "oracle": 25,
+            "runtime_reads": [],
+            "traced_reads": [
+              "@chain_producer",
+              "chain_bias"
+            ],
+            "transition": 1
+          },
+          {
+            "action": "repair_then_replay",
+            "after": {
+              "declared": [
+                "slice_a",
+                "slice_evidence"
+              ],
+              "permitted": [
+                "slice_a",
+                "slice_evidence"
+              ]
+            },
+            "before": {
+              "declared": [
+                "slice_a",
+                "slice_evidence"
+              ],
+              "permitted": [
+                "slice_a"
+              ]
+            },
+            "current": "ABSTAIN:missing:slice_evidence",
+            "missing_edges": [],
+            "missing_fields": [
+              "slice_evidence"
+            ],
+            "node": "slice",
+            "oracle": 8,
+            "runtime_reads": [],
+            "traced_reads": [
+              "slice_a",
+              "slice_evidence"
+            ],
+            "transition": 1
+          },
+          {
+            "action": "repair_then_replay",
+            "after": {
+              "declared": [
+                "branch_p",
+                "branch_q",
+                "mode"
+              ],
+              "permitted": [
+                "mode",
+                "branch_p",
+                "branch_q"
+              ]
+            },
+            "before": {
+              "declared": [
+                "mode",
+                "branch_p"
+              ],
+              "permitted": [
+                "mode",
+                "branch_p",
+                "branch_q"
+              ]
+            },
+            "current": 11,
+            "missing_edges": [
+              "branch_q"
+            ],
+            "missing_fields": [],
+            "node": "branch",
+            "oracle": 19,
+            "runtime_reads": [],
+            "traced_reads": [
+              "branch_q",
+              "mode"
+            ],
+            "transition": 4
+          },
+          {
+            "action": "quarantine_unresolved",
+            "after": {
+              "declared": [
+                "dormant_enabled",
+                "dormant_value"
+              ],
+              "permitted": [
+                "dormant_enabled",
+                "dormant_value"
+              ]
+            },
+            "before": {
+              "declared": [
+                "dormant_enabled",
+                "dormant_value"
+              ],
+              "permitted": [
+                "dormant_enabled",
+                "dormant_value"
+              ]
+            },
+            "current": "ABSTAIN:invalid_dormant_value",
+            "missing_edges": [],
+            "missing_fields": [],
+            "node": "dormant",
+            "oracle": "ABSTAIN:invalid_dormant_value",
+            "runtime_reads": [
+              "dormant_enabled",
+              "dormant_value"
+            ],
+            "traced_reads": [
+              "dormant_enabled",
+              "dormant_value"
+            ],
+            "transition": 6
+          }
+        ],
+        "faults": [
+          "branch",
+          "direct",
+          "dormant",
+          "indirect",
+          "slice"
+        ],
+        "final_equality": true,
+        "final_output_hash": "416f0090860ba263900210e31394895c454a9b3f8111cdd2ebc1ee10a64cda70",
+        "full_audits": 10000,
+        "handler_executions": 10927,
+        "learned_edges": 3,
+        "learned_fields": 1,
+        "maximum_damage_window": 1,
+        "observed_read_set_changes": 0,
+        "oracle_measurement_time_ns": 309930762,
+        "oracle_output_hash": "416f0090860ba263900210e31394895c454a9b3f8111cdd2ebc1ee10a64cda70",
+        "policy": "FULL_ORACLE",
+        "policy_work_time_ns": 207127411,
+        "proactive_reconciliations": 0,
+        "quarantines": 1,
+        "replay_handler_executions": 30,
+        "replay_hash": "030b3ddeae747efa59c55c096efad4bb318b847d2055024e18ec3247e152ae41",
+        "rollback_events": 5,
+        "startup_trace_handler_executions": 0,
+        "transitions": 10000,
+        "undetected_self_heals": 0,
+        "unresolved_items": 1,
+        "wall_time_ns": 517058173
+      },
+      "NO_AUDIT": {
+        "abstentions": 2040,
+        "audit_handler_executions": 0,
+        "audits": 0,
+        "corrupted_output_transitions": 10000,
+        "corrupted_outputs": 21663,
+        "detection_latency_transitions": 0,
+        "detections": 0,
+        "evidence": [],
+        "faults": [
+          "branch",
+          "direct",
+          "dormant",
+          "indirect",
+          "slice"
+        ],
+        "final_equality": false,
+        "final_output_hash": "ef99739d8c9728419f1e3f3362d191d3d2ad8024c41c1a2aaaa8877f4f0a4b2b",
+        "full_audits": 0,
+        "handler_executions": 7930,
+        "learned_edges": 0,
+        "learned_fields": 0,
+        "maximum_damage_window": 0,
+        "observed_read_set_changes": 0,
+        "oracle_measurement_time_ns": 310022360,
+        "oracle_output_hash": "416f0090860ba263900210e31394895c454a9b3f8111cdd2ebc1ee10a64cda70",
+        "policy": "NO_AUDIT",
+        "policy_work_time_ns": 65450474,
+        "proactive_reconciliations": 0,
+        "quarantines": 0,
+        "replay_handler_executions": 0,
+        "replay_hash": "fd75a2e27d276759acfa31968a481acace98f4338dcc3872d181a83e53cc1684",
+        "rollback_events": 0,
+        "startup_trace_handler_executions": 0,
+        "transitions": 10000,
+        "undetected_self_heals": 0,
+        "unresolved_items": 0,
+        "wall_time_ns": 375472834
+      },
+      "OBSERVED_RECONCILE": {
+        "abstentions": 1,
+        "audit_handler_executions": 13436,
+        "audits": 10000,
+        "corrupted_output_transitions": 0,
+        "corrupted_outputs": 0,
+        "detection_latency_transitions": 0,
+        "detections": 5,
+        "evidence": [
+          {
+            "action": "observed_read_cold_start_reconciliation",
+            "after": {
+              "declared": [
+                "@chain_producer",
+                "chain_bias"
+              ],
+              "permitted": [
+                "@chain_producer",
+                "chain_bias"
+              ]
+            },
+            "before": {
+              "declared": [
+                "chain_bias"
+              ],
+              "permitted": [
+                "@chain_producer",
+                "chain_bias"
+              ]
+            },
+            "current": 7,
+            "missing_edges": [
+              "@chain_producer"
+            ],
+            "missing_fields": [],
+            "node": "chain_consumer",
+            "oracle": 7,
+            "runtime_reads": [
+              "@chain_producer",
+              "chain_bias"
+            ],
+            "traced_reads": [
+              "@chain_producer",
+              "chain_bias"
+            ],
+            "transition": -1
+          },
+          {
+            "action": "observed_read_cold_start_reconciliation",
+            "after": {
+              "declared": [
+                "direct_a",
+                "direct_b"
+              ],
+              "permitted": [
+                "direct_a",
+                "direct_b"
+              ]
+            },
+            "before": {
+              "declared": [
+                "direct_a"
+              ],
+              "permitted": [
+                "direct_a",
+                "direct_b"
+              ]
+            },
+            "current": 3,
+            "missing_edges": [
+              "direct_b"
+            ],
+            "missing_fields": [],
+            "node": "direct",
+            "oracle": 3,
+            "runtime_reads": [
+              "direct_a",
+              "direct_b"
+            ],
+            "traced_reads": [
+              "direct_a",
+              "direct_b"
+            ],
+            "transition": -1
+          },
+          {
+            "action": "observed_read_cold_start_reconciliation",
+            "after": {
+              "declared": [
+                "slice_a",
+                "slice_evidence"
+              ],
+              "permitted": [
+                "slice_a",
+                "slice_evidence"
+              ]
+            },
+            "before": {
+              "declared": [
+                "slice_a",
+                "slice_evidence"
+              ],
+              "permitted": [
+                "slice_a"
+              ]
+            },
+            "current": 8,
+            "missing_edges": [],
+            "missing_fields": [
+              "slice_evidence"
+            ],
+            "node": "slice",
+            "oracle": 8,
+            "runtime_reads": [
+              "slice_a",
+              "slice_evidence"
+            ],
+            "traced_reads": [
+              "slice_a",
+              "slice_evidence"
+            ],
+            "transition": -1
+          },
+          {
+            "action": "observed_read_reconciliation",
+            "after": {
+              "declared": [
+                "branch_p",
+                "branch_q",
+                "mode"
+              ],
+              "permitted": [
+                "mode",
+                "branch_p",
+                "branch_q"
+              ]
+            },
+            "before": {
+              "declared": [
+                "mode",
+                "branch_p"
+              ],
+              "permitted": [
+                "mode",
+                "branch_p",
+                "branch_q"
+              ]
+            },
+            "current": 11,
+            "missing_edges": [
+              "branch_q"
+            ],
+            "missing_fields": [],
+            "node": "branch",
+            "oracle": 11,
+            "runtime_reads": [
+              "branch_q",
+              "mode"
+            ],
+            "traced_reads": [
+              "branch_q",
+              "mode"
+            ],
+            "transition": 3
+          },
+          {
+            "action": "quarantine_unresolved",
+            "after": {
+              "declared": [
+                "dormant_enabled",
+                "dormant_value"
+              ],
+              "permitted": [
+                "dormant_enabled",
+                "dormant_value"
+              ]
+            },
+            "before": {
+              "declared": [
+                "dormant_enabled",
+                "dormant_value"
+              ],
+              "permitted": [
+                "dormant_enabled",
+                "dormant_value"
+              ]
+            },
+            "current": "ABSTAIN:invalid_dormant_value",
+            "missing_edges": [],
+            "missing_fields": [],
+            "node": "dormant",
+            "oracle": "ABSTAIN:invalid_dormant_value",
+            "runtime_reads": [
+              "dormant_enabled",
+              "dormant_value"
+            ],
+            "traced_reads": [
+              "dormant_enabled",
+              "dormant_value"
+            ],
+            "transition": 6
+          }
+        ],
+        "faults": [
+          "branch",
+          "direct",
+          "dormant",
+          "indirect",
+          "slice"
+        ],
+        "final_equality": true,
+        "final_output_hash": "416f0090860ba263900210e31394895c454a9b3f8111cdd2ebc1ee10a64cda70",
+        "full_audits": 500,
+        "handler_executions": 10930,
+        "learned_edges": 3,
+        "learned_fields": 1,
+        "maximum_damage_window": 0,
+        "observed_read_set_changes": 483,
+        "oracle_measurement_time_ns": 316646498,
+        "oracle_output_hash": "416f0090860ba263900210e31394895c454a9b3f8111cdd2ebc1ee10a64cda70",
+        "policy": "OBSERVED_RECONCILE",
+        "policy_work_time_ns": 133755623,
+        "proactive_reconciliations": 4,
+        "quarantines": 1,
+        "replay_handler_executions": 14,
+        "replay_hash": "dfcf546c569b1364a6e3cd1bde98c3a6620cc6b9c92ca97476253ef1c52e5140",
+        "rollback_events": 7,
+        "startup_trace_handler_executions": 6,
+        "transitions": 10000,
+        "undetected_self_heals": 0,
+        "unresolved_items": 1,
+        "wall_time_ns": 450402121
+      },
+      "RISK_ADAPTIVE": {
+        "abstentions": 1,
+        "audit_handler_executions": 30216,
+        "audits": 5036,
+        "corrupted_output_transitions": 3,
+        "corrupted_outputs": 4,
+        "detection_latency_transitions": 3,
+        "detections": 5,
+        "evidence": [
+          {
+            "action": "repair_then_replay",
+            "after": {
+              "declared": [
+                "direct_a",
+                "direct_b"
+              ],
+              "permitted": [
+                "direct_a",
+                "direct_b"
+              ]
+            },
+            "before": {
+              "declared": [
+                "direct_a"
+              ],
+              "permitted": [
+                "direct_a",
+                "direct_b"
+              ]
+            },
+            "current": 3,
+            "missing_edges": [
+              "direct_b"
+            ],
+            "missing_fields": [],
+            "node": "direct",
+            "oracle": 10,
+            "runtime_reads": [],
+            "traced_reads": [
+              "direct_a",
+              "direct_b"
+            ],
+            "transition": 0
+          },
+          {
+            "action": "repair_then_replay",
+            "after": {
+              "declared": [
+                "@chain_producer",
+                "chain_bias"
+              ],
+              "permitted": [
+                "@chain_producer",
+                "chain_bias"
+              ]
+            },
+            "before": {
+              "declared": [
+                "chain_bias"
+              ],
+              "permitted": [
+                "@chain_producer",
+                "chain_bias"
+              ]
+            },
+            "current": 7,
+            "missing_edges": [
+              "@chain_producer"
+            ],
+            "missing_fields": [],
+            "node": "chain_consumer",
+            "oracle": 25,
+            "runtime_reads": [],
+            "traced_reads": [
+              "@chain_producer",
+              "chain_bias"
+            ],
+            "transition": 1
+          },
+          {
+            "action": "repair_then_replay",
+            "after": {
+              "declared": [
+                "slice_a",
+                "slice_evidence"
+              ],
+              "permitted": [
+                "slice_a",
+                "slice_evidence"
+              ]
+            },
+            "before": {
+              "declared": [
+                "slice_a",
+                "slice_evidence"
+              ],
+              "permitted": [
+                "slice_a"
+              ]
+            },
+            "current": "ABSTAIN:missing:slice_evidence",
+            "missing_edges": [],
+            "missing_fields": [
+              "slice_evidence"
+            ],
+            "node": "slice",
+            "oracle": 8,
+            "runtime_reads": [],
+            "traced_reads": [
+              "slice_a",
+              "slice_evidence"
+            ],
+            "transition": 1
+          },
+          {
+            "action": "repair_then_replay",
+            "after": {
+              "declared": [
+                "branch_p",
+                "branch_q",
+                "mode"
+              ],
+              "permitted": [
+                "mode",
+                "branch_p",
+                "branch_q"
+              ]
+            },
+            "before": {
+              "declared": [
+                "mode",
+                "branch_p"
+              ],
+              "permitted": [
+                "mode",
+                "branch_p",
+                "branch_q"
+              ]
+            },
+            "current": 11,
+            "missing_edges": [
+              "branch_q"
+            ],
+            "missing_fields": [],
+            "node": "branch",
+            "oracle": 19,
+            "runtime_reads": [],
+            "traced_reads": [
+              "branch_q",
+              "mode"
+            ],
+            "transition": 4
+          },
+          {
+            "action": "quarantine_unresolved",
+            "after": {
+              "declared": [
+                "dormant_enabled",
+                "dormant_value"
+              ],
+              "permitted": [
+                "dormant_enabled",
+                "dormant_value"
+              ]
+            },
+            "before": {
+              "declared": [
+                "dormant_enabled",
+                "dormant_value"
+              ],
+              "permitted": [
+                "dormant_enabled",
+                "dormant_value"
+              ]
+            },
+            "current": "ABSTAIN:invalid_dormant_value",
+            "missing_edges": [],
+            "missing_fields": [],
+            "node": "dormant",
+            "oracle": "ABSTAIN:invalid_dormant_value",
+            "runtime_reads": [
+              "dormant_enabled",
+              "dormant_value"
+            ],
+            "traced_reads": [
+              "dormant_enabled",
+              "dormant_value"
+            ],
+            "transition": 6
+          }
+        ],
+        "faults": [
+          "branch",
+          "direct",
+          "dormant",
+          "indirect",
+          "slice"
+        ],
+        "final_equality": true,
+        "final_output_hash": "416f0090860ba263900210e31394895c454a9b3f8111cdd2ebc1ee10a64cda70",
+        "full_audits": 5036,
+        "handler_executions": 10927,
+        "learned_edges": 3,
+        "learned_fields": 1,
+        "maximum_damage_window": 1,
+        "observed_read_set_changes": 0,
+        "oracle_measurement_time_ns": 316186490,
+        "oracle_output_hash": "416f0090860ba263900210e31394895c454a9b3f8111cdd2ebc1ee10a64cda70",
+        "policy": "RISK_ADAPTIVE",
+        "policy_work_time_ns": 156510013,
+        "proactive_reconciliations": 0,
+        "quarantines": 1,
+        "replay_handler_executions": 30,
+        "replay_hash": "0d1659c0ee8ff06605adb13adf9bfde58a5d3a1cc44db8c5ca2002aef35af945",
+        "rollback_events": 5,
+        "startup_trace_handler_executions": 0,
+        "transitions": 10000,
+        "undetected_self_heals": 0,
+        "unresolved_items": 1,
+        "wall_time_ns": 472696503
+      },
+      "SEEDED_SAMPLE": {
+        "abstentions": 2,
+        "audit_handler_executions": 2500,
+        "audits": 2500,
+        "corrupted_output_transitions": 42,
+        "corrupted_outputs": 55,
+        "detection_latency_transitions": 171,
+        "detections": 4,
+        "evidence": [
+          {
+            "action": "repair_then_replay",
+            "after": {
+              "declared": [
+                "slice_a",
+                "slice_evidence"
+              ],
+              "permitted": [
+                "slice_a",
+                "slice_evidence"
+              ]
+            },
+            "before": {
+              "declared": [
+                "slice_a",
+                "slice_evidence"
+              ],
+              "permitted": [
+                "slice_a"
+              ]
+            },
+            "current": "ABSTAIN:missing:slice_evidence",
+            "missing_edges": [],
+            "missing_fields": [
+              "slice_evidence"
+            ],
+            "node": "slice",
+            "oracle": 15,
+            "runtime_reads": [],
+            "traced_reads": [
+              "slice_a",
+              "slice_evidence"
+            ],
+            "transition": 4
+          },
+          {
+            "action": "repair_then_replay",
+            "after": {
+              "declared": [
+                "direct_a",
+                "direct_b"
+              ],
+              "permitted": [
+                "direct_a",
+                "direct_b"
+              ]
+            },
+            "before": {
+              "declared": [
+                "direct_a"
+              ],
+              "permitted": [
+                "direct_a",
+                "direct_b"
+              ]
+            },
+            "current": 3,
+            "missing_edges": [
+              "direct_b"
+            ],
+            "missing_fields": [],
+            "node": "direct",
+            "oracle": 10,
+            "runtime_reads": [],
+            "traced_reads": [
+              "direct_a",
+              "direct_b"
+            ],
+            "transition": 16
+          },
+          {
+            "action": "repair_then_replay",
+            "after": {
+              "declared": [
+                "@chain_producer",
+                "chain_bias"
+              ],
+              "permitted": [
+                "@chain_producer",
+                "chain_bias"
+              ]
+            },
+            "before": {
+              "declared": [
+                "chain_bias"
+              ],
+              "permitted": [
+                "@chain_producer",
+                "chain_bias"
+              ]
+            },
+            "current": 37,
+            "missing_edges": [
+              "@chain_producer"
+            ],
+            "missing_fields": [],
+            "node": "chain_consumer",
+            "oracle": 64,
+            "runtime_reads": [],
+            "traced_reads": [
+              "@chain_producer",
+              "chain_bias"
+            ],
+            "transition": 52
+          },
+          {
+            "action": "repair_then_replay",
+            "after": {
+              "declared": [
+                "branch_p",
+                "branch_q",
+                "mode"
+              ],
+              "permitted": [
+                "mode",
+                "branch_p",
+                "branch_q"
+              ]
+            },
+            "before": {
+              "declared": [
+                "mode",
+                "branch_p"
+              ],
+              "permitted": [
+                "mode",
+                "branch_p",
+                "branch_q"
+              ]
+            },
+            "current": 8,
+            "missing_edges": [
+              "branch_q"
+            ],
+            "missing_fields": [],
+            "node": "branch",
+            "oracle": 11,
+            "runtime_reads": [],
+            "traced_reads": [
+              "branch_q",
+              "mode"
+            ],
+            "transition": 212
+          }
+        ],
+        "faults": [
+          "branch",
+          "direct",
+          "dormant",
+          "indirect",
+          "slice"
+        ],
+        "final_equality": true,
+        "final_output_hash": "416f0090860ba263900210e31394895c454a9b3f8111cdd2ebc1ee10a64cda70",
+        "full_audits": 0,
+        "handler_executions": 10899,
+        "learned_edges": 3,
+        "learned_fields": 1,
+        "maximum_damage_window": 131,
+        "observed_read_set_changes": 0,
+        "oracle_measurement_time_ns": 309977426,
+        "oracle_output_hash": "416f0090860ba263900210e31394895c454a9b3f8111cdd2ebc1ee10a64cda70",
+        "policy": "SEEDED_SAMPLE",
+        "policy_work_time_ns": 101745830,
+        "proactive_reconciliations": 0,
+        "quarantines": 0,
+        "replay_handler_executions": 326,
+        "replay_hash": "afbaf809fe41ee953013e5d5bdfbf1b60f00098957f5f5a4acc2b522dd13d1c8",
+        "rollback_events": 288,
+        "startup_trace_handler_executions": 0,
+        "transitions": 10000,
+        "undetected_self_heals": 0,
+        "unresolved_items": 0,
+        "wall_time_ns": 411723256
+      }
+    }
+  },
+  "schema": "axm.adaptive-closure.benchmark/v1",
+  "seed": 20260902,
+  "timing_boundary": "policy_work_time_ns excludes the always-on offline truth-oracle measurement used by the harness; selected audit handler work remains included"
+}
