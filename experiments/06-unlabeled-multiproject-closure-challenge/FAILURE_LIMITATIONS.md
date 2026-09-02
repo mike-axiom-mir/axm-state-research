@@ -19,5 +19,10 @@ After the first scored held-out run, no policy semantics, structural inference, 
 
 ## Scored failures
 
-Pending the frozen first held-out score. This section will be updated only with post-score evidence; frozen semantics and inputs will not change.
-
+11. Broken sparse/no-audit retained 32 silent stale occurrences and ended unequal.
+12. Observed reads retained eight silent opaque-helper occurrences, although later ordinary config changes self-healed them and made final equality pass. Final equality is not a substitute for the zero-silent gate.
+13. Both failing policies' 40 occurrences minimize to ten unique one-mutation reproductions. Greedy minimization was verified for all ten.
+14. The first-score embedded determinism flags failed because validation-time-derived provenance remained inside the logical hash. The raw failure was retained; a post-score non-semantic verifier removed only measurement fields and their derived hash, then repeat/order hashes matched.
+15. Structural-only passed with 595 executions, two fewer than the 597-execution named candidate. The combined policy is not claimed as universally optimal.
+16. Reconstruction was 391 of the candidate's 597 check executions. With fewer subsequent mutations, recovery can erase the work advantage.
+17. The two held-out checkpoint faults were recoverable because the canonical repository subtrees were trusted and locally available. The unresolved/no-source path is tested but not part of the passing held-out score.

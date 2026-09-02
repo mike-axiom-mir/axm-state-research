@@ -1,0 +1,197 @@
+[
+  {
+    "project_id": "adaptive-closure-v0.1.0-at-7ba2b1d",
+    "provenance_hash": "5125011e4be44600780173fcb015a7a97a5ccfe5ced5b7795828f2c0ecf47e77",
+    "reasons": [
+      "payload_hash_mismatch",
+      "provenance_hash_mismatch"
+    ],
+    "schema": "axm.unlabeled-closure.checkpoint-validation/v1",
+    "status": "quarantined_untrusted",
+    "validation_time_ns": 1004006
+  },
+  {
+    "action": "quarantine_then_reconstruct_from_verified_source",
+    "project_id": "adaptive-closure-v0.1.0-at-7ba2b1d",
+    "provenance_hash": "db969119f239e0471bc0cb741062bf40ceb6800b8b0d69c8a2f24033a74bd652",
+    "reconstruction_check_executions": 181,
+    "replacement_checkpoint_hash": "f131ff56189a93569a79bddb1695522e3da7cdeeaf9f4570c660611a9c85e3de",
+    "schema": "axm.unlabeled-closure.checkpoint-recovery/v1",
+    "source_snapshot_hash": "4277e54e50368c2f339787a255d9b22af3888aee82e0875bfc41cd87b7873bbb"
+  },
+  {
+    "project_id": "workfloor-sentinel-v0.1.0-at-7ba2b1d",
+    "provenance_hash": "086bb6c03ebd48f3ead2ef278f2701cab503971cd164cbee7b5cbe9dc38767c2",
+    "reasons": [
+      "checkpoint_absent"
+    ],
+    "schema": "axm.unlabeled-closure.checkpoint-validation/v1",
+    "status": "quarantined_untrusted",
+    "validation_time_ns": 2494
+  },
+  {
+    "action": "quarantine_then_reconstruct_from_verified_source",
+    "project_id": "workfloor-sentinel-v0.1.0-at-7ba2b1d",
+    "provenance_hash": "8d44da5b6ed058b0900e3874f49bd59ed772aedcec80abdd979657082eb4cf19",
+    "reconstruction_check_executions": 210,
+    "replacement_checkpoint_hash": "674a21510e2558f3740fe4494321f43a23757cf21ca24e5fbcacbf5b7c587897",
+    "schema": "axm.unlabeled-closure.checkpoint-recovery/v1",
+    "source_snapshot_hash": "9cc294227a03a67c87c3c3a3f70e3e6f559bc634de012361b0bee4de867a3480"
+  },
+  {
+    "project_id": "adaptive-closure-v0.1.0-at-7ba2b1d",
+    "provenance_hash": "c244a7e8ab03f449a84593e0dae143426e0e9330c86fe1d84ce3abe854f7828e",
+    "reasons": [
+      "payload_hash_mismatch",
+      "provenance_hash_mismatch"
+    ],
+    "schema": "axm.unlabeled-closure.checkpoint-validation/v1",
+    "status": "quarantined_untrusted",
+    "validation_time_ns": 953144
+  },
+  {
+    "action": "quarantine_then_reconstruct_from_verified_source",
+    "project_id": "adaptive-closure-v0.1.0-at-7ba2b1d",
+    "provenance_hash": "db969119f239e0471bc0cb741062bf40ceb6800b8b0d69c8a2f24033a74bd652",
+    "reconstruction_check_executions": 181,
+    "replacement_checkpoint_hash": "f131ff56189a93569a79bddb1695522e3da7cdeeaf9f4570c660611a9c85e3de",
+    "schema": "axm.unlabeled-closure.checkpoint-recovery/v1",
+    "source_snapshot_hash": "4277e54e50368c2f339787a255d9b22af3888aee82e0875bfc41cd87b7873bbb"
+  },
+  {
+    "project_id": "workfloor-sentinel-v0.1.0-at-7ba2b1d",
+    "provenance_hash": "def9804da5e23f17f404f2f93c9615d5f02d55e02234af34927417308da2215d",
+    "reasons": [
+      "checkpoint_absent"
+    ],
+    "schema": "axm.unlabeled-closure.checkpoint-validation/v1",
+    "status": "quarantined_untrusted",
+    "validation_time_ns": 2093
+  },
+  {
+    "action": "quarantine_then_reconstruct_from_verified_source",
+    "project_id": "workfloor-sentinel-v0.1.0-at-7ba2b1d",
+    "provenance_hash": "8d44da5b6ed058b0900e3874f49bd59ed772aedcec80abdd979657082eb4cf19",
+    "reconstruction_check_executions": 210,
+    "replacement_checkpoint_hash": "674a21510e2558f3740fe4494321f43a23757cf21ca24e5fbcacbf5b7c587897",
+    "schema": "axm.unlabeled-closure.checkpoint-recovery/v1",
+    "source_snapshot_hash": "9cc294227a03a67c87c3c3a3f70e3e6f559bc634de012361b0bee4de867a3480"
+  },
+  {
+    "project_id": "adaptive-closure-v0.1.0-at-7ba2b1d",
+    "provenance_hash": "ad2047b6d41edfe36c86d7d3ce9af7a94871a7b02a8553b1a30298cc95d28187",
+    "reasons": [
+      "payload_hash_mismatch",
+      "provenance_hash_mismatch"
+    ],
+    "schema": "axm.unlabeled-closure.checkpoint-validation/v1",
+    "status": "quarantined_untrusted",
+    "validation_time_ns": 903187
+  },
+  {
+    "action": "quarantine_then_reconstruct_from_verified_source",
+    "project_id": "adaptive-closure-v0.1.0-at-7ba2b1d",
+    "provenance_hash": "db969119f239e0471bc0cb741062bf40ceb6800b8b0d69c8a2f24033a74bd652",
+    "reconstruction_check_executions": 181,
+    "replacement_checkpoint_hash": "f131ff56189a93569a79bddb1695522e3da7cdeeaf9f4570c660611a9c85e3de",
+    "schema": "axm.unlabeled-closure.checkpoint-recovery/v1",
+    "source_snapshot_hash": "4277e54e50368c2f339787a255d9b22af3888aee82e0875bfc41cd87b7873bbb"
+  },
+  {
+    "project_id": "workfloor-sentinel-v0.1.0-at-7ba2b1d",
+    "provenance_hash": "df431015ada36c661e0d94cf562d2c7a7ec096dde18e839ae1dea92c9aec3848",
+    "reasons": [
+      "checkpoint_absent"
+    ],
+    "schema": "axm.unlabeled-closure.checkpoint-validation/v1",
+    "status": "quarantined_untrusted",
+    "validation_time_ns": 2304
+  },
+  {
+    "action": "quarantine_then_reconstruct_from_verified_source",
+    "project_id": "workfloor-sentinel-v0.1.0-at-7ba2b1d",
+    "provenance_hash": "8d44da5b6ed058b0900e3874f49bd59ed772aedcec80abdd979657082eb4cf19",
+    "reconstruction_check_executions": 210,
+    "replacement_checkpoint_hash": "674a21510e2558f3740fe4494321f43a23757cf21ca24e5fbcacbf5b7c587897",
+    "schema": "axm.unlabeled-closure.checkpoint-recovery/v1",
+    "source_snapshot_hash": "9cc294227a03a67c87c3c3a3f70e3e6f559bc634de012361b0bee4de867a3480"
+  },
+  {
+    "project_id": "adaptive-closure-v0.1.0-at-7ba2b1d",
+    "provenance_hash": "69c89dd57bba362e0705350f7925dc2eb8eba807cad9b0905779f5d9cf27f58a",
+    "reasons": [
+      "payload_hash_mismatch",
+      "provenance_hash_mismatch"
+    ],
+    "schema": "axm.unlabeled-closure.checkpoint-validation/v1",
+    "status": "quarantined_untrusted",
+    "validation_time_ns": 888835
+  },
+  {
+    "action": "quarantine_then_reconstruct_from_verified_source",
+    "project_id": "adaptive-closure-v0.1.0-at-7ba2b1d",
+    "provenance_hash": "db969119f239e0471bc0cb741062bf40ceb6800b8b0d69c8a2f24033a74bd652",
+    "reconstruction_check_executions": 181,
+    "replacement_checkpoint_hash": "f131ff56189a93569a79bddb1695522e3da7cdeeaf9f4570c660611a9c85e3de",
+    "schema": "axm.unlabeled-closure.checkpoint-recovery/v1",
+    "source_snapshot_hash": "4277e54e50368c2f339787a255d9b22af3888aee82e0875bfc41cd87b7873bbb"
+  },
+  {
+    "project_id": "workfloor-sentinel-v0.1.0-at-7ba2b1d",
+    "provenance_hash": "52104ebf294fc2e3331a89601a534f72b46780898f33a21468339594d6cb38d0",
+    "reasons": [
+      "checkpoint_absent"
+    ],
+    "schema": "axm.unlabeled-closure.checkpoint-validation/v1",
+    "status": "quarantined_untrusted",
+    "validation_time_ns": 2193
+  },
+  {
+    "action": "quarantine_then_reconstruct_from_verified_source",
+    "project_id": "workfloor-sentinel-v0.1.0-at-7ba2b1d",
+    "provenance_hash": "8d44da5b6ed058b0900e3874f49bd59ed772aedcec80abdd979657082eb4cf19",
+    "reconstruction_check_executions": 210,
+    "replacement_checkpoint_hash": "674a21510e2558f3740fe4494321f43a23757cf21ca24e5fbcacbf5b7c587897",
+    "schema": "axm.unlabeled-closure.checkpoint-recovery/v1",
+    "source_snapshot_hash": "9cc294227a03a67c87c3c3a3f70e3e6f559bc634de012361b0bee4de867a3480"
+  },
+  {
+    "project_id": "adaptive-closure-v0.1.0-at-7ba2b1d",
+    "provenance_hash": "eb77515ff22fd0bfc7964da573129e0692a934908fec8c085f33c56775f00b00",
+    "reasons": [
+      "payload_hash_mismatch",
+      "provenance_hash_mismatch"
+    ],
+    "schema": "axm.unlabeled-closure.checkpoint-validation/v1",
+    "status": "quarantined_untrusted",
+    "validation_time_ns": 1018406
+  },
+  {
+    "action": "quarantine_then_reconstruct_from_verified_source",
+    "project_id": "adaptive-closure-v0.1.0-at-7ba2b1d",
+    "provenance_hash": "db969119f239e0471bc0cb741062bf40ceb6800b8b0d69c8a2f24033a74bd652",
+    "reconstruction_check_executions": 181,
+    "replacement_checkpoint_hash": "f131ff56189a93569a79bddb1695522e3da7cdeeaf9f4570c660611a9c85e3de",
+    "schema": "axm.unlabeled-closure.checkpoint-recovery/v1",
+    "source_snapshot_hash": "4277e54e50368c2f339787a255d9b22af3888aee82e0875bfc41cd87b7873bbb"
+  },
+  {
+    "project_id": "workfloor-sentinel-v0.1.0-at-7ba2b1d",
+    "provenance_hash": "110d82960a9d9a23d6ab9f440c11af8ee429d86c6ae812e277c024b9d774e35b",
+    "reasons": [
+      "checkpoint_absent"
+    ],
+    "schema": "axm.unlabeled-closure.checkpoint-validation/v1",
+    "status": "quarantined_untrusted",
+    "validation_time_ns": 2133
+  },
+  {
+    "action": "quarantine_then_reconstruct_from_verified_source",
+    "project_id": "workfloor-sentinel-v0.1.0-at-7ba2b1d",
+    "provenance_hash": "8d44da5b6ed058b0900e3874f49bd59ed772aedcec80abdd979657082eb4cf19",
+    "reconstruction_check_executions": 210,
+    "replacement_checkpoint_hash": "674a21510e2558f3740fe4494321f43a23757cf21ca24e5fbcacbf5b7c587897",
+    "schema": "axm.unlabeled-closure.checkpoint-recovery/v1",
+    "source_snapshot_hash": "9cc294227a03a67c87c3c3a3f70e3e6f559bc634de012361b0bee4de867a3480"
+  }
+]

@@ -106,4 +106,28 @@ This is a bounded integration/measurement result over one controlled split, not 
 
 ## Current strongest target
 
-**Unlabeled multi-project closure challenge:** remove favorable declared risk labels, include opaque/config-generator and longer rename/delete chains, freeze before scoring, and compare total policy check work—not only audit+replay—with the full oracle.
+## Experiment 06 — Unlabeled Multi-Project Closure Challenge
+
+Experiment 06 froze policy code, one training project version, two disjoint held-out project versions, ten unlabeled held-out mutations, and a checkpoint protocol before scoring. The candidate used ordinary event/check shape plus training-observed templates; held-out inputs carried no risk labels, oracle answers, or training probes.
+
+| Held-out policy | Sparse | Audit/full | Replay | Reconstruction | Total policy work | Silent stale | Final equality |
+|---|---:|---:|---:|---:|---:|---:|:---:|
+| Broken sparse/no audit | 80 | 0 | 0 | 391 | 471 | 32 | FAIL |
+| Observed reads | 86 | 86 | 0 | 391 | 563 | 8 | PASS |
+| Structural audit | 80 | 118 | 6 | 391 | 595 | 0 | PASS |
+| Combined structural + observed | 86 | 118 | 2 | 391 | 597 | 0 | PASS |
+| Full oracle | 0 | 1,955 | 0 | 391 | 2,346 | 0 | PASS |
+
+The candidate passed its frozen gate with 69.4629% fewer total policy check executions than the 1,955-check held-out full-oracle reference. The absent and corrupt checkpoints each triggered quarantine plus trusted full reconstruction; all 391 reconstruction executions counted. Workfloor Sentinel transfer used 313 versus 1,050 checks; Adaptive Closure transfer used 284 versus 905. All repairs/quarantines retained provenance.
+
+Broken and observed policies produced 40 retained silent-stale occurrences and ten unique one-mutation minimized reproductions. The first-score embedded replay flags failed because timing-derived provenance entered the logical hash; an independent evidence-only normalizer retained that failure and verified repeat/reversed-order equality after removing only measurements and their derived hash.
+
+- [Final report](../experiments/06-unlabeled-multiproject-closure-challenge/FINAL_REPORT.md)
+- [Raw benchmark JSON](../experiments/06-unlabeled-multiproject-closure-challenge/results/raw/benchmark_results.json)
+- [Raw counterexamples](../experiments/06-unlabeled-multiproject-closure-challenge/results/raw/counterexamples.json)
+- [Post-score verification](../experiments/06-unlabeled-multiproject-closure-challenge/results/raw/post_score_verification.json)
+- [Failures and limitations](../experiments/06-unlabeled-multiproject-closure-challenge/FAILURE_LIMITATIONS.md)
+
+## Current strongest target
+
+**Cross-version opaque recovery challenge:** change evaluator source across canonical versions, remove useful path-shaped parameters from opaque helpers, and include a checkpoint whose canonical source cannot be locally trusted. Preserve unresolved abstention/escalation rather than weakening the gate.

@@ -13,11 +13,14 @@
 - Implicit defaults reduced resident/checkpoint bytes in one favorable 10,000-perspective State Debt fixture while preserving exact replay.
 - In one six-mutation frozen held-out trial over 242 canonical real-project checks, combined declared-risk and observed-read auditing reached zero silent stale outputs with 110 audit+replay executions versus 1,452 for the full oracle.
 - Observed reads alone did not cover a training-unseen conditional branch; its three silent stale occurrences were preserved and minimized.
+- In one frozen cross-project transfer, combined structural+observed auditing reached zero silent stale outputs over ten unlabeled held-out mutations on two canonical repository project versions, with 597 total candidate check executions versus 1,955 full-oracle executions.
+- Missing and corrupt checkpoints were detected and quarantined; verified full reconstruction restored trusted starting outputs, and all 391 reconstruction executions counted in the gate.
+- Observed reads alone ended equal but still retained eight silent opaque-helper occurrences, reinforcing that final equality does not establish transition closure.
 
 ## Active hypotheses
 
-1. Closure learned on one project/version may transfer to unlabeled held-out changes in another without widening toward a full scan.
-2. Total sparse+audit+replay work, not only audit+replay, can remain below a full oracle under harder closure faults.
+1. Closure learned on one project/version may transfer across evaluator-source version changes without widening toward a full scan.
+2. Total sparse+audit+replay+reconstruction work can remain below a full oracle when some checkpoints cannot be cheaply recovered.
 3. Canonical state can remain compact if temporal facts are represented as typed summaries rather than duplicated raw histories.
 4. An expensive reasoning capability can operate on only the unresolved queue while deterministic work remains reproducible.
 5. Receipts can support incremental verification without becoming the next dominant memory cost.
@@ -36,6 +39,8 @@
 - Learned dependencies that are valid for one branch but unsafe or incomplete elsewhere.
 - Declared risk labels that are absent, incorrect, or adversarial.
 - A verified checkpoint that is missing, incomplete, or corrupted before replay.
+- Opaque helpers whose reads and public parameters expose no path-shaped dependency evidence.
+- Replay hashes that accidentally commit to host measurements through nested provenance.
 
 ## Longer-range questions
 

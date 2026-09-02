@@ -28,6 +28,7 @@ flowchart TD
 | [03 — AXM Wakeup Fuzzer](experiments/03-wakeup-fuzzer/) | Is positive activation cheaper than polling every registered check, and can a missing edge be minimized? | At 10,000 mutations, declared sparse was 6.45× faster than polling on one host; one omission caused 64 wrong transitions and minimized to one mutation. |
 | [04 — AXM Adaptive Closure Verifier](experiments/04-adaptive-closure-verifier/) | Can sparse routing audit and repair activation and state-slice closure failures? | The broken control failed; audited policies repaired/replayed to equality with damage windows from 0 to 131 transitions in the controlled fixture. |
 | [05 — AXM Real-Project Closure Trial](experiments/05-real-project-closure-trial/) | Does train/freeze closure survive held-out mutations over Sentinel's 242 canonical checks? | Combined risk+observed left zero silent stale outputs and used 110 audit+replay checks versus 1,452 full-oracle checks; broken and observed-only failures were retained and minimized. |
+| [06 — Unlabeled Multi-Project Closure](experiments/06-unlabeled-multiproject-closure-challenge/) | Does frozen closure transfer from one canonical project to two unlabeled held-out project versions with checkpoint faults? | Combined structural+observed left zero silent stale outputs and used 597 total policy checks versus 1,955 full-oracle checks; absent/corrupt checkpoints were quarantined and reconstructed with charged work. |
 
 See the [Research Index](docs/RESEARCH_INDEX.md) for exact metrics, the [State Research Map](docs/STATE_RESEARCH_MAP.md) for the hypothesis tree, and [Claim Boundaries](docs/CLAIM_BOUNDARIES.md) for what has not been established.
 
@@ -49,6 +50,9 @@ cd ../04-adaptive-closure-verifier
 python3 -m unittest discover -s tests -v
 
 cd ../05-real-project-closure-trial
+python3 -m unittest discover -s tests -v
+
+cd ../06-unlabeled-multiproject-closure-challenge
 python3 -m unittest discover -s tests -v
 ```
 

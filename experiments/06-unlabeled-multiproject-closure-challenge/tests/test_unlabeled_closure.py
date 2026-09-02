@@ -17,6 +17,7 @@ from run_benchmarks import (
     run_all,
     verify_freeze,
 )
+from verify_evidence import run_verification
 from unlabeled_closure.checkpoint import create_checkpoint, recover_checkpoint, validate_checkpoint
 from unlabeled_closure.engine import CANDIDATE_POLICY, POLICIES, full_outputs, run_experiment, verify_counterexample
 from unlabeled_closure.foundation_loader import EXPERIMENT_ROOT, stable_hash
@@ -129,8 +130,13 @@ class UnlabeledClosureTests(unittest.TestCase):
         self.assertTrue(all(verify_counterexample(spec) for spec in sorted(set(specs))))
 
     def test_repeat_and_reverse_order_are_deterministic(self) -> None:
-        self.assertTrue(self.result["determinism"]["repeat_replay_equal"])
-        self.assertTrue(self.result["determinism"]["registration_order_invariant"])
+        # The first score retained an evidence-only failed flag because its
+        # checkpoint validation provenance hash included host timing.
+        self.assertFalse(self.result["determinism"]["repeat_replay_equal"])
+        self.assertFalse(self.result["determinism"]["registration_order_invariant"])
+        verified = run_verification(verify_counterexamples=False)
+        self.assertTrue(verified["normalized_repeat_replay_equal"])
+        self.assertTrue(verified["normalized_registration_order_invariant"])
 
     def test_transfer_is_reported_by_held_out_project_version(self) -> None:
         candidate = self.result["policies"][CANDIDATE_POLICY]
@@ -172,4 +178,3 @@ class UnlabeledClosureTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

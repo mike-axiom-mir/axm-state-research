@@ -16,6 +16,10 @@
 - One implicit-default fixture reduced measured Python object/checkpoint bytes while preserving its defined output and replay.
 - In one frozen six-mutation held-out trial over Sentinel's canonical 242 checks, combined declared-risk and observed-read auditing left zero silent stale outputs, ended oracle-equal, retained repair provenance, and used 110 audit+replay check executions versus 1,452 full-oracle executions.
 - The same Real-Project Closure fixture retained 18 silent stale occurrences for broken/no-audit and three for observed-only; every occurrence was minimized to a runnable one-mutation counterexample.
+- In one frozen transfer challenge, training on the canonical State Floor subtree preceded ten unlabeled held-out mutations over canonical Workfloor Sentinel and Adaptive Closure subtrees. The combined structural+observed candidate left zero silent stale outputs, ended oracle-equal on both versions, and used 597 total policy check executions versus 1,955 full-oracle executions.
+- The held-out absent and corrupt checkpoints were detected, quarantined with provenance, and reconstructed from verified canonical sources. All 391 reconstruction check executions counted in the candidate's total work.
+- Broken sparse retained 32 silent stale occurrences and ended unequal; observed reads retained eight opaque-helper stale occurrences despite ending equal. All 40 occurrences were retained and their ten unique minimized reproductions passed.
+- The first-score embedded repeat/order flags failed because timing-derived checkpoint-validation provenance entered the logical hash. The raw failure remains; a post-score verifier that removed only measurements and their derived hash produced identical repeat and reversed-order logical hashes.
 
 ## Not demonstrated
 
@@ -32,6 +36,11 @@
 - No model-weight editing or domain actuator was implemented in Adaptive Closure.
 - Experiment 05 does not prove dependency completeness beyond its six held-out mutations, validate untrusted risk tags, remove the need for an offline scoring oracle, or establish that observed reads cover opaque or unexecuted accesses.
 - Experiment 05 is a bounded integration and measurement of existing deterministic routing, tracing, auditing, replay, and minimization ideas; it makes no component-novelty claim.
+- Experiment 06 does not prove transfer beyond its three named repository subtrees, ten held-out mutations, or frozen contract shapes.
+- Structural auditing has not proven complete for opaque helpers without useful public path parameters.
+- The passing checkpoint cases do not establish recovery when the canonical source is unavailable or untrusted; that path abstains/escalates in a protocol test but was not part of the passing held-out score.
+- Experiment 06's normalized replay verification does not establish cross-machine, cross-runtime, or cross-language determinism.
+- Experiment 06 makes no component-novelty claim. It integrates deterministic routing, tracing, structural selection, auditing, checkpoint validation, repair/replay, and minimization under a harder frozen gate.
 
 ## Use these terms
 

@@ -26,6 +26,8 @@ jobs:
             directory: experiments/04-adaptive-closure-verifier
           - name: Real-Project Closure Trial
             directory: experiments/05-real-project-closure-trial
+          - name: Unlabeled Multi-Project Closure
+            directory: experiments/06-unlabeled-multiproject-closure-challenge
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
