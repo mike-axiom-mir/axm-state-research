@@ -19,6 +19,7 @@ Additive research-only lane covering:
 - implicit-zero / positive-state propagation;
 - State Debt: lifetime cost of retained state that no longer helps reproduce the correct future;
 - minimum-sufficient-state and on-demand perspective materialization experiments;
+- direct-state editing vs training as a bounded external replication challenge;
 - current adjacent research / prior-art convergence;
 - state compiler + domain actuator architecture;
 - food/drink sensory-state and sensory-trajectory formulation;
@@ -33,13 +34,15 @@ Additive research-only lane covering:
 - rewriting other chat instances' active lanes;
 - broad claims that this is a theory of everything;
 - claims that sparse specialist routing itself is novel;
-- claims that a general physical replicator or holodeck currently exists.
+- claims that a general physical replicator or holodeck currently exists;
+- claims that arbitrary model capabilities can already be safely compiled into direct weight/state edits.
 
 ## Files in this lane
 
 - `logs/2026-09-02-state-friction-evolution-machine-layer.txt`
 - `research/2026-09-02-state-level-specialist-fabric.md`
 - `research/2026-09-02-implicit-zero-positive-state-propagation.md`
+- `research/2026-09-02-external-replication-challenge-direct-state-edit.md`
 - `research/2026-09-02-prior-art-convergence.md`
 - `research/2026-09-02-state-compiler-domain-actuators.md`
 - `research/2026-09-02-research-preservation-and-source-integrity.md`
