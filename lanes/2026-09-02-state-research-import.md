@@ -7,7 +7,8 @@ base: main@b41efd033baf291809d00bdc9b1f48f314bc04dd
 chat lanes claimed: 1
 pull requests allowed for this chat: 1
 merge authority: human maintainer
-status: repository verification passed; PR creation pending
+status: pull request open; human merge pending
+pull request: https://github.com/mike-axiom-mir/axm-state-research/pull/3
 ```
 
 ## Bounded scope
@@ -40,6 +41,7 @@ experiments/01-state-floor: 8/8 PASS
 experiments/02-workfloor-sentinel: 6/6 PASS
 archive hashes: MATCH
 git diff --check: PASS
+GitHub Actions run 1: PASS
 ```
 
-The pull request URL is recorded in the pull request description and final chat handoff; this receipt must be amended if the lane is handed off or verification later fails.
+The lane is open as pull request #3. This receipt must be amended if the lane is handed off or verification later fails.
