@@ -20,6 +20,7 @@ RAW_DIR = EXPERIMENT_ROOT / "results" / "raw"
 REPORT_PATH = EXPERIMENT_ROOT / "results" / "BENCHMARK_RESULTS.md"
 FREEZE_SUMS_PATH = EXPERIMENT_ROOT / "manifests" / "FREEZE_SHA256SUMS"
 FREEZE_RECEIPT_PATH = RAW_DIR / "pre_score_freeze_receipt.json"
+WHITESPACE_CORRECTION_PATH = RAW_DIR / "post_score_whitespace_correction_receipt.json"
 
 
 def write_json(path: Path, value: object) -> None:
@@ -39,7 +40,14 @@ def _sha256(path: Path) -> str:
 def verify_freeze() -> dict[str, Any]:
     if not FREEZE_SUMS_PATH.is_file() or not FREEZE_RECEIPT_PATH.is_file():
         raise RuntimeError("pre-score SHA-256 manifest and receipt must exist before scoring")
+    receipt = json.loads(FREEZE_RECEIPT_PATH.read_text(encoding="utf-8"))
+    correction = (
+        json.loads(WHITESPACE_CORRECTION_PATH.read_text(encoding="utf-8"))
+        if WHITESPACE_CORRECTION_PATH.is_file()
+        else None
+    )
     checked: dict[str, str] = {}
+    corrected: dict[str, str] = {}
     for line in FREEZE_SUMS_PATH.read_text(encoding="utf-8").splitlines():
         if not line.strip():
             continue
@@ -47,11 +55,29 @@ def verify_freeze() -> dict[str, Any]:
         path = EXPERIMENT_ROOT / relative
         actual = _sha256(path)
         if actual != expected:
-            raise RuntimeError(f"frozen input changed before score: {relative}")
-        checked[relative] = actual
-    receipt = json.loads(FREEZE_RECEIPT_PATH.read_text(encoding="utf-8"))
+            if correction is None:
+                raise RuntimeError(f"frozen input changed without a correction receipt: {relative}")
+            repository_relative = path.relative_to(REPOSITORY_ROOT).as_posix()
+            original = subprocess.run(
+                ["git", "show", f"{receipt['semantic_freeze_commit']}:{repository_relative}"],
+                cwd=REPOSITORY_ROOT,
+                check=True,
+                capture_output=True,
+            ).stdout
+            if hashlib.sha256(original).hexdigest() != expected:
+                raise RuntimeError(f"semantic freeze blob hash mismatch: {relative}")
+            normalized = original.rstrip(b"\n") + b"\n"
+            if path.read_bytes() != normalized:
+                raise RuntimeError(f"post-score change is not EOF-only normalization: {relative}")
+            recorded = correction["corrected_files"].get(relative)
+            if recorded != {"before_sha256": expected, "after_sha256": actual}:
+                raise RuntimeError(f"whitespace correction receipt mismatch: {relative}")
+            corrected[relative] = actual
+        checked[relative] = expected
     if receipt["frozen_files"] != checked:
         raise RuntimeError("pre-score receipt differs from SHA-256 manifest")
+    if correction is not None and set(corrected) != set(correction["corrected_frozen_files"]):
+        raise RuntimeError("whitespace correction frozen-file set mismatch")
     commit = receipt["semantic_freeze_commit"]
     subprocess.run(
         ["git", "merge-base", "--is-ancestor", commit, "HEAD"],
@@ -229,4 +255,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

@@ -293,4 +293,3 @@ def held_out_manifest_hash() -> str:
 
 def state_storage_bytes(state: dict[str, Any]) -> int:
     return len(canonical_bytes(state))
-

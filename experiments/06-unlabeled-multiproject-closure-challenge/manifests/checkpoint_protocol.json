@@ -9,4 +9,3 @@
   "charged_work": ["checkpoint validation", "full reconstruction check executions"],
   "cases": ["valid", "absent", "corrupt_payload", "unresolved_without_trusted_source"]
 }
-

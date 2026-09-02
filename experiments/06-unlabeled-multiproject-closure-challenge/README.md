@@ -54,4 +54,3 @@ The first scored evidence is intentionally blocked until the pre-score freeze re
 - `results/raw/` — first score, JSONL receipts, checkpoint evidence, and minimized misses.
 
 No component novelty is claimed. No AI capability, model-weight change, substrate mapping, production actuator, or cross-machine determinism is tested.
-

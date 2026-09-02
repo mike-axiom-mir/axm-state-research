@@ -47,4 +47,3 @@ Checkpoint validation hashes/timing, receipt bytes, storage estimates, wall/CPU 
 ## Determinism
 
 Logical replay excludes host timing and byte estimates. Repeated replay and reversed registration/order must match. Timing and object-size observations remain host-specific.
-

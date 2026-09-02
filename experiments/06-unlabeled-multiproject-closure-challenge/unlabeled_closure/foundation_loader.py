@@ -39,4 +39,3 @@ __all__ = [
     "stable_hash",
     "traced_state",
 ]
-

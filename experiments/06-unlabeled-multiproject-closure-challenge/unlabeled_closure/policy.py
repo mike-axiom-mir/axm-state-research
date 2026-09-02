@@ -129,4 +129,3 @@ def audit_selection(
     if policy == "OBSERVED_READS":
         return tuple(sorted(set(awakened)))
     return ()
-

@@ -146,4 +146,3 @@ def recover_checkpoint(
     receipt["provenance_hash"] = stable_hash(receipt)
     receipts.append(receipt)
     return reconstructed, executions, receipts, False
-
