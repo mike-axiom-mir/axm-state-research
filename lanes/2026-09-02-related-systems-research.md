@@ -8,7 +8,8 @@ chat lanes claimed: 1
 pull requests allowed for this chat: 1
 target branch: main
 merge authority: Mike / human maintainer
-status: research and source verification complete; pull request pending
+status: pull request open; human merge pending
+pull request: https://github.com/mike-axiom-mir/axm-state-research/pull/4
 ```
 
 ## Bounded objective
@@ -34,7 +35,7 @@ runtime tests: NOT RUN — no runtime files changed
 primary links inspected at official/publisher locations: 21/21
 unique primary link targets found in research files: 21
 git diff --check: PASS
-pull request: PENDING
+pull request: https://github.com/mike-axiom-mir/axm-state-research/pull/4
 ```
 
-This receipt must be updated before the pull request is opened and must not be used to authorize a second branch or pull request for this chat.
+The pull request is open. This receipt must be amended if the lane is handed off or verification later fails, and it must not be used to authorize a second branch or pull request for this chat.
