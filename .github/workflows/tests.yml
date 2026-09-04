@@ -64,3 +64,6 @@ jobs:
       - name: Run typed state-language gate
         run: node tools/state-language-probe.mjs
         working-directory: experiments/07-stateborn-rpg-lab
+      - name: Run hostile transport gate
+        run: node tools/state-transport-probe.mjs
+        working-directory: experiments/07-stateborn-rpg-lab

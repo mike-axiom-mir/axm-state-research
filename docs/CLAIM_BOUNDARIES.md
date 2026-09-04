@@ -24,6 +24,11 @@
 - Stateborn v0.3 and v0.4 demonstrate deterministic policy/authority separation in authored fixtures: outcome fields stay outside the curiosity policy, and only the local referee commits three-seat consequences.
 - Stateborn v0.5 passed 13 capsule-specific tests and 16 deterministic crossings in which fictional actor projections composed under distinct namespaces, source state stayed unchanged before explicit acceptance, selective return worked, forged returns refused, and exact replay passed.
 - Stateborn v0.6 passed 17 state-language-specific tests and five frozen held-out trials: two solved, one refused, and two deadlocked. Accepted payloads contained no prose or private fixture values; all runs preserved sources, matched the direct public-state baseline, normalized across reverse offer order, and replayed exactly.
+- Stateborn v0.7 passed 18 transport-specific tests and ten frozen held-out
+  routes: seven solved, one refused, and two deadlocked. Duplicate and expired
+  deliveries had no state effect, one interruption recovered, all sources stayed
+  unchanged, and every route replayed exactly. The repeated-loss route retained
+  transport failure despite a solvable direct baseline.
 
 ## Not demonstrated
 
@@ -49,6 +54,11 @@
 - Actor capsules represent consented fictional game-state projections, not whole people. v0.5 does not implement account identity, cryptographic signatures, hostile-peer security, networking, arbitrary schema compatibility, or production multiplayer.
 - The v0.5 rendered browser route was not observed in the publishing session because the cloud browser refused local URLs; its visual verdict remains UNKNOWN while engine and static tests passed.
 - Stateborn v0.6 does not prove that machines invented a language, attach subjective meaning to its symbols, communicate generally, negotiate arbitrary schemas, or survive a real network. Its opcodes, dimensions, fixtures, policies, and observer interpretation are human-authored.
+- Stateborn v0.7 is a one-process deterministic simulator. It does not prove
+  cross-process or browser interoperability, Internet delivery, NAT traversal,
+  free relay availability, cryptographic identity, hostile-peer security, or
+  production multiplayer. Its fault schedules and expected outcomes are
+  human-authored.
 
 ## Use these terms
 
@@ -66,6 +76,8 @@
 - explicit return acceptance
 - typed state packet
 - explicit refusal or deadlock
+- deterministic transport envelope
+- bounded retry and checkpoint recovery
 
 ## Avoid these terms unless future evidence earns them
 
@@ -81,4 +93,4 @@
 - identity fusion
 - secure multiplayer
 - private or evolved machine language
-
+- production network transport

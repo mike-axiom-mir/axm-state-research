@@ -19,6 +19,10 @@
 - In the Stateborn chain, a million-cell logical game field stayed sparse while receipt-bound relational reactions, outcome-blind curiosity, and three bounded authority seats remained exactly replayable in their controlled fixtures.
 - In 16 local actor-capsule crossings, consented fictional projections stayed in separate namespaces, source states remained unchanged before explicit acceptance, forged return packets were refused, and replay passed.
 - In five frozen held-out Stateborn state-language trials, a human-authored typed packet protocol produced two solves, one consent refusal, and two deadlocks with no private/prose leakage, exact replay, direct-baseline agreement, and order-normalized outcomes.
+- In ten frozen Stateborn hostile-transport routes, seven solved, one refused,
+  and two deadlocked while duplicate and expired deliveries had no effect,
+  one interruption recovered from a checkpoint, sources stayed unchanged, and
+  every route replayed exactly.
 
 ## Active hypotheses
 
@@ -28,7 +32,8 @@
 4. An expensive reasoning capability can operate on only the unresolved queue while deterministic work remains reproducible.
 5. Receipts can support incremental verification without becoming the next dominant memory cost.
 6. Typed state offers and accept/refuse deltas can coordinate bounded actors in the v0.6 authored fixture without a natural-language payload channel.
-7. Consent-bounded actor projections may be temporarily routed across lossy, duplicated, delayed, and reordered transports without identity fusion.
+7. Consent-bounded actor projections can retain explicit recovery and failure semantics across the v0.7 simulated hostile transport without identity fusion.
+8. The same envelopes may remain canonical when routed between independent runtimes with separate recovery stores.
 
 ## Open failure surfaces
 
@@ -63,4 +68,3 @@
 ## Hard boundary
 
 These are software-runtime experiments. They do not establish physical computational nodes, brain or neuron equivalence, matter or human transfer, behavior below the software/runtime layer, or a mapping to CPU cores, GPU units, firmware, drivers, kernel mechanisms, or privileged memory. Any future substrate claim requires a genuine implementation and direct measurement on that substrate.
-

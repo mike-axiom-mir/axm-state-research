@@ -34,8 +34,13 @@ This supports coordination through state transitions under an agreed protocol.
 It does not show that machines invented the symbols or share private meanings.
 Humans authored the codes, dimensions, rules, fixtures, and observer labels.
 
-## Next falsifiable test
+## Completed next falsifiable test — v0.7
 
-Carry the same packets over a simulated transport that reorders, duplicates,
-drops, delays, and reconnects messages. Preserve expiry, idempotence, explicit
-deadlock, source recovery, and only consented return deltas.
+The same packets were carried through ten frozen simulated transport routes
+covering reordering, duplication, loss, delay, disconnect/reconnect, expiry,
+and corruption. Seven solved, one refused, and two deadlocked while preserving
+expiry, idempotence, explicit failure, source recovery, consent, and replay.
+
+The next falsifiable test is cross-runtime routing: separately running peers
+must exchange the canonical envelopes, resume from independent checkpoints,
+and fail visibly when a peer or transport disappears.

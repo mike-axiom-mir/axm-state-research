@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#03070d">
+  <meta name="description" content="Offline Stateborn microscope for typed packets under frozen loss, duplication, delay, reordering, disconnect, corruption, and expiry faults.">
+  <title>Stateborn Hostile Packet Transport</title>
+  <link rel="stylesheet" href="./curiosity.css"><link rel="stylesheet" href="./transport.css">
+</head>
+<body>
+  <main class="shell transport-shell">
+    <header class="topbar">
+      <div class="brand"><div class="storm-sigil" aria-hidden="true"><i></i><i></i><i></i><i></i></div><div><p class="eyebrow">AXM · STATEBORN EXPERIMENT 07</p><h1>HOSTILE PACKET TRANSPORT</h1></div></div>
+      <div class="head-actions"><span class="truth-badge">SIMULATED FAULTS · NOT THE INTERNET</span><a href="./language.html">State language</a><a href="./capsules.html">Capsules</a><a href="./index.html">State fabric</a></div>
+    </header>
+
+    <section class="boundary"><strong>GATE</strong><p id="claimText">The v0.6 packet language must survive frozen connection faults without widening consent or hiding failure.</p><span id="digestBadge" class="mono">transport —</span></section>
+
+    <section class="fault-strip" aria-label="Injected transport faults">
+      <div><b>LOSS</b><span>retry or stop</span></div><div><b>×2</b><span>deduplicate</span></div><div><b>DELAY</b><span>remain pending</span></div><div><b>⇄</b><span>stale + reorder</span></div><div><b>OFFLINE</b><span>checkpoint recovery</span></div><div><b>EXPIRY</b><span>fail unchanged</span></div>
+    </section>
+
+    <section class="transport-grid">
+      <aside class="panel fixture-panel">
+        <div class="panel-head compact"><div><p class="eyebrow">FROZEN HELD-OUT ROUTES</p><h2>Choose the storm</h2></div><span id="freezeStatus" class="freeze-status">CHECKING</span></div>
+        <label class="fixture-label" for="fixtureSelect">Fault route</label><select id="fixtureSelect"></select>
+        <div id="fixtureFacts" class="fact-stack"></div>
+        <div class="controls vertical-controls"><button id="tickButton" class="control primary">Advance one tick</button><button id="runButton" class="control">Run selected route</button><button id="resetButton" class="control quiet">Reset selected</button></div>
+        <p class="micro-boundary">The connection can delay or destroy delivery. It cannot invent source authority, rewrite consent, or quietly turn a deadlock into success.</p>
+      </aside>
+
+      <section class="panel network-panel">
+        <div class="panel-head"><div><p class="eyebrow">DETERMINISTIC NETWORK FLOOR</p><h2 id="networkHeading">Tick 0 · ready</h2></div><span id="connectionPill" class="connection-pill online">ONLINE</span></div>
+        <div class="route-rail"><article><span>SEAT A</span><b id="seatARevision">revision 0</b></article><div class="wire"><i></i><i></i><i></i></div><article><span>SEAT B</span><b id="seatBRevision">revision 0</b></article></div>
+        <section class="queue-box"><header><span>IN-FLIGHT ENVELOPES</span><b id="queueCount">0 queued</b></header><div id="queueLedger" class="queue-ledger"><p class="empty">No packet is in flight.</p></div></section>
+        <section class="timeline-box"><header><span>TRANSPORT RECEIPTS</span><b id="eventCount">0 events</b></header><div id="eventLedger" class="event-ledger"><p class="empty">Advance a tick to emit the first packet.</p></div></section>
+        <output id="systemMessage" class="system-message" aria-live="polite">Ready. Fault decisions are frozen in the selected fixture.</output>
+      </section>
+
+      <aside class="panel recovery-panel">
+        <div class="panel-head compact"><div><p class="eyebrow">RECOVERY + CONSENT</p><h2>What survived?</h2></div><span id="outcomePill" class="outcome-pill open">OPEN</span></div>
+        <div id="resultMetrics" class="result-metrics"></div>
+        <section class="checkpoint-box"><span>LATEST CHECKPOINT</span><strong id="checkpointDigest">—</strong><p id="checkpointCopy">No reconnect required yet.</p></section>
+        <section class="accepted-box"><span>ACCEPTED MACHINE PACKETS</span><div id="acceptedPackets"><p class="empty">No packet accepted.</p></div></section>
+        <div class="controls vertical-controls"><button id="replayButton" class="control">Verify exact replay</button><button id="gateButton" class="control primary">Run all ten routes</button></div>
+      </aside>
+    </section>
+
+    <section class="panel gate-panel">
+      <div class="panel-head"><div><p class="eyebrow">FAULT-MATRIX RESULT</p><h2>Held-out transport ledger</h2></div><span id="fixtureDigest" class="mono"></span></div>
+      <div id="gateMetrics" class="gate-metrics"></div><div id="gateLedger" class="gate-ledger"><p class="empty">Run the gate to retain recoveries, refusals, and failures together.</p></div>
+      <details><summary>Hard boundary</summary><p>This is a deterministic in-process fault simulator. It does not test sockets, browsers talking to each other, encryption, peer identity, NAT traversal, malicious devices, bandwidth contention, or the public Internet.</p></details>
+    </section>
+  </main>
+  <script defer src="./transport.bundle.js"></script>
+</body>
+</html>

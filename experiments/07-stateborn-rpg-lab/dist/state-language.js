@@ -262,34 +262,52 @@ export class StateLanguageTrial {
   }
 
   emitOffer(actorId) {
+    return this.applyPacket(this.prepareOffer(actorId), { operationId: `offer-${actorId}` });
+  }
+
+  prepareOffer(actorId) {
     const view = this.policyView(actorId);
-    return this.applyPacket(this.makePacket(actorId, LANGUAGE_OPS.OFFER, { v: vectorMin(view.own.inventory, view.own.consentMax) }), { operationId: `offer-${actorId}` });
+    return this.makePacket(actorId, LANGUAGE_OPS.OFFER, { v: vectorMin(view.own.inventory, view.own.consentMax) });
   }
 
   emitProposal() {
+    const prepared = this.prepareProposal();
+    return prepared.packet ? this.applyPacket(prepared.packet, { operationId: "proposal" }) : prepared;
+  }
+
+  prepareProposal() {
     if (!ACTOR_IDS.every((id) => this.state.channel.offers[id])) return { status: "REFUSED", reasonCode: LANGUAGE_REASONS.OFFERS_INCOMPLETE };
     const offers = Object.fromEntries(ACTOR_IDS.map((id) => [id, this.state.channel.offers[id].payload.v]));
     const candidates = enumerateContributions(this.state.task.target, offers);
     if (!candidates.length) return { status: "REFUSED", reasonCode: LANGUAGE_REASONS.INSUFFICIENT_OFFER };
     const payload = { c: candidates[0], n: candidates.length,
       o: ACTOR_IDS.map((id) => this.state.channel.offers[id].packetDigest).sort() };
-    return this.applyPacket(this.makePacket(ACTOR_IDS[0], LANGUAGE_OPS.PROPOSE, payload), { operationId: "proposal" });
+    return { status: "READY", reasonCode: LANGUAGE_REASONS.OK, packet: this.makePacket(ACTOR_IDS[0], LANGUAGE_OPS.PROPOSE, payload) };
   }
 
   emitResponse(actorId) {
+    const prepared = this.prepareResponse(actorId);
+    return prepared.packet ? this.applyPacket(prepared.packet, { operationId: `response-${actorId}` }) : prepared;
+  }
+
+  prepareResponse(actorId) {
     const proposal = this.state.channel.proposal;
     if (!proposal) return { status: "REFUSED", reasonCode: LANGUAGE_REASONS.PROPOSAL_MISMATCH };
     const contribution = proposal.payload.c[actorId];
     const rejects = contribution.some((value, index) => value > 0 && this.seats[actorId].rejectMask[index] > 0);
     const op = rejects ? LANGUAGE_OPS.REFUSE : LANGUAGE_OPS.ACCEPT;
     const reasonCode = rejects ? LANGUAGE_REASONS.CONSENT_POLICY : LANGUAGE_REASONS.OK;
-    return this.applyPacket(this.makePacket(actorId, op, { p: proposal.packetDigest, r: reasonCode }), { operationId: `response-${actorId}` });
+    return { status: "READY", reasonCode, packet: this.makePacket(actorId, op, { p: proposal.packetDigest, r: reasonCode }) };
   }
 
   emitCommit() {
+    return this.applyPacket(this.prepareCommit(), { operationId: "commit" });
+  }
+
+  prepareCommit() {
     const proposal = this.state.channel.proposal;
     const acceptDigests = ACTOR_IDS.map((id) => this.state.channel.responses[id]?.packetDigest).filter(Boolean).sort();
-    return this.applyPacket(this.makePacket(-1, LANGUAGE_OPS.COMMIT, { p: proposal?.packetDigest || digest(null), a: acceptDigests }), { operationId: "commit" });
+    return this.makePacket(-1, LANGUAGE_OPS.COMMIT, { p: proposal?.packetDigest || digest(null), a: acceptDigests });
   }
 
   closeDeadlock({ operationId = "deadlock" } = {}) {

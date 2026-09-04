@@ -1,34 +1,36 @@
-# Next experiment — Hostile state-packet transport
+# Next experiment — Independent peer routing
 
 ## Gate
 
-Move the exact v0.6 typed packets through a deterministic simulated transport
-instead of delivering them directly in process. Inject bounded loss,
-duplication, delay, reordering, disconnect, reconnect, and expiry.
+Move the exact v0.7 envelopes between separately running peers with separate
+memory and recovery stores. Start with a manual copy/paste invitation and a
+bounded local or direct transport so infrastructure cannot become hidden state
+authority.
 
 ## Freeze before scoring
 
-Freeze transport schedules, retry/expiry rules, actor-visible state, recovery
-checkpoints, consent rules, success/deadlock verifier, leakage detector, and
-normalization before held-out runs.
+Freeze wire serialization, peer versions, invitations, retry/expiry rules,
+recovery checkpoints, conflict fixtures, success/deadlock verifier, leakage
+detector, and normalization before held-out runs.
 
 ## Measure
 
-- solved, refused, expired, and deadlocked tasks;
-- attempts, accepted packets, duplicate suppression, and bytes;
-- convergence after reordering and reconnect;
-- stale or ambiguous packets retained as explicit receipts;
-- independent source recovery after interrupted sessions;
+- byte-equal canonical envelopes across process boundaries;
+- solved, refused, unavailable, conflicted, and deadlocked tasks;
+- resumption when only one peer has a newer checkpoint;
+- explicit refusal of conflicting or tampered checkpoints;
+- peer disappearance without invented success;
 - only explicitly accepted return deltas reaching either source;
-- exact replay under the frozen fault schedule.
+- exact replay from each peer's independent evidence.
 
 ## Pass boundary
 
-At least one held-out task must recover and solve after interruption, while
-duplicates apply no effect, expired or stale messages fail closed, unresolved
-sessions stay unresolved, both sources remain independently recoverable, and
-replay reproduces every final outcome.
+At least one held-out task must resume and solve across two independent
+runtimes. A conflicting checkpoint must refuse, peer disappearance must stay
+unavailable, both sources must remain independently recoverable, and each
+peer's evidence must replay to the same accepted result.
 
-A pass would support a simulated transport protocol. It would not establish
-secure networking, hostile Internet safety, identity, production multiplayer,
-human-state movement, consciousness, or an evolved machine language.
+A pass would support cross-runtime routing. It would not establish secure
+Internet networking, NAT traversal, reliable free relays, cryptographic
+identity, production multiplayer, human-state movement, consciousness, or an
+evolved machine language.

@@ -1,7 +1,7 @@
 # Stateborn preserved version chain
 
 The archives under `artifacts/stateborn/` are retained as immutable named
-snapshots. v0.6 does not replace the knowledge earned by v0.1–v0.5.
+snapshots. v0.7 does not replace the knowledge earned by v0.1–v0.6.
 
 | Step | Research boundary | Archive SHA-256 |
 |---|---|---|
@@ -11,6 +11,7 @@ snapshots. v0.6 does not replace the knowledge earned by v0.1–v0.5.
 | v0.4 | Human, outcome-blind machine, and labelled AI-compatible stand-in under one local referee. | `8bc87d581ee4b8cf22c22b69ebbe6cc9b25921c5426977cf6f03e5fa432eeae0` |
 | v0.5 | Consent-bounded fictional actor projections, distinct namespaces, explicit return acceptance, detach, and replay. | `77dba9c23b81dee599f27f8a2843015ac5364d11cbebe2093b86e4225b86ae19` |
 | v0.6 | Human-authored typed state packets, consent-bound commits, explicit refusal/deadlock, order normalization, and replay. | `5d970ce746d60ec8cd3ffd9d6d947ddcf41526cdc790b506370638d379648474` |
+| v0.7 | Deterministic hostile packet delivery, retry, deduplication, expiry, interruption recovery, retained transport failure, and replay. | `ca4fe5225f3377da3d61f12344c31dbdf1b9526c93e58d89fc85bc00e1e9f06f` |
 
 ## Knowledge progression
 
@@ -26,5 +27,7 @@ snapshots. v0.6 does not replace the knowledge earned by v0.1–v0.5.
    “state crossing” testable without pretending a person moved.
 6. Separating typed machine payloads from observer interpretation made bounded
    coordination testable without pretending machines invented a language.
+7. Separating transport receipt identity from state acceptance made recovery
+   testable without pretending simulated delivery was real networking.
 
 Failures, fixtures, and exclusions remain part of the result.

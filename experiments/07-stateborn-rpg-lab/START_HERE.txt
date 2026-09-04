@@ -1,71 +1,75 @@
-AXM STATEBORN RPG LAB v0.6.0
+AXM STATEBORN RPG LAB v0.7.0
 ================================
 
 WHAT THIS IS
 ------------
-A local bottom-up state research chain with six separately preserved steps.
-The new State Language Microscope tests whether two bounded machines can
-coordinate with typed state packets and no natural-language payload.
+A local bottom-up state research chain with seven separately preserved steps.
+The new Hostile Transport Microscope tests whether the exact v0.6 packets keep
+their state, consent, recovery, and failure boundaries under bad delivery.
 
 OPEN THE NEWEST TEST
 --------------------
 1. Open the "dist" folder.
-2. Double-click "language.html".
-3. Choose one of the five frozen held-out fixtures.
-4. Step one packet at a time or run the selected protocol.
-5. Compare the two machine views with the separate observer interpretation.
-6. Inspect a solved, refused, ambiguous, and deadlocked route.
-7. Run the refusal attacks and verify exact replay.
-8. Run the complete held-out gate.
+2. Double-click "transport.html".
+3. Choose one of the ten frozen held-out routes.
+4. Step one transport tick at a time or run the selected route.
+5. Inspect its in-flight envelopes and transport event ledger.
+6. Watch retry, duplicate suppression, expiry, and checkpoint recovery.
+7. Compare solved, refused, state-deadlocked, and transport-deadlocked routes.
+8. Run the complete hostile-transport gate.
 
 No account, internet, AI connection, installation, server, or real personal
 data is required.
 
-SIX KNOWLEDGE STEPS
---------------------
+SEVEN KNOWLEDGE STEPS
+---------------------
 v0.1 canonical receipts: deterministic, but whole-world copy/hash scaled badly.
 v0.2 sparse relations: sleeping logical cells plus causal autonomous reactions.
 v0.3 curiosity boundary: novelty input separated from observer consequences.
 v0.4 coexistence boundary: human/machine/AI-compatible proposals, one referee.
 v0.5 ownership boundary: consented projections compose, return, and separate.
 v0.6 protocol boundary: typed packets coordinate, refuse, or deadlock honestly.
+v0.7 transport boundary: hostile delivery recovers or fails with typed evidence.
 
-All six named ZIP snapshots are retained. A later version does not rewrite an
+All seven named ZIP snapshots are retained. A later version does not rewrite an
 earlier failure, fixture, limitation, or result.
 
 WHAT TO WATCH
 -------------
-- Machine payloads contain typed state values, not prose.
-- Fictional private values never appear in the channel.
-- A commit binds two exact accept packet digests.
-- Consent refusal and insufficient state remain visible failures.
-- The ambiguous fixture reports unused valid alternatives.
-- Text-bearing, tampered, and stale packets fail closed.
-- Reverse offer order preserves the same normalized result.
+- Dropped packets retry within an explicit attempt limit.
+- Duplicate and expired deliveries have no state effect.
+- Delayed and reordered packets remain visible in the ledger.
+- Disconnect recovery reconstructs from a digest-bound checkpoint.
+- Corruption refuses before a later clean retry succeeds.
+- Consent refusal and insufficient state remain protocol outcomes.
+- Repeated packet loss remains an honest retained transport deadlock.
+- Every accepted machine payload remains state-only and replayable.
 
 IMPORTANT FILES
 ---------------
 README.md                                      complete research overview
-TEST_REPORT.md                                 v0.1-v0.6 verification
-docs/ACTION_REPORT_v0.6.0.md                   implementation and limits
-docs/STATE_LANGUAGE_REPORT_v0.6.0.md           protocol evidence
+TEST_REPORT.md                                 v0.1-v0.7 verification
+docs/ACTION_REPORT_v0.7.0.md                   implementation and limits
+docs/HOSTILE_TRANSPORT_REPORT_v0.7.0.md        transport evidence
+docs/RETAINED_TRANSPORT_FAILURE_v0.7.0.md      discovered defect and repair
 docs/STATE_RESEARCH_HANDOFF.md                 next research gate
 
 SOURCE AND TESTS
 ----------------
-Protocol source: dist/state-language.js and dist/language-app.js.
-Offline browser bundle: dist/language.bundle.js.
+Transport source: dist/state-transport.js and dist/transport-app.js.
+Offline browser bundle: dist/transport.bundle.js.
 
 If Node.js is installed:
 
   npm test
   node tools/capsule-probe.mjs
   node tools/state-language-probe.mjs
+  node tools/state-transport-probe.mjs
   node tools/coexistence-probe.mjs 64 12
   node tools/curiosity-probe.mjs 64 12
   node tools/validate-static.mjs
 
 PUBLICATION BOUNDARY
 --------------------
-The v0.1-v0.6 chain is prepared for one bounded axm-state-research PR lane.
+The v0.1-v0.7 chain is prepared for one bounded axm-state-research PR lane.
 The package itself does not imply merge, release, or canon.

@@ -1,6 +1,6 @@
 # Stateborn → AXM State Research handoff
 
-Status: **v0.1–v0.6 RESEARCH CHAIN / BOUNDED PUBLICATION CANDIDATE**
+Status: **v0.1–v0.7 RESEARCH CHAIN / BOUNDED PUBLICATION CANDIDATE**
 
 This document records the bounded material for an `axm-state-research` lane. It does not authorize a merge or canon action.
 
@@ -8,7 +8,7 @@ This document records the bounded material for an `axm-state-research` lane. It 
 
 Can a game-like experience be assembled upward from a canonical state graph and tiny deterministic perspective nodes, without first specifying a conventional RPG and decomposing it?
 
-## Node contract used through v0.6.0
+## Node contract used through v0.7.0
 
 Each rule node has:
 
@@ -54,6 +54,13 @@ and commit packets. Packet and prior-state digests bind every transition. A
 commit requires two exact accept digests. Missing state deadlocks; policy
 conflict refuses. Human observer labels stay outside the machine payload.
 
+v0.7 adds a simulated transport boundary without changing the v0.6 packet
+schema. Deterministic envelopes add delivery ticks, expiry, retry, queue, and
+checkpoint evidence. Loss, duplication, delay, reordering,
+disconnect/reconnect, expiry, and corruption are injected from frozen routes.
+Only accepted packets become duplicate barriers. Sources remain independently
+recoverable and every terminal result replays exactly.
+
 ## Current observations to measure
 
 - deterministic world generation from an explicit seed;
@@ -92,6 +99,19 @@ conflict refuses. Human observer labels stay outside the machine payload.
 - free-text, tampered, and stale packets refuse without canonical mutation;
 - every state-language result agrees with a direct public-state baseline and
   replays exactly.
+- ten frozen hostile-transport routes produce seven solves, one consent
+  refusal, one state deadlock, and one transport-exhaustion deadlock;
+- duplicates and expired envelopes have no canonical effect, while reorder,
+  stale refusal, retry, and corruption remain visible in the ledger;
+- one interrupted session reconstructs from a digest-bound checkpoint and
+  then solves;
+- the frozen corrupt-retry route first exposed a rejected-packet deduplication
+  defect; restricting replay barriers to accepted packets repaired it without
+  changing the fixture universe;
+- the repeated-loss route retains a transport failure even though the direct
+  state-language baseline solves;
+- all routes preserve private-state exclusion, state-only payloads, consent
+  provenance, source digests, and exact replay.
 
 ## Truth boundary
 
@@ -107,15 +127,22 @@ Represent each participant as an independently owned capsule. A shared world rec
 
 Give two actors a shared problem but no text channel. Allow only typed state offers, requested deltas, accept/refuse responses, and resulting receipts. Measure task completion, message volume, ambiguity, deadlocks, and whether replay reproduces coordination.
 
-### Gate 4 — multiplayer routing (next)
+### Gate 4 — hostile transport (bounded v0.7 simulator complete)
 
-First place the v0.6 packets over a deterministic hostile-transport simulator:
-loss, duplication, delay, reordering, disconnect, reconnect, and expiry. Match
-compatible actor projections rather than merely accounts or game queues.
-Compose a temporary shared state, keep each source state independently
-recoverable, and return only explicitly accepted deltas to each participant.
+The exact v0.6 packets now cross deterministic loss, duplication, delay,
+reordering, disconnect/reconnect, expiry, and corruption. Recovery and failure
+are receipt-bound, but the peers still run inside one local simulator.
 
-### Gate 5 — state-root USB boot
+### Gate 5 — independent peer routing (next)
+
+Move canonical envelopes between separately running peers with separate
+memory and recovery stores. Begin with a manual copy/paste invitation and
+bounded local or direct transport so connection infrastructure cannot become
+hidden authority. Test serialization, resumption, conflicting checkpoints,
+peer disappearance, and explicit unavailability before calling anything
+multiplayer.
+
+### Gate 6 — state-root USB boot
 
 Place an immutable, digest-verifiable root starting state on bootable media. Treat firmware, bootloader, kernel, driver discovery, and hardware facts as bounded gates or projections around that root. Keep the user capsule and accepted session deltas independently recoverable. This is a conceptual architecture only; no UEFI, Secure Boot, driver, encryption, or storage-atomicity implementation has been tested here.
 

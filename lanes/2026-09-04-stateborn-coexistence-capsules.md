@@ -104,3 +104,35 @@ This receipt-only amendment changes no protocol, fixture, test, artifact, raw
 result, metric, or claim boundary. The final receipt head is verified again
 below without recursively editing itself. Human merge authority remains
 unchanged.
+
+## v0.7 hostile-transport continuation amendment — 2026-09-04 UTC
+
+The same visible chat and PR lane continued with Gate 4. No new branch or pull
+request was created.
+
+```text
+version: Stateborn v0.7.0
+bounded test: deterministic hostile transport around the exact v0.6 packets
+fixture digest: 937ea582ce4576bdff15fb1afebbece7c9f11e2b138860d66cfcbc381f948079
+held-out outcomes: 7 solved; 1 refused; 2 deadlocked
+attempted sends / accepted packets / transmitted bytes: 56 / 49 / 24960
+fault evidence: drops 4; duplicates suppressed 2; expiry 1; reorder 1
+interruption: disconnect 1; recovery pass 1
+privacy/prose leakage: 0 / 0
+source preservation and exact replay: 10 / 10 PASS
+retained counterfactual: repeated-loss route deadlocked while direct baseline solved
+retained discovered defect: rejected corrupt packet first poisoned deduplication
+repair boundary: only accepted packets become replay barriers; fixture unchanged
+retained-chain tests: 97 / 97 PASS
+static validation: 33 files; 20 JavaScript files; no external dependency
+archive: AXM_STATEBORN_RPG_LAB_v0.7.0.zip
+archive SHA-256: ca4fe5225f3377da3d61f12344c31dbdf1b9526c93e58d89fc85bc00e1e9f06f
+browser visual run: not requested for v0.7
+publication: pending this amendment
+```
+
+This result supports explicit transport recovery and failure semantics inside
+one deterministic simulator. It does not establish a real network,
+cross-runtime interoperability, cryptographic identity, hostile-peer safety,
+production multiplayer, human-state movement, a finished RPG, merge, release,
+or canon. Human merge authority remains unchanged.
