@@ -128,6 +128,29 @@ Broken and observed policies produced 40 retained silent-stale occurrences and t
 - [Post-score verification](../experiments/06-unlabeled-multiproject-closure-challenge/results/raw/post_score_verification.json)
 - [Failures and limitations](../experiments/06-unlabeled-multiproject-closure-challenge/FAILURE_LIMITATIONS.md)
 
+## Experiment 07 — Stateborn RPG Lab v0.1.0–v0.5.0
+
+Experiment 07 preserves five incremental state-first game research steps rather
+than replacing early failures with the latest result.
+
+| Version | Bounded result |
+|---|---|
+| v0.1 | Canonical state, fail-closed transactions, receipts, and replay passed; whole-world copy/hash exposed a scale failure. |
+| v0.2 | A million-cell logical field stayed sparse in the bounded probe; share and wait produced distinct receipt-backed relational branches. |
+| v0.3 | Twelve seeds × 64 novelty-driven steps kept outcome fields outside policy input, produced mixed observer consequences, and replayed exactly. |
+| v0.4 | Twelve seeds × 64 three-seat cycles kept the machine view outcome-blind, used a labelled deterministic AI stand-in, and earned only receipt-backed intersections. |
+| v0.5 | 62 / 62 tests and 16 / 16 local capsule crossings passed separate namespaces, source immutability before acceptance, selective returns, tamper refusal, detach, and replay. |
+
+v0.5 represents only fictional game-relevant projections. It does not move a
+human, prove identity, implement secure networking, or establish a real RPG.
+
+- [Version chain](../experiments/07-stateborn-rpg-lab/VERSION_CHAIN.md)
+- [v0.5 evidence report](../experiments/07-stateborn-rpg-lab/docs/CAPSULE_COMPOSITION_REPORT_v0.5.0.md)
+- [Raw capsule probe](../experiments/07-stateborn-rpg-lab/results/raw/capsule_probe.json)
+- [Failures and limitations](../experiments/07-stateborn-rpg-lab/FAILURE_LIMITATIONS.md)
+- [Next experiment](../experiments/07-stateborn-rpg-lab/NEXT_EXPERIMENT.md)
+
 ## Current strongest target
 
 **Cross-version opaque recovery challenge:** change evaluator source across canonical versions, remove useful path-shaped parameters from opaque helpers, and include a checkpoint whose canonical source cannot be locally trusted. Preserve unresolved abstention/escalation rather than weakening the gate.
+

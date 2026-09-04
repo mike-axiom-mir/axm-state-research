@@ -29,12 +29,13 @@ flowchart TD
 | [04 — AXM Adaptive Closure Verifier](experiments/04-adaptive-closure-verifier/) | Can sparse routing audit and repair activation and state-slice closure failures? | The broken control failed; audited policies repaired/replayed to equality with damage windows from 0 to 131 transitions in the controlled fixture. |
 | [05 — AXM Real-Project Closure Trial](experiments/05-real-project-closure-trial/) | Does train/freeze closure survive held-out mutations over Sentinel's 242 canonical checks? | Combined risk+observed left zero silent stale outputs and used 110 audit+replay checks versus 1,452 full-oracle checks; broken and observed-only failures were retained and minimized. |
 | [06 — Unlabeled Multi-Project Closure](experiments/06-unlabeled-multiproject-closure-challenge/) | Does frozen closure transfer from one canonical project to two unlabeled held-out project versions with checkpoint faults? | Combined structural+observed left zero silent stale outputs and used 597 total policy checks versus 1,955 full-oracle checks; absent/corrupt checkpoints were quarantined and reconstructed with charged work. |
+| [07 — Stateborn RPG Lab](experiments/07-stateborn-rpg-lab/) | Can state-first game mechanisms evolve through sparse relations, outcome-blind curiosity, bounded coexistence, and consented actor projection? | v0.1–v0.5 are preserved. The latest local gate passed 62 tests and 16 capsule crossings with separate namespaces, explicit return acceptance, tamper refusal, and exact replay. |
 
 See the [Research Index](docs/RESEARCH_INDEX.md) for exact metrics, the [State Research Map](docs/STATE_RESEARCH_MAP.md) for the hypothesis tree, and [Claim Boundaries](docs/CLAIM_BOUNDARIES.md) for what has not been established.
 
 ## Run the evidence
 
-Python 3.11 or newer is required; current experiments use only the standard library.
+Experiments 01–06 require Python 3.11 or newer and use only the standard library. Experiment 07 requires Node.js 20 or newer and has no runtime package dependency.
 
 ```bash
 cd experiments/01-state-floor
@@ -54,6 +55,11 @@ python3 -m unittest discover -s tests -v
 
 cd ../06-unlabeled-multiproject-closure-challenge
 python3 -m unittest discover -s tests -v
+
+cd ../07-stateborn-rpg-lab
+npm test
+node tools/validate-static.mjs
+node tools/capsule-probe.mjs
 ```
 
 ## Collaboration rule
@@ -71,3 +77,4 @@ python3 -m unittest discover -s tests -v
 ## License
 
 Apache-2.0. Permission to reuse the code is not permission to detach claims from their measured scope.
+

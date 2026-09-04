@@ -40,3 +40,25 @@ jobs:
         working-directory: ${{ matrix.directory }}
         env:
           PYTHONDONTWRITEBYTECODE: "1"
+
+
+  stateborn:
+    name: Stateborn RPG Lab
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Run Stateborn tests
+        run: npm test
+        working-directory: experiments/07-stateborn-rpg-lab
+      - name: Validate offline surface
+        run: node tools/validate-static.mjs
+        working-directory: experiments/07-stateborn-rpg-lab
+      - name: Run capsule crossing probe
+        run: node tools/capsule-probe.mjs
+        working-directory: experiments/07-stateborn-rpg-lab
+

@@ -1,0 +1,71 @@
+AXM STATEBORN RPG LAB v0.5.0
+================================
+
+WHAT THIS IS
+------------
+A local bottom-up state research chain with five separately preserved steps.
+The new Actor Capsule Crossing composes consented projections from two
+independently owned fictional sources. It never claims to move a person.
+
+OPEN THE NEWEST TEST
+--------------------
+1. Open the "dist" folder.
+2. Double-click "capsules.html".
+3. Inspect what Aster and Briar keep private.
+4. Compose both allowlisted projections into separate session namespaces.
+5. Select each projection and leave matching signals on the same cell.
+6. Build proposed return packets.
+7. Accept selected paths or refuse all; nothing writes back automatically.
+8. Detach either projection and verify exact replay.
+9. Use "Run crossing proof" for the complete bounded sequence.
+
+No account, internet, AI connection, installation, server, or real personal
+data is required.
+
+FIVE KNOWLEDGE STEPS
+--------------------
+v0.1 canonical receipts: deterministic, but whole-world copy/hash scaled badly.
+v0.2 sparse relations: sleeping logical cells plus causal autonomous reactions.
+v0.3 curiosity boundary: novelty input separated from observer consequences.
+v0.4 coexistence boundary: human/machine/AI-compatible proposals, one referee.
+v0.5 ownership boundary: consented projections compose, return, and separate.
+
+All five named ZIP snapshots are retained. A later version does not rewrite an
+earlier failure, fixture, limitation, or result.
+
+WHAT TO WATCH
+-------------
+- Private notes and recovery tokens never appear in capsules.
+- Aster and Briar remain under different owner namespaces.
+- Session actions cannot mutate either source.
+- A shared signal appears only after matching independent event receipts.
+- A return packet is a proposal, not write authority.
+- Each owner chooses its accepted fields independently.
+- Forged or stale packets fail closed.
+- Detachment preserves evidence and both sources remain recoverable.
+
+IMPORTANT FILES
+---------------
+README.md                                      complete research overview
+TEST_REPORT.md                                 v0.1-v0.5 verification
+docs/ACTION_REPORT_v0.5.0.md                   implementation and limits
+docs/CAPSULE_COMPOSITION_REPORT_v0.5.0.md      capsule evidence
+docs/STATE_RESEARCH_HANDOFF.md                 next research gate
+
+SOURCE AND TESTS
+----------------
+Capsule source: dist/capsule-world.js and dist/capsule-app.js.
+Offline browser bundle: dist/capsule.bundle.js.
+
+If Node.js is installed:
+
+  npm test
+  node tools/capsule-probe.mjs
+  node tools/coexistence-probe.mjs 64 12
+  node tools/curiosity-probe.mjs 64 12
+  node tools/validate-static.mjs
+
+PUBLICATION BOUNDARY
+--------------------
+The v0.1-v0.5 chain is prepared for one bounded axm-state-research PR lane.
+The package itself does not imply merge, release, or canon.

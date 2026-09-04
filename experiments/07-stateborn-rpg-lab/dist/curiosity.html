@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#060b13">
+  <meta name="description" content="An offline deterministic AXM experiment where machine actors follow curiosity while outcomes remain visible only to the game observer.">
+  <title>Stateborn Curiosity Garden</title>
+  <link rel="stylesheet" href="./curiosity.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="sigil" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div>
+          <p class="eyebrow">AXM · STATEBORN EXPERIMENT 03</p>
+          <h1>CURIOSITY GARDEN</h1>
+        </div>
+      </div>
+      <div class="head-actions">
+        <span class="truth-badge">NO REWARD CHANNEL</span>
+        <a href="./capsules.html">Actor capsules</a>
+        <a href="./coexistence.html">Coexistence field</a>
+        <a href="./index.html">Relational lab</a>
+      </div>
+    </header>
+
+    <section class="boundary" aria-label="Current research boundary">
+      <strong>TEST</strong>
+      <p id="claimText">Six actors choose unfamiliar states and untried signals. Growth and damage exist only in the observer layer.</p>
+      <span id="digestBadge" class="mono">digest —</span>
+    </section>
+
+    <section class="workbench">
+      <section class="stage panel">
+        <div class="panel-head">
+          <div>
+            <p class="eyebrow">THE GAME CAN SEE CONSEQUENCES</p>
+            <h2 id="stepHeading">Genesis · no questions asked</h2>
+          </div>
+          <div class="seed-control">
+            <label for="seedInput">Seed</label>
+            <input id="seedInput" value="AXM-CURIOSITY-001" spellcheck="false" autocomplete="off">
+          </div>
+        </div>
+
+        <div class="garden-frame">
+          <canvas id="gardenCanvas" width="760" height="560" aria-label="Curiosity garden observer map"></canvas>
+          <div class="legend" aria-hidden="true">
+            <span><i class="actor-dot"></i>curious actor</span>
+            <span><i class="bloom-dot"></i>growth</span>
+            <span><i class="scar-dot"></i>damage</span>
+            <span><i class="touch-dot"></i>changed state</span>
+          </div>
+          <div class="observer-stamp">OBSERVER VIEW</div>
+        </div>
+
+        <div class="world-metrics" id="worldMetrics"></div>
+
+        <div class="controls" aria-label="Experiment controls">
+          <button id="stepButton" class="control primary" type="button">Ask one question</button>
+          <button id="run16Button" class="control" type="button">Loop 16</button>
+          <button id="run64Button" class="control" type="button">Loop 64</button>
+          <button id="replayButton" class="control" type="button">Verify replay</button>
+          <button id="resetButton" class="control quiet" type="button">Reset</button>
+        </div>
+        <output id="systemMessage" class="system-message" aria-live="polite">Ready. The actors have no success target.</output>
+      </section>
+
+      <aside class="inspector">
+        <section class="panel outcome-panel">
+          <div class="panel-head compact">
+            <div>
+              <p class="eyebrow">OBSERVER-ONLY OUTCOME</p>
+              <h2>What the game reveals</h2>
+            </div>
+            <span class="observer-lock">not policy input</span>
+          </div>
+          <div id="outcomeMetrics" class="outcome-grid"></div>
+          <div id="patterns" class="patterns"></div>
+        </section>
+
+        <section class="panel machine-panel">
+          <div class="panel-head compact">
+            <div>
+              <p class="eyebrow">MACHINE-VISIBLE INPUT</p>
+              <h2>Why the next state changed</h2>
+            </div>
+          </div>
+          <div id="machineView" class="machine-view"></div>
+          <details>
+            <summary>Policy boundary</summary>
+            <p>The actor sees terrain, phase, unexplored neighbours, and context/action trial counts. It receives no health, bloom, scar, damage, success, or reward field.</p>
+          </details>
+        </section>
+      </aside>
+    </section>
+
+    <section class="panel ledger-panel">
+      <div class="panel-head compact">
+        <div>
+          <p class="eyebrow">CAUSAL LEDGER</p>
+          <h2>Questions and visible consequences</h2>
+        </div>
+        <span id="receiptCount" class="mono">0 receipts</span>
+      </div>
+      <div id="ledger" class="ledger"></div>
+    </section>
+  </main>
+
+  <script defer src="./curiosity.bundle.js"></script>
+</body>
+</html>

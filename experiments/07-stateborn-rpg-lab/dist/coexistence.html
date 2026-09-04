@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050910">
+  <meta name="description" content="An offline Stateborn experiment where a human, curiosity-driven machine, and AI-compatible proposal seat coexist through one local referee.">
+  <title>Stateborn Coexistence Field</title>
+  <link rel="stylesheet" href="./curiosity.css">
+  <link rel="stylesheet" href="./coexistence.css">
+</head>
+<body>
+  <main class="shell coexist-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="tri-sigil" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div><p class="eyebrow">AXM · STATEBORN EXPERIMENT 04</p><h1>COEXISTENCE FIELD</h1></div>
+      </div>
+      <div class="head-actions">
+        <span class="truth-badge">LOCAL REFEREE OWNS CONSEQUENCES</span>
+        <a href="./capsules.html">Actor capsules</a>
+        <a href="./curiosity.html">Curiosity garden</a>
+        <a href="./index.html">Relational lab</a>
+      </div>
+    </header>
+
+    <section class="boundary" aria-label="Research boundary">
+      <strong>TEST</strong>
+      <p id="claimText">Three seats begin together by authored fixture. Genesis earns no adventure thread.</p>
+      <span id="digestBadge" class="mono">digest —</span>
+    </section>
+
+    <section class="authority-strip" aria-label="Authority split">
+      <div class="human-tone"><b>YOU · WITNESS</b><span>choose a world intent</span></div>
+      <div class="machine-tone"><b>MACHINE · MOTE</b><span>curiosity, no outcome reward</span></div>
+      <div class="ai-tone"><b>AI SEAT · LUMEN</b><span>bounded proposal only</span></div>
+      <div><b>REFEREE</b><span>validate, commit, receipt</span></div>
+    </section>
+
+    <section class="coexist-grid">
+      <section class="panel field-panel">
+        <div class="panel-head">
+          <div><p class="eyebrow">CANONICAL FIELD · OBSERVER RENDER</p><h2 id="cycleHeading">Genesis · authored shared start</h2></div>
+          <div class="seed-control"><label for="seedInput">Seed</label><input id="seedInput" value="AXM-COEXIST-001" spellcheck="false" autocomplete="off"></div>
+        </div>
+        <div class="coexist-frame">
+          <canvas id="coexistenceCanvas" width="820" height="600" aria-label="Coexistence field map"></canvas>
+          <div class="legend coexist-legend" aria-hidden="true">
+            <span><i class="human-dot"></i>human</span><span><i class="machine-dot"></i>machine</span>
+            <span><i class="ai-dot"></i>AI seat</span><span><i class="thread-dot"></i>shared thread</span>
+          </div>
+          <div class="observer-stamp">PROJECTION ≠ CANON</div>
+        </div>
+        <div id="worldMetrics" class="world-metrics"></div>
+
+        <section class="human-console" aria-label="Human action controls">
+          <div><p class="eyebrow">YOUR TURN INSIDE EACH CYCLE</p><h3>Choose one intent</h3></div>
+          <div class="intent-groups">
+            <div><span>Move</span><button class="intent" data-kind="move" data-value="north">↑</button><button class="intent" data-kind="move" data-value="west">←</button><button class="intent" data-kind="move" data-value="south">↓</button><button class="intent" data-kind="move" data-value="east">→</button></div>
+            <div><span>Signal</span><button class="intent" data-kind="signal" data-value="hush">hush</button><button class="intent" data-kind="signal" data-value="pulse">pulse</button><button class="intent" data-kind="signal" data-value="turn">turn</button><button class="intent" data-kind="signal" data-value="open">open</button></div>
+            <div><span>Other</span><button class="intent" data-kind="wait">wait</button><button id="run12Button" class="control">probe 12</button></div>
+          </div>
+          <output id="systemMessage" class="system-message" aria-live="polite">Ready. No model is connected.</output>
+        </section>
+      </section>
+
+      <aside class="seat-stack">
+        <section class="panel seat-panel human-seat">
+          <p class="eyebrow">HUMAN RECEIPT</p><h2>Witness chose</h2><div id="humanDecision" class="seat-readout"><p class="empty">No choice committed.</p></div>
+        </section>
+        <section class="panel seat-panel machine-seat">
+          <p class="eyebrow">OUTCOME-BLIND MACHINE</p><h2>Mote explored</h2><div id="machineDecision" class="seat-readout"></div>
+          <details><summary>Machine boundary</summary><p>Terrain, phase, unfamiliar neighbours, and trial counts are visible. Damage, growth, vitality, success, reward, and observer summaries are absent.</p></details>
+        </section>
+        <section class="panel seat-panel ai-seat">
+          <div class="seat-title"><div><p class="eyebrow">AI-COMPATIBLE SEAT</p><h2>Lumen proposed</h2></div><span class="standin-badge">STAND-IN</span></div>
+          <div id="aiDecision" class="seat-readout"></div>
+          <p class="standin-note">No AI model is connected. The default proposer is deterministic and labelled in every receipt.</p>
+          <details><summary>Try the external proposal gate</summary>
+            <label class="proposal-label" for="proposalInput">JSON intent (human action will be wait)</label>
+            <textarea id="proposalInput" rows="3" spellcheck="false">{"kind":"signal","signal":"open"}</textarea>
+            <button id="proposalButton" class="control" type="button">Validate external proposal</button>
+          </details>
+        </section>
+      </aside>
+    </section>
+
+    <section class="lower-grid">
+      <section class="panel">
+        <div class="panel-head compact"><div><p class="eyebrow">ADVENTURE IS A PROJECTION</p><h2>Receipt-backed intersections</h2></div><span id="threadCount" class="mono">0 threads</span></div>
+        <div id="threads" class="thread-grid"><p class="empty">No role intersection has been earned.</p></div>
+      </section>
+      <section class="panel">
+        <div class="panel-head compact"><div><p class="eyebrow">LOCAL CONSEQUENCES</p><h2>What the game observed</h2></div><span class="observer-lock">not machine input</span></div>
+        <div id="outcomes" class="outcome-grid"></div>
+      </section>
+    </section>
+
+    <section class="panel ledger-panel">
+      <div class="panel-head compact"><div><p class="eyebrow">CYCLE LEDGER</p><h2>Three seats, one receipt boundary</h2></div><div class="ledger-actions"><span id="receiptCount" class="mono">0 receipts</span><button id="replayButton" class="control">Verify replay</button><button id="resetButton" class="control quiet">Reset</button></div></div>
+      <div id="ledger" class="cycle-ledger"><p class="empty">The ledger is empty. Co-location alone is not an adventure.</p></div>
+    </section>
+  </main>
+  <script defer src="./coexistence.bundle.js"></script>
+</body>
+</html>

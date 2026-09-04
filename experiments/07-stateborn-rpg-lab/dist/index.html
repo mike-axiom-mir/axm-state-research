@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071016">
+  <meta name="description" content="A deterministic AXM experiment testing whether RPG-like behavior can emerge from a state and node fabric.">
+  <title>AXM Stateborn RPG Lab</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="ambient ambient-a"></div>
+  <div class="ambient ambient-b"></div>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand-lockup">
+        <div class="mark" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div>
+          <p class="eyebrow">AXM · STATE FABRIC EXPERIMENT 02</p>
+          <h1>STATEBORN</h1>
+        </div>
+      </div>
+      <div class="truth-strip">
+        <span class="truth-badge">UNPROVEN RPG</span>
+        <span id="scaleBadge">1,048,579 logical nodes</span>
+        <span id="revisionBadge">revision 0</span>
+        <span id="digestBadge" class="mono">digest —</span>
+      </div>
+    </header>
+
+    <section class="boundary" aria-label="Research boundary">
+      <span class="boundary-key">CURRENT CLAIM</span>
+      <p id="claimText">A deterministic state fabric is running. RPG emergence has not been proven.</p>
+      <a class="quiet-button" href="./capsules.html">Actor capsules →</a>
+      <a class="quiet-button" href="./coexistence.html">Coexistence field →</a>
+      <a class="quiet-button" href="./curiosity.html">Curiosity loop →</a>
+      <button class="quiet-button" id="methodButton" type="button">Method</button>
+    </section>
+
+    <section class="workbench">
+      <aside class="panel actor-panel">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">ACTOR PROJECTION</p>
+            <h2 id="identityLabel">Unformed</h2>
+          </div>
+          <span class="signal-label">signal, not class</span>
+        </div>
+        <p id="identityBasis" class="muted">No repeated behavior yet.</p>
+
+        <div class="energy-block">
+          <div class="metric-row"><span>Energy</span><strong id="energyLabel">12 / 12</strong></div>
+          <div class="meter"><span id="energyMeter"></span></div>
+        </div>
+
+        <div class="section-block">
+          <div class="metric-row"><span>Held state</span><span id="capacityLabel" class="muted">0 / 8</span></div>
+          <div id="inventory" class="inventory"></div>
+        </div>
+
+        <div class="section-block">
+          <div class="metric-row"><span>Pressure state</span><span class="muted">direct</span></div>
+          <div id="competence" class="competence-grid"></div>
+        </div>
+
+        <div class="section-block grow">
+          <div class="metric-row"><span>Situation projections</span><span id="threadCount" class="muted">0 formed</span></div>
+          <div id="threads" class="thread-list"></div>
+        </div>
+      </aside>
+
+      <section class="panel world-panel">
+        <div class="panel-heading world-heading">
+          <div>
+            <p class="eyebrow">CANONICAL WORLD</p>
+            <h2 id="locationLabel">Cell 3 · 3</h2>
+          </div>
+          <div class="seed-control">
+            <label for="seedInput">Seed</label>
+            <input id="seedInput" value="AXM-STATEBORN-001" spellcheck="false" autocomplete="off">
+          </div>
+        </div>
+
+        <div class="map-frame">
+          <div class="map-key" aria-hidden="true">
+            <span><i class="key-player"></i>you</span>
+            <span><i class="key-agent"></i>other state</span>
+            <span><i class="key-need"></i>pressure</span>
+          </div>
+          <div id="worldMap" class="world-map" role="grid" aria-label="State world map"></div>
+          <div class="scanline"></div>
+        </div>
+
+        <div id="worldStats" class="world-stats" aria-label="Sparse world statistics"></div>
+
+        <div class="cell-readout">
+          <div>
+            <span class="readout-label">Terrain</span>
+            <strong id="terrainLabel">moss</strong>
+          </div>
+          <div>
+            <span class="readout-label">Local state</span>
+            <div id="cellResources" class="resource-line"></div>
+          </div>
+          <div>
+            <span class="readout-label">Present</span>
+            <strong id="presentLabel">only you</strong>
+          </div>
+        </div>
+
+        <div class="action-zone">
+          <div class="metric-row">
+            <span>Available transformations</span>
+            <span class="muted">computed now</span>
+          </div>
+          <div id="actions" class="action-grid"></div>
+        </div>
+      </section>
+
+      <aside class="panel fabric-panel">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">CAUSAL WORK FLOOR</p>
+            <h2>Node trace</h2>
+          </div>
+          <span id="traceStatus" class="trace-status idle">GENESIS</span>
+        </div>
+
+        <div class="trace-metrics">
+          <div><strong id="wokenCount">0</strong><span>woken</span></div>
+          <div><strong id="firedCount">0</strong><span>changed state</span></div>
+          <div><strong id="pathCount">0</strong><span>paths changed</span></div>
+        </div>
+
+        <div class="tabs" role="tablist" aria-label="Fabric inspection views">
+          <button class="tab active" data-tab="trace" role="tab" aria-selected="true">Trace</button>
+          <button class="tab" data-tab="receipts" role="tab" aria-selected="false">Receipts</button>
+          <button class="tab" data-tab="state" role="tab" aria-selected="false">State</button>
+        </div>
+
+        <div class="tab-page active" id="tracePage">
+          <div class="trace-section">
+            <span class="readout-label">Woke because dependencies changed</span>
+            <div id="wokenNodes" class="node-chips"></div>
+          </div>
+          <div class="trace-section">
+            <span class="readout-label">Produced an actual delta</span>
+            <div id="firedNodes" class="node-chips fired"></div>
+          </div>
+          <div class="trace-section">
+            <span class="readout-label">Actor events + projected situations</span>
+            <div id="discoveries" class="discovery-list"></div>
+          </div>
+        </div>
+
+        <div class="tab-page" id="receiptsPage">
+          <div id="receipts" class="receipt-list"></div>
+        </div>
+
+        <div class="tab-page" id="statePage">
+          <pre id="stateJson" class="state-json"></pre>
+        </div>
+      </aside>
+    </section>
+
+    <footer class="control-deck">
+      <div class="probe-copy">
+        <span class="eyebrow">BOUNDED PROBE</span>
+        <strong>Can one state change cause another actor to choose—and form a replayable situation?</strong>
+      </div>
+      <div class="controls">
+        <button id="resetButton" class="deck-button secondary" type="button">Reset seed</button>
+        <button id="probeButton" class="deck-button primary" type="button">Run living probe</button>
+        <button id="replayButton" class="deck-button" type="button">Verify replay</button>
+        <button id="saveButton" class="deck-button" type="button">Save locally</button>
+        <button id="loadButton" class="deck-button" type="button">Load save</button>
+      </div>
+      <output id="systemMessage" class="system-message" aria-live="polite">Ready. Choose a neighboring cell or transform local state.</output>
+    </footer>
+  </main>
+
+  <dialog id="methodDialog" class="method-dialog">
+    <form method="dialog">
+      <div class="dialog-heading">
+        <div>
+          <p class="eyebrow">RESEARCH BOUNDARY</p>
+          <h2>What this probe can prove</h2>
+        </div>
+        <button class="close-button" value="close" aria-label="Close method">×</button>
+      </div>
+      <p>The lab seed deliberately creates compatible pressures and holdings, then stops authoring. The actors share generic intent transforms, dependency-triggered rules, and invariants. It contains no written quest, dialogue tree, or selected character class.</p>
+      <div class="method-grid">
+        <section><span>OBSERVED</span><p>A million-cell logical field can remain mostly asleep. One player share causes Rhea to reciprocate through a generic autonomous decision, and exact replay reproduces the branch.</p></section>
+        <section><span>NOT YET PROVEN</span><p>That this becomes a satisfying RPG, scales to millions of active actors, creates rich novelty, or can safely compose portable human states.</p></section>
+      </div>
+      <button class="deck-button primary dialog-done" value="close">Return to probe</button>
+    </form>
+  </dialog>
+
+  <script defer src="./stateborn.bundle.js"></script>
+</body>
+</html>

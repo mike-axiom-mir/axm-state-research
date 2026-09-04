@@ -20,6 +20,9 @@
 - The held-out absent and corrupt checkpoints were detected, quarantined with provenance, and reconstructed from verified canonical sources. All 391 reconstruction check executions counted in the candidate's total work.
 - Broken sparse retained 32 silent stale occurrences and ended unequal; observed reads retained eight opaque-helper stale occurrences despite ending equal. All 40 occurrences were retained and their ten unique minimized reproductions passed.
 - The first-score embedded repeat/order flags failed because timing-derived checkpoint-validation provenance entered the logical hash. The raw failure remains; a post-score verifier that removed only measurements and their derived hash produced identical repeat and reversed-order logical hashes.
+- Stateborn preserves v0.1's whole-world copy/hash scale failure and the repaired sparse v0.2 mechanism as separate versioned artifacts.
+- Stateborn v0.3 and v0.4 demonstrate deterministic policy/authority separation in authored fixtures: outcome fields stay outside the curiosity policy, and only the local referee commits three-seat consequences.
+- Stateborn v0.5 passed 13 capsule-specific tests and 16 deterministic crossings in which fictional actor projections composed under distinct namespaces, source state stayed unchanged before explicit acceptance, selective return worked, forged returns refused, and exact replay passed.
 
 ## Not demonstrated
 
@@ -41,6 +44,9 @@
 - The passing checkpoint cases do not establish recovery when the canonical source is unavailable or untrusted; that path abstains/escalates in a protocol test but was not part of the passing held-out score.
 - Experiment 06's normalized replay verification does not establish cross-machine, cross-runtime, or cross-language determinism.
 - Experiment 06 makes no component-novelty claim. It integrates deterministic routing, tracing, structural selection, auditing, checkpoint validation, repair/replay, and minimization under a harder frozen gate.
+- Stateborn does not demonstrate a finished or automatically generated RPG, fun, narrative quality, subjective curiosity, consciousness, open-ended emergence, or participation by a connected AI model.
+- Actor capsules represent consented fictional game-state projections, not whole people. v0.5 does not implement account identity, cryptographic signatures, hostile-peer security, networking, arbitrary schema compatibility, or production multiplayer.
+- The v0.5 rendered browser route was not observed in the publishing session because the cloud browser refused local URLs; its visual verdict remains UNKNOWN while engine and static tests passed.
 
 ## Use these terms
 
@@ -53,6 +59,9 @@
 - explicit unresolved conflict
 - controlled fixture
 - measured on this host
+- consented actor projection
+- temporary shared namespace
+- explicit return acceptance
 
 ## Avoid these terms unless future evidence earns them
 
@@ -64,3 +73,8 @@
 - perfectly deterministic everywhere
 - free or infinitely scalable
 - complete dependency graph
+- moved a user or human state
+- identity fusion
+- secure multiplayer
+
+

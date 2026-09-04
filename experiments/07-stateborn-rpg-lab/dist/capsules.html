@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#050910">
+  <meta name="description" content="Offline Stateborn experiment for consent-bounded actor-state composition, reversible separation, and explicit return-delta acceptance.">
+  <title>Stateborn Capsule Crossing</title>
+  <link rel="stylesheet" href="./curiosity.css"><link rel="stylesheet" href="./capsule.css">
+</head>
+<body>
+  <main class="shell capsule-shell">
+    <header class="topbar">
+      <div class="brand"><div class="capsule-sigil" aria-hidden="true"><i></i><i></i></div><div><p class="eyebrow">AXM · STATEBORN EXPERIMENT 05</p><h1>CAPSULE CROSSING</h1></div></div>
+      <div class="head-actions"><span class="truth-badge">A PROJECTION IS NOT A PERSON</span><a href="./coexistence.html">Coexistence field</a><a href="./curiosity.html">Curiosity garden</a></div>
+    </header>
+    <section class="boundary"><strong>TEST</strong><p id="claimText">Two independent source states exist. Nothing has entered the shared session.</p><span id="digestBadge" class="mono">session —</span></section>
+
+    <section class="flow-strip" aria-label="Capsule composition flow">
+      <div><b>1 · SOURCE</b><span>owner keeps full state</span></div><div><b>2 · CONSENT</b><span>allowlisted projection</span></div>
+      <div><b>3 · SESSION</b><span>namespaced temporary state</span></div><div><b>4 · RETURN</b><span>proposal, then explicit acceptance</span></div>
+    </section>
+
+    <section class="capsule-grid">
+      <aside class="source-stack">
+        <section class="panel source-card amber"><div class="panel-head compact"><div><p class="eyebrow">INDEPENDENT SOURCE A</p><h2>Aster</h2></div><span id="asterRevision" class="mono">revision 0</span></div><div id="asterSource" class="source-state"></div><button id="composeAster" class="control">Compose Aster projection</button></section>
+        <section class="panel source-card violet"><div class="panel-head compact"><div><p class="eyebrow">INDEPENDENT SOURCE B</p><h2>Briar</h2></div><span id="briarRevision" class="mono">revision 0</span></div><div id="briarSource" class="source-state"></div><button id="composeBriar" class="control">Compose Briar projection</button></section>
+        <section class="panel truth-card"><p class="eyebrow">WITHHELD BY DEFAULT</p><h2>Private state never enters</h2><p>Local notes and recovery tokens exist in each source but are absent from every capsule, session projection, and return packet.</p></section>
+      </aside>
+
+      <section class="panel session-panel">
+        <div class="panel-head"><div><p class="eyebrow">TEMPORARY SHARED SESSION</p><h2 id="sessionHeading">Empty namespace floor</h2></div><button id="proofButton" class="control primary">Run crossing proof</button></div>
+        <div class="capsule-frame"><canvas id="capsuleCanvas" width="760" height="600" aria-label="Capsule session grid"></canvas><div class="legend"><span><i class="aster-dot"></i>Aster projection</span><span><i class="briar-dot"></i>Briar projection</span><span><i class="shared-dot"></i>shared signal</span></div><div class="observer-stamp">SESSION ≠ SOURCE</div></div>
+        <div id="sessionMetrics" class="world-metrics"></div>
+        <section class="projection-controls">
+          <div class="active-row"><span>Active projection</span><button class="seat-choice active" data-owner="aster">Aster</button><button class="seat-choice" data-owner="briar">Briar</button></div>
+          <div class="action-row"><button class="session-action" data-kind="move" data-value="north">↑</button><button class="session-action" data-kind="move" data-value="west">←</button><button class="session-action" data-kind="move" data-value="south">↓</button><button class="session-action" data-kind="move" data-value="east">→</button><span></span><button class="session-action" data-kind="signal" data-value="hush">hush</button><button class="session-action" data-kind="signal" data-value="pulse">pulse</button><button class="session-action" data-kind="signal" data-value="turn">turn</button><button class="session-action" data-kind="signal" data-value="open">open</button></div>
+          <output id="systemMessage" class="system-message" aria-live="polite">Ready. Source and session digests are separate.</output>
+        </section>
+      </section>
+
+      <aside class="return-stack">
+        <section class="panel"><p class="eyebrow">CAPSULE INSPECTOR</p><h2>Consent envelope</h2><div id="capsuleInspector" class="inspector-list"></div></section>
+        <section class="panel return-panel"><p class="eyebrow">RETURN GATE</p><h2>Session proposes; source decides</h2><button id="proposeReturn" class="control">Build return packet</button><div id="returnPacket" class="packet-box"><p class="empty">No return proposed.</p></div><div class="return-actions"><button id="acceptSignals" class="control">Accept signals only</button><button id="acceptVisits" class="control">Accept visits only</button><button id="refuseReturn" class="control quiet">Refuse all</button><button id="tamperReturn" class="control danger">Test forged packet</button></div></section>
+        <section class="panel"><p class="eyebrow">SEPARATION</p><h2>Projection may leave</h2><button id="detachButton" class="control">Detach active projection</button><p class="empty">Detachment removes temporary state while retaining evidence. It does not delete or rewrite the source.</p></section>
+      </aside>
+    </section>
+
+    <section class="lower-grid capsule-lower">
+      <section class="panel"><div class="panel-head compact"><div><p class="eyebrow">COLLABORATION PROJECTION</p><h2>Shared signals</h2></div><span id="threadCount" class="mono">0 threads</span></div><div id="threads" class="thread-grid"><p class="empty">Independent actions have not intersected.</p></div></section>
+      <section class="panel"><div class="panel-head compact"><div><p class="eyebrow">RECEIPT CHAIN</p><h2>Composition and separation</h2></div><button id="replayButton" class="control">Verify session replay</button></div><div id="ledger" class="capsule-ledger"></div><button id="resetButton" class="control quiet reset-button">Reset exact sources + session</button></section>
+    </section>
+  </main>
+  <script defer src="./capsule.bundle.js"></script>
+</body>
+</html>
