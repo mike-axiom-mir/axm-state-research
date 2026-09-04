@@ -1,0 +1,17 @@
+{
+  "base_commit": "d6ee5b61a42323db22c80325a2895dfbf03b2d48",
+  "branch": "ai/real-project-closure-trial-2026-09-02",
+  "canonical_source": "experiments/02-workfloor-sentinel imported at runtime; source not copied",
+  "files": {
+    "BENCHMARK_RESULTS.md": "d4154c2fd8a574dfafc0375b4060b24d39cc0a5113a55c5bc8cbaca0c2895661",
+    "benchmark_results.json": "67e4106fa02fab70e7f35090767025b0077896f7b432f1372bfe36dcabd19e74",
+    "counterexamples.json": "263ea96bbdebb17137a63efd995ce68dbe516a91289734dad072fa149f315712",
+    "mutation_split.json": "2f0d7ccffc67f992f7da37b59fc31e556be3db381254c98793fd4ec3cd7706ca",
+    "repair_receipts.jsonl": "1a2002258334af4dfc7b48a13e1d9780ab207ed4fa43a9aafef4137380f7c59f",
+    "transition_receipts.jsonl": "e62047c6f7d1645ae8c5fd136246058e0086ffc0518d6596b1299a3c8e9d5c10"
+  },
+  "gate_passed": true,
+  "held_out_manifest_hash": "72315d3330709384129c6a3589b47455beae5e166115f979869127f08afb362e",
+  "logical_replay_hash": "8b6b32f724a6c83684356b65a2ca425d3ee780fe43af6ac60181f7e254a057d6",
+  "schema": "axm.real-project-closure.evidence-receipt/v1"
+}

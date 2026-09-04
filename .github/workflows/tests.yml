@@ -1,0 +1,69 @@
+name: State research tests
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  experiments:
+    name: ${{ matrix.name }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: State Floor
+            directory: experiments/01-state-floor
+          - name: Workfloor Sentinel
+            directory: experiments/02-workfloor-sentinel
+          - name: Wakeup Fuzzer
+            directory: experiments/03-wakeup-fuzzer
+          - name: Adaptive Closure Verifier
+            directory: experiments/04-adaptive-closure-verifier
+          - name: Real-Project Closure Trial
+            directory: experiments/05-real-project-closure-trial
+          - name: Unlabeled Multi-Project Closure
+            directory: experiments/06-unlabeled-multiproject-closure-challenge
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run tests
+        run: python -m unittest discover -s tests -v
+        working-directory: ${{ matrix.directory }}
+        env:
+          PYTHONDONTWRITEBYTECODE: "1"
+
+
+  stateborn:
+    name: Stateborn RPG Lab
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Run Stateborn tests
+        run: npm test
+        working-directory: experiments/07-stateborn-rpg-lab
+      - name: Validate offline surface
+        run: node tools/validate-static.mjs
+        working-directory: experiments/07-stateborn-rpg-lab
+      - name: Run capsule crossing probe
+        run: node tools/capsule-probe.mjs
+        working-directory: experiments/07-stateborn-rpg-lab
+      - name: Run typed state-language gate
+        run: node tools/state-language-probe.mjs
+        working-directory: experiments/07-stateborn-rpg-lab
+      - name: Run hostile transport gate
+        run: node tools/state-transport-probe.mjs
+        working-directory: experiments/07-stateborn-rpg-lab
