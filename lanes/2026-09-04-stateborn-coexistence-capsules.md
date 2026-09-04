@@ -80,3 +80,27 @@ does not establish an invented/private machine language, subjective
 understanding, secure networking, human-state movement, production multiplayer,
 a finished RPG, merge, release, or canon. Human merge authority remains
 unchanged.
+
+## v0.6 publication verification amendment — 2026-09-04 UTC
+
+```text
+experiment publication commit: d503ab6fd2724a83b6d89a9d7f4aa2d8322f1878
+experiment publication tree: a29afce993411908c28e71712e27b55d60373e2d
+expected changed/new remote blobs matched: 33 / 33
+pull request: https://github.com/mike-axiom-mir/axm-state-research/pull/9
+pull request state: OPEN; not merged
+GitHub Actions run: 18
+Stateborn RPG Lab: PASS
+State Floor: PASS
+Workfloor Sentinel: PASS
+Wakeup Fuzzer: PASS
+Adaptive Closure Verifier: PASS
+Real-Project Closure Trial: PASS
+Unlabeled Multi-Project Closure: PASS
+overall conclusion: SUCCESS
+```
+
+This receipt-only amendment changes no protocol, fixture, test, artifact, raw
+result, metric, or claim boundary. The final receipt head is verified again
+below without recursively editing itself. Human merge authority remains
+unchanged.
