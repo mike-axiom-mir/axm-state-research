@@ -136,3 +136,27 @@ one deterministic simulator. It does not establish a real network,
 cross-runtime interoperability, cryptographic identity, hostile-peer safety,
 production multiplayer, human-state movement, a finished RPG, merge, release,
 or canon. Human merge authority remains unchanged.
+
+## v0.7 publication verification amendment — 2026-09-04 UTC
+
+```text
+experiment publication commit: 032e106b798a8929b51dae944e310cb01188b076
+experiment publication tree: 155f2cf3c5c5ae813c58e47ac3e8bd931abf6966
+expected changed/new remote blobs matched: 34 / 34
+pull request: https://github.com/mike-axiom-mir/axm-state-research/pull/9
+pull request state: OPEN; mergeable; not merged
+GitHub Actions run: 20
+Stateborn RPG Lab: PASS
+State Floor: PASS
+Workfloor Sentinel: PASS
+Wakeup Fuzzer: PASS
+Adaptive Closure Verifier: PASS
+Real-Project Closure Trial: PASS
+Unlabeled Multi-Project Closure: PASS
+overall conclusion: SUCCESS
+```
+
+This receipt-only amendment changes no transport engine, protocol, fixture,
+test, artifact, raw result, metric, or claim boundary. The final receipt head
+is verified separately without recursively editing itself. Human merge
+authority remains unchanged.
