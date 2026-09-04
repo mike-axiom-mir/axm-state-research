@@ -5,13 +5,14 @@ import { spawnSync } from "node:child_process";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const htmlEntrypoints = {
-  "dist/index.html": ["./styles.css", "./stateborn.bundle.js", "./curiosity.html", "./coexistence.html", "./capsules.html"],
-  "dist/curiosity.html": ["./curiosity.css", "./curiosity.bundle.js", "./index.html", "./coexistence.html", "./capsules.html"],
-  "dist/coexistence.html": ["./curiosity.css", "./coexistence.css", "./coexistence.bundle.js", "./index.html", "./curiosity.html", "./capsules.html"],
-  "dist/capsules.html": ["./curiosity.css", "./capsule.css", "./capsule.bundle.js", "./coexistence.html", "./curiosity.html"],
+  "dist/index.html": ["./styles.css", "./stateborn.bundle.js", "./curiosity.html", "./coexistence.html", "./capsules.html", "./language.html"],
+  "dist/curiosity.html": ["./curiosity.css", "./curiosity.bundle.js", "./index.html", "./coexistence.html", "./capsules.html", "./language.html"],
+  "dist/coexistence.html": ["./curiosity.css", "./coexistence.css", "./coexistence.bundle.js", "./index.html", "./curiosity.html", "./capsules.html", "./language.html"],
+  "dist/capsules.html": ["./curiosity.css", "./capsule.css", "./capsule.bundle.js", "./coexistence.html", "./curiosity.html", "./language.html"],
+  "dist/language.html": ["./curiosity.css", "./language.css", "./language.bundle.js", "./index.html", "./capsules.html"],
 };
-const javascriptFiles = ["dist/stateborn.bundle.js", "dist/app.js", "dist/engine.js", "dist/world.js", "dist/living-world.js", "dist/curiosity-world.js", "dist/curiosity-app.js", "dist/curiosity.bundle.js", "dist/coexistence-world.js", "dist/coexistence-app.js", "dist/coexistence.bundle.js", "dist/capsule-world.js", "dist/capsule-app.js", "dist/capsule.bundle.js"];
-const required = [...Object.keys(htmlEntrypoints), "dist/styles.css", "dist/curiosity.css", "dist/coexistence.css", "dist/capsule.css", ...javascriptFiles, ".openai/hosting.json"];
+const javascriptFiles = ["dist/stateborn.bundle.js", "dist/app.js", "dist/engine.js", "dist/world.js", "dist/living-world.js", "dist/curiosity-world.js", "dist/curiosity-app.js", "dist/curiosity.bundle.js", "dist/coexistence-world.js", "dist/coexistence-app.js", "dist/coexistence.bundle.js", "dist/capsule-world.js", "dist/capsule-app.js", "dist/capsule.bundle.js", "dist/state-language.js", "dist/language-app.js", "dist/language.bundle.js"];
+const required = [...Object.keys(htmlEntrypoints), "dist/styles.css", "dist/curiosity.css", "dist/coexistence.css", "dist/capsule.css", "dist/language.css", ...javascriptFiles, ".openai/hosting.json"];
 const failures = [];
 
 for (const relative of required) {

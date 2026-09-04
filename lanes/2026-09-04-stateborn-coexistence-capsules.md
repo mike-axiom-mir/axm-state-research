@@ -51,3 +51,32 @@ This receipt-only amendment changes no experiment, artifact, raw result,
 metric, or claim boundary. Its final-head Actions result is reported on the
 pull request after completion rather than recursively changing the tested head.
 Human merge authority remains unchanged.
+
+## v0.6 continuation amendment — 2026-09-04 UTC
+
+The same visible chat and PR lane continued with Gate 3. No new branch or pull
+request was created.
+
+```text
+version: Stateborn v0.6.0
+bounded test: human-authored typed state-packet coordination
+fixture digest: 4a70fa25ce93be23e16dff144eb28a201e437589cba69b007c387c12c0c13b1f
+held-out outcomes: 2 solved; 1 refused; 2 deadlocked
+privacy/prose leakage: 0 / 0
+exact replay: 5 / 5 PASS
+reverse-order normalized outcome: 5 / 5 PASS
+direct public-state baseline agreement: 5 / 5 PASS
+adversarial packets: free text, tamper, and stale all REFUSED unchanged
+retained-chain tests: 79 / 79 PASS
+static validation: 28 files; 17 JavaScript files; no external dependency
+archive: AXM_STATEBORN_RPG_LAB_v0.6.0.zip
+archive SHA-256: 5d970ce746d60ec8cd3ffd9d6d947ddcf41526cdc790b506370638d379648474
+browser visual run: not requested for v0.6
+publication: pending this amendment
+```
+
+The result supports bounded coordination through an agreed state protocol. It
+does not establish an invented/private machine language, subjective
+understanding, secure networking, human-state movement, production multiplayer,
+a finished RPG, merge, release, or canon. Human merge authority remains
+unchanged.

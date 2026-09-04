@@ -18,6 +18,7 @@
 - Observed reads alone ended equal but still retained eight silent opaque-helper occurrences, reinforcing that final equality does not establish transition closure.
 - In the Stateborn chain, a million-cell logical game field stayed sparse while receipt-bound relational reactions, outcome-blind curiosity, and three bounded authority seats remained exactly replayable in their controlled fixtures.
 - In 16 local actor-capsule crossings, consented fictional projections stayed in separate namespaces, source states remained unchanged before explicit acceptance, forged return packets were refused, and replay passed.
+- In five frozen held-out Stateborn state-language trials, a human-authored typed packet protocol produced two solves, one consent refusal, and two deadlocks with no private/prose leakage, exact replay, direct-baseline agreement, and order-normalized outcomes.
 
 ## Active hypotheses
 
@@ -26,8 +27,8 @@
 3. Canonical state can remain compact if temporal facts are represented as typed summaries rather than duplicated raw histories.
 4. An expensive reasoning capability can operate on only the unresolved queue while deterministic work remains reproducible.
 5. Receipts can support incremental verification without becoming the next dominant memory cost.
-6. Typed state offers and accept/refuse deltas may coordinate bounded actors without a natural-language channel.
-7. Consent-bounded actor projections may be temporarily routed across compatible state fabrics without identity fusion.
+6. Typed state offers and accept/refuse deltas can coordinate bounded actors in the v0.6 authored fixture without a natural-language payload channel.
+7. Consent-bounded actor projections may be temporarily routed across lossy, duplicated, delayed, and reordered transports without identity fusion.
 
 ## Open failure surfaces
 
@@ -47,6 +48,7 @@
 - Replay hashes that accidentally commit to host measurements through nested provenance.
 - Capsule schemas that disclose more than the owner intended or silently widen return authority.
 - Namespace collisions, stale source revisions, hostile peers, transport loss, and semantic mismatch across independently evolved worlds.
+- Authored protocol symbols that appear meaningful only because a human observer supplied their semantics.
 
 ## Longer-range questions
 
@@ -55,11 +57,10 @@
 - Can real applications declare dependencies precisely enough to preserve zero missed wake-ups?
 - When does process, thread, WASM worker, SIMD, or GPU mapping become useful after profiling?
 - How much unresolved work reaches an AI boundary, and is that boundary stable as the deterministic floor improves?
-- Can useful coordination emerge from typed state offers, deltas, refusals, and receipts without hiding natural-language reasoning?
+- Can typed coordination survive loss, duplication, reordering, disconnect, reconnect, and expiry without hiding unresolved state?
 - Which actor-state fields can safely cross worlds, and how should incompatible meanings remain unresolved?
 
 ## Hard boundary
 
 These are software-runtime experiments. They do not establish physical computational nodes, brain or neuron equivalence, matter or human transfer, behavior below the software/runtime layer, or a mapping to CPU cores, GPU units, firmware, drivers, kernel mechanisms, or privileged memory. Any future substrate claim requires a genuine implementation and direct measurement on that substrate.
-
 

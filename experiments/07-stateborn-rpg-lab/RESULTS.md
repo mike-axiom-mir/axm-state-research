@@ -2,18 +2,21 @@
 
 ## Latest gate
 
-Stateborn v0.5 passed:
+Stateborn v0.6 passed:
 
-- 62 / 62 tests across the full retained source tree;
-- 13 / 13 capsule-specific tests;
-- 16 / 16 deterministic capsule crossings;
-- 16 / 16 distinct namespaces;
-- 16 / 16 unchanged source states before explicit acceptance;
-- 16 / 16 selective asymmetric returns;
-- 16 / 16 forged-return refusals;
-- 16 / 16 exact replays;
-- static validation for four offline entrypoints, 23 required files, and 14
+- 79 / 79 tests across the full retained source tree;
+- 17 / 17 state-language-specific tests;
+- frozen held-out outcomes: 2 solved, 1 refused, 2 deadlocked;
+- zero private-value leaks and zero natural-language payload values;
+- every committed delta bound to two exact accept packet digests;
+- source records unchanged in all five trials;
+- exact replay, reverse-order normalized outcomes, and direct-baseline
+  agreement in all five trials;
+- free-text, tampered, and stale packets refused without target-state mutation;
+- static validation for five offline entrypoints, 28 required files, and 17
   JavaScript files with no external runtime dependency.
+
+The retained v0.5 16-run capsule probe and v0.1–v0.4 tests also pass.
 
 ## Run
 
@@ -21,22 +24,23 @@ Stateborn v0.5 passed:
 npm test
 node tools/validate-static.mjs
 node tools/capsule-probe.mjs
+node tools/state-language-probe.mjs
 ```
 
 ## Visual verification
 
-The publishing session's cloud browser blocked local and `file:` URLs, so the
-rendered v0.5 route is recorded as UNKNOWN. No visual pass is inferred from
-source or engine behavior.
+No live browser verification was requested for v0.6. Engine, probe, bundle,
+navigation, and static checks passed. The earlier v0.5 rendered route remains
+UNKNOWN because its publishing session's cloud browser blocked local URLs.
 
 ## Claim
 
-Demonstrated: two fictional, consented game-state projections can temporarily
-compose under separate namespaces, create shared receipt evidence, return only
-owner-selected allowlisted paths, detach, and replay in one local process.
+Demonstrated: within one human-authored typed schema, two bounded deterministic
+actors can solve, refuse, or deadlock through state packets without a prose
+payload channel, while preserving consent provenance, source recovery, and
+exact replay.
 
-Not demonstrated: movement of a human, whole-person identity, account
-portability, secure networking, hostile-peer safety, arbitrary schema
-compatibility, production multiplayer, consciousness, fun, a generated RPG,
-merge, or canon.
-
+Not demonstrated: a spontaneous or private machine language, subjective
+understanding, whole-person identity, secure networking, hostile-peer safety,
+arbitrary schema compatibility, production multiplayer, consciousness, fun, a
+generated RPG, merge, or canon.

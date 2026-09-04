@@ -1,8 +1,29 @@
-# AXM Stateborn RPG Lab v0.5.0
+# AXM Stateborn RPG Lab v0.6.0
 
 Stateborn is a bottom-up research instrument. It asks whether RPG-like situations can arise from deterministic state, actor pressure, relations, memory, generic intent transforms, and consequences—without defining a conventional RPG first.
 
 It is not a claim that AXM has generated a real RPG. The browser surface is a microscope for the state fabric: it shows which nodes woke, which actors acted, what changed, and whether exact replay reaches the same digest.
+
+## Machine State Language in v0.6
+
+`dist/language.html` is an offline microscope for a deliberately small typed
+packet protocol. Two deterministic seats receive bounded public vectors and
+may emit only five operations: offer, propose, accept, refuse, and commit. The
+packet payload accepts numbers, arrays, maps, booleans, and exact digests; a
+free-text value is refused before it changes canonical state.
+
+The held-out gate freezes five fixtures before scoring. Two solve, one ends in
+an explicit consent refusal, and two deadlock rather than inventing missing
+state. Every run keeps fictional private values out of the channel, binds a
+commit to two exact accept packets, leaves source records unchanged, and
+replays exactly. Reversing which seat offers first changes the raw receipt
+order but not the normalized logical outcome.
+
+This supports one narrow claim: bounded deterministic machines can coordinate
+through an agreed state-transition protocol without sending sentences. Humans
+still authored the opcodes, dimensions, fixtures, and interpretation. It is
+not evidence of a private natural machine language, consciousness, subjective
+understanding, general communication, or production multiplayer.
 
 ## Actor Capsule Crossing in v0.5
 
@@ -12,7 +33,7 @@ Each owner receives a proposed return packet after shared activity. Nothing retu
 
 Across 16 deterministic crossing runs, both capsules verified, namespaces stayed distinct, session activity left both sources unchanged before acceptance, a receipt-backed shared signal appeared, selective returns worked, tampering was refused, and replay passed. This demonstrates a bounded data-state composition protocol. It does not move a human, prove identity, provide networking, or justify silent cross-user state transfer.
 
-## Five retained steps
+## Six retained steps
 
 | Version | Question tested | Retained result |
 |---|---|---|
@@ -21,6 +42,7 @@ Across 16 deterministic crossing runs, both capsules verified, namespaces stayed
 | v0.3 | Can novelty drive change while outcomes remain outside policy input? | Yes in the scripted curiosity loop; mixed growth/damage is observer-only. |
 | v0.4 | Can human, machine, and AI-compatible seats coexist under one referee? | Yes with a labelled offline stand-in and evidence-gated intersections. |
 | v0.5 | Can independently owned actor projections temporarily compose and separate? | Yes under an allowlisted, consent-bounded local capsule contract. |
+| v0.6 | Can bounded actors coordinate through state packets rather than prose? | Yes for five frozen fixtures; failures remain explicit refusal or deadlock. |
 
 Every version remains separately archived. Later results do not rewrite the v0.1 failure or turn authored fixtures into emergence.
 
@@ -85,7 +107,11 @@ This is a small, causally verified RPG-like situation. It is not evidence of ric
 
 ## Run locally
 
-Open `dist/capsules.html` for the v0.5 actor-state crossing, `dist/coexistence.html` for the v0.4 shared-authority probe, `dist/curiosity.html` for Curiosity Garden, or `dist/index.html` for the relational probe. All classic local bundles require no server, network, account, AI connection, analytics, or external asset.
+Open `dist/language.html` for the v0.6 state-language gate,
+`dist/capsules.html` for actor-state crossing, `dist/coexistence.html` for the
+shared-authority probe, `dist/curiosity.html` for Curiosity Garden, or
+`dist/index.html` for the relational probe. All classic local bundles require
+no server, network, account, AI connection, analytics, or external asset.
 
 If Node.js is installed:
 
@@ -96,6 +122,7 @@ node tools/benchmark-v02.mjs
 node tools/curiosity-probe.mjs 64 12
 node tools/coexistence-probe.mjs 64 12
 node tools/capsule-probe.mjs
+node tools/state-language-probe.mjs
 node tools/validate-static.mjs
 ```
 
@@ -105,14 +132,18 @@ node tools/validate-static.mjs
 2. **Curiosity without outcome reward — implemented as a mini experiment.** Measure novelty-driven state change while keeping consequences outside the actor policy.
 3. **Bounded human/machine/AI coexistence — implemented for testing with an offline stand-in.** Measure shared transforms and evidence-backed intersections while the local referee preserves authority.
 4. **Portable actor-state composition — implemented as a local bounded probe.** Export allowlisted projections, compose under distinct namespaces, propose return packets, accept selected paths, separate, and replay.
-5. **Machine state language — proposed only.** Test coordination through state offers, deltas, refusals, and receipts without natural language.
-6. **Multiplayer state routing — unproven.** Compose temporary shared worlds while preserving independent recovery and accepted return deltas.
+5. **Machine state language — implemented as a bounded typed-packet gate.** Five frozen held-out fixtures measure completion, refusal, deadlock, message volume, leakage, ordering, and replay.
+6. **Multiplayer state routing — next and unproven.** Put the typed protocol over a simulated lossy, duplicated, out-of-order connection while preserving independent recovery and accepted return deltas.
 7. **State-root USB boot — conceptual only.** Treat a sealed genesis/root state as revision zero around real firmware, bootloader, kernel, driver, and hardware gates.
 
 ## Separation and publication state
 
 This remains isolated from the older Threshold Expedition RPG foundation. Earlier work informed integrity requirements only; no earlier story, world, backend state, or RPG model is a dependency.
 
-The complete v0.1–v0.5 chain is prepared for a bounded `axm-state-research` lane. Repository publication is a separate receipt; this package never implies merge, release, or canon.
+The complete v0.1–v0.6 chain is prepared for a bounded `axm-state-research`
+lane. Repository publication is a separate receipt; this package never
+implies merge, release, or canon.
 
-See `docs/ACTION_REPORT_v0.5.0.md`, `docs/CAPSULE_COMPOSITION_REPORT_v0.5.0.md`, and the retained v0.1–v0.4 reports for the evidence boundary.
+See `docs/ACTION_REPORT_v0.6.0.md`,
+`docs/STATE_LANGUAGE_REPORT_v0.6.0.md`, and the retained v0.1–v0.5 reports for
+the evidence boundary.

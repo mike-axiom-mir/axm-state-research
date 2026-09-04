@@ -23,6 +23,7 @@
 - Stateborn preserves v0.1's whole-world copy/hash scale failure and the repaired sparse v0.2 mechanism as separate versioned artifacts.
 - Stateborn v0.3 and v0.4 demonstrate deterministic policy/authority separation in authored fixtures: outcome fields stay outside the curiosity policy, and only the local referee commits three-seat consequences.
 - Stateborn v0.5 passed 13 capsule-specific tests and 16 deterministic crossings in which fictional actor projections composed under distinct namespaces, source state stayed unchanged before explicit acceptance, selective return worked, forged returns refused, and exact replay passed.
+- Stateborn v0.6 passed 17 state-language-specific tests and five frozen held-out trials: two solved, one refused, and two deadlocked. Accepted payloads contained no prose or private fixture values; all runs preserved sources, matched the direct public-state baseline, normalized across reverse offer order, and replayed exactly.
 
 ## Not demonstrated
 
@@ -47,6 +48,7 @@
 - Stateborn does not demonstrate a finished or automatically generated RPG, fun, narrative quality, subjective curiosity, consciousness, open-ended emergence, or participation by a connected AI model.
 - Actor capsules represent consented fictional game-state projections, not whole people. v0.5 does not implement account identity, cryptographic signatures, hostile-peer security, networking, arbitrary schema compatibility, or production multiplayer.
 - The v0.5 rendered browser route was not observed in the publishing session because the cloud browser refused local URLs; its visual verdict remains UNKNOWN while engine and static tests passed.
+- Stateborn v0.6 does not prove that machines invented a language, attach subjective meaning to its symbols, communicate generally, negotiate arbitrary schemas, or survive a real network. Its opcodes, dimensions, fixtures, policies, and observer interpretation are human-authored.
 
 ## Use these terms
 
@@ -62,6 +64,8 @@
 - consented actor projection
 - temporary shared namespace
 - explicit return acceptance
+- typed state packet
+- explicit refusal or deadlock
 
 ## Avoid these terms unless future evidence earns them
 
@@ -76,5 +80,5 @@
 - moved a user or human state
 - identity fusion
 - secure multiplayer
-
+- private or evolved machine language
 

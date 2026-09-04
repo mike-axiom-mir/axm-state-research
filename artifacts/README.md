@@ -11,7 +11,7 @@ These ZIPs are exact standalone packages retained for reproducibility. Use `expe
 | `stateborn/AXM_STATEBORN_RPG_LAB_v0.3.0.zip` | `5a2bb60583950d7344d356b7d8fcfa2bcb1f00b11ec96268ce939cecfa062a3f` |
 | `stateborn/AXM_STATEBORN_RPG_LAB_v0.4.0.zip` | `8bc87d581ee4b8cf22c22b69ebbe6cc9b25921c5426977cf6f03e5fa432eeae0` |
 | `stateborn/AXM_STATEBORN_RPG_LAB_v0.5.0.zip` | `77dba9c23b81dee599f27f8a2843015ac5364d11cbebe2093b86e4225b86ae19` |
+| `stateborn/AXM_STATEBORN_RPG_LAB_v0.6.0.zip` | `5d970ce746d60ec8cd3ffd9d6d947ddcf41526cdc790b506370638d379648474` |
 
 Do not regenerate an archive under the same versioned filename. A changed artifact requires a new version, a new hash, and a receipt explaining the difference.
-
 

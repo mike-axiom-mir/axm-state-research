@@ -1,71 +1,71 @@
-AXM STATEBORN RPG LAB v0.5.0
+AXM STATEBORN RPG LAB v0.6.0
 ================================
 
 WHAT THIS IS
 ------------
-A local bottom-up state research chain with five separately preserved steps.
-The new Actor Capsule Crossing composes consented projections from two
-independently owned fictional sources. It never claims to move a person.
+A local bottom-up state research chain with six separately preserved steps.
+The new State Language Microscope tests whether two bounded machines can
+coordinate with typed state packets and no natural-language payload.
 
 OPEN THE NEWEST TEST
 --------------------
 1. Open the "dist" folder.
-2. Double-click "capsules.html".
-3. Inspect what Aster and Briar keep private.
-4. Compose both allowlisted projections into separate session namespaces.
-5. Select each projection and leave matching signals on the same cell.
-6. Build proposed return packets.
-7. Accept selected paths or refuse all; nothing writes back automatically.
-8. Detach either projection and verify exact replay.
-9. Use "Run crossing proof" for the complete bounded sequence.
+2. Double-click "language.html".
+3. Choose one of the five frozen held-out fixtures.
+4. Step one packet at a time or run the selected protocol.
+5. Compare the two machine views with the separate observer interpretation.
+6. Inspect a solved, refused, ambiguous, and deadlocked route.
+7. Run the refusal attacks and verify exact replay.
+8. Run the complete held-out gate.
 
 No account, internet, AI connection, installation, server, or real personal
 data is required.
 
-FIVE KNOWLEDGE STEPS
+SIX KNOWLEDGE STEPS
 --------------------
 v0.1 canonical receipts: deterministic, but whole-world copy/hash scaled badly.
 v0.2 sparse relations: sleeping logical cells plus causal autonomous reactions.
 v0.3 curiosity boundary: novelty input separated from observer consequences.
 v0.4 coexistence boundary: human/machine/AI-compatible proposals, one referee.
 v0.5 ownership boundary: consented projections compose, return, and separate.
+v0.6 protocol boundary: typed packets coordinate, refuse, or deadlock honestly.
 
-All five named ZIP snapshots are retained. A later version does not rewrite an
+All six named ZIP snapshots are retained. A later version does not rewrite an
 earlier failure, fixture, limitation, or result.
 
 WHAT TO WATCH
 -------------
-- Private notes and recovery tokens never appear in capsules.
-- Aster and Briar remain under different owner namespaces.
-- Session actions cannot mutate either source.
-- A shared signal appears only after matching independent event receipts.
-- A return packet is a proposal, not write authority.
-- Each owner chooses its accepted fields independently.
-- Forged or stale packets fail closed.
-- Detachment preserves evidence and both sources remain recoverable.
+- Machine payloads contain typed state values, not prose.
+- Fictional private values never appear in the channel.
+- A commit binds two exact accept packet digests.
+- Consent refusal and insufficient state remain visible failures.
+- The ambiguous fixture reports unused valid alternatives.
+- Text-bearing, tampered, and stale packets fail closed.
+- Reverse offer order preserves the same normalized result.
 
 IMPORTANT FILES
 ---------------
 README.md                                      complete research overview
-TEST_REPORT.md                                 v0.1-v0.5 verification
-docs/ACTION_REPORT_v0.5.0.md                   implementation and limits
-docs/CAPSULE_COMPOSITION_REPORT_v0.5.0.md      capsule evidence
+TEST_REPORT.md                                 v0.1-v0.6 verification
+docs/ACTION_REPORT_v0.6.0.md                   implementation and limits
+docs/STATE_LANGUAGE_REPORT_v0.6.0.md           protocol evidence
 docs/STATE_RESEARCH_HANDOFF.md                 next research gate
 
 SOURCE AND TESTS
 ----------------
-Capsule source: dist/capsule-world.js and dist/capsule-app.js.
-Offline browser bundle: dist/capsule.bundle.js.
+Protocol source: dist/state-language.js and dist/language-app.js.
+Offline browser bundle: dist/language.bundle.js.
 
 If Node.js is installed:
 
   npm test
   node tools/capsule-probe.mjs
+  node tools/state-language-probe.mjs
   node tools/coexistence-probe.mjs 64 12
   node tools/curiosity-probe.mjs 64 12
   node tools/validate-static.mjs
 
 PUBLICATION BOUNDARY
 --------------------
-The v0.1-v0.5 chain is prepared for one bounded axm-state-research PR lane.
+The v0.1-v0.6 chain is prepared for one bounded axm-state-research PR lane.
 The package itself does not imply merge, release, or canon.

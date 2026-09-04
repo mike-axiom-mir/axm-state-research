@@ -1,39 +1,34 @@
-# Next experiment — Typed machine state language
+# Next experiment — Hostile state-packet transport
 
 ## Gate
 
-Give two bounded actors one shared problem and remove the natural-language
-channel. They may communicate only through typed state messages:
-
-- offer a visible state projection;
-- request a bounded delta;
-- accept or refuse;
-- attach a causal receipt;
-- close or deadlock explicitly.
+Move the exact v0.6 typed packets through a deterministic simulated transport
+instead of delivering them directly in process. Inject bounded loss,
+duplication, delay, reordering, disconnect, reconnect, and expiry.
 
 ## Freeze before scoring
 
-Freeze the state schema, message types, actors' visible fields, task fixtures,
-success verifier, leakage detector, deadlock limit, and replay normalizer before
-running held-out cases.
+Freeze transport schedules, retry/expiry rules, actor-visible state, recovery
+checkpoints, consent rules, success/deadlock verifier, leakage detector, and
+normalization before held-out runs.
 
 ## Measure
 
-- completed and refused tasks;
-- messages and bytes per result;
-- ambiguous or incompatible offers;
-- information disclosed outside each allowlist;
-- deadlocks and unresolved states;
-- exact replay and order-reversal behavior;
-- comparison with a minimal direct-coordination baseline.
+- solved, refused, expired, and deadlocked tasks;
+- attempts, accepted packets, duplicate suppression, and bytes;
+- convergence after reordering and reconnect;
+- stale or ambiguous packets retained as explicit receipts;
+- independent source recovery after interrupted sessions;
+- only explicitly accepted return deltas reaching either source;
+- exact replay under the frozen fault schedule.
 
 ## Pass boundary
 
-The experiment passes only if at least one held-out problem is solved through
-typed state exchange, private fields remain absent, every applied delta has
-explicit acceptance and receipt provenance, and replay reproduces the same
-resolved or unresolved result.
+At least one held-out task must recover and solve after interruption, while
+duplicates apply no effect, expired or stale messages fail closed, unresolved
+sessions stay unresolved, both sources remain independently recoverable, and
+replay reproduces every final outcome.
 
-A pass would demonstrate a bounded coordination protocol, not a private
-machine language, consciousness, general communication, or superior gameplay.
-
+A pass would support a simulated transport protocol. It would not establish
+secure networking, hostile Internet safety, identity, production multiplayer,
+human-state movement, consciousness, or an evolved machine language.

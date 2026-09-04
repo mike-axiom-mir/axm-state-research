@@ -1,6 +1,6 @@
 # Stateborn → AXM State Research handoff
 
-Status: **v0.1–v0.5 RESEARCH CHAIN / BOUNDED PUBLICATION CANDIDATE**
+Status: **v0.1–v0.6 RESEARCH CHAIN / BOUNDED PUBLICATION CANDIDATE**
 
 This document records the bounded material for an `axm-state-research` lane. It does not authorize a merge or canon action.
 
@@ -8,7 +8,7 @@ This document records the bounded material for an `axm-state-research` lane. It 
 
 Can a game-like experience be assembled upward from a canonical state graph and tiny deterministic perspective nodes, without first specifying a conventional RPG and decomposing it?
 
-## Node contract used through v0.5.0
+## Node contract used through v0.6.0
 
 Each rule node has:
 
@@ -48,6 +48,12 @@ source revision; each source separately accepts an explicit subset. Forged,
 stale, undeclared, or cross-owner changes fail closed. Detachment and replay
 preserve the separation evidence.
 
+v0.6 adds a typed communication boundary. Two deterministic seats expose only
+consent-bounded public vectors and exchange offer, proposal, accept, refuse,
+and commit packets. Packet and prior-state digests bind every transition. A
+commit requires two exact accept digests. Missing state deadlocks; policy
+conflict refuses. Human observer labels stay outside the machine payload.
+
 ## Current observations to measure
 
 - deterministic world generation from an explicit seed;
@@ -77,6 +83,15 @@ preserve the separation evidence.
 - one owner can accept a signal delta while another refuses all return paths;
 - forged and stale return packets are refused, and detach/replay reconstruct
   the bounded crossing.
+- five frozen held-out state-language fixtures produce two solves, one explicit
+  consent refusal, and two deadlocks without private-value or prose leakage;
+- a commit binds both exact acceptance packets, while source records remain
+  unchanged;
+- reverse offer order changes raw receipt order but not the normalized logical
+  outcome;
+- free-text, tampered, and stale packets refuse without canonical mutation;
+- every state-language result agrees with a direct public-state baseline and
+  replays exactly.
 
 ## Truth boundary
 
@@ -88,13 +103,17 @@ Verified automated behavior is not equivalent to verified fun, narrative coheren
 
 Represent each participant as an independently owned capsule. A shared world receives only a consented projection. Composition must preserve namespaces, source digests, permissions, reversible separation, and conflict receipts. “Merge” must never mean irreversible identity fusion.
 
-### Gate 3 — machine state language (next)
+### Gate 3 — machine state language (bounded v0.6 probe complete)
 
 Give two actors a shared problem but no text channel. Allow only typed state offers, requested deltas, accept/refuse responses, and resulting receipts. Measure task completion, message volume, ambiguity, deadlocks, and whether replay reproduces coordination.
 
-### Gate 4 — multiplayer routing
+### Gate 4 — multiplayer routing (next)
 
-Match compatible actor projections rather than merely accounts or game queues. Compose a temporary shared state, keep each source state independently recoverable, and return only explicitly accepted deltas to each participant.
+First place the v0.6 packets over a deterministic hostile-transport simulator:
+loss, duplication, delay, reordering, disconnect, reconnect, and expiry. Match
+compatible actor projections rather than merely accounts or game queues.
+Compose a temporary shared state, keep each source state independently
+recoverable, and return only explicitly accepted deltas to each participant.
 
 ### Gate 5 — state-root USB boot
 

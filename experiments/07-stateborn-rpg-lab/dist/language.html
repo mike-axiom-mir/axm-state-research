@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#050910">
+  <meta name="description" content="Offline microscope for a bounded typed state-packet protocol between deterministic actors.">
+  <title>Stateborn Machine State Language</title>
+  <link rel="stylesheet" href="./curiosity.css"><link rel="stylesheet" href="./language.css">
+</head>
+<body>
+  <main class="shell language-shell">
+    <header class="topbar">
+      <div class="brand"><div class="language-sigil" aria-hidden="true"><i></i><i></i><i></i></div><div><p class="eyebrow">AXM · STATEBORN EXPERIMENT 06</p><h1>STATE LANGUAGE MICROSCOPE</h1></div></div>
+      <div class="head-actions"><span class="truth-badge">AUTHORED PROTOCOL · NOT A SECRET LANGUAGE</span><a href="./capsules.html">Capsule crossing</a><a href="./index.html">State fabric</a></div>
+    </header>
+
+    <section class="boundary"><strong>BOUNDED CLAIM</strong><p id="claimText">Two deterministic seats can coordinate through typed state packets with no natural-language payload.</p><span id="digestBadge" class="mono">trial —</span></section>
+
+    <section class="protocol-strip" aria-label="Protocol operations">
+      <div><b>0</b><span>offer vector</span></div><div><b>1</b><span>propose split</span></div><div><b>2 / 3</b><span>accept / refuse</span></div><div><b>4</b><span>commit bound accepts</span></div>
+    </section>
+
+    <section class="language-grid">
+      <aside class="panel fixture-panel">
+        <div class="panel-head compact"><div><p class="eyebrow">FROZEN HELD-OUT FIXTURES</p><h2>Choose a pressure</h2></div><span id="freezeStatus" class="freeze-status">CHECKING</span></div>
+        <label class="fixture-label" for="fixtureSelect">Fixture</label>
+        <select id="fixtureSelect"></select>
+        <div id="fixtureFacts" class="fact-stack"></div>
+        <div class="controls vertical-controls">
+          <button id="stepButton" class="control primary">Step one packet</button>
+          <button id="runButton" class="control">Run selected trial</button>
+          <button id="resetButton" class="control quiet">Reset selected</button>
+        </div>
+        <p class="micro-boundary">Private notes and recovery tokens exist in each source fixture, but the microscope never displays or sends them.</p>
+      </aside>
+
+      <section class="panel channel-panel">
+        <div class="panel-head"><div><p class="eyebrow">RAW MACHINE CHANNEL</p><h2 id="channelHeading">No packets yet</h2></div><span id="outcomePill" class="outcome-pill open">OPEN</span></div>
+        <div class="seat-grid">
+          <article><header><span>SEAT 0</span><b>A</b></header><pre id="seatA"></pre></article>
+          <article><header><span>SEAT 1</span><b>B</b></header><pre id="seatB"></pre></article>
+        </div>
+        <div class="channel-line" aria-hidden="true"><i></i><span>typed packets only</span><i></i></div>
+        <div id="packetLedger" class="packet-ledger"><p class="empty">The channel is empty.</p></div>
+        <output id="systemMessage" class="system-message" aria-live="polite">Ready. The observer may translate, but the seats receive only state.</output>
+      </section>
+
+      <aside class="panel observer-panel">
+        <div class="panel-head compact"><div><p class="eyebrow">HUMAN OBSERVER LAYER</p><h2>Meaning stays outside payload</h2></div><span class="observer-lock">READ-ONLY</span></div>
+        <div id="observerSummary" class="observer-summary"></div>
+        <section class="baseline-box"><span>DIRECT STATE BASELINE</span><strong id="baselineOutcome">—</strong><p id="baselineCopy">One centralized evaluation, used only for comparison.</p></section>
+        <div class="controls observer-controls">
+          <button id="replayButton" class="control">Verify replay</button>
+          <button id="attackButton" class="control danger">Run refusal attacks</button>
+          <button id="gateButton" class="control primary">Run held-out gate</button>
+        </div>
+        <div id="attackResults" class="attack-results"><p class="empty">No adversarial packets attempted.</p></div>
+      </aside>
+    </section>
+
+    <section class="panel gate-panel">
+      <div class="panel-head"><div><p class="eyebrow">HELD-OUT GATE</p><h2>Outcome ledger</h2></div><span id="fixtureDigest" class="mono"></span></div>
+      <div id="gateMetrics" class="gate-metrics"></div>
+      <div id="gateLedger" class="gate-ledger"><p class="empty">Run the five frozen fixtures to inspect solved, refused, and deadlocked results.</p></div>
+      <details><summary>What this does not prove</summary><p>These operation codes, dimensions, consent rules, and meanings were written by humans. Passing this gate does not demonstrate consciousness, subjective understanding, spontaneous animal-like signaling, secure networking, portable identity, or a finished multiplayer game.</p></details>
+    </section>
+  </main>
+  <script defer src="./language.bundle.js"></script>
+</body>
+</html>

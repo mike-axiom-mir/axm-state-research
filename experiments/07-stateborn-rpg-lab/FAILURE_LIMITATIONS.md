@@ -15,6 +15,10 @@
 The seeds, fictional sources, export and return allowlists, signal vocabulary,
 curiosity formula, consequence rules, shared-site rules, and crossing plans are
 authored. Repeatability of those mechanisms is not open-ended emergence.
+The v0.6 packet opcodes, vector dimensions, consent policy, fixture targets,
+canonical proposal ordering, and observer labels are also authored. Passing
+the gate is not evidence that machines invented symbols or share private
+meaning.
 
 ## Unimplemented boundaries
 
@@ -23,6 +27,7 @@ authored. Repeatability of those mechanisms is not open-ended emergence.
 - no real personal data or whole-person representation;
 - no cross-game schema negotiation or semantic conflict resolver;
 - no persistence race, disconnect, reconnect, or distributed recovery test;
+- no packet loss, duplication, delay, reordering, expiry, or reconnect test;
 - no real model connected to the labelled AI-compatible seat;
 - no gameplay quality, accessibility, or broad human evaluation;
 - no UEFI, bootloader, kernel, driver, or USB OS implementation.
@@ -30,4 +35,3 @@ authored. Repeatability of those mechanisms is not open-ended emergence.
 ## Publication boundary
 
 This lane requests review. It does not authorize merge, release, or canon.
-

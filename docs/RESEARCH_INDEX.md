@@ -128,9 +128,9 @@ Broken and observed policies produced 40 retained silent-stale occurrences and t
 - [Post-score verification](../experiments/06-unlabeled-multiproject-closure-challenge/results/raw/post_score_verification.json)
 - [Failures and limitations](../experiments/06-unlabeled-multiproject-closure-challenge/FAILURE_LIMITATIONS.md)
 
-## Experiment 07 — Stateborn RPG Lab v0.1.0–v0.5.0
+## Experiment 07 — Stateborn RPG Lab v0.1.0–v0.6.0
 
-Experiment 07 preserves five incremental state-first game research steps rather
+Experiment 07 preserves six incremental state-first game research steps rather
 than replacing early failures with the latest result.
 
 | Version | Bounded result |
@@ -140,17 +140,20 @@ than replacing early failures with the latest result.
 | v0.3 | Twelve seeds × 64 novelty-driven steps kept outcome fields outside policy input, produced mixed observer consequences, and replayed exactly. |
 | v0.4 | Twelve seeds × 64 three-seat cycles kept the machine view outcome-blind, used a labelled deterministic AI stand-in, and earned only receipt-backed intersections. |
 | v0.5 | 62 / 62 tests and 16 / 16 local capsule crossings passed separate namespaces, source immutability before acceptance, selective returns, tamper refusal, detach, and replay. |
+| v0.6 | 79 / 79 retained-chain tests passed. Five frozen held-out typed-packet trials produced 2 solves, 1 consent refusal, and 2 deadlocks with no private/prose leakage, exact replay, baseline agreement, and order-normalized outcomes. |
 
-v0.5 represents only fictional game-relevant projections. It does not move a
+v0.6 uses a human-authored state schema. It supports bounded coordination
+without prose payloads, not an evolved machine language. It does not move a
 human, prove identity, implement secure networking, or establish a real RPG.
 
 - [Version chain](../experiments/07-stateborn-rpg-lab/VERSION_CHAIN.md)
 - [v0.5 evidence report](../experiments/07-stateborn-rpg-lab/docs/CAPSULE_COMPOSITION_REPORT_v0.5.0.md)
 - [Raw capsule probe](../experiments/07-stateborn-rpg-lab/results/raw/capsule_probe.json)
+- [v0.6 evidence report](../experiments/07-stateborn-rpg-lab/docs/STATE_LANGUAGE_REPORT_v0.6.0.md)
+- [Raw state-language probe](../experiments/07-stateborn-rpg-lab/results/raw/state_language_probe.json)
 - [Failures and limitations](../experiments/07-stateborn-rpg-lab/FAILURE_LIMITATIONS.md)
 - [Next experiment](../experiments/07-stateborn-rpg-lab/NEXT_EXPERIMENT.md)
 
 ## Current strongest target
 
 **Cross-version opaque recovery challenge:** change evaluator source across canonical versions, remove useful path-shaped parameters from opaque helpers, and include a checkpoint whose canonical source cannot be locally trusted. Preserve unresolved abstention/escalation rather than weakening the gate.
-

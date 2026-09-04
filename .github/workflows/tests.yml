@@ -61,4 +61,6 @@ jobs:
       - name: Run capsule crossing probe
         run: node tools/capsule-probe.mjs
         working-directory: experiments/07-stateborn-rpg-lab
-
+      - name: Run typed state-language gate
+        run: node tools/state-language-probe.mjs
+        working-directory: experiments/07-stateborn-rpg-lab
