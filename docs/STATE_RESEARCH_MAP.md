@@ -16,11 +16,14 @@
 - In one frozen cross-project transfer, combined structural+observed auditing reached zero silent stale outputs over ten unlabeled held-out mutations on two canonical repository project versions, with 597 total candidate check executions versus 1,955 full-oracle executions.
 - Missing and corrupt checkpoints were detected and quarantined; verified full reconstruction restored trusted starting outputs, and all 391 reconstruction executions counted in the gate.
 - Observed reads alone ended equal but still retained eight silent opaque-helper occurrences, reinforcing that final equality does not establish transition closure.
+- In one frozen cross-version fixture, a source-hash guard contained an opaque dependency change with zero wrong resolved outputs while resolving 154 of 168 decisions and using 41 charged operations versus 168 full-oracle executions.
+- When trusted evaluator source was unavailable, canonical state could not supply the missing decision semantics: two nodes remained explicitly unresolved across seven snapshots while ten independent nodes continued to resolve.
+- Observed-only and structural-only each produced four wrong resolved outputs on the changed opaque dependency; the abstain-all control resolved 0% and recorded 154 false abstentions.
 
 ## Active hypotheses
 
-1. Closure learned on one project/version may transfer across evaluator-source version changes without widening toward a full scan.
-2. Total sparse+audit+replay+reconstruction work can remain below a full oracle when some checkpoints cannot be cheaply recovered.
+1. Per-event source-version guarding may remain below a full scan only while the incompatible opaque set is small.
+2. Trustworthy runtime-generated dependency receipts may restore sparse routing after evaluator source changes without exposing held-out oracle answers.
 3. Canonical state can remain compact if temporal facts are represented as typed summaries rather than duplicated raw histories.
 4. An expensive reasoning capability can operate on only the unresolved queue while deterministic work remains reproducible.
 5. Receipts can support incremental verification without becoming the next dominant memory cost.
@@ -40,6 +43,8 @@
 - Declared risk labels that are absent, incorrect, or adversarial.
 - A verified checkpoint that is missing, incomplete, or corrupted before replay.
 - Opaque helpers whose reads and public parameters expose no path-shaped dependency evidence.
+- Source-hash guards that degrade toward a full scan when many opaque evaluators change simultaneously.
+- Missing evaluator semantics that canonical state alone cannot reconstruct.
 - Replay hashes that accidentally commit to host measurements through nested provenance.
 
 ## Longer-range questions

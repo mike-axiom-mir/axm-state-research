@@ -128,6 +128,41 @@ Broken and observed policies produced 40 retained silent-stale occurrences and t
 - [Post-score verification](../experiments/06-unlabeled-multiproject-closure-challenge/results/raw/post_score_verification.json)
 - [Failures and limitations](../experiments/06-unlabeled-multiproject-closure-challenge/FAILURE_LIMITATIONS.md)
 
+## Experiment 07 — Cross-Version Opaque Recovery Challenge
+
+Experiment 07 froze two controlled evaluator source versions, one unavailable
+source case, twelve unlabeled held-out mutations, a v1-bound checkpoint, a sealed
+post-action oracle, and an 85% anti-abstention coverage gate before scoring. The
+opaque public contract had no parameters and its training trace exposed no reads.
+
+| Policy | Work | Full reference | Resolved coverage | Wrong resolved | Unresolved | False abstentions | Untrusted replay |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Broken sparse | 23 | 168 | 91.6667% | 6 | 14 | 0 | 1 |
+| Observed only | 34 | 168 | 91.6667% | 4 | 14 | 0 | 0 |
+| Structural only | 34 | 168 | 91.6667% | 4 | 14 | 0 | 0 |
+| Version-aware bounded | 41 | 168 | 91.6667% | 0 | 14 | 0 | 0 |
+| Abstain all | 0 | 168 | 0.0000% | 0 | 168 | 154 | 0 |
+| Full oracle | 168 | 168 | 100.0000% | 0 | 0 | 0 | 0 |
+
+The candidate quarantined both checkpoint cases, reconstructed 22 available
+initial outputs, performed ten sparse executions, five changed-source guard
+executions, and two downstream replays. In the unavailable-source version, ten
+nodes stayed useful while `opaque-guard` and `safety-summary` remained explicitly
+unresolved across seven snapshots. Repeat and reversed-registration logical replay
+passed. Fourteen comparison-policy wrong-output occurrences were retained and
+collapsed to six verified unique reproductions.
+
+The candidate did not discover the changed dependency. It executed the one
+changed opaque capability after every event, which is the next scaling weakness.
+
+- [Final report](../experiments/07-cross-version-opaque-recovery-challenge/FINAL_REPORT.md)
+- [Raw benchmark JSON](../experiments/07-cross-version-opaque-recovery-challenge/results/raw/benchmark_results.json)
+- [Raw counterexamples](../experiments/07-cross-version-opaque-recovery-challenge/results/raw/counterexamples.json)
+- [Failures and limitations](../experiments/07-cross-version-opaque-recovery-challenge/FAILURE_LIMITATIONS.md)
+
 ## Current strongest target
 
-**Cross-version opaque recovery challenge:** change evaluator source across canonical versions, remove useful path-shaped parameters from opaque helpers, and include a checkpoint whose canonical source cannot be locally trusted. Preserve unresolved abstention/escalation rather than weakening the gate.
+**Budgeted Opaque Version Swarm:** change hundreds or thousands of opaque
+evaluators at once, enforce a per-transition fallback budget, and test whether
+trusted runtime-generated dependency receipts restore sparsity without wrong
+resolved outputs.

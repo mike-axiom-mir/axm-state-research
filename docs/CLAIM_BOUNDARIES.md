@@ -20,6 +20,9 @@
 - The held-out absent and corrupt checkpoints were detected, quarantined with provenance, and reconstructed from verified canonical sources. All 391 reconstruction check executions counted in the candidate's total work.
 - Broken sparse retained 32 silent stale occurrences and ended unequal; observed reads retained eight opaque-helper stale occurrences despite ending equal. All 40 occurrences were retained and their ten unique minimized reproductions passed.
 - The first-score embedded repeat/order flags failed because timing-derived checkpoint-validation provenance entered the logical hash. The raw failure remains; a post-score verifier that removed only measurements and their derived hash produced identical repeat and reversed-order logical hashes.
+- In one frozen 12-node cross-version fixture, the version-aware candidate resolved 154 of 168 decisions with zero wrong resolved outputs, zero false abstentions, zero untrusted checkpoint replay, and 41 charged operations versus 168 full-oracle executions.
+- In that fixture, one unavailable evaluator source left exactly two dependent nodes explicitly unresolved across seven snapshots while ten independent nodes remained resolved.
+- Observed-only and structural-only each produced four wrong resolved outputs for the changed opaque dependency; all retained misses minimized to verified reproductions.
 
 ## Not demonstrated
 
@@ -41,6 +44,10 @@
 - The passing checkpoint cases do not establish recovery when the canonical source is unavailable or untrusted; that path abstains/escalates in a protocol test but was not part of the passing held-out score.
 - Experiment 06's normalized replay verification does not establish cross-machine, cross-runtime, or cross-language determinism.
 - Experiment 06 makes no component-novelty claim. It integrates deterministic routing, tracing, structural selection, auditing, checkpoint validation, repair/replay, and minimization under a harder frozen gate.
+- Experiment 07 did not discover the changed hidden dependency. It guarded the single changed evaluator after every event; this may approach a full scan when many evaluators change.
+- Experiment 07 does not show that canonical state can replace unavailable decision semantics, that arbitrary checkpoints can be recovered, or that the post-action oracle boundary resists malicious code.
+- Experiment 07's 41-versus-168 work count uses heterogeneous logical operations and is not a general CPU-time or cost ratio.
+- Experiment 07 uses synthetic controlled versions, 12 nodes, and 12 transitions. It does not establish opaque recovery, safety, or scalability in production.
 
 ## Use these terms
 

@@ -28,6 +28,8 @@ jobs:
             directory: experiments/05-real-project-closure-trial
           - name: Unlabeled Multi-Project Closure
             directory: experiments/06-unlabeled-multiproject-closure-challenge
+          - name: Cross-Version Opaque Recovery
+            directory: experiments/07-cross-version-opaque-recovery-challenge
     steps:
       - uses: actions/checkout@v4
         with:

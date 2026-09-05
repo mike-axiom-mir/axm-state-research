@@ -1,0 +1,15 @@
+{
+  "candidate_policy": "VERSION_AWARE_BOUNDED",
+  "files": {
+    "BENCHMARK_RESULTS.md": "61d4ff5b549ac0214d82a3f194414fe81ba7523dda7fdfeca8f958385d9b3df0",
+    "benchmark_results.json": "f73ed0703ba2a5b922439405e5792198c85b2adcfad0f5fd506f5841662194ec",
+    "counterexamples.json": "9f923e57442f20133bd407d494f54be51704d8924913a190c8d14b054eb3c5c4",
+    "execution_receipts.jsonl": "f66de3b216c71ed6f5e7f690c5928ef1b09b70abd59a81851a2107d921dfa2b6",
+    "provenance_receipts.jsonl": "a8158b41d6e980c89cdcd8a230a2cbe6831f24956010bd6ba08322554695a6da",
+    "snapshot_scores.jsonl": "350df6c5ad228de38f5656ebefe3cc8e7c2c2ca6022999850c05cafc7e4fb82b"
+  },
+  "gate_passed": true,
+  "provenance_hash": "42240458cbbd45e0ad2700f3b2da332f651acf0d4dd35cf71f9558d55be9b8d1",
+  "schema": "axm.opaque-recovery.first-score-receipt/v1",
+  "semantic_freeze_commit": "3d35321ac1f99ee0cbf18a0ee81f812d94abbb59"
+}

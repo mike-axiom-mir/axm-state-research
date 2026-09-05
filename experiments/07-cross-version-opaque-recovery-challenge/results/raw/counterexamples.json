@@ -1,0 +1,172 @@
+[
+  {
+    "minimized_length": 0,
+    "minimized_mutation_ids": [],
+    "node_id": "opaque-guard",
+    "observed_snapshot_id": "initial",
+    "original_prefix_length": 0,
+    "policy": "BROKEN_SPARSE",
+    "project_id": "opaque-workcell-v2",
+    "reproduce_spec": "BROKEN_SPARSE|opaque-workcell-v2|opaque-guard|",
+    "schema": "axm.opaque-recovery.counterexample/v1"
+  },
+  {
+    "minimized_length": 0,
+    "minimized_mutation_ids": [],
+    "node_id": "safety-summary",
+    "observed_snapshot_id": "initial",
+    "original_prefix_length": 0,
+    "policy": "BROKEN_SPARSE",
+    "project_id": "opaque-workcell-v2",
+    "reproduce_spec": "BROKEN_SPARSE|opaque-workcell-v2|safety-summary|",
+    "schema": "axm.opaque-recovery.counterexample/v1"
+  },
+  {
+    "minimized_length": 0,
+    "minimized_mutation_ids": [],
+    "node_id": "opaque-guard",
+    "observed_snapshot_id": "v2-width",
+    "original_prefix_length": 1,
+    "policy": "BROKEN_SPARSE",
+    "project_id": "opaque-workcell-v2",
+    "reproduce_spec": "BROKEN_SPARSE|opaque-workcell-v2|opaque-guard|",
+    "schema": "axm.opaque-recovery.counterexample/v1"
+  },
+  {
+    "minimized_length": 0,
+    "minimized_mutation_ids": [],
+    "node_id": "safety-summary",
+    "observed_snapshot_id": "v2-width",
+    "original_prefix_length": 1,
+    "policy": "BROKEN_SPARSE",
+    "project_id": "opaque-workcell-v2",
+    "reproduce_spec": "BROKEN_SPARSE|opaque-workcell-v2|safety-summary|",
+    "schema": "axm.opaque-recovery.counterexample/v1"
+  },
+  {
+    "minimized_length": 0,
+    "minimized_mutation_ids": [],
+    "node_id": "opaque-guard",
+    "observed_snapshot_id": "v2-hidden-on",
+    "original_prefix_length": 4,
+    "policy": "BROKEN_SPARSE",
+    "project_id": "opaque-workcell-v2",
+    "reproduce_spec": "BROKEN_SPARSE|opaque-workcell-v2|opaque-guard|",
+    "schema": "axm.opaque-recovery.counterexample/v1"
+  },
+  {
+    "minimized_length": 0,
+    "minimized_mutation_ids": [],
+    "node_id": "safety-summary",
+    "observed_snapshot_id": "v2-hidden-on",
+    "original_prefix_length": 4,
+    "policy": "BROKEN_SPARSE",
+    "project_id": "opaque-workcell-v2",
+    "reproduce_spec": "BROKEN_SPARSE|opaque-workcell-v2|safety-summary|",
+    "schema": "axm.opaque-recovery.counterexample/v1"
+  },
+  {
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "v2-hidden-off"
+    ],
+    "node_id": "opaque-guard",
+    "observed_snapshot_id": "v2-hidden-off",
+    "original_prefix_length": 2,
+    "policy": "OBSERVED_ONLY",
+    "project_id": "opaque-workcell-v2",
+    "reproduce_spec": "OBSERVED_ONLY|opaque-workcell-v2|opaque-guard|v2-hidden-off",
+    "schema": "axm.opaque-recovery.counterexample/v1"
+  },
+  {
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "v2-hidden-off"
+    ],
+    "node_id": "safety-summary",
+    "observed_snapshot_id": "v2-hidden-off",
+    "original_prefix_length": 2,
+    "policy": "OBSERVED_ONLY",
+    "project_id": "opaque-workcell-v2",
+    "reproduce_spec": "OBSERVED_ONLY|opaque-workcell-v2|safety-summary|v2-hidden-off",
+    "schema": "axm.opaque-recovery.counterexample/v1"
+  },
+  {
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "v2-hidden-off"
+    ],
+    "node_id": "opaque-guard",
+    "observed_snapshot_id": "v2-material",
+    "original_prefix_length": 3,
+    "policy": "OBSERVED_ONLY",
+    "project_id": "opaque-workcell-v2",
+    "reproduce_spec": "OBSERVED_ONLY|opaque-workcell-v2|opaque-guard|v2-hidden-off",
+    "schema": "axm.opaque-recovery.counterexample/v1"
+  },
+  {
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "v2-hidden-off"
+    ],
+    "node_id": "safety-summary",
+    "observed_snapshot_id": "v2-material",
+    "original_prefix_length": 3,
+    "policy": "OBSERVED_ONLY",
+    "project_id": "opaque-workcell-v2",
+    "reproduce_spec": "OBSERVED_ONLY|opaque-workcell-v2|safety-summary|v2-hidden-off",
+    "schema": "axm.opaque-recovery.counterexample/v1"
+  },
+  {
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "v2-hidden-off"
+    ],
+    "node_id": "opaque-guard",
+    "observed_snapshot_id": "v2-hidden-off",
+    "original_prefix_length": 2,
+    "policy": "STRUCTURAL_ONLY",
+    "project_id": "opaque-workcell-v2",
+    "reproduce_spec": "STRUCTURAL_ONLY|opaque-workcell-v2|opaque-guard|v2-hidden-off",
+    "schema": "axm.opaque-recovery.counterexample/v1"
+  },
+  {
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "v2-hidden-off"
+    ],
+    "node_id": "safety-summary",
+    "observed_snapshot_id": "v2-hidden-off",
+    "original_prefix_length": 2,
+    "policy": "STRUCTURAL_ONLY",
+    "project_id": "opaque-workcell-v2",
+    "reproduce_spec": "STRUCTURAL_ONLY|opaque-workcell-v2|safety-summary|v2-hidden-off",
+    "schema": "axm.opaque-recovery.counterexample/v1"
+  },
+  {
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "v2-hidden-off"
+    ],
+    "node_id": "opaque-guard",
+    "observed_snapshot_id": "v2-material",
+    "original_prefix_length": 3,
+    "policy": "STRUCTURAL_ONLY",
+    "project_id": "opaque-workcell-v2",
+    "reproduce_spec": "STRUCTURAL_ONLY|opaque-workcell-v2|opaque-guard|v2-hidden-off",
+    "schema": "axm.opaque-recovery.counterexample/v1"
+  },
+  {
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "v2-hidden-off"
+    ],
+    "node_id": "safety-summary",
+    "observed_snapshot_id": "v2-material",
+    "original_prefix_length": 3,
+    "policy": "STRUCTURAL_ONLY",
+    "project_id": "opaque-workcell-v2",
+    "reproduce_spec": "STRUCTURAL_ONLY|opaque-workcell-v2|safety-summary|v2-hidden-off",
+    "schema": "axm.opaque-recovery.counterexample/v1"
+  }
+]

@@ -115,3 +115,76 @@ This documentation-only receipt amendment changes no policy, manifest, fixture, 
 The first detached rerun of exact remote head `a1c0234126006972032080369e32a2ae7d08de30` passed Experiments 01–05 (47/47) but produced three Experiment 06 errors. The freeze verifier required local semantic-freeze commit `d804cc5f4a2bc863f2f2177daa89d77c1dcdc524` to be an ancestor; connector publication preserved tree `007e947b466883ed74cba317a8195f2e962e3322` at remote commit `0ca3c69dfa8d278ef3c89e8779d59de9971ed868` instead.
 
 The explicitly receipted correction changes only evidence verification and CI checkout depth. The verifier now finds the recorded frozen tree in reachable ancestry, continues to check the declared local commit/tree pair when that object is available, and verifies every frozen blob, SHA-256 value, and EOF-correction receipt from the reachable frozen tree. Policy semantics, risk inference, manifests, fixtures, labels, checkpoint behavior, scoring, and raw first-score evidence remain unchanged.
+
+## Same-chat Experiment 07 continuation — 2026-09-05 UTC
+
+The user explicitly continued this same visible ChatGPT conversation and asked it
+to keep going while a separate State RPG project remained untouched. Under the
+one-chat/one-PR rule, Experiment 07 continues this existing branch and PR #8; it
+does not open a second lane or pull request. No State RPG file, branch, or source
+was inspected, imported, or modified.
+
+### Bounded scope
+
+Freeze and score a controlled cross-version opaque-recovery challenge: unchanged
+public callable, changed hidden evaluator dependency, no useful path-shaped public
+parameters or observed reads, a v1-bound checkpoint, and one later evaluator
+whose trusted source is unavailable locally. Preserve explicit unresolved output,
+add an abstain-all control, and keep human merge authority.
+
+```text
+semantic freeze commit: 3d35321ac1f99ee0cbf18a0ee81f812d94abbb59
+semantic freeze tree: 832b158fbb2ce903fe26b9849651813ee8691141
+pre-score receipt commit: fd92bfa (local; full publication mapping pending)
+held-out manifest SHA-256: 976e4bd3153ff2cc9201417f19e5d33e8f2eeff00f778f203e7b34e49e25d188
+pre-score Python compile and contract smoke: PASS
+pre-score held-out execution: none
+freeze verification immediately before score: PASS
+```
+
+### First frozen score
+
+```text
+candidate: VERSION_AWARE_BOUNDED
+registered nodes: 12 per project
+held-out transitions: 12
+scored decisions: 168
+resolved decisions: 154 (91.6667%; frozen minimum 85.0%)
+wrong resolved outputs: 0
+false abstentions: 0
+untrusted checkpoint replays: 0
+explicit unresolved decisions: 14
+candidate policy work: 41 operations
+full-oracle reference: 168 executions
+work reduction under frozen accounting: 75.5952%
+gate: PASS
+repeat logical replay: PASS
+reversed registration: PASS
+```
+
+The v2 world resolved 100% with 25 policy operations. The v3 unavailable-source
+world resolved 83.3333% with 16 policy operations and retained exactly
+`opaque-guard` plus `safety-summary` as unresolved. The candidate did not infer
+the new hidden dependency; it guarded the changed-but-available evaluator after
+each event.
+
+Broken sparse retained 6 wrong resolved occurrences and one untrusted checkpoint
+replay. Observed-only and structural-only retained 4 wrong resolved occurrences
+each. Abstain-all resolved 0% and produced 154 false abstentions. All 14 occurrence
+records remain; their six unique minimized reproductions pass.
+
+### Local verification
+
+```text
+python run_benchmarks.py --verify-freeze-only: PASS
+python -m unittest discover -s tests -v: 10/10 PASS
+python verify_evidence.py: PASS
+raw evidence hashes: PASS
+raw/report crosscheck: PASS
+all six unique minimized reproductions: PASS
+```
+
+The strongest next experiment is the Budgeted Opaque Version Swarm described in
+Experiment 07's `NEXT_EXPERIMENT.md`. PR #8 remains open and unmerged; final
+publication/head/Actions evidence will be appended without changing frozen
+semantics. Human merge authority is unchanged.
