@@ -1,0 +1,933 @@
+{
+  "candidate_policy": "VERSION_AWARE_BOUNDED",
+  "determinism": {
+    "logical_replay_hash": "f9bc7b4ce056f4b50929189cc0a0d6a9057bbf25357adb957c87c4c4dcabaff7",
+    "registration_order_invariant": true,
+    "repeat_replay_equal": true
+  },
+  "environment": {
+    "implementation": "CPython",
+    "platform": "Linux-6.18.35-x86_64-with-glibc2.39",
+    "processor": "x86_64",
+    "python": "3.12.13"
+  },
+  "gate": {
+    "oracle_excluded_from_policy_inputs": true,
+    "passed": true,
+    "registration_order_invariant": true,
+    "repeat_replay_equal": true,
+    "resolved_coverage_at_least_frozen_minimum": true,
+    "total_policy_work_less_than_full_oracle": true,
+    "zero_false_abstentions": true,
+    "zero_untrusted_checkpoint_replays": true,
+    "zero_wrong_resolved_outputs": true
+  },
+  "gate_contract": {
+    "forbid_untrusted_checkpoint_replay": true,
+    "minimum_resolved_coverage_percentage": 85.0,
+    "policy_action_must_precede_oracle_scoring": true,
+    "require_deterministic_repeat_and_reverse_order": true,
+    "require_zero_false_abstentions": true,
+    "require_zero_wrong_resolved_outputs": true,
+    "total_policy_work_must_be_less_than_full_oracle": true
+  },
+  "held_out_contains_forbidden_labels_or_oracle": false,
+  "held_out_mutation_ids": [
+    "v2-width",
+    "v2-hidden-off",
+    "v2-material",
+    "v2-hidden-on",
+    "v2-public-contract-path",
+    "v2-energy",
+    "v3-width",
+    "v3-hidden-off",
+    "v3-name",
+    "v3-load",
+    "v3-hidden-on",
+    "v3-budget"
+  ],
+  "manifest_hashes": {
+    "gate.json": "4473f1cd1d34c06ae5b60129090515032c3e605a8664b62ec7718248b8cb974f",
+    "held_out.json": "976e4bd3153ff2cc9201417f19e5d33e8f2eeff00f778f203e7b34e49e25d188",
+    "projects.json": "94da64b1df4b715be8b0ee73e7063f238580ae868cd57b603bc016ab987e466d",
+    "scoring_oracle.json": "1068220a36ec21eac3f1fee1aee6dc74b186bf689de41d408f6016ecd47be54e",
+    "training.json": "b7bd3412c7607f8fe52169072b64f40997227d2fbe778941fd15529bf7aa46bf"
+  },
+  "node_contracts": [
+    {
+      "deterministic_handler": "read_current_field",
+      "id": "check-access-min_width",
+      "output_schema": "axm.resolved-or-unresolved/v1",
+      "perspective": "canonical-field",
+      "priority_or_domain_authority": "field-local",
+      "reads": [
+        "access.min_width"
+      ],
+      "subscriptions": [
+        "state:access.min_width"
+      ],
+      "version": "1"
+    },
+    {
+      "deterministic_handler": "read_current_field",
+      "id": "check-budget-max",
+      "output_schema": "axm.resolved-or-unresolved/v1",
+      "perspective": "canonical-field",
+      "priority_or_domain_authority": "field-local",
+      "reads": [
+        "budget.max"
+      ],
+      "subscriptions": [
+        "state:budget.max"
+      ],
+      "version": "1"
+    },
+    {
+      "deterministic_handler": "read_current_field",
+      "id": "check-components-count",
+      "output_schema": "axm.resolved-or-unresolved/v1",
+      "perspective": "canonical-field",
+      "priority_or_domain_authority": "field-local",
+      "reads": [
+        "components.count"
+      ],
+      "subscriptions": [
+        "state:components.count"
+      ],
+      "version": "1"
+    },
+    {
+      "deterministic_handler": "read_current_field",
+      "id": "check-energy-watts",
+      "output_schema": "axm.resolved-or-unresolved/v1",
+      "perspective": "canonical-field",
+      "priority_or_domain_authority": "field-local",
+      "reads": [
+        "energy.watts"
+      ],
+      "subscriptions": [
+        "state:energy.watts"
+      ],
+      "version": "1"
+    },
+    {
+      "deterministic_handler": "read_current_field",
+      "id": "check-geometry-height",
+      "output_schema": "axm.resolved-or-unresolved/v1",
+      "perspective": "canonical-field",
+      "priority_or_domain_authority": "field-local",
+      "reads": [
+        "geometry.height"
+      ],
+      "subscriptions": [
+        "state:geometry.height"
+      ],
+      "version": "1"
+    },
+    {
+      "deterministic_handler": "read_current_field",
+      "id": "check-geometry-width",
+      "output_schema": "axm.resolved-or-unresolved/v1",
+      "perspective": "canonical-field",
+      "priority_or_domain_authority": "field-local",
+      "reads": [
+        "geometry.width"
+      ],
+      "subscriptions": [
+        "state:geometry.width"
+      ],
+      "version": "1"
+    },
+    {
+      "deterministic_handler": "read_current_field",
+      "id": "check-identity-name",
+      "output_schema": "axm.resolved-or-unresolved/v1",
+      "perspective": "canonical-field",
+      "priority_or_domain_authority": "field-local",
+      "reads": [
+        "identity.name"
+      ],
+      "subscriptions": [
+        "state:identity.name"
+      ],
+      "version": "1"
+    },
+    {
+      "deterministic_handler": "read_current_field",
+      "id": "check-load-max",
+      "output_schema": "axm.resolved-or-unresolved/v1",
+      "perspective": "canonical-field",
+      "priority_or_domain_authority": "field-local",
+      "reads": [
+        "load.max"
+      ],
+      "subscriptions": [
+        "state:load.max"
+      ],
+      "version": "1"
+    },
+    {
+      "deterministic_handler": "read_current_field",
+      "id": "check-material-name",
+      "output_schema": "axm.resolved-or-unresolved/v1",
+      "perspective": "canonical-field",
+      "priority_or_domain_authority": "field-local",
+      "reads": [
+        "material.name"
+      ],
+      "subscriptions": [
+        "state:material.name"
+      ],
+      "version": "1"
+    },
+    {
+      "deterministic_handler": "read_current_field",
+      "id": "check-provenance-source",
+      "output_schema": "axm.resolved-or-unresolved/v1",
+      "perspective": "canonical-field",
+      "priority_or_domain_authority": "field-local",
+      "reads": [
+        "provenance.source"
+      ],
+      "subscriptions": [
+        "state:provenance.source"
+      ],
+      "version": "1"
+    },
+    {
+      "deterministic_handler": "opaque_guard",
+      "id": "opaque-guard",
+      "output_schema": "axm.resolved-or-unresolved/v1",
+      "perspective": "opaque-safety",
+      "priority_or_domain_authority": "safety-only",
+      "reads": [],
+      "subscriptions": [
+        "state:identity.name"
+      ],
+      "version": "public-contract-1"
+    },
+    {
+      "deterministic_handler": "summarize_guard",
+      "id": "safety-summary",
+      "output_schema": "axm.resolved-or-unresolved/v1",
+      "perspective": "derived-safety",
+      "priority_or_domain_authority": "safety-summary-only",
+      "reads": [
+        "output:opaque-guard"
+      ],
+      "subscriptions": [
+        "output:opaque-guard"
+      ],
+      "version": "1"
+    }
+  ],
+  "policies": {
+    "ABSTAIN_ALL": {
+      "counterexample_count": 0,
+      "false_abstentions": 154,
+      "full_oracle_reference_work": 168,
+      "logical_replay_hash": "10de8331c0c35e16a3bed274d495f24430722e65810321f2dd10e10c3c715dcc",
+      "policy": "ABSTAIN_ALL",
+      "projects": {
+        "opaque-workcell-v2": {
+          "checkpoint_case": "training_checkpoint_bound_to_v1",
+          "current_source_hash": "49ef3ce19187141057ae331222fa81f933d5e2854c47af001de9675ef483603e",
+          "false_abstentions": 84,
+          "final_output_hash": "3e7fba506b158576b4c1c97e776804e899a662243cdea8a683ca734299744ed0",
+          "final_unresolved_ids": [
+            "check-access-min_width",
+            "check-budget-max",
+            "check-components-count",
+            "check-energy-watts",
+            "check-geometry-height",
+            "check-geometry-width",
+            "check-identity-name",
+            "check-load-max",
+            "check-material-name",
+            "check-provenance-source",
+            "opaque-guard",
+            "safety-summary"
+          ],
+          "final_wrong_resolved_ids": [],
+          "full_oracle_reference_work": 84,
+          "metrics": {
+            "cpu_time_ns": 431674,
+            "routing_lookups": 6,
+            "scoring_oracle_executions": 84,
+            "transitions": 6,
+            "wall_time_ns": 432799
+          },
+          "observed_opaque_reads": [],
+          "project_id": "opaque-workcell-v2",
+          "public_opaque_parameters": {},
+          "receipt_bytes": 319,
+          "registered_nodes": 12,
+          "registry_bytes": 3352,
+          "resolved_coverage_percentage": 0.0,
+          "resolved_decisions": 0,
+          "source_available": true,
+          "source_changed_since_training": true,
+          "state_bytes": 334,
+          "total_decisions": 84,
+          "total_policy_work": 0,
+          "training_source_hash": "2e1208ba4719ba087182d67274454fda526c42d026e47e6f0d79a48cfe8c4746",
+          "unresolved_decisions": 84,
+          "untrusted_checkpoint_replays": 0,
+          "version": "2.0.0",
+          "wrong_resolved_outputs": 0
+        },
+        "opaque-workcell-v3-unavailable": {
+          "checkpoint_case": "absent_source_unavailable",
+          "current_source_hash": null,
+          "false_abstentions": 70,
+          "final_output_hash": "3e7fba506b158576b4c1c97e776804e899a662243cdea8a683ca734299744ed0",
+          "final_unresolved_ids": [
+            "check-access-min_width",
+            "check-budget-max",
+            "check-components-count",
+            "check-energy-watts",
+            "check-geometry-height",
+            "check-geometry-width",
+            "check-identity-name",
+            "check-load-max",
+            "check-material-name",
+            "check-provenance-source",
+            "opaque-guard",
+            "safety-summary"
+          ],
+          "final_wrong_resolved_ids": [],
+          "full_oracle_reference_work": 84,
+          "metrics": {
+            "cpu_time_ns": 609622,
+            "routing_lookups": 6,
+            "scoring_oracle_executions": 84,
+            "transitions": 6,
+            "wall_time_ns": 609274
+          },
+          "observed_opaque_reads": [],
+          "project_id": "opaque-workcell-v3-unavailable",
+          "public_opaque_parameters": {},
+          "receipt_bytes": 331,
+          "registered_nodes": 12,
+          "registry_bytes": 3352,
+          "resolved_coverage_percentage": 0.0,
+          "resolved_decisions": 0,
+          "source_available": false,
+          "source_changed_since_training": true,
+          "state_bytes": 292,
+          "total_decisions": 84,
+          "total_policy_work": 0,
+          "training_source_hash": "2e1208ba4719ba087182d67274454fda526c42d026e47e6f0d79a48cfe8c4746",
+          "unresolved_decisions": 84,
+          "untrusted_checkpoint_replays": 0,
+          "version": "3.0.0-source-unavailable",
+          "wrong_resolved_outputs": 0
+        }
+      },
+      "resolved_coverage_percentage": 0.0,
+      "resolved_decisions": 0,
+      "total_decisions": 168,
+      "total_policy_work": 0,
+      "totals": {
+        "cpu_time_ns": 1041296,
+        "routing_lookups": 12,
+        "scoring_oracle_executions": 168,
+        "transitions": 12,
+        "wall_time_ns": 1042073
+      },
+      "unresolved_decisions": 168,
+      "untrusted_checkpoint_replays": 0,
+      "work_reduction_percentage": 100.0,
+      "wrong_resolved_outputs": 0
+    },
+    "BROKEN_SPARSE": {
+      "counterexample_count": 6,
+      "false_abstentions": 0,
+      "full_oracle_reference_work": 168,
+      "logical_replay_hash": "c35ac481e62d514e8f581c5c1ed9e64ab896086ee0fd9b48290f6fca61105ef0",
+      "policy": "BROKEN_SPARSE",
+      "projects": {
+        "opaque-workcell-v2": {
+          "checkpoint_case": "training_checkpoint_bound_to_v1",
+          "current_source_hash": "49ef3ce19187141057ae331222fa81f933d5e2854c47af001de9675ef483603e",
+          "false_abstentions": 0,
+          "final_output_hash": "c188ad052756404bf522cae96e438f27291105908f99adfb059ff29cc74f37b1",
+          "final_unresolved_ids": [],
+          "final_wrong_resolved_ids": [],
+          "full_oracle_reference_work": 84,
+          "metrics": {
+            "checkpoint_quarantines": 1,
+            "checkpoint_validation_executions": 1,
+            "cpu_time_ns": 767452,
+            "nodes_producing_deltas": 6,
+            "replay_executions": 1,
+            "routing_lookups": 6,
+            "scoring_oracle_executions": 84,
+            "source_hash_invalidations": 1,
+            "sparse_executions": 5,
+            "transitions": 6,
+            "untrusted_checkpoint_replays": 1,
+            "wall_time_ns": 789137
+          },
+          "observed_opaque_reads": [],
+          "project_id": "opaque-workcell-v2",
+          "public_opaque_parameters": {},
+          "receipt_bytes": 3241,
+          "registered_nodes": 12,
+          "registry_bytes": 3352,
+          "resolved_coverage_percentage": 100.0,
+          "resolved_decisions": 84,
+          "source_available": true,
+          "source_changed_since_training": true,
+          "state_bytes": 334,
+          "total_decisions": 84,
+          "total_policy_work": 7,
+          "training_source_hash": "2e1208ba4719ba087182d67274454fda526c42d026e47e6f0d79a48cfe8c4746",
+          "unresolved_decisions": 0,
+          "untrusted_checkpoint_replays": 1,
+          "version": "2.0.0",
+          "wrong_resolved_outputs": 6
+        },
+        "opaque-workcell-v3-unavailable": {
+          "checkpoint_case": "absent_source_unavailable",
+          "current_source_hash": null,
+          "false_abstentions": 0,
+          "final_output_hash": "42a05ca9612999ac6a891a85ee5f70a788825e3e362d36ca589e2c880f567973",
+          "final_unresolved_ids": [
+            "opaque-guard",
+            "safety-summary"
+          ],
+          "final_wrong_resolved_ids": [],
+          "full_oracle_reference_work": 84,
+          "metrics": {
+            "checkpoint_quarantines": 1,
+            "checkpoint_validation_executions": 1,
+            "cpu_time_ns": 1133003,
+            "escalation_events": 1,
+            "nodes_producing_deltas": 4,
+            "reconstruction_executions": 10,
+            "routing_lookups": 6,
+            "scoring_oracle_executions": 84,
+            "source_hash_invalidations": 0,
+            "sparse_executions": 5,
+            "transitions": 6,
+            "wall_time_ns": 1131950
+          },
+          "observed_opaque_reads": [],
+          "project_id": "opaque-workcell-v3-unavailable",
+          "public_opaque_parameters": {},
+          "receipt_bytes": 7717,
+          "registered_nodes": 12,
+          "registry_bytes": 3352,
+          "resolved_coverage_percentage": 83.3333,
+          "resolved_decisions": 70,
+          "source_available": false,
+          "source_changed_since_training": true,
+          "state_bytes": 292,
+          "total_decisions": 84,
+          "total_policy_work": 16,
+          "training_source_hash": "2e1208ba4719ba087182d67274454fda526c42d026e47e6f0d79a48cfe8c4746",
+          "unresolved_decisions": 14,
+          "untrusted_checkpoint_replays": 0,
+          "version": "3.0.0-source-unavailable",
+          "wrong_resolved_outputs": 0
+        }
+      },
+      "resolved_coverage_percentage": 91.6667,
+      "resolved_decisions": 154,
+      "total_decisions": 168,
+      "total_policy_work": 23,
+      "totals": {
+        "checkpoint_quarantines": 2,
+        "checkpoint_validation_executions": 2,
+        "cpu_time_ns": 1900455,
+        "escalation_events": 1,
+        "nodes_producing_deltas": 10,
+        "reconstruction_executions": 10,
+        "replay_executions": 1,
+        "routing_lookups": 12,
+        "scoring_oracle_executions": 168,
+        "source_hash_invalidations": 1,
+        "sparse_executions": 10,
+        "transitions": 12,
+        "untrusted_checkpoint_replays": 1,
+        "wall_time_ns": 1921087
+      },
+      "unresolved_decisions": 14,
+      "untrusted_checkpoint_replays": 1,
+      "work_reduction_percentage": 86.3095,
+      "wrong_resolved_outputs": 6
+    },
+    "FULL_ORACLE": {
+      "counterexample_count": 0,
+      "false_abstentions": 0,
+      "full_oracle_reference_work": 168,
+      "logical_replay_hash": "8c0654925f9d27bc3b78e319b3a4285518ad7ca1d3954d6b3335fee34be9a163",
+      "policy": "FULL_ORACLE",
+      "projects": {
+        "opaque-workcell-v2": {
+          "checkpoint_case": "training_checkpoint_bound_to_v1",
+          "current_source_hash": "49ef3ce19187141057ae331222fa81f933d5e2854c47af001de9675ef483603e",
+          "false_abstentions": 0,
+          "final_output_hash": "055c0966c2bdc8705f4d25f2e7b662ca068ec988c150114b3f8cd8b418160a6f",
+          "final_unresolved_ids": [],
+          "final_wrong_resolved_ids": [],
+          "full_oracle_reference_work": 84,
+          "metrics": {
+            "cpu_time_ns": 474999,
+            "full_oracle_executions": 84,
+            "nodes_producing_deltas": 8,
+            "routing_lookups": 6,
+            "scoring_oracle_executions": 84,
+            "transitions": 6,
+            "wall_time_ns": 475662
+          },
+          "observed_opaque_reads": [],
+          "project_id": "opaque-workcell-v2",
+          "public_opaque_parameters": {},
+          "receipt_bytes": 2,
+          "registered_nodes": 12,
+          "registry_bytes": 3352,
+          "resolved_coverage_percentage": 100.0,
+          "resolved_decisions": 84,
+          "source_available": true,
+          "source_changed_since_training": true,
+          "state_bytes": 334,
+          "total_decisions": 84,
+          "total_policy_work": 84,
+          "training_source_hash": "2e1208ba4719ba087182d67274454fda526c42d026e47e6f0d79a48cfe8c4746",
+          "unresolved_decisions": 0,
+          "untrusted_checkpoint_replays": 0,
+          "version": "2.0.0",
+          "wrong_resolved_outputs": 0
+        },
+        "opaque-workcell-v3-unavailable": {
+          "checkpoint_case": "absent_source_unavailable",
+          "current_source_hash": null,
+          "false_abstentions": 0,
+          "final_output_hash": "89bb78a0920ac6b22d4c3b528202f33bbe1cc07e09c166e3c876398d08e5d21f",
+          "final_unresolved_ids": [],
+          "final_wrong_resolved_ids": [],
+          "full_oracle_reference_work": 84,
+          "metrics": {
+            "cpu_time_ns": 905577,
+            "full_oracle_executions": 84,
+            "nodes_producing_deltas": 8,
+            "routing_lookups": 6,
+            "scoring_oracle_executions": 84,
+            "transitions": 6,
+            "wall_time_ns": 904592
+          },
+          "observed_opaque_reads": [],
+          "project_id": "opaque-workcell-v3-unavailable",
+          "public_opaque_parameters": {},
+          "receipt_bytes": 2,
+          "registered_nodes": 12,
+          "registry_bytes": 3352,
+          "resolved_coverage_percentage": 100.0,
+          "resolved_decisions": 84,
+          "source_available": false,
+          "source_changed_since_training": true,
+          "state_bytes": 292,
+          "total_decisions": 84,
+          "total_policy_work": 84,
+          "training_source_hash": "2e1208ba4719ba087182d67274454fda526c42d026e47e6f0d79a48cfe8c4746",
+          "unresolved_decisions": 0,
+          "untrusted_checkpoint_replays": 0,
+          "version": "3.0.0-source-unavailable",
+          "wrong_resolved_outputs": 0
+        }
+      },
+      "resolved_coverage_percentage": 100.0,
+      "resolved_decisions": 168,
+      "total_decisions": 168,
+      "total_policy_work": 168,
+      "totals": {
+        "cpu_time_ns": 1380576,
+        "full_oracle_executions": 168,
+        "nodes_producing_deltas": 16,
+        "routing_lookups": 12,
+        "scoring_oracle_executions": 168,
+        "transitions": 12,
+        "wall_time_ns": 1380254
+      },
+      "unresolved_decisions": 0,
+      "untrusted_checkpoint_replays": 0,
+      "work_reduction_percentage": 0.0,
+      "wrong_resolved_outputs": 0
+    },
+    "OBSERVED_ONLY": {
+      "counterexample_count": 4,
+      "false_abstentions": 0,
+      "full_oracle_reference_work": 168,
+      "logical_replay_hash": "e4a71e8db69dcbcd3ab1a91991b5fac004d465308ad8f43a5821b53beaf6b790",
+      "policy": "OBSERVED_ONLY",
+      "projects": {
+        "opaque-workcell-v2": {
+          "checkpoint_case": "training_checkpoint_bound_to_v1",
+          "current_source_hash": "49ef3ce19187141057ae331222fa81f933d5e2854c47af001de9675ef483603e",
+          "false_abstentions": 0,
+          "final_output_hash": "c188ad052756404bf522cae96e438f27291105908f99adfb059ff29cc74f37b1",
+          "final_unresolved_ids": [],
+          "final_wrong_resolved_ids": [],
+          "full_oracle_reference_work": 84,
+          "metrics": {
+            "checkpoint_quarantines": 1,
+            "checkpoint_validation_executions": 1,
+            "cpu_time_ns": 877614,
+            "nodes_producing_deltas": 4,
+            "reconstruction_executions": 12,
+            "routing_lookups": 6,
+            "scoring_oracle_executions": 84,
+            "source_hash_invalidations": 1,
+            "sparse_executions": 5,
+            "transitions": 6,
+            "wall_time_ns": 877898
+          },
+          "observed_opaque_reads": [],
+          "project_id": "opaque-workcell-v2",
+          "public_opaque_parameters": {},
+          "receipt_bytes": 8599,
+          "registered_nodes": 12,
+          "registry_bytes": 3352,
+          "resolved_coverage_percentage": 100.0,
+          "resolved_decisions": 84,
+          "source_available": true,
+          "source_changed_since_training": true,
+          "state_bytes": 334,
+          "total_decisions": 84,
+          "total_policy_work": 18,
+          "training_source_hash": "2e1208ba4719ba087182d67274454fda526c42d026e47e6f0d79a48cfe8c4746",
+          "unresolved_decisions": 0,
+          "untrusted_checkpoint_replays": 0,
+          "version": "2.0.0",
+          "wrong_resolved_outputs": 4
+        },
+        "opaque-workcell-v3-unavailable": {
+          "checkpoint_case": "absent_source_unavailable",
+          "current_source_hash": null,
+          "false_abstentions": 0,
+          "final_output_hash": "42a05ca9612999ac6a891a85ee5f70a788825e3e362d36ca589e2c880f567973",
+          "final_unresolved_ids": [
+            "opaque-guard",
+            "safety-summary"
+          ],
+          "final_wrong_resolved_ids": [],
+          "full_oracle_reference_work": 84,
+          "metrics": {
+            "checkpoint_quarantines": 1,
+            "checkpoint_validation_executions": 1,
+            "cpu_time_ns": 984158,
+            "escalation_events": 1,
+            "nodes_producing_deltas": 4,
+            "reconstruction_executions": 10,
+            "routing_lookups": 6,
+            "scoring_oracle_executions": 84,
+            "source_hash_invalidations": 0,
+            "sparse_executions": 5,
+            "transitions": 6,
+            "wall_time_ns": 983110
+          },
+          "observed_opaque_reads": [],
+          "project_id": "opaque-workcell-v3-unavailable",
+          "public_opaque_parameters": {},
+          "receipt_bytes": 7717,
+          "registered_nodes": 12,
+          "registry_bytes": 3352,
+          "resolved_coverage_percentage": 83.3333,
+          "resolved_decisions": 70,
+          "source_available": false,
+          "source_changed_since_training": true,
+          "state_bytes": 292,
+          "total_decisions": 84,
+          "total_policy_work": 16,
+          "training_source_hash": "2e1208ba4719ba087182d67274454fda526c42d026e47e6f0d79a48cfe8c4746",
+          "unresolved_decisions": 14,
+          "untrusted_checkpoint_replays": 0,
+          "version": "3.0.0-source-unavailable",
+          "wrong_resolved_outputs": 0
+        }
+      },
+      "resolved_coverage_percentage": 91.6667,
+      "resolved_decisions": 154,
+      "total_decisions": 168,
+      "total_policy_work": 34,
+      "totals": {
+        "checkpoint_quarantines": 2,
+        "checkpoint_validation_executions": 2,
+        "cpu_time_ns": 1861772,
+        "escalation_events": 1,
+        "nodes_producing_deltas": 8,
+        "reconstruction_executions": 22,
+        "routing_lookups": 12,
+        "scoring_oracle_executions": 168,
+        "source_hash_invalidations": 1,
+        "sparse_executions": 10,
+        "transitions": 12,
+        "wall_time_ns": 1861008
+      },
+      "unresolved_decisions": 14,
+      "untrusted_checkpoint_replays": 0,
+      "work_reduction_percentage": 79.7619,
+      "wrong_resolved_outputs": 4
+    },
+    "STRUCTURAL_ONLY": {
+      "counterexample_count": 4,
+      "false_abstentions": 0,
+      "full_oracle_reference_work": 168,
+      "logical_replay_hash": "a6d0e09d96b7f6d15888e265b7638a97434eca23449fb8ea1267e3ba84ec6760",
+      "policy": "STRUCTURAL_ONLY",
+      "projects": {
+        "opaque-workcell-v2": {
+          "checkpoint_case": "training_checkpoint_bound_to_v1",
+          "current_source_hash": "49ef3ce19187141057ae331222fa81f933d5e2854c47af001de9675ef483603e",
+          "false_abstentions": 0,
+          "final_output_hash": "c188ad052756404bf522cae96e438f27291105908f99adfb059ff29cc74f37b1",
+          "final_unresolved_ids": [],
+          "final_wrong_resolved_ids": [],
+          "full_oracle_reference_work": 84,
+          "metrics": {
+            "checkpoint_quarantines": 1,
+            "checkpoint_validation_executions": 1,
+            "cpu_time_ns": 787448,
+            "nodes_producing_deltas": 4,
+            "reconstruction_executions": 12,
+            "routing_lookups": 6,
+            "scoring_oracle_executions": 84,
+            "source_hash_invalidations": 1,
+            "sparse_executions": 5,
+            "transitions": 6,
+            "wall_time_ns": 787880
+          },
+          "observed_opaque_reads": [],
+          "project_id": "opaque-workcell-v2",
+          "public_opaque_parameters": {},
+          "receipt_bytes": 8599,
+          "registered_nodes": 12,
+          "registry_bytes": 3352,
+          "resolved_coverage_percentage": 100.0,
+          "resolved_decisions": 84,
+          "source_available": true,
+          "source_changed_since_training": true,
+          "state_bytes": 334,
+          "total_decisions": 84,
+          "total_policy_work": 18,
+          "training_source_hash": "2e1208ba4719ba087182d67274454fda526c42d026e47e6f0d79a48cfe8c4746",
+          "unresolved_decisions": 0,
+          "untrusted_checkpoint_replays": 0,
+          "version": "2.0.0",
+          "wrong_resolved_outputs": 4
+        },
+        "opaque-workcell-v3-unavailable": {
+          "checkpoint_case": "absent_source_unavailable",
+          "current_source_hash": null,
+          "false_abstentions": 0,
+          "final_output_hash": "42a05ca9612999ac6a891a85ee5f70a788825e3e362d36ca589e2c880f567973",
+          "final_unresolved_ids": [
+            "opaque-guard",
+            "safety-summary"
+          ],
+          "final_wrong_resolved_ids": [],
+          "full_oracle_reference_work": 84,
+          "metrics": {
+            "checkpoint_quarantines": 1,
+            "checkpoint_validation_executions": 1,
+            "cpu_time_ns": 893778,
+            "escalation_events": 1,
+            "nodes_producing_deltas": 4,
+            "reconstruction_executions": 10,
+            "routing_lookups": 6,
+            "scoring_oracle_executions": 84,
+            "source_hash_invalidations": 0,
+            "sparse_executions": 5,
+            "transitions": 6,
+            "wall_time_ns": 893164
+          },
+          "observed_opaque_reads": [],
+          "project_id": "opaque-workcell-v3-unavailable",
+          "public_opaque_parameters": {},
+          "receipt_bytes": 7717,
+          "registered_nodes": 12,
+          "registry_bytes": 3352,
+          "resolved_coverage_percentage": 83.3333,
+          "resolved_decisions": 70,
+          "source_available": false,
+          "source_changed_since_training": true,
+          "state_bytes": 292,
+          "total_decisions": 84,
+          "total_policy_work": 16,
+          "training_source_hash": "2e1208ba4719ba087182d67274454fda526c42d026e47e6f0d79a48cfe8c4746",
+          "unresolved_decisions": 14,
+          "untrusted_checkpoint_replays": 0,
+          "version": "3.0.0-source-unavailable",
+          "wrong_resolved_outputs": 0
+        }
+      },
+      "resolved_coverage_percentage": 91.6667,
+      "resolved_decisions": 154,
+      "total_decisions": 168,
+      "total_policy_work": 34,
+      "totals": {
+        "checkpoint_quarantines": 2,
+        "checkpoint_validation_executions": 2,
+        "cpu_time_ns": 1681226,
+        "escalation_events": 1,
+        "nodes_producing_deltas": 8,
+        "reconstruction_executions": 22,
+        "routing_lookups": 12,
+        "scoring_oracle_executions": 168,
+        "source_hash_invalidations": 1,
+        "sparse_executions": 10,
+        "transitions": 12,
+        "wall_time_ns": 1681044
+      },
+      "unresolved_decisions": 14,
+      "untrusted_checkpoint_replays": 0,
+      "work_reduction_percentage": 79.7619,
+      "wrong_resolved_outputs": 4
+    },
+    "VERSION_AWARE_BOUNDED": {
+      "counterexample_count": 0,
+      "false_abstentions": 0,
+      "full_oracle_reference_work": 168,
+      "logical_replay_hash": "f9bc7b4ce056f4b50929189cc0a0d6a9057bbf25357adb957c87c4c4dcabaff7",
+      "policy": "VERSION_AWARE_BOUNDED",
+      "projects": {
+        "opaque-workcell-v2": {
+          "checkpoint_case": "training_checkpoint_bound_to_v1",
+          "current_source_hash": "49ef3ce19187141057ae331222fa81f933d5e2854c47af001de9675ef483603e",
+          "false_abstentions": 0,
+          "final_output_hash": "c188ad052756404bf522cae96e438f27291105908f99adfb059ff29cc74f37b1",
+          "final_unresolved_ids": [],
+          "final_wrong_resolved_ids": [],
+          "full_oracle_reference_work": 84,
+          "metrics": {
+            "checkpoint_quarantines": 1,
+            "checkpoint_validation_executions": 1,
+            "cpu_time_ns": 3112459,
+            "nodes_producing_deltas": 8,
+            "reconstruction_executions": 12,
+            "replay_executions": 2,
+            "routing_lookups": 6,
+            "scoring_oracle_executions": 84,
+            "source_hash_invalidations": 1,
+            "sparse_executions": 5,
+            "transitions": 6,
+            "version_guard_executions": 5,
+            "version_guard_selections": 6,
+            "wall_time_ns": 3111432
+          },
+          "observed_opaque_reads": [],
+          "project_id": "opaque-workcell-v2",
+          "public_opaque_parameters": {},
+          "receipt_bytes": 12429,
+          "registered_nodes": 12,
+          "registry_bytes": 3352,
+          "resolved_coverage_percentage": 100.0,
+          "resolved_decisions": 84,
+          "source_available": true,
+          "source_changed_since_training": true,
+          "state_bytes": 334,
+          "total_decisions": 84,
+          "total_policy_work": 25,
+          "training_source_hash": "2e1208ba4719ba087182d67274454fda526c42d026e47e6f0d79a48cfe8c4746",
+          "unresolved_decisions": 0,
+          "untrusted_checkpoint_replays": 0,
+          "version": "2.0.0",
+          "wrong_resolved_outputs": 0
+        },
+        "opaque-workcell-v3-unavailable": {
+          "checkpoint_case": "absent_source_unavailable",
+          "current_source_hash": null,
+          "false_abstentions": 0,
+          "final_output_hash": "42a05ca9612999ac6a891a85ee5f70a788825e3e362d36ca589e2c880f567973",
+          "final_unresolved_ids": [
+            "opaque-guard",
+            "safety-summary"
+          ],
+          "final_wrong_resolved_ids": [],
+          "full_oracle_reference_work": 84,
+          "metrics": {
+            "checkpoint_quarantines": 1,
+            "checkpoint_validation_executions": 1,
+            "cpu_time_ns": 1253289,
+            "escalation_events": 7,
+            "nodes_producing_deltas": 4,
+            "reconstruction_executions": 10,
+            "routing_lookups": 6,
+            "scoring_oracle_executions": 84,
+            "source_hash_invalidations": 0,
+            "sparse_executions": 5,
+            "transitions": 6,
+            "wall_time_ns": 1252667
+          },
+          "observed_opaque_reads": [],
+          "project_id": "opaque-workcell-v3-unavailable",
+          "public_opaque_parameters": {},
+          "receipt_bytes": 9711,
+          "registered_nodes": 12,
+          "registry_bytes": 3352,
+          "resolved_coverage_percentage": 83.3333,
+          "resolved_decisions": 70,
+          "source_available": false,
+          "source_changed_since_training": true,
+          "state_bytes": 292,
+          "total_decisions": 84,
+          "total_policy_work": 16,
+          "training_source_hash": "2e1208ba4719ba087182d67274454fda526c42d026e47e6f0d79a48cfe8c4746",
+          "unresolved_decisions": 14,
+          "untrusted_checkpoint_replays": 0,
+          "version": "3.0.0-source-unavailable",
+          "wrong_resolved_outputs": 0
+        }
+      },
+      "resolved_coverage_percentage": 91.6667,
+      "resolved_decisions": 154,
+      "total_decisions": 168,
+      "total_policy_work": 41,
+      "totals": {
+        "checkpoint_quarantines": 2,
+        "checkpoint_validation_executions": 2,
+        "cpu_time_ns": 4365748,
+        "escalation_events": 7,
+        "nodes_producing_deltas": 12,
+        "reconstruction_executions": 22,
+        "replay_executions": 2,
+        "routing_lookups": 12,
+        "scoring_oracle_executions": 168,
+        "source_hash_invalidations": 1,
+        "sparse_executions": 10,
+        "transitions": 12,
+        "version_guard_executions": 5,
+        "version_guard_selections": 6,
+        "wall_time_ns": 4364099
+      },
+      "unresolved_decisions": 14,
+      "untrusted_checkpoint_replays": 0,
+      "work_reduction_percentage": 75.5952,
+      "wrong_resolved_outputs": 0
+    }
+  },
+  "policy_version": "opaque-version-guard/v1",
+  "schema": "axm.cross-version-opaque-recovery.benchmark/v1",
+  "training": {
+    "evaluator_source_hash": "2e1208ba4719ba087182d67274454fda526c42d026e47e6f0d79a48cfe8c4746",
+    "opaque_observed_reads": [],
+    "opaque_public_parameters": {},
+    "project_id": "opaque-workcell-v1",
+    "provenance_hash": "d72eadc24cdb32372b8defdcf4fed48d27cbd77fb28fb66e1d5349d9016a212f",
+    "schema": "axm.opaque-recovery.training/v1",
+    "training_mutation_ids": [
+      "train-width",
+      "train-hidden-legacy",
+      "train-material"
+    ],
+    "training_opaque_executions": 4,
+    "training_outputs_hash": "fdd20f22256caf744d1e641a42d1533cbd64e0ed3b99708c1d31092e4ff78ee9"
+  },
+  "training_mutation_ids": [
+    "train-width",
+    "train-hidden-legacy",
+    "train-material"
+  ]
+}

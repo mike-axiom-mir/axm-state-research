@@ -1,0 +1,9 @@
+{
+  "forbid_untrusted_checkpoint_replay": true,
+  "minimum_resolved_coverage_percentage": 85.0,
+  "policy_action_must_precede_oracle_scoring": true,
+  "require_deterministic_repeat_and_reverse_order": true,
+  "require_zero_false_abstentions": true,
+  "require_zero_wrong_resolved_outputs": true,
+  "total_policy_work_must_be_less_than_full_oracle": true
+}

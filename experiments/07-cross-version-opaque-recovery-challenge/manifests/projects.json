@@ -1,0 +1,59 @@
+{
+  "projects": [
+    {
+      "checkpoint_case": "training_checkpoint_bound_to_v1",
+      "evaluator_source": "evaluators/v2.py",
+      "id": "opaque-workcell-v2",
+      "role": "held_out",
+      "state": {
+        "access": {"min_width": 85},
+        "budget": {"max": 1200},
+        "components": {"count": 4},
+        "controls": {"emergency_override": true, "legacy_override": false},
+        "energy": {"watts": 500},
+        "geometry": {"height": 80, "width": 60},
+        "identity": {"name": "workcell-alpha"},
+        "load": {"max": 140},
+        "material": {"name": "steel"},
+        "provenance": {"source": "controlled-v2"}
+      },
+      "version": "2.0.0"
+    },
+    {
+      "checkpoint_case": "absent_source_unavailable",
+      "evaluator_source": null,
+      "id": "opaque-workcell-v3-unavailable",
+      "role": "held_out",
+      "state": {
+        "access": {"min_width": 90},
+        "budget": {"max": 1800},
+        "components": {"count": 6},
+        "controls": {"fail_safe": true},
+        "energy": {"watts": 640},
+        "geometry": {"height": 95, "width": 75},
+        "identity": {"name": "workcell-beta"},
+        "load": {"max": 180},
+        "material": {"name": "aluminum"},
+        "provenance": {"source": "controlled-v3"}
+      },
+      "version": "3.0.0-source-unavailable"
+    }
+  ],
+  "training": {
+    "evaluator_source": "evaluators/v1.py",
+    "id": "opaque-workcell-v1",
+    "state": {
+      "access": {"min_width": 80},
+      "budget": {"max": 1000},
+      "components": {"count": 3},
+      "controls": {"legacy_override": false},
+      "energy": {"watts": 450},
+      "geometry": {"height": 70, "width": 55},
+      "identity": {"name": "workcell-training"},
+      "load": {"max": 120},
+      "material": {"name": "steel"},
+      "provenance": {"source": "controlled-v1"}
+    },
+    "version": "1.0.0"
+  }
+}

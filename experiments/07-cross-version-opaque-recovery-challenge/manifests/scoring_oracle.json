@@ -1,0 +1,12 @@
+{
+  "boundary": "Loaded only by the post-action scorer; never passed to routing, checkpoint validation, training, or policy execution.",
+  "opaque-workcell-v3-unavailable": {
+    "initial": true,
+    "v3-budget": true,
+    "v3-hidden-off": false,
+    "v3-hidden-on": true,
+    "v3-load": false,
+    "v3-name": false,
+    "v3-width": true
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "active": 80,
+  "dense": {
+    "checkpoint_bytes": 110001,
+    "index_edges": 10000,
+    "materializations": 10000,
+    "reads": 10000,
+    "resident_bytes": 885657,
+    "writes": 10000
+  },
+  "final_hash": "d4e6267640bda53c95ad379cc89b56bfab330ac8ba7d362371ee66d50a259aa1",
+  "fixture_units": "Python object graph bytes and UTF-8 JSON bytes",
+  "implicit": {
+    "checkpoint_bytes": 881,
+    "index_edges": 80,
+    "materializations": 80,
+    "reads": 10000,
+    "resident_bytes": 7325,
+    "writes": 80
+  },
+  "initial_output_equality": true,
+  "perspectives": 10000,
+  "replay_equality": true,
+  "schema": "axm.adaptive-closure.state-debt/v1"
+}
