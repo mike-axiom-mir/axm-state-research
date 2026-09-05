@@ -179,6 +179,7 @@ records remain; their six unique minimized reproductions pass.
 python run_benchmarks.py --verify-freeze-only: PASS
 python -m unittest discover -s tests -v: 10/10 PASS
 python verify_evidence.py: PASS
+all seven repository experiment suites: 68/68 PASS
 raw evidence hashes: PASS
 raw/report crosscheck: PASS
 all six unique minimized reproductions: PASS
