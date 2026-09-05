@@ -204,3 +204,31 @@ tree in reachable history and still verifies every original frozen blob SHA-256.
 The receipt binds the before/after verifier hashes and unchanged benchmark,
 first-score receipt, and freeze-manifest hashes. Policy code, evaluators,
 manifests, oracle answers, tests, threshold, score, and raw evidence are unchanged.
+
+### Experiment 07 connector publication and remote verification
+
+The connector mirrored each local commit as a fast-forward commit with the same
+Git tree. Commit identifiers differ because connector publication metadata differs;
+tree identities are exact.
+
+```text
+local 3d35321ac1f99ee0cbf18a0ee81f812d94abbb59 -> remote 49bd69f09511085592f69f03d110f381d4ff16c1; tree 832b158fbb2ce903fe26b9849651813ee8691141
+local fd92bfa096133746497f6e74063173e5fc4ef7e2 -> remote 247a8149c84473b9c8ca958d44700daae6aa8a87; tree 0f7a41f681e7994667f43e3949b1810003e58add
+local 163f7d38ad0d5a465f76f552659bcd4d6b981d36 -> remote 232c64db41c544fa27567c246b82680aa2e31d3e; tree c7b2607147f9161ecb20e5b9db4941c23a2aa317
+local d79e699e9107d8a08c5ae5e6890137f433e24726 -> remote b46b06d8e9be030421f3f6c87d05b6be8f9e4481; tree b7ad2370fffa479d6fb5e5d2b66ec3980b344ad0
+local f8584b4bdb7880b6853176ee9c424e114a0dbf19 -> remote a640d16df1fc9e30765df8ab6d1b3dde5c3f78cf; tree 40fef5a07c84adc1121689ee2349242627989339
+
+local final experiment/evidence tree equals connector tree: PASS
+git diff --check f2685532e501b1e288c5f5b3c21c6058c4a820d6..remote head: PASS
+fresh remote-only clone local semantic-freeze object: absent
+fresh remote-only Experiment 07 tests: 10/10 PASS
+fresh remote-only evidence verifier: PASS
+GitHub Actions run 22: SUCCESS
+all seven Actions matrix jobs: SUCCESS
+pull request: #8, open, unmerged, target main
+```
+
+This final lane amendment is documentation only. Its connector-created commit ID
+and final-head Actions result are recorded in the pull-request body so this receipt
+does not create an endless chain of commits that each documents the previous head.
+Human merge authority remains unchanged.
