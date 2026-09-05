@@ -6,6 +6,7 @@
 - Base branch: `main`
 - Base commit: `b41efd033baf291809d00bdc9b1f48f314bc04dd`
 - Branch: `ai/genesis-state-machine-web-2026-09-05`
+- Pull request: [#11](https://github.com/mike-axiom-mir/axm-state-research/pull/11)
 - Lane rule: one chat instance, one branch, one pull request
 
 ## Bounded question
@@ -44,4 +45,3 @@ The research supports a sharper Stateborn definition:
 > Genesis State is the first admitted truth of a named machine history, not the first condition in reality.
 
 Pre-genesis is retained as a web of prerequisite, empty/default, candidate, validation, and commitment states distributed across machine layers.
-
