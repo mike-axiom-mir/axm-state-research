@@ -11,6 +11,8 @@ The canonical first score is append-only evidence bound to semantic freeze commi
 - `raw/snapshot_scores.jsonl` — 84 post-action snapshot scores across policies.
 - `raw/counterexamples.json` — 14 retained wrong-output occurrences.
 - `raw/first_score_receipt.json` — hashes of every canonical result file.
+- `raw/post_score_connector_correction.json` — bounded verifier portability
+  amendment; policy, fixtures, score, and raw evidence are unchanged.
 
 Run `python verify_evidence.py` from the experiment directory to verify the freeze,
 file hashes, report crosscheck, replay/order determinism, and all six unique

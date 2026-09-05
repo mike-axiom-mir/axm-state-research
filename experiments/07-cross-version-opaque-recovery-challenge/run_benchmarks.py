@@ -26,6 +26,7 @@ RAW_DIR = EXPERIMENT_ROOT / "results" / "raw"
 REPORT_PATH = EXPERIMENT_ROOT / "results" / "BENCHMARK_RESULTS.md"
 FREEZE_SUMS_PATH = EXPERIMENT_ROOT / "manifests" / "FREEZE_SHA256SUMS"
 FREEZE_RECEIPT_PATH = RAW_DIR / "pre_score_freeze_receipt.json"
+CONNECTOR_CORRECTION_PATH = RAW_DIR / "post_score_connector_correction.json"
 
 
 def _sha256(path: Path) -> str:
@@ -42,11 +43,50 @@ def write_jsonl(path: Path, values: list[dict[str, Any]]) -> None:
             handle.write(json.dumps(value, sort_keys=True, separators=(",", ":")) + "\n")
 
 
+def _reachable_commit_for_tree(tree: str) -> str:
+    history = subprocess.run(
+        ["git", "log", "--format=%H%x00%T", "HEAD"],
+        cwd=REPOSITORY_ROOT,
+        check=True,
+        capture_output=True,
+        text=True,
+    ).stdout
+    for line in history.splitlines():
+        commit, candidate_tree = line.split("\x00", 1)
+        if candidate_tree == tree:
+            return commit
+    raise RuntimeError(f"semantic freeze tree is not reachable from HEAD: {tree}")
+
+
 def verify_freeze() -> dict[str, Any]:
     if not FREEZE_SUMS_PATH.is_file() or not FREEZE_RECEIPT_PATH.is_file():
         raise RuntimeError("freeze manifest and pre-score receipt must exist before scoring")
     receipt = json.loads(FREEZE_RECEIPT_PATH.read_text(encoding="utf-8"))
+    correction = (
+        json.loads(CONNECTOR_CORRECTION_PATH.read_text(encoding="utf-8"))
+        if CONNECTOR_CORRECTION_PATH.is_file()
+        else None
+    )
+    commit = receipt["semantic_freeze_commit"]
+    semantic_tree = receipt["semantic_freeze_tree"]
+    declared_exists = subprocess.run(
+        ["git", "cat-file", "-e", f"{commit}^{{commit}}"],
+        cwd=REPOSITORY_ROOT,
+        capture_output=True,
+    ).returncode == 0
+    if declared_exists:
+        declared_tree = subprocess.run(
+            ["git", "rev-parse", f"{commit}^{{tree}}"],
+            cwd=REPOSITORY_ROOT,
+            check=True,
+            capture_output=True,
+            text=True,
+        ).stdout.strip()
+        if declared_tree != semantic_tree:
+            raise RuntimeError("declared semantic freeze commit has the wrong tree")
+    freeze_source_commit = _reachable_commit_for_tree(semantic_tree)
     checked: dict[str, str] = {}
+    corrected: set[str] = set()
     for line in FREEZE_SUMS_PATH.read_text(encoding="utf-8").splitlines():
         if not line.strip():
             continue
@@ -54,25 +94,27 @@ def verify_freeze() -> dict[str, Any]:
         path = EXPERIMENT_ROOT / relative
         actual = _sha256(path)
         if actual != expected:
-            raise RuntimeError(f"frozen semantic input changed: {relative}")
+            if correction is None:
+                raise RuntimeError(f"frozen semantic input changed: {relative}")
+            repository_relative = path.relative_to(REPOSITORY_ROOT).as_posix()
+            original = subprocess.run(
+                ["git", "show", f"{freeze_source_commit}:{repository_relative}"],
+                cwd=REPOSITORY_ROOT,
+                check=True,
+                capture_output=True,
+            ).stdout
+            if hashlib.sha256(original).hexdigest() != expected:
+                raise RuntimeError(f"frozen source blob mismatch: {relative}")
+            recorded = correction["corrected_files"].get(relative)
+            if recorded != {"before_sha256": expected, "after_sha256": actual}:
+                raise RuntimeError(f"connector correction receipt mismatch: {relative}")
+            corrected.add(relative)
         checked[relative] = expected
     if checked != receipt["frozen_files"]:
         raise RuntimeError("freeze receipt and hash manifest disagree")
-    commit = receipt["semantic_freeze_commit"]
-    tree = subprocess.run(
-        ["git", "rev-parse", f"{commit}^{{tree}}"],
-        cwd=REPOSITORY_ROOT,
-        check=True,
-        capture_output=True,
-        text=True,
-    ).stdout.strip()
-    if tree != receipt["semantic_freeze_tree"]:
-        raise RuntimeError("semantic freeze tree mismatch")
-    ancestor = subprocess.run(
-        ["git", "merge-base", "--is-ancestor", commit, "HEAD"], cwd=REPOSITORY_ROOT
-    ).returncode == 0
-    if not ancestor:
-        raise RuntimeError("semantic freeze commit is not in HEAD ancestry")
+    expected_corrections = set(correction["corrected_files"]) if correction else set()
+    if corrected != expected_corrections:
+        raise RuntimeError("connector correction file set mismatch")
     return receipt
 
 

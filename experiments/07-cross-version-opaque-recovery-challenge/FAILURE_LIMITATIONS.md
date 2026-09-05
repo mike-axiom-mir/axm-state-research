@@ -43,3 +43,10 @@ cross-machine, or novelty conclusion follows.
 Receipt sizes were measured, but receipt compaction, long-duration growth, and
 retrieval cost were not tested. Conflicting node deltas were not exercised here;
 earlier merge/conflict behavior is not widened by this experiment.
+
+After scoring, the evidence verifier required one receipted portability correction:
+the original form required the exact local freeze commit ID to exist, while the
+authorized GitHub connector preserves trees and creates different commit IDs. The
+corrected verifier resolves the exact frozen tree in ancestry and checks original
+blob hashes. The policy, fixtures, oracle, gate, score, and raw evidence did not
+change.

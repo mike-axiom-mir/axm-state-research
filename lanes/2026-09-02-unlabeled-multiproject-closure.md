@@ -189,3 +189,18 @@ The strongest next experiment is the Budgeted Opaque Version Swarm described in
 Experiment 07's `NEXT_EXPERIMENT.md`. PR #8 remains open and unmerged; final
 publication/head/Actions evidence will be appended without changing frozen
 semantics. Human merge authority is unchanged.
+
+### Receipted connector-verifier correction
+
+The first-score verifier was frozen with an exact-local-commit ancestry check.
+The direct Git push attempt then failed because this sandbox has no GitHub
+username/credential device; it changed no remote state. The already-authorized
+connector is therefore required, and—as retained in Experiment 06 evidence—it
+preserves Git trees while generating different commit identifiers.
+
+Post-score correction `post_score_connector_correction.json` changes only
+`run_benchmarks.py` freeze-source resolution: it finds the exact semantic freeze
+tree in reachable history and still verifies every original frozen blob SHA-256.
+The receipt binds the before/after verifier hashes and unchanged benchmark,
+first-score receipt, and freeze-manifest hashes. Policy code, evaluators,
+manifests, oracle answers, tests, threshold, score, and raw evidence are unchanged.

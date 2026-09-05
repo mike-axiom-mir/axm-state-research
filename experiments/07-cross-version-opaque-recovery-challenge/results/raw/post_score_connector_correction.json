@@ -1,0 +1,16 @@
+{
+  "benchmark_results_sha256_unchanged": "f73ed0703ba2a5b922439405e5792198c85b2adcfad0f5fd506f5841662194ec",
+  "corrected_files": {
+    "run_benchmarks.py": {
+      "after_sha256": "513ba61dfd61964dc283636a6f09e727e5f0d5bb2f565f0db6592fbbd5b90c0e",
+      "before_sha256": "010a3c42abe56a5c140288b129446bc4979102d52d959cac93636e530c86ef44"
+    }
+  },
+  "date_utc": "2026-09-05",
+  "first_score_receipt_sha256_unchanged": "dbd66a302c98db302ed2f93bf70852d5cd7b7a7af81d5258a13f27028741087e",
+  "freeze_manifest_sha256_unchanged": "e17bded730a4aa11b809f0544a4e16985929876952bf833f46c8142ed24ff1b9",
+  "reason": "The GitHub connector preserves frozen Git trees but creates new commit identifiers. Verification now resolves the exact frozen tree in reachable ancestry while still checking every original frozen blob hash.",
+  "schema": "axm.opaque-recovery.post-score-connector-correction/v1",
+  "semantic_change": false,
+  "score_or_raw_evidence_changed": false
+}
