@@ -10,9 +10,9 @@ const htmlEntrypoints = {
   "dist/coexistence.html": ["./curiosity.css", "./coexistence.css", "./coexistence.bundle.js", "./index.html", "./curiosity.html", "./capsules.html", "./language.html"],
   "dist/capsules.html": ["./curiosity.css", "./capsule.css", "./capsule.bundle.js", "./coexistence.html", "./curiosity.html", "./language.html", "./transport.html"],
   "dist/language.html": ["./curiosity.css", "./language.css", "./language.bundle.js", "./index.html", "./capsules.html", "./transport.html"],
-  "dist/transport.html": ["./curiosity.css", "./transport.css", "./transport.bundle.js", "./index.html", "./capsules.html", "./language.html"],
+  "dist/transport.html": ["./curiosity.css", "./transport.css", "./transport.bundle.js", "./transport-experience.js", "./index.html", "./capsules.html", "./language.html"],
 };
-const javascriptFiles = ["dist/stateborn.bundle.js", "dist/app.js", "dist/engine.js", "dist/world.js", "dist/living-world.js", "dist/curiosity-world.js", "dist/curiosity-app.js", "dist/curiosity.bundle.js", "dist/coexistence-world.js", "dist/coexistence-app.js", "dist/coexistence.bundle.js", "dist/capsule-world.js", "dist/capsule-app.js", "dist/capsule.bundle.js", "dist/state-language.js", "dist/language-app.js", "dist/language.bundle.js", "dist/state-transport.js", "dist/transport-app.js", "dist/transport.bundle.js"];
+const javascriptFiles = ["dist/stateborn.bundle.js", "dist/app.js", "dist/engine.js", "dist/world.js", "dist/living-world.js", "dist/curiosity-world.js", "dist/curiosity-app.js", "dist/curiosity.bundle.js", "dist/coexistence-world.js", "dist/coexistence-app.js", "dist/coexistence.bundle.js", "dist/capsule-world.js", "dist/capsule-app.js", "dist/capsule.bundle.js", "dist/state-language.js", "dist/language-app.js", "dist/language.bundle.js", "dist/state-transport.js", "dist/transport-app.js", "dist/transport.bundle.js", "dist/transport-experience.js"];
 const required = [...Object.keys(htmlEntrypoints), "dist/styles.css", "dist/curiosity.css", "dist/coexistence.css", "dist/capsule.css", "dist/language.css", "dist/transport.css", ...javascriptFiles, ".openai/hosting.json"];
 const failures = [];
 
