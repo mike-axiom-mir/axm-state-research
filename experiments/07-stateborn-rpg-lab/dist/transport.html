@@ -26,12 +26,18 @@
         <label class="fixture-label" for="fixtureSelect">Fault route</label><select id="fixtureSelect"></select>
         <div id="fixtureFacts" class="fact-stack"></div>
         <div class="controls vertical-controls"><button id="tickButton" class="control primary">Advance one tick</button><button id="runButton" class="control">Run selected route</button><button id="resetButton" class="control quiet">Reset selected</button></div>
+        <p class="shortcut-strip"><kbd>Space</kbd> step <kbd>R</kbd> run <kbd>V</kbd> replay <kbd>[</kbd><kbd>]</kbd> route <kbd>Esc</kbd> reset</p>
         <p class="micro-boundary">The connection can delay or destroy delivery. It cannot invent source authority, rewrite consent, or quietly turn a deadlock into success.</p>
       </aside>
 
       <section class="panel network-panel">
         <div class="panel-head"><div><p class="eyebrow">DETERMINISTIC NETWORK FLOOR</p><h2 id="networkHeading">Tick 0 · ready</h2></div><span id="connectionPill" class="connection-pill online">ONLINE</span></div>
         <div class="route-rail"><article><span>SEAT A</span><b id="seatARevision">revision 0</b></article><div class="wire"><i></i><i></i><i></i></div><article><span>SEAT B</span><b id="seatBRevision">revision 0</b></article></div>
+        <section id="tickFocus" class="tick-focus" aria-live="polite" data-tone="idle">
+          <header><span>CURRENT CONSEQUENCE</span><b id="stateEffectPill" class="state-effect neutral">RESET</b></header>
+          <div class="tick-focus-body"><div><strong id="tickFocusTitle">Frozen route restored</strong><p id="tickFocusCopy">No transport evidence has been emitted yet.</p></div><ol id="tickFocusEvents"><li>Advance one tick to expose the next receipt-backed consequence.</li></ol></div>
+          <footer><span id="nextAction">Next: advance one tick; the simulator will plan the next required packet.</span><em>DISPLAY ≠ AUTHORITY</em></footer>
+        </section>
         <section class="queue-box"><header><span>IN-FLIGHT ENVELOPES</span><b id="queueCount">0 queued</b></header><div id="queueLedger" class="queue-ledger"><p class="empty">No packet is in flight.</p></div></section>
         <section class="timeline-box"><header><span>TRANSPORT RECEIPTS</span><b id="eventCount">0 events</b></header><div id="eventLedger" class="event-ledger"><p class="empty">Advance a tick to emit the first packet.</p></div></section>
         <output id="systemMessage" class="system-message" aria-live="polite">Ready. Fault decisions are frozen in the selected fixture.</output>
@@ -53,5 +59,6 @@
     </section>
   </main>
   <script defer src="./transport.bundle.js"></script>
+  <script defer src="./transport-experience.js"></script>
 </body>
 </html>
