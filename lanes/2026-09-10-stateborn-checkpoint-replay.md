@@ -51,3 +51,20 @@ corrective branch.
 This lane is intentionally stacked on PR #9 because that exact head contains
 the v0.7 transport experiment. It does not take over PR #17's presentation-only
 transport-feedback lane. Human merge authority remains unchanged.
+
+## Publication checkpoint — 2026-09-10 UTC
+
+```text
+initial repair commit: 0f5bb5e16f9f105e3d6220253ded853a949ed967
+pull request: https://github.com/mike-axiom-mir/axm-state-research/pull/19
+pull request state: OPEN; draft/HOLD; unmerged; not CANON
+dependency: PR #9 exact head 686201db2a17d343fc5e63123a93bb3f03d343ee
+final overlap scan: no checkpoint-replay or recovery-correctness lane found
+newest PR #18: Genesis admission; semantically distinct
+PR #17: transport presentation only; semantically distinct
+GitHub Actions: pending at this checkpoint
+```
+
+The final tested head is reported on the pull request after CI rather than
+recursively editing this receipt. Human merge and CANON authority remain
+unchanged.
