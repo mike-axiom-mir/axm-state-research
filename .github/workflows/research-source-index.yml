@@ -1,0 +1,82 @@
+name: Research source discovery contract
+
+on:
+  pull_request:
+    paths:
+      - "RESEARCH/**"
+      - "research/**"
+      - "lanes/**"
+      - "logs/**"
+      - "visuals/**"
+      - "tools/generate_research_index.py"
+      - "tests/test_research_index.py"
+      - "registry/**"
+      - ".axm/discovery-public.json"
+      - ".github/workflows/research-source-index.yml"
+  push:
+    branches: [main]
+    paths:
+      - "RESEARCH/**"
+      - "research/**"
+      - "lanes/**"
+      - "logs/**"
+      - "visuals/**"
+      - "tools/generate_research_index.py"
+      - "tests/test_research_index.py"
+      - "registry/**"
+      - ".axm/discovery-public.json"
+      - ".github/workflows/research-source-index.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.13"]
+    steps:
+      - name: Checkout State Research
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Compile indexer
+        run: python -m py_compile tools/generate_research_index.py tests/test_research_index.py
+
+      - name: Run focused regressions
+        run: python -m unittest -v tests/test_research_index.py
+
+      - name: Verify committed discovery output
+        run: python tools/generate_research_index.py --check
+
+      - name: Checkout pinned Discovery Buddy compatibility producer
+        uses: actions/checkout@v4
+        with:
+          repository: mike-axiom-mir/axm-discovery-buddy
+          ref: 1a94fc2481d1cfc9234dea7c86af4777126d3924
+          path: .interop/discovery-buddy
+
+      - name: Prove public discovery consumption
+        env:
+          PYTHONPATH: ${{ github.workspace }}/.interop/discovery-buddy
+        run: |
+          python -m discovery_buddy scan . --public --output-dir /tmp/axm-discovery
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          payload = json.loads(Path("/tmp/axm-discovery/public-discovery.json").read_text("utf-8"))
+          assert payload["summary"]["repositories"] == 1, payload["summary"]
+          repo = payload["repositories"][0]
+          assert repo["repo"] == "mike-axiom-mir/axm-state-research", repo
+          ids = {row["id"] for row in repo["capabilities"]["records"]}
+          assert "axm.state-research.source-index/v1" in ids, ids
+          print("discovery-consumer: PASS", payload["content_sha256"])
+          PY
