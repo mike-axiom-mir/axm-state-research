@@ -1,0 +1,45 @@
+name: Reference-state closure experiment
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/reference-state-closure.yml"
+      - "experiments/reference-state-closure-v1/**"
+      - "research/2026-09-09-routing-convergence-reference-state.md"
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/reference-state-closure.yml"
+      - "experiments/reference-state-closure-v1/**"
+      - "research/2026-09-09-routing-convergence-reference-state.md"
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: Python ${{ matrix.python-version }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Run adversarial tests
+        run: >-
+          python -m unittest discover
+          -s experiments/reference-state-closure-v1
+          -p 'test_*.py'
+          -v
+      - name: Run machine-readable experiment gate
+        run: python experiments/reference-state-closure-v1/experiment.py > reference-state-report.json
+      - name: Publish inspectable report
+        uses: actions/upload-artifact@v4
+        with:
+          name: reference-state-report-python-${{ matrix.python-version }}
+          path: reference-state-report.json
+          if-no-files-found: error
