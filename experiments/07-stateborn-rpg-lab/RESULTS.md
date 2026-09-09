@@ -11,6 +11,8 @@ Stateborn v0.7 passed:
 - every requested fault family appeared: 4 drops, 2 duplicates suppressed,
   1 expiry, 1 reorder, 1 disconnect, 1 recovery pass, and 1 tamper refusal;
 - duplicate and expired envelopes had no canonical state effect;
+- disconnect recovery replayed a self-contained checkpoint after the live
+  engine was deliberately discarded;
 - source records unchanged and exact replay passed in all ten routes;
 - private values stayed out, accepted payloads stayed state-only, and each
   commit preserved its exact acceptance provenance;
@@ -43,6 +45,10 @@ UNKNOWN because its publishing session's cloud browser blocked local URLs.
 Demonstrated: within one deterministic simulator, the exact v0.6 typed packets
 can preserve consent, privacy, idempotence, bounded recovery, explicit refusal,
 honest deadlock, and exact replay under ten frozen hostile-delivery routes.
+
+The recovery claim is limited to deterministic replay of checkpoint-owned
+receipts after simulated loss of the in-memory engine. It does not claim durable
+storage or process-level restart.
 
 Not demonstrated: a spontaneous or private machine language, subjective
 understanding, whole-person identity, real networking, hostile-peer safety,

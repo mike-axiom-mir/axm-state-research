@@ -46,9 +46,10 @@ The ten routes total 56 attempted sends, 49 accepted packets, and 24,960
 transmitted bytes. Seven solve, one refuses, and two deadlock. Every expected
 outcome, replay, source digest, consent binding, privacy check, state-only
 payload check, duplicate no-effect check, and expiry no-effect check passed.
-The disconnect route recovered from a checkpoint. The repeated-loss route is
-retained as a transport failure even though its direct protocol baseline
-solves.
+The disconnect route recovered after the test replaced the live engine with a
+fresh instance. Its v2 checkpoint supplied the replay receipts, receipt IDs,
+expected state digest, and source digests. The repeated-loss route is retained
+as a transport failure even though its direct protocol baseline solves.
 
 The first frozen corruption run exposed a deduplication bug. A refused corrupt
 delivery had been recorded as delivered and suppressed the later clean retry.

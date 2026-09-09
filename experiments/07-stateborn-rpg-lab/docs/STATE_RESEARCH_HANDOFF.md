@@ -59,7 +59,10 @@ schema. Deterministic envelopes add delivery ticks, expiry, retry, queue, and
 checkpoint evidence. Loss, duplication, delay, reordering,
 disconnect/reconnect, expiry, and corruption are injected from frozen routes.
 Only accepted packets become duplicate barriers. Sources remain independently
-recoverable and every terminal result replays exactly.
+recoverable and every terminal result replays exactly. Checkpoint v2 carries
+the receipt bodies needed for restart: the disconnect regression discards the
+live engine and requires replay to reproduce checkpoint-owned receipt IDs,
+state digest, and source digests before transport resumes.
 
 ## Current observations to measure
 
@@ -103,8 +106,8 @@ recoverable and every terminal result replays exactly.
   refusal, one state deadlock, and one transport-exhaustion deadlock;
 - duplicates and expired envelopes have no canonical effect, while reorder,
   stale refusal, retry, and corruption remain visible in the ledger;
-- one interrupted session reconstructs from a digest-bound checkpoint and
-  then solves;
+- one interrupted session reconstructs from a self-contained, digest-bound
+  checkpoint after the live engine is discarded, then solves;
 - the frozen corrupt-retry route first exposed a rejected-packet deduplication
   defect; restricting replay barriers to accepted packets repaired it without
   changing the fixture universe;

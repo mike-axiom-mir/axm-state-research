@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { canonicalStringify } from "../dist/engine.js";
-import { LANGUAGE_OUTCOMES, LANGUAGE_REASONS } from "../dist/state-language.js";
+import { LANGUAGE_OUTCOMES, LANGUAGE_REASONS, StateLanguageTrial } from "../dist/state-language.js";
 import {
   FROZEN_STATE_TRANSPORT_FIXTURE_DIGEST, HostileTransportTrial,
   STATE_TRANSPORT_FIXTURE_DIGEST, STATE_TRANSPORT_FIXTURES, stateTransportGate,
@@ -53,12 +53,24 @@ test("reordering stays visible, stale state refuses, and retry solves", () => {
 });
 
 test("disconnect recovery rebuilds the exact checkpoint before continuing", () => {
-  const { trial, result } = run("held-disconnect-recover");
+  const trial = new HostileTransportTrial("held-disconnect-recover");
+  trial.tickOnce();
+  trial.tickOnce();
+  const checkpoint = structuredClone(trial.latestCheckpoint);
+  assert.ok(checkpoint.engineReceiptIds.length > 0);
+
+  // A restart cannot rely on the pre-disconnect engine object still being alive.
+  trial.engine = new StateLanguageTrial(trial.fixture.languageFixtureId);
+  const result = trial.run();
   assert.equal(result.outcomeCode, LANGUAGE_OUTCOMES.SOLVED);
   assert.equal(result.disconnects, 1);
   assert.equal(result.recoveryPasses, 1);
   assert.equal(result.recoveryFailures, 0);
-  assert.ok(trial.ledger.some((event) => event.type === "RECOVERY_PASS"));
+  const recovery = trial.ledger.find((event) => event.type === "RECOVERY_PASS");
+  assert.equal(recovery.receipts, checkpoint.engineReceiptIds.length);
+  assert.equal(recovery.engineStateDigest, checkpoint.engineStateDigest);
+  assert.deepEqual(trial.engine.receipts.slice(0, checkpoint.engineReceiptIds.length)
+    .map((receipt) => receipt.receiptId), checkpoint.engineReceiptIds);
 });
 
 test("an expired packet has no effect and a fresh retry solves", () => {

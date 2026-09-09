@@ -86,8 +86,9 @@ export class HostileTransportTrial {
 
   #checkpoint() {
     const value = {
-      schema: "axm.stateborn.transport-checkpoint/v1", fixtureId: this.fixture.id,
+      schema: "axm.stateborn.transport-checkpoint/v2", fixtureId: this.fixture.id,
       engineStateDigest: this.engine.stateDigest,
+      engineReceipts: deepClone(this.engine.receipts),
       engineReceiptIds: this.engine.receipts.map((receipt) => receipt.receiptId),
       deliveredDigests: [...this.deliveredDigests].sort(), sourceDigests: this.engine.sourceDigests,
     };
@@ -100,38 +101,52 @@ export class HostileTransportTrial {
     return !(this.fixture.disconnects || []).some((window) => tick >= window.start && tick < window.end);
   }
 
+  #recoveryFailure(reason, data = {}) {
+    this.terminalReason = reason;
+    if (!this.closed) this.engine.closeDeadlock({ operationId: `transport-recovery-fail-${this.tick}` });
+    this.#record("RECOVERY_FAIL", { reason, ...deepClone(data) });
+    return false;
+  }
+
   #recover() {
     const checkpoint = deepClone(this.latestCheckpoint);
+    if (!checkpoint || typeof checkpoint !== "object") return this.#recoveryFailure("CHECKPOINT_SCHEMA");
     const sealed = checkpoint.checkpointDigest;
     delete checkpoint.checkpointDigest;
-    if (digest(checkpoint) !== sealed) {
-      this.terminalReason = "CHECKPOINT_DIGEST";
-      this.engine.closeDeadlock({ operationId: `transport-checkpoint-fail-${this.tick}` });
-      this.#record("RECOVERY_FAIL", { reason: this.terminalReason });
-      return false;
+    if (digest(checkpoint) !== sealed) return this.#recoveryFailure("CHECKPOINT_DIGEST");
+    if (checkpoint.schema !== "axm.stateborn.transport-checkpoint/v2"
+      || checkpoint.fixtureId !== this.fixture.id
+      || !Array.isArray(checkpoint.engineReceipts)
+      || !Array.isArray(checkpoint.engineReceiptIds)
+      || !Array.isArray(checkpoint.deliveredDigests)) return this.#recoveryFailure("CHECKPOINT_SCHEMA");
+    const receiptIds = checkpoint.engineReceipts.map((receipt) => receipt?.receiptId);
+    if (canonicalStringify(receiptIds) !== canonicalStringify(checkpoint.engineReceiptIds)) {
+      return this.#recoveryFailure("CHECKPOINT_RECEIPTS");
     }
     const recovered = new StateLanguageTrial(this.fixture.languageFixtureId);
-    for (const expected of this.engine.receipts) {
-      const actual = expected.kind === "CLOSE"
-        ? recovered.closeDeadlock({ operationId: expected.operationId })
-        : recovered.applyPacket(expected.packet, { operationId: expected.operationId });
+    for (const expected of checkpoint.engineReceipts) {
+      let actual;
+      try {
+        actual = expected.kind === "CLOSE"
+          ? recovered.closeDeadlock({ operationId: expected.operationId })
+          : recovered.applyPacket(expected.packet, { operationId: expected.operationId });
+      } catch {
+        return this.#recoveryFailure("CHECKPOINT_REPLAY", { at: expected?.index ?? null });
+      }
       if (actual.receiptId !== expected.receiptId) {
-        this.terminalReason = "CHECKPOINT_REPLAY";
-        this.engine.closeDeadlock({ operationId: `transport-replay-fail-${this.tick}` });
-        this.#record("RECOVERY_FAIL", { reason: this.terminalReason, at: expected.index });
-        return false;
+        return this.#recoveryFailure("CHECKPOINT_REPLAY", { at: expected.index });
       }
     }
-    if (recovered.stateDigest !== this.engine.stateDigest
+    if (recovered.stateDigest !== checkpoint.engineStateDigest
+      || canonicalStringify(recovered.receipts.map((receipt) => receipt.receiptId))
+        !== canonicalStringify(checkpoint.engineReceiptIds)
       || canonicalStringify(recovered.sourceDigests) !== canonicalStringify(checkpoint.sourceDigests)) {
-      this.terminalReason = "CHECKPOINT_STATE";
-      this.engine.closeDeadlock({ operationId: `transport-state-fail-${this.tick}` });
-      this.#record("RECOVERY_FAIL", { reason: this.terminalReason });
-      return false;
+      return this.#recoveryFailure("CHECKPOINT_STATE");
     }
     this.engine = recovered;
     this.deliveredDigests = new Set(checkpoint.deliveredDigests);
-    this.#record("RECOVERY_PASS", { checkpointDigest: sealed, receipts: recovered.receipts.length });
+    this.#record("RECOVERY_PASS", { checkpointDigest: sealed, receipts: recovered.receipts.length,
+      engineStateDigest: recovered.stateDigest });
     return true;
   }
 

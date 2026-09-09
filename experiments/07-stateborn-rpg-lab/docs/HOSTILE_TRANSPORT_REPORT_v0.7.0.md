@@ -42,6 +42,12 @@ source digests, kept private values out, kept accepted payloads state-only, and
 kept committed deltas bound to exact consent packets. Duplicates and expired
 envelopes caused no second canonical effect.
 
+The disconnect test also discards the live state-language engine before
+reconnection. Recovery replays the receipt bodies sealed into checkpoint v2,
+requires their IDs and resulting state digest to match the checkpoint, and only
+then resumes delivery. This distinguishes checkpoint recovery from continued
+use of the pre-disconnect in-memory engine.
+
 ## Counterfactual failure
 
 `held-loss-exhaustion` is intentionally important: its direct state-language
@@ -58,6 +64,18 @@ that digest was incorrectly recorded as delivered, so the clean retry was
 suppressed. Duplicate barriers now record only packets the state-language
 engine accepted. The frozen fixture universe did not change. See
 `RETAINED_TRANSPORT_FAILURE_v0.7.0.md` for the preserved failure account.
+
+A later adversarial restart probe exposed a separate recovery defect: checkpoint
+v1 stored receipt IDs but recovery read receipt bodies and the expected state
+from the still-live engine. Replacing that engine during the disconnect made the
+route deadlock even though recovery had been reported as successful. Checkpoint
+v2 now carries its own receipts and verifies their deterministic replay against
+the checkpoint-owned IDs, state digest, and source digests before publishing a
+recovered engine.
+
+The sealed `AXM_STATEBORN_RPG_LAB_v0.7.0.zip` remains the historical artifact
+from before this repair and is not silently rewritten. This branch is a
+separate, unmerged corrective amendment until a human chooses its disposition.
 
 ## What this establishes
 
