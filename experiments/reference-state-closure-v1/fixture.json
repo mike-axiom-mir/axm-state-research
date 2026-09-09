@@ -1,0 +1,38 @@
+{
+  "schema": "axm.reference-state-closure.fixture.v1",
+  "omitted_reference_control": "archive",
+  "nodes": [
+    {"id": "archive", "signal": "memory", "scale": 2, "bias": 1, "reference": 13},
+    {"id": "climate", "signal": "weather", "scale": 3, "bias": 2, "reference": 11},
+    {"id": "health", "signal": "care", "scale": 5, "bias": 0, "reference": 17},
+    {"id": "logistics", "signal": "supply", "scale": 4, "bias": 3, "reference": 19},
+    {"id": "navigation", "signal": "traffic", "scale": 3, "bias": 1, "reference": 23},
+    {"id": "power", "signal": "load", "scale": 2, "bias": 4, "reference": 29},
+    {"id": "safety", "signal": "risk", "scale": 7, "bias": 0, "reference": 31},
+    {"id": "water", "signal": "flow", "scale": 3, "bias": 2, "reference": 37}
+  ],
+  "initial_signals": {
+    "care": 2,
+    "flow": 4,
+    "load": 5,
+    "memory": 3,
+    "risk": 1,
+    "supply": 2,
+    "traffic": 4,
+    "weather": 2
+  },
+  "events": [
+    {"id": "traffic-rise", "signals": {"traffic": 6}},
+    {"id": "sleeping-reference-change", "references": {"archive": 21}},
+    {"id": "care-and-flow", "signals": {"care": 3, "flow": 5}},
+    {"id": "implicit-offset-materializes", "defaults": {"power": {"offset": 2}}},
+    {"id": "no-op-repeat", "signals": {"flow": 5}},
+    {"id": "risk-rise", "signals": {"risk": 3}},
+    {"id": "reference-rebalance", "references": {"climate": 13, "water": 41}},
+    {"id": "offset-returns-to-default", "defaults": {"power": {"offset": 0}}},
+    {"id": "memory-wakes", "signals": {"memory": 5}},
+    {"id": "supply-falls", "signals": {"supply": 1}},
+    {"id": "load-rise", "signals": {"load": 7}},
+    {"id": "weather-clears", "signals": {"weather": 1}}
+  ]
+}
