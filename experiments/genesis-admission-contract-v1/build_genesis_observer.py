@@ -210,6 +210,7 @@ button{font:inherit}.shell{width:min(1180px,calc(100% - 32px));margin:0 auto;pad
 @media (max-width:780px){.shell{width:min(100% - 20px,680px);padding-top:18px}.hero,.workspace{grid-template-columns:1fr}.hero h1{font-size:44px}.rail-wrap:after{display:none}.rail{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding:10px}.phase{min-width:126px;min-height:52px;scroll-snap-align:center}.main-panel,.side{padding:17px}.state-head{align-items:flex-start}.facts{grid-template-columns:1fr}.fact.wide{grid-column:auto}.footer{grid-template-columns:1fr}.evidence-row{display:block}.evidence-row strong{display:block;text-align:left;margin-top:3px}.fsync{grid-template-columns:1fr}.controls{position:sticky;bottom:8px;background:rgba(7,16,25,.92);padding:8px;border-radius:15px;backdrop-filter:blur(10px)}}
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}.phase[aria-current="step"]{transform:none}}
 @media (prefers-contrast:more){:root{--line:#7f97a8;--muted:#d3dce3}.panel,.rail,.boundary,.fact{border-width:2px}.phase[aria-current="step"]{outline:2px solid var(--cyan)}}
+@media (max-width:780px){.controls{position:static;bottom:auto;background:transparent;padding:0;border-radius:0;backdrop-filter:none}}
 """
 
 JS = r"""
