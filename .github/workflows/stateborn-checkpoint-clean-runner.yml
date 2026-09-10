@@ -1,0 +1,82 @@
+name: Stateborn checkpoint clean-runner evidence
+
+on:
+  push:
+    branches:
+      - ai/stateborn-clean-runner-evidence-2026-09-10
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  retained-experiments:
+    name: Retained experiment / ${{ matrix.name }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: State Floor
+            directory: experiments/01-state-floor
+          - name: Workfloor Sentinel
+            directory: experiments/02-workfloor-sentinel
+          - name: Wakeup Fuzzer
+            directory: experiments/03-wakeup-fuzzer
+          - name: Adaptive Closure Verifier
+            directory: experiments/04-adaptive-closure-verifier
+          - name: Real-Project Closure Trial
+            directory: experiments/05-real-project-closure-trial
+          - name: Unlabeled Multi-Project Closure
+            directory: experiments/06-unlabeled-multiproject-closure-challenge
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verify stacked prerequisite ancestry
+        run: git merge-base --is-ancestor 8f121cbcea12a68904ead3042897e7d3f49124b0 HEAD
+      - name: Run retained experiment tests
+        run: python -m unittest discover -s tests -v
+        working-directory: ${{ matrix.directory }}
+        env:
+          PYTHONDONTWRITEBYTECODE: "1"
+
+  stateborn-checkpoint:
+    name: Stateborn checkpoint / Node ${{ matrix.node }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node: [20, 22]
+    defaults:
+      run:
+        working-directory: experiments/07-stateborn-rpg-lab
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Verify stacked prerequisite ancestry
+        run: git merge-base --is-ancestor 8f121cbcea12a68904ead3042897e7d3f49124b0 HEAD
+      - name: Syntax check recovery boundary
+        run: |
+          node --check dist/state-transport.js
+          node --check tests/state-transport.test.mjs
+      - name: Run focused hostile-transport recovery suite
+        run: node --test tests/state-transport.test.mjs
+      - name: Run complete Stateborn suite
+        run: npm test
+      - name: Validate offline surface
+        run: node tools/validate-static.mjs
+      - name: Replay retained probes
+        run: |
+          node tools/capsule-probe.mjs > /tmp/capsule-probe.json
+          node tools/state-language-probe.mjs > /tmp/state-language-probe.json
+          node tools/state-transport-probe.mjs > /tmp/state-transport-probe.json
+      - name: Require retained hostile-transport evidence to reproduce byte-for-byte
+        run: cmp /tmp/state-transport-probe.json results/raw/state_transport_probe.json
