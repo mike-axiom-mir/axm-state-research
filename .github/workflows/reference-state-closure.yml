@@ -37,9 +37,38 @@ jobs:
           -v
       - name: Run machine-readable experiment gate
         run: python experiments/reference-state-closure-v1/experiment.py > reference-state-report.json
-      - name: Publish inspectable report
+      - name: Build deterministic portable runner
+        run: >-
+          python experiments/reference-state-closure-v1/portable.py build
+          --output reference-state-closure.pyz
+          > portable-build-receipt.json
+      - name: Verify portable runner against provider source
+        run: >-
+          python experiments/reference-state-closure-v1/portable.py verify
+          reference-state-closure.pyz
+          > portable-verify-receipt.json
+      - name: Prove checkout-independent execution
+        shell: bash
+        run: |
+          set -euo pipefail
+          consumer="$RUNNER_TEMP/reference-state-consumer"
+          mkdir -p "$consumer"
+          cp reference-state-closure.pyz "$consumer/reference-state-closure.pyz"
+          (
+            cd "$consumer"
+            env -u PYTHONPATH python ./reference-state-closure.pyz verify > portable-self-verify.json
+            env -u PYTHONPATH python ./reference-state-closure.pyz run > portable-report.json
+          )
+          cmp reference-state-report.json "$consumer/portable-report.json"
+      - name: Publish inspectable evidence
         uses: actions/upload-artifact@v4
         with:
-          name: reference-state-report-python-${{ matrix.python-version }}
-          path: reference-state-report.json
+          name: reference-state-closure-python-${{ matrix.python-version }}
+          path: |
+            reference-state-report.json
+            reference-state-closure.pyz
+            portable-build-receipt.json
+            portable-verify-receipt.json
+            ${{ runner.temp }}/reference-state-consumer/portable-self-verify.json
+            ${{ runner.temp }}/reference-state-consumer/portable-report.json
           if-no-files-found: error
