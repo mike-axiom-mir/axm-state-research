@@ -55,17 +55,25 @@ async function exercise(page, label) {
   const metrics = await page.evaluate(() => {
     const phaseTargets = [...document.querySelectorAll('[data-phase-index]')].map(node => node.getBoundingClientRect());
     const controlTargets = [...document.querySelectorAll('.control')].map(node => node.getBoundingClientRect());
+    const controls = document.querySelector('.controls');
+    const controlsRect = controls.getBoundingClientRect();
+    const facts = [...document.querySelectorAll('.fact')].map(node => node.getBoundingClientRect());
+    const overlaps = (a, b) => a.left < b.right && a.right > b.left && a.top < b.bottom && a.bottom > b.top;
     return {
       horizontalOverflowPx: Math.max(0, document.documentElement.scrollWidth - document.documentElement.clientWidth),
       minPhaseHeight: Math.min(...phaseTargets.map(rect => rect.height)),
       minControlHeight: Math.min(...controlTargets.map(rect => rect.height)),
       currentCount: document.querySelectorAll('[data-phase-index][aria-current="step"]').length,
       bodyPhase: document.body.dataset.phase,
+      controlsPosition: getComputedStyle(controls).position,
+      controlsOverlapFacts: facts.some(rect => overlaps(controlsRect, rect)),
     };
   });
   assert.equal(metrics.horizontalOverflowPx, 0, `${label}: no document horizontal overflow`);
   assert.equal(metrics.currentCount, 1, `${label}: one current phase`);
   assert.equal(metrics.bodyPhase, 'GENESIS');
+  assert.equal(metrics.controlsPosition, 'static', `${label}: evidence controls stay in document flow`);
+  assert.equal(metrics.controlsOverlapFacts, false, `${label}: evidence controls do not cover receipt facts`);
   assert.ok(metrics.minPhaseHeight >= 44, `${label}: phase targets >= 44px`);
   assert.ok(metrics.minControlHeight >= 44, `${label}: previous/next targets >= 44px`);
   assert.deepEqual(consoleErrors, [], `${label}: no console errors`);
