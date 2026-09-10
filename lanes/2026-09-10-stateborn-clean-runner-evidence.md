@@ -40,10 +40,29 @@ Every job also requires this branch to retain PR #19 exact head `8f121cbcea12a68
 
 ## Evidence
 
-Hosted clean-runner result: PENDING on initial publication checkpoint.
+Initial clean-runner implementation head: `d7d4436bf19fce80f16e4b140f52af01ba4cfe78`.
+
+GitHub Actions `Stateborn checkpoint clean-runner evidence` run `34419467463`: **SUCCESS**.
+
+Eight clean Ubuntu 24.04.5 jobs completed successfully:
+
+- Python 3.12: State Floor;
+- Python 3.12: Workfloor Sentinel;
+- Python 3.12: Wakeup Fuzzer;
+- Python 3.12: Adaptive Closure Verifier;
+- Python 3.12: Real-Project Closure Trial;
+- Python 3.12: Unlabeled Multi-Project Closure;
+- Node 20: Stateborn checkpoint/recovery;
+- Node 22.23.2: Stateborn checkpoint/recovery.
+
+Each Node job passed the exact PR #19 ancestry guard, recovery-boundary syntax checks, the focused hostile-transport suite, the complete Stateborn suite, offline static validation, all three retained probes, and exact-byte comparison of regenerated `state_transport_probe.json` to the retained raw evidence. The Node 22 log records **18/18 focused hostile-transport tests** and **97/97 complete Stateborn tests**. Static validation reports **33 required files, 20 JavaScript files, zero external dependencies**.
+
+GitHub currently warns that `actions/checkout@v4` and `actions/setup-node@v4` themselves target its deprecated Actions Node 20 runtime and are forced onto Node 24 internally. The tested project process was still explicitly provisioned as Node 20 or Node 22 by `setup-node`; this warning is not presented as project-runtime evidence.
+
+This receipt-only evidence update follows the same non-recursive publication pattern already used by PR #19: the next exact branch head receives the same push-triggered workflow, while its final hosted run is reported on the pull request rather than editing this receipt forever.
 
 No benchmark or performance measurement is introduced by this lane. No visual/browser evidence is involved.
 
 ## Truth boundary
 
-A green hosted run will prove that the exact checkpoint-recovery stack and retained experiment suites execute successfully in the named GitHub Ubuntu environments exercised by the workflow. It will not add filesystem durability, crash atomicity, process-level restart, authenticated checkpoints, concurrent-writer safety, real networking, merge approval, release authority, or CANON authority.
+A green hosted run proves that the exact checkpoint-recovery stack and retained experiment suites execute successfully in the named GitHub Ubuntu environments exercised by the workflow. It does not add filesystem durability, crash atomicity, process-level restart, authenticated checkpoints, concurrent-writer safety, real networking, merge approval, release authority, or CANON authority.
