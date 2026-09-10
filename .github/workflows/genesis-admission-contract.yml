@@ -8,6 +8,7 @@ on:
   push:
     branches:
       - 'automation/state-architect-genesis-admission-v1'
+      - 'automation/state-architect-genesis-local-fsync-20260910'
     paths:
       - 'experiments/genesis-admission-contract-v1/**'
       - '.github/workflows/genesis-admission-contract.yml'
@@ -29,7 +30,7 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Compile
         working-directory: experiments/genesis-admission-contract-v1
-        run: python -m py_compile genesis_admission.py test_genesis_admission.py run_probe.py
+        run: python -m py_compile genesis_admission.py local_commit_store.py test_genesis_admission.py test_local_commit_store.py run_probe.py
       - name: Contract regressions
         working-directory: experiments/genesis-admission-contract-v1
         run: python -m unittest -v
