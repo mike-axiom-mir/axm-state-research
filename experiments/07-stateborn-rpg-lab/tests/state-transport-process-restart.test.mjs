@@ -5,10 +5,8 @@ import test from "node:test";
 import { fileURLToPath } from "node:url";
 
 import { digest } from "../dist/engine.js";
-import {
-  HostileTransportTrial,
-  verifyTransportCheckpoint,
-} from "../dist/state-transport.js";
+import { verifyTransportCheckpoint } from "../dist/state-transport-checkpoint.js";
+import { HostileTransportTrial } from "../dist/state-transport.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const VERIFIER = path.join(ROOT, "tools", "verify-state-transport-checkpoint.mjs");
