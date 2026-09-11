@@ -1,0 +1,57 @@
+name: Stateborn checkpoint process verifier
+
+on:
+  push:
+    branches:
+      - ai/stateborn-checkpoint-process-verifier-2026-09-11
+  pull_request:
+    paths:
+      - "experiments/07-stateborn-rpg-lab/**"
+      - ".github/workflows/stateborn-checkpoint-process-verifier.yml"
+      - "lanes/2026-09-11-stateborn-checkpoint-process-verifier.md"
+
+permissions:
+  contents: read
+
+jobs:
+  checkpoint-process-verifier:
+    name: Checkpoint process verifier / Node ${{ matrix.node }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node: [20, 22]
+    defaults:
+      run:
+        working-directory: experiments/07-stateborn-rpg-lab
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Assert exact authored source and prerequisite ancestry
+        run: |
+          test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
+          git merge-base --is-ancestor 8f121cbcea12a68904ead3042897e7d3f49124b0 HEAD
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Syntax check checkpoint boundary
+        run: |
+          node --check dist/state-transport.js
+          if test -f tools/verify-state-transport-checkpoint.mjs; then
+            node --check tools/verify-state-transport-checkpoint.mjs
+          fi
+          node --check tests/state-transport-process-restart.test.mjs
+      - name: Run focused fresh-process checkpoint regressions
+        run: node --test tests/state-transport-process-restart.test.mjs
+      - name: Run complete Stateborn suite
+        run: npm test
+      - name: Validate offline surface
+        run: node tools/validate-static.mjs
+      - name: Replay retained probes
+        run: |
+          node tools/capsule-probe.mjs > /tmp/capsule-probe.json
+          node tools/state-language-probe.mjs > /tmp/state-language-probe.json
+          node tools/state-transport-probe.mjs > /tmp/state-transport-probe.json
+      - name: Require retained hostile-transport evidence to reproduce byte-for-byte
+        run: cmp /tmp/state-transport-probe.json results/raw/state_transport_probe.json
