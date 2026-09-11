@@ -30,6 +30,22 @@ The v0.7 transport schedules, fault types, retry limits, expiry ticks, and
 expected outcomes are authored. Passing does not establish hostile Internet
 safety.
 
+## Verified fresh-process checkpoint boundary
+
+The checkpoint-owned replay repair can now be verified by a separate Node
+process that receives only a serialized v2 checkpoint plus its frozen fixture
+identity. The detached verifier recomputes the checkpoint digest, replays the
+checkpoint-owned receipt bodies into a fresh state-language engine, and checks
+the reconstructed receipt IDs, engine-state digest, and source digests. A
+self-consistently re-sealed checkpoint with an altered receipt body is rejected
+by replay rather than accepted because its outer digest was recomputed.
+
+This is verification-only evidence. It does not publish the reconstructed
+engine, resume the transport automatically, write canonical state, or grant
+merge/CANON authority. It also does not prove a complete transport-session
+restart: checkpoint v2 does not carry the transport tick, pending queue,
+attempt counters, ledger, or every other live `HostileTransportTrial` field.
+
 ## Unimplemented boundaries
 
 - no real socket, browser peer, server, authentication, encryption, signatures,
@@ -38,6 +54,8 @@ safety.
 - no cross-game schema negotiation or semantic conflict resolver;
 - no cross-process or distributed persistence race and no independent peer
   recovery store;
+- no durable checkpoint-file format, crash/power-loss atomicity, or automatic
+  process restart/resume path for the complete transport session;
 - no real model connected to the labelled AI-compatible seat;
 - no gameplay quality, accessibility, or broad human evaluation;
 - no UEFI, bootloader, kernel, driver, or USB OS implementation.
