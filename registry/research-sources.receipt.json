@@ -1,0 +1,29 @@
+{
+  "authority": {
+    "canon_authority": false,
+    "execution_authority": false,
+    "merge_authority": false,
+    "research_claim_verified": false,
+    "source_discovery_only": true
+  },
+  "class_counts": {
+    "lane-receipt": 13,
+    "raw-log": 1,
+    "reference-research": 5,
+    "research-note": 7,
+    "visual-log": 1
+  },
+  "record_count": 27,
+  "record_schema": "axm.research-source/v1",
+  "records_sha256": "007409af5a2ce4478b5d55e6c4557636955ef9a96767121063c1e7c9d1b34d3d",
+  "repo": "mike-axiom-mir/axm-state-research",
+  "schema": "axm.research-source-index/v1",
+  "source_roots": [
+    "RESEARCH",
+    "lanes",
+    "logs",
+    "research",
+    "visuals"
+  ],
+  "truth_boundary": "File identity and classification are deterministic discovery evidence; the index does not validate research claims, infer scientific truth, or promote CANON."
+}
