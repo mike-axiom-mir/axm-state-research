@@ -10,51 +10,45 @@ permissions:
 
 jobs:
   integrate:
-    if: github.event.head_commit.message != 'MergeAgent integrate Stateborn chain'
+    if: github.event.head_commit.message != 'MergeAgent flatten Stateborn chain'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
           ref: integration/stateborn-current-main-20260912
           fetch-depth: 0
-      - name: Merge checkpoint/restart ancestry and experience lane
+      - name: Flatten exact non-workflow Stateborn donor content
         run: |
           git config user.name 'AXM MergeAgent'
           git config user.email 'actions@users.noreply.github.com'
           git fetch origin ai/stateborn-checkpoint-process-verifier-2026-09-11 ai/stateborn-transport-feedback-2026-09-09
 
-          set +e
-          git merge --no-ff --no-commit origin/ai/stateborn-checkpoint-process-verifier-2026-09-11
-          status=$?
-          set -e
-          if [ "$status" -ne 0 ]; then
-            for path in README.md AGENTS.md LICENSE .gitignore docs/CLAIM_BOUNDARIES.md docs/RESEARCH_INDEX.md docs/STATE_RESEARCH_MAP.md; do
-              git checkout --ours "$path" || true
-              git add "$path" || true
-            done
-          fi
-          git checkout --ours .github/workflows/tests.yml || true
-          git add .github/workflows/tests.yml || true
-          if test -e .github/workflows/stateborn-checkpoint-process-verifier.yml; then
-            git rm -f .github/workflows/stateborn-checkpoint-process-verifier.yml
-          fi
-          unresolved="$(git diff --name-only --diff-filter=U)"
-          if [ -n "$unresolved" ]; then
-            printf 'Unresolved checkpoint-chain paths:\n%s\n' "$unresolved"
-            exit 1
-          fi
-          git commit -m 'MergeAgent integrate Stateborn checkpoint chain'
+          CHECKPOINT=origin/ai/stateborn-checkpoint-process-verifier-2026-09-11
+          EXPERIENCE=origin/ai/stateborn-transport-feedback-2026-09-09
 
-          set +e
-          git merge --no-ff --no-commit origin/ai/stateborn-transport-feedback-2026-09-09
-          status=$?
-          set -e
-          if [ "$status" -ne 0 ]; then
-            unresolved="$(git diff --name-only --diff-filter=U)"
-            if [ -n "$unresolved" ]; then
-              printf 'Unresolved experience paths:\n%s\n' "$unresolved"
-              exit 1
-            fi
-          fi
-          git commit -m 'MergeAgent integrate Stateborn transport experience'
+          git checkout "$CHECKPOINT" -- experiments/07-stateborn-rpg-lab artifacts/stateborn
+          for path in \
+            lanes/2026-09-04-stateborn-coexistence-capsules.md \
+            lanes/2026-09-10-stateborn-checkpoint-replay.md \
+            lanes/2026-09-11-stateborn-checkpoint-process-verifier.md
+          do
+            git checkout "$CHECKPOINT" -- "$path"
+          done
+
+          for path in \
+            experiments/07-stateborn-rpg-lab/dist/transport-experience.js \
+            experiments/07-stateborn-rpg-lab/dist/transport.css \
+            experiments/07-stateborn-rpg-lab/dist/transport.html \
+            experiments/07-stateborn-rpg-lab/tests/transport-experience.test.mjs \
+            experiments/07-stateborn-rpg-lab/tools/validate-static.mjs \
+            lanes/2026-09-09-stateborn-transport-feedback.md
+          do
+            git checkout "$EXPERIENCE" -- "$path"
+          done
+
+          git status --short
+          git commit -am 'MergeAgent flatten Stateborn chain' || {
+            git add experiments/07-stateborn-rpg-lab artifacts/stateborn lanes
+            git commit -m 'MergeAgent flatten Stateborn chain'
+          }
           git push origin HEAD:integration/stateborn-current-main-20260912
