@@ -1,0 +1,7 @@
+{
+  "mutations": [
+    {"id": "train-width", "path": "geometry.width", "value": 58},
+    {"id": "train-hidden-legacy", "path": "controls.legacy_override", "value": true},
+    {"id": "train-material", "path": "material.name", "value": "aluminum"}
+  ]
+}

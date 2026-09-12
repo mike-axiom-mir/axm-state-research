@@ -1,0 +1,27 @@
+{
+  "freeze_date_utc": "2026-09-05",
+  "frozen_files": {
+    "ARCHITECTURE.md": "701ef74d465f100992a5986264e407e8b9c4f54951384d5ba274f4fba3905583",
+    "evaluators/v1.py": "2e1208ba4719ba087182d67274454fda526c42d026e47e6f0d79a48cfe8c4746",
+    "evaluators/v2.py": "49ef3ce19187141057ae331222fa81f933d5e2854c47af001de9675ef483603e",
+    "manifests/gate.json": "4473f1cd1d34c06ae5b60129090515032c3e605a8664b62ec7718248b8cb974f",
+    "manifests/held_out.json": "976e4bd3153ff2cc9201417f19e5d33e8f2eeff00f778f203e7b34e49e25d188",
+    "manifests/projects.json": "94da64b1df4b715be8b0ee73e7063f238580ae868cd57b603bc016ab987e466d",
+    "manifests/scoring_oracle.json": "1068220a36ec21eac3f1fee1aee6dc74b186bf689de41d408f6016ecd47be54e",
+    "manifests/training.json": "b7bd3412c7607f8fe52169072b64f40997227d2fbe778941fd15529bf7aa46bf",
+    "opaque_recovery/__init__.py": "5e9fb6d611e73e16e7e15fd89b20c82c2257420644d0b6fd6c2f8df2284a027c",
+    "opaque_recovery/runtime.py": "ec2232039af03f8982bfd15712fd9e31bc51f9129c943e8a24778f9b82909dbd",
+    "pyproject.toml": "44050cc747ee8e411a0f25b71a06193ecd799493fbf7bcee6df5d089e3c658db",
+    "run_benchmarks.py": "010a3c42abe56a5c140288b129446bc4979102d52d959cac93636e530c86ef44",
+    "tests/test_opaque_recovery.py": "640eed92a9bec30d405d3ff70ab906d9f23974cddc95e8c613c1df22fc3de793",
+    "verify_evidence.py": "06121be2d9a0ff06d3b662bfefde875797e72acbf9354033258e6a9f95ec2c35"
+  },
+  "pre_score_checks": {
+    "contract_smoke": true,
+    "held_out_score_executed": false,
+    "python_compile": true
+  },
+  "schema": "axm.opaque-recovery.pre-score-freeze/v1",
+  "semantic_freeze_commit": "3d35321ac1f99ee0cbf18a0ee81f812d94abbb59",
+  "semantic_freeze_tree": "832b158fbb2ce903fe26b9849651813ee8691141"
+}

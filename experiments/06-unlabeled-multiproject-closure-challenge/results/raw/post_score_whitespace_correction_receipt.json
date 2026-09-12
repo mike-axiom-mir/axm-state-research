@@ -1,0 +1,54 @@
+{
+  "schema": "axm.unlabeled-closure.post-score-whitespace-correction/v1",
+  "date_utc": "2026-09-02",
+  "semantic_freeze_commit": "d804cc5f4a2bc863f2f2177daa89d77c1dcdc524",
+  "first_score_evidence_commit": "dd645e35d2958165b845e998ba74d0f20018a8bf",
+  "pre_correction_head": "20d2ca4d6d9b5a3d066ee42b010d8582d771da87",
+  "correction_commit": "e28e6c6b69a5509a911eb464c48af68a2da637d1",
+  "correction_tree": "c06a92efdb9e915794ba647b5b83ed91f5b3684c",
+  "initial_committed_range_check": {
+    "command": "git diff --check 7ba2b1d42891074856ad274d00dc3985ef5e1d27..HEAD",
+    "result": "FAIL",
+    "exit_code": 2,
+    "reported_added_eof_blank_lines": 15
+  },
+  "correction_boundary": "Remove only extra EOF blank lines from reported files. run_benchmarks.py additionally learns how to verify the original frozen blob against the receipted EOF-normalized current blob.",
+  "policy_semantics_changed": false,
+  "risk_inference_changed": false,
+  "training_or_held_out_parsed_values_changed": false,
+  "checkpoint_protocol_parsed_value_changed": false,
+  "first_score_or_raw_evidence_overwritten": false,
+  "corrected_frozen_files": [
+    "manifests/checkpoint_protocol.json",
+    "manifests/held_out.json",
+    "manifests/projects.json",
+    "manifests/training.json",
+    "pyproject.toml",
+    "unlabeled_closure/__init__.py",
+    "unlabeled_closure/checkpoint.py",
+    "unlabeled_closure/foundation_loader.py",
+    "unlabeled_closure/model.py",
+    "unlabeled_closure/policy.py"
+  ],
+  "corrected_files": {
+    "ARCHITECTURE.md": {"before_sha256": "3fc96d80eea7ed68c847a76851274e7fe392c8904ff748d124d5ed77a92940c6", "after_sha256": "1c91df7dcb4a00ca9719b1af4067081c603639dd577509cdcbccbbbf8d10eaaf"},
+    "README.md": {"before_sha256": "2caa597ba4f1fd727046170541d562144b265b007235448a9f3b2a2bce97c601", "after_sha256": "6dd498b8072761aad72d6b4aa822d3c04d27bb86136abd5ace2590c6a0178127"},
+    "manifests/checkpoint_protocol.json": {"before_sha256": "af9293c02dc59d969c4fdcd04d9356a055d6635bca22e70e32dcd2b3a5628fc4", "after_sha256": "6bc02ec2f29d95e4e43129c7447a9ab6f57f3b99e868e85dc97035cb1e22e4b4"},
+    "manifests/held_out.json": {"before_sha256": "2d3b07b3f5eaf5bac06c739d7ff3e3ac9a45f71daff757b7c18d37eb601da251", "after_sha256": "05bff140729c749ca5ef082e1ab489158260916b215a68664031407d139447d9"},
+    "manifests/projects.json": {"before_sha256": "e93c487d17dc3906fd51fb5722ba494a9edbfe2a7d8eba6ca0681fda7fbd0f03", "after_sha256": "9b7a253a3795865c3bc354687628838b7d6d1b9908f550877e920701c8ab721c"},
+    "manifests/training.json": {"before_sha256": "f1914eebe3f5c854a12972c8b42d548f3eaf443668a94bc0b553d8794a80adc7", "after_sha256": "c6bd71fe8f7fa25411936bf50ab7af324abc7679951dfe29e8d3e6dceca3f48e"},
+    "pyproject.toml": {"before_sha256": "427c81ffec9b8e7f4277af12b8ba28d1e1d045b7e011373c4b85522a3fefae4f", "after_sha256": "34c9dc001ad86cc455666fb482cfcd855c0fcc0e60b69f024854ea1cb6c20999"},
+    "results/README.md": {"before_sha256": "eb0587f195ffbb31b019ba76f8cd2b057ab84f6a98de673e8d6f63c09e868f3a", "after_sha256": "5c96bf545a3b79408d9d7067441105fac2be3877ead6fafa455068aa4ebdf930"},
+    "run_benchmarks.py": {"before_sha256": "c3f82806eb09dff66c16e24742c48d5379d112000b343d3405b56eaa324531ad", "after_sha256": "c9d04bbfbf9c9fae390d6d2fc8c74e716e529908f9801fb57f27b7ad06d6f4ec"},
+    "unlabeled_closure/__init__.py": {"before_sha256": "b0d3880f681dd8223eb6a6cd6cfa2151b1e667e235c0dfc1e9d9dafd676e9b68", "after_sha256": "08ee3df1a32797cd0c21050b4666e1624158594f3a036fe1adf819f33f342999"},
+    "unlabeled_closure/checkpoint.py": {"before_sha256": "94745af1c6182280f9e29e9ef58be805d18a6b48f7e01736afa73854546149a6", "after_sha256": "2e0953a51b7ef659b984959181e27be840eddadcc471af2d1a5add3e889b70ed"},
+    "unlabeled_closure/foundation_loader.py": {"before_sha256": "031264b724c3bc3de3badf123ece207d2fa58534c65cdd90cf5cf2f50d1280eb", "after_sha256": "3974bf5db5278899d378f4039c9cbfa9992327d826d35b70df9111abdd092d1d"},
+    "unlabeled_closure/model.py": {"before_sha256": "e9e46be77e6281e6344068e6d69377e8f4d5e2db6622e92ca21624d2643138a4", "after_sha256": "69530676ca2f645ff7a194f5bc2eb17ebf172c6df0412e04932035a999143a06"},
+    "unlabeled_closure/policy.py": {"before_sha256": "7dba7d4383e0ddde6f1a9d5b6dee70748238d34f9d7d90b65554e830a0007e60", "after_sha256": "072b47dc043ee5a506b2c18b13dff947eecf1dbbd9833ac04041206bd6e6515e"},
+    "verify_evidence.py": {"before_sha256": "d0a76a37fdb5f64f84c04721c8603d6b824d6c3490d47b5586dcb3f9237b9ecf", "after_sha256": "3144ddb3ec0b881fecd685163ca10c1d7c68eed2bda7a071256914966722df0c"}
+  },
+  "post_correction_committed_range_check": {
+    "command": "git diff --check 7ba2b1d42891074856ad274d00dc3985ef5e1d27..e28e6c6b69a5509a911eb464c48af68a2da637d1",
+    "result": "PASS"
+  }
+}

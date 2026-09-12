@@ -1,0 +1,178 @@
+{
+  "schema": "axm.real-project-closure.mutation-split/v1",
+  "seed": 20260902,
+  "separation": {
+    "training_can_change_metadata": true,
+    "held_out_is_loaded_only_after_training_is_frozen": true,
+    "held_out_oracle_answers_are_not_stored": true,
+    "held_out_routing_inputs": ["file change event", "declared risk tags", "training-learned reads"]
+  },
+  "faults": [
+    {
+      "id": "fault-direct-file-omission",
+      "kind": "direct_file_dependency_omission",
+      "check_id": "boundary--software-not-hardware",
+      "action": "remove_dependency",
+      "value": "file:README.md",
+      "training_exposed": true
+    },
+    {
+      "id": "fault-derived-report-chain",
+      "kind": "derived_report_chain",
+      "check_id": "cross--report-matches-raw-results",
+      "action": "remove_dependency",
+      "value": "file:results/benchmark_results.json",
+      "training_exposed": true
+    },
+    {
+      "id": "fault-incomplete-evidence",
+      "kind": "incomplete_evidence_access",
+      "check_id": "toml-python--pyproject__toml",
+      "action": "restrict_evidence",
+      "value": "file:pyproject.toml#sha256",
+      "training_exposed": true
+    },
+    {
+      "id": "fault-conditional-read",
+      "kind": "conditional_read",
+      "check_id": "json-timings--results__benchmark_results__json",
+      "action": "remove_dependency",
+      "value": "file:results/benchmark_results.json",
+      "training_exposed": false
+    },
+    {
+      "id": "fault-dormant-invalid-metadata",
+      "kind": "dormant_invalid_metadata",
+      "check_id": "markdown-h1--ARCHITECTURE__md",
+      "action": "inject_invalid_dependency",
+      "value": "unknown:dormant-manifest",
+      "training_exposed": false
+    }
+  ],
+  "mutations": {
+    "training": [
+      {
+        "id": "train-direct-break",
+        "operation": "update",
+        "path": "README.md",
+        "transform": "replace_once",
+        "arguments": {"old": "This is not a hardware layer", "new": "This is not a hardware tier"},
+        "risk_tags": ["claim"],
+        "training_probes": ["boundary--software-not-hardware"],
+        "description": "Exercise the planted direct README omission with a training-only wording change."
+      },
+      {
+        "id": "train-direct-restore",
+        "operation": "update",
+        "path": "README.md",
+        "transform": "replace_once",
+        "arguments": {"old": "This is not a hardware tier", "new": "This is not a hardware layer"},
+        "risk_tags": ["claim"],
+        "training_probes": ["boundary--software-not-hardware"],
+        "description": "Restore the direct training mutation before the held-out phase."
+      },
+      {
+        "id": "train-report-break",
+        "operation": "update",
+        "path": "results/benchmark_results.json",
+        "transform": "json_set",
+        "arguments": {"path": ["scaling_runs", 3, "comparison", "final_state_output_equivalence"], "value": false},
+        "risk_tags": ["raw_results"],
+        "training_probes": ["cross--report-matches-raw-results"],
+        "description": "Exercise the report/raw derived dependency using the final scaling record."
+      },
+      {
+        "id": "train-report-restore",
+        "operation": "update",
+        "path": "results/benchmark_results.json",
+        "transform": "json_set",
+        "arguments": {"path": ["scaling_runs", 3, "comparison", "final_state_output_equivalence"], "value": true},
+        "risk_tags": ["raw_results"],
+        "training_probes": ["cross--report-matches-raw-results"],
+        "description": "Restore the report-chain training mutation before the held-out phase."
+      },
+      {
+        "id": "train-evidence-break",
+        "operation": "update",
+        "path": "pyproject.toml",
+        "transform": "replace_once",
+        "arguments": {"old": "requires-python = \">=3.11\"", "new": "requires-python = \">=3.12\""},
+        "risk_tags": ["config"],
+        "training_probes": ["toml-python--pyproject__toml"],
+        "description": "Exercise an incomplete permitted evidence slice on a training-only config value."
+      },
+      {
+        "id": "train-evidence-restore",
+        "operation": "update",
+        "path": "pyproject.toml",
+        "transform": "replace_once",
+        "arguments": {"old": "requires-python = \">=3.12\"", "new": "requires-python = \">=3.11\""},
+        "risk_tags": ["config"],
+        "training_probes": ["toml-python--pyproject__toml"],
+        "description": "Restore the config training mutation before the held-out phase."
+      }
+    ],
+    "held_out": [
+      {
+        "id": "held-direct-unseen-wording",
+        "operation": "update",
+        "path": "README.md",
+        "transform": "replace_once",
+        "arguments": {"old": "This is not a hardware layer", "new": "This remains a software-only layer"},
+        "risk_tags": ["claim"],
+        "training_probes": [],
+        "description": "Use a wording not present in training against the learned direct dependency."
+      },
+      {
+        "id": "held-report-unseen-record",
+        "operation": "update",
+        "path": "results/benchmark_results.json",
+        "transform": "json_set",
+        "arguments": {"path": ["scaling_runs", 0, "comparison", "final_state_output_equivalence"], "value": false},
+        "risk_tags": ["raw_results"],
+        "training_probes": [],
+        "description": "Change a different raw scaling record than training used."
+      },
+      {
+        "id": "held-evidence-unseen-value",
+        "operation": "update",
+        "path": "pyproject.toml",
+        "transform": "replace_once",
+        "arguments": {"old": "requires-python = \">=3.11\"", "new": "requires-python = \">=99\""},
+        "risk_tags": ["config"],
+        "training_probes": [],
+        "description": "Use a config value not present in training against the learned evidence slice."
+      },
+      {
+        "id": "held-conditional-negative-timing",
+        "operation": "update",
+        "path": "results/benchmark_results.json",
+        "transform": "json_set",
+        "arguments": {"path": ["scaling_runs", 1, "sparse", "wall_time_ns"], "value": -1},
+        "risk_tags": ["raw_results"],
+        "training_probes": [],
+        "description": "Expose a dormant recursive timing branch absent from training."
+      },
+      {
+        "id": "held-delete-license",
+        "operation": "delete",
+        "path": "LICENSE",
+        "transform": "literal",
+        "arguments": {},
+        "risk_tags": ["license"],
+        "training_probes": [],
+        "description": "Delete a normally routed file while risk validation surfaces dormant invalid metadata elsewhere."
+      },
+      {
+        "id": "held-add-invalid-python",
+        "operation": "add",
+        "path": "axm_state_floor/held_ghost.py",
+        "transform": "literal",
+        "arguments": {"content": "def held_broken(:\n    pass\n"},
+        "risk_tags": ["new_file"],
+        "training_probes": [],
+        "description": "Add an unseen invalid Python file for the canonical category evaluator."
+      }
+    ]
+  }
+}

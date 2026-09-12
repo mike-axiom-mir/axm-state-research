@@ -1,0 +1,16 @@
+{
+  "mutations": [
+    {"id": "v2-width", "project_id": "opaque-workcell-v2", "path": "geometry.width", "value": 63},
+    {"id": "v2-hidden-off", "project_id": "opaque-workcell-v2", "path": "controls.emergency_override", "value": false},
+    {"id": "v2-material", "project_id": "opaque-workcell-v2", "path": "material.name", "value": "carbon-composite"},
+    {"id": "v2-hidden-on", "project_id": "opaque-workcell-v2", "path": "controls.emergency_override", "value": true},
+    {"id": "v2-public-contract-path", "project_id": "opaque-workcell-v2", "path": "identity.name", "value": "workcell-alpha-r2"},
+    {"id": "v2-energy", "project_id": "opaque-workcell-v2", "path": "energy.watts", "value": 525},
+    {"id": "v3-width", "project_id": "opaque-workcell-v3-unavailable", "path": "geometry.width", "value": 79},
+    {"id": "v3-hidden-off", "project_id": "opaque-workcell-v3-unavailable", "path": "controls.fail_safe", "value": false},
+    {"id": "v3-name", "project_id": "opaque-workcell-v3-unavailable", "path": "identity.name", "value": "workcell-beta-r2"},
+    {"id": "v3-load", "project_id": "opaque-workcell-v3-unavailable", "path": "load.max", "value": 195},
+    {"id": "v3-hidden-on", "project_id": "opaque-workcell-v3-unavailable", "path": "controls.fail_safe", "value": true},
+    {"id": "v3-budget", "project_id": "opaque-workcell-v3-unavailable", "path": "budget.max", "value": 1900}
+  ]
+}

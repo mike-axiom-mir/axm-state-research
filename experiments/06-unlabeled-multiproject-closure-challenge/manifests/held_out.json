@@ -1,0 +1,94 @@
+{
+  "schema": "axm.unlabeled-closure.held-out-mutations/v1",
+  "separation": {
+    "loaded_after_training_freeze": true,
+    "contains_declared_risk_annotations": false,
+    "contains_oracle_answers": false,
+    "contains_training_probes": false,
+    "routing_inputs": ["file operation", "path", "suffix", "category", "depth", "check contract shape", "training-observed parameter/read templates"]
+  },
+  "mutations": [
+    {
+      "id": "held-sentinel-config-generator",
+      "project_id": "workfloor-sentinel-v0.1.0-at-7ba2b1d",
+      "checkpoint_case": "absent",
+      "description": "Change the held Sentinel launcher/config-generator with an absent starting checkpoint.",
+      "operations": [
+        {"kind": "append_text", "path": "run_sentinel.py", "arguments": {"text": "\n# held config-generator mutation\n"}}
+      ]
+    },
+    {
+      "id": "held-sentinel-derived-chain",
+      "project_id": "workfloor-sentinel-v0.1.0-at-7ba2b1d",
+      "description": "Change Sentinel raw results feeding a three-stage derived-output chain.",
+      "operations": [
+        {"kind": "json_set_top", "path": "results/sentinel_results.json", "arguments": {"key": "held_chain_marker", "value": 2}}
+      ]
+    },
+    {
+      "id": "held-sentinel-rename",
+      "project_id": "workfloor-sentinel-v0.1.0-at-7ba2b1d",
+      "description": "Rename a canonical Sentinel catalog file.",
+      "operations": [
+        {"kind": "rename", "path": "CHECK_CATALOG.md", "arguments": {"to": "CHECK_CATALOG_HELD.md"}}
+      ]
+    },
+    {
+      "id": "held-sentinel-delete-renamed",
+      "project_id": "workfloor-sentinel-v0.1.0-at-7ba2b1d",
+      "description": "Delete the renamed catalog as a longer rename/delete chain.",
+      "operations": [
+        {"kind": "delete", "path": "CHECK_CATALOG_HELD.md", "arguments": {}}
+      ]
+    },
+    {
+      "id": "held-sentinel-config-value",
+      "project_id": "workfloor-sentinel-v0.1.0-at-7ba2b1d",
+      "description": "Change Sentinel configuration through the opaque helper input.",
+      "operations": [
+        {"kind": "replace_once", "path": "pyproject.toml", "arguments": {"old": "requires-python = \">=3.11\"", "new": "requires-python = \">=3.13\""}}
+      ]
+    },
+    {
+      "id": "held-adaptive-config-generator",
+      "project_id": "adaptive-closure-v0.1.0-at-7ba2b1d",
+      "checkpoint_case": "corrupt_payload",
+      "description": "Change the held Adaptive Closure runner/config-generator with a corrupt starting checkpoint.",
+      "operations": [
+        {"kind": "append_text", "path": "run_benchmarks.py", "arguments": {"text": "\n# held config-generator mutation\n"}}
+      ]
+    },
+    {
+      "id": "held-adaptive-derived-chain",
+      "project_id": "adaptive-closure-v0.1.0-at-7ba2b1d",
+      "description": "Change Adaptive Closure raw state-debt results feeding a three-stage chain.",
+      "operations": [
+        {"kind": "json_set_top", "path": "results/raw/state_debt.json", "arguments": {"key": "held_chain_marker", "value": 3}}
+      ]
+    },
+    {
+      "id": "held-adaptive-rename",
+      "project_id": "adaptive-closure-v0.1.0-at-7ba2b1d",
+      "description": "Rename the canonical Adaptive Closure limitations file.",
+      "operations": [
+        {"kind": "rename", "path": "FAILURE_LIMITATIONS.md", "arguments": {"to": "FAILURE_LIMITATIONS_HELD.md"}}
+      ]
+    },
+    {
+      "id": "held-adaptive-delete-renamed",
+      "project_id": "adaptive-closure-v0.1.0-at-7ba2b1d",
+      "description": "Delete the renamed limitations file to complete the held chain.",
+      "operations": [
+        {"kind": "delete", "path": "FAILURE_LIMITATIONS_HELD.md", "arguments": {}}
+      ]
+    },
+    {
+      "id": "held-adaptive-config-value",
+      "project_id": "adaptive-closure-v0.1.0-at-7ba2b1d",
+      "description": "Change Adaptive Closure configuration through the opaque helper input.",
+      "operations": [
+        {"kind": "replace_once", "path": "pyproject.toml", "arguments": {"old": "requires-python = \">=3.11\"", "new": "requires-python = \">=3.14\""}}
+      ]
+    }
+  ]
+}

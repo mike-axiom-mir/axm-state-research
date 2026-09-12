@@ -22,8 +22,18 @@ jobs:
             directory: experiments/02-workfloor-sentinel
           - name: Wakeup Fuzzer
             directory: experiments/03-wakeup-fuzzer
+          - name: Adaptive Closure Verifier
+            directory: experiments/04-adaptive-closure-verifier
+          - name: Real-Project Closure Trial
+            directory: experiments/05-real-project-closure-trial
+          - name: Unlabeled Multi-Project Closure
+            directory: experiments/06-unlabeled-multiproject-closure-challenge
+          - name: Cross-Version Opaque Recovery
+            directory: experiments/07-cross-version-opaque-recovery-challenge
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
