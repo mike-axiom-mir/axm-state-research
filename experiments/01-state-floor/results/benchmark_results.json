@@ -1,0 +1,487 @@
+{
+  "configuration": {
+    "baseline_fairness": "same nodes, handlers, inputs, subscriptions, merge gate, and expected final output; baseline scans and deserializes a full packet for every node each cycle",
+    "history_events_in_naive_packet": 48,
+    "partition_count": 128,
+    "perspective_families": 16,
+    "replay_runs": 3,
+    "scales": [
+      10,
+      100,
+      1000,
+      10000
+    ]
+  },
+  "environment": {
+    "cpu_clock": "time.process_time_ns",
+    "logical_cpus": 9,
+    "memory_method": "tracemalloc peak plus Linux VmRSS snapshot and recursive Python retained-size estimate",
+    "platform": "Linux-6.18.35-x86_64-with-glibc2.39",
+    "process_rss_at_suite_start_bytes": 14696448,
+    "python": "3.12.13 (main, Aug  7 2026, 02:25:39) [Clang 22.1.3 ]",
+    "timing_clock": "time.perf_counter_ns"
+  },
+  "experiment_version": "0.1.0",
+  "scaling_runs": [
+    {
+      "comparison": {
+        "baseline_duplicated_context_bytes": 142770,
+        "baseline_final_state_hash": "adb580d1a190d077c208a5a5228e5089032c364a5c28a90e0c6ade963bd959a0",
+        "final_state_output_equivalence": true,
+        "note": "Sparse runtime shares a guarded read-only state view; zero here means no per-node context serialization, not zero memory traffic.",
+        "sparse_duplicated_context_bytes": 0,
+        "sparse_final_state_hash": "adb580d1a190d077c208a5a5228e5089032c364a5c28a90e0c6ade963bd959a0",
+        "specialist_evaluation_reduction_percentage": 60.0,
+        "wall_time_ratio_baseline_over_sparse": 2.968
+      },
+      "naive_baseline": {
+        "accepted_state_deltas": 9,
+        "conflict_objects_created": 0,
+        "cpu_time_ns": 21913637,
+        "deduplicated_deltas": 2,
+        "duplicated_context_bytes_cumulative": 142770,
+        "final_state_bytes": 4075,
+        "full_scan_and_copy_time_ns": 16139706,
+        "handler_invocations": 8,
+        "handler_time_ns": 829890,
+        "max_iterations_reached": false,
+        "merge_time_ns": 2061770,
+        "nodes_changing_state_unique": 7,
+        "nodes_producing_deltas_unique": 7,
+        "process_rss_after_run_bytes": 15220736,
+        "quiescent": true,
+        "registered_nodes": 10,
+        "specialist_evaluations": 20,
+        "stabilization_iterations": 2,
+        "tracemalloc_current_bytes": 38155,
+        "tracemalloc_peak_bytes": 126554,
+        "triggered_nodes_unique": 7,
+        "unresolved_conflicts_created": 0,
+        "wall_time_ns": 21973681
+      },
+      "registered_vs_triggered_vs_changing": {
+        "changing_state": 7,
+        "producing_deltas": 7,
+        "registered": 10,
+        "triggered": 7
+      },
+      "scale": 10,
+      "sparse": {
+        "accepted_state_deltas": 9,
+        "bytes_per_registered_node_estimate": 686.1,
+        "conflict_objects_created": 0,
+        "cpu_time_ns": 7403591,
+        "deduplicated_deltas": 2,
+        "deterministic_replay_success": true,
+        "dormant_nodes": 3,
+        "dormant_percentage": 30.0,
+        "execution_order_invariance_success": true,
+        "final_state_bytes": 4075,
+        "handler_time_ns": 927688,
+        "max_iterations_reached": false,
+        "merge_time_ns": 1844472,
+        "node_executions": 8,
+        "nodes_changing_state_unique": 7,
+        "nodes_producing_deltas_unique": 7,
+        "process_rss_after_run_bytes": 15216640,
+        "quiescent": true,
+        "receipt_file": "receipts_10.jsonl",
+        "registered_nodes": 10,
+        "registry_and_router_retained_bytes": 6861,
+        "replay_final_state_hashes": [
+          "adb580d1a190d077c208a5a5228e5089032c364a5c28a90e0c6ade963bd959a0",
+          "adb580d1a190d077c208a5a5228e5089032c364a5c28a90e0c6ade963bd959a0",
+          "adb580d1a190d077c208a5a5228e5089032c364a5c28a90e0c6ade963bd959a0"
+        ],
+        "replay_fingerprints": [
+          "7121f573ac91a45aa914fa098a2a25cb18c5436a27d05f75cab233b9ae3cd7f4",
+          "7121f573ac91a45aa914fa098a2a25cb18c5436a27d05f75cab233b9ae3cd7f4",
+          "7121f573ac91a45aa914fa098a2a25cb18c5436a27d05f75cab233b9ae3cd7f4"
+        ],
+        "replay_runs": 3,
+        "reverse_order_final_state_hash": "adb580d1a190d077c208a5a5228e5089032c364a5c28a90e0c6ade963bd959a0",
+        "routing_time_ns": 1362196,
+        "stabilization_iterations": 2,
+        "startup_time_ns": 58571,
+        "tracemalloc_current_bytes": 25083,
+        "tracemalloc_peak_bytes": 39275,
+        "triggered_nodes_unique": 7,
+        "unresolved_conflicts_created": 0,
+        "wall_time_ns": 7403599
+      }
+    },
+    {
+      "comparison": {
+        "baseline_duplicated_context_bytes": 3428900,
+        "baseline_final_state_hash": "ba160f89a82f4c4116d0c0fa58db890090cdfc93bc0fafb15e0c5209486cfa23",
+        "final_state_output_equivalence": true,
+        "note": "Sparse runtime shares a guarded read-only state view; zero here means no per-node context serialization, not zero memory traffic.",
+        "sparse_duplicated_context_bytes": 0,
+        "sparse_final_state_hash": "ba160f89a82f4c4116d0c0fa58db890090cdfc93bc0fafb15e0c5209486cfa23",
+        "specialist_evaluation_reduction_percentage": 88.6667,
+        "wall_time_ratio_baseline_over_sparse": 13.2029
+      },
+      "naive_baseline": {
+        "accepted_state_deltas": 11,
+        "conflict_objects_created": 2,
+        "cpu_time_ns": 342476028,
+        "deduplicated_deltas": 20,
+        "duplicated_context_bytes_cumulative": 3428900,
+        "final_state_bytes": 8231,
+        "full_scan_and_copy_time_ns": 326625056,
+        "handler_invocations": 34,
+        "handler_time_ns": 12476985,
+        "max_iterations_reached": false,
+        "merge_time_ns": 6114363,
+        "nodes_changing_state_unique": 9,
+        "nodes_producing_deltas_unique": 13,
+        "process_rss_after_run_bytes": 15441920,
+        "quiescent": true,
+        "registered_nodes": 100,
+        "specialist_evaluations": 300,
+        "stabilization_iterations": 3,
+        "tracemalloc_current_bytes": 72442,
+        "tracemalloc_peak_bytes": 208777,
+        "triggered_nodes_unique": 13,
+        "unresolved_conflicts_created": 2,
+        "wall_time_ns": 343736483
+      },
+      "registered_vs_triggered_vs_changing": {
+        "changing_state": 9,
+        "producing_deltas": 13,
+        "registered": 100,
+        "triggered": 13
+      },
+      "scale": 100,
+      "sparse": {
+        "accepted_state_deltas": 11,
+        "bytes_per_registered_node_estimate": 436.09,
+        "conflict_objects_created": 2,
+        "cpu_time_ns": 26038405,
+        "deduplicated_deltas": 20,
+        "deterministic_replay_success": true,
+        "dormant_nodes": 87,
+        "dormant_percentage": 87.0,
+        "execution_order_invariance_success": true,
+        "final_state_bytes": 8231,
+        "handler_time_ns": 4255118,
+        "max_iterations_reached": false,
+        "merge_time_ns": 6671812,
+        "node_executions": 34,
+        "nodes_changing_state_unique": 9,
+        "nodes_producing_deltas_unique": 13,
+        "process_rss_after_run_bytes": 15441920,
+        "quiescent": true,
+        "receipt_file": "receipts_100.jsonl",
+        "registered_nodes": 100,
+        "registry_and_router_retained_bytes": 43609,
+        "replay_final_state_hashes": [
+          "ba160f89a82f4c4116d0c0fa58db890090cdfc93bc0fafb15e0c5209486cfa23",
+          "ba160f89a82f4c4116d0c0fa58db890090cdfc93bc0fafb15e0c5209486cfa23",
+          "ba160f89a82f4c4116d0c0fa58db890090cdfc93bc0fafb15e0c5209486cfa23"
+        ],
+        "replay_fingerprints": [
+          "29412de04a48c4f79fb28a792713f49bf9367ce42dd0a6675f5c05a0111deca0",
+          "29412de04a48c4f79fb28a792713f49bf9367ce42dd0a6675f5c05a0111deca0",
+          "29412de04a48c4f79fb28a792713f49bf9367ce42dd0a6675f5c05a0111deca0"
+        ],
+        "replay_runs": 3,
+        "reverse_order_final_state_hash": "ba160f89a82f4c4116d0c0fa58db890090cdfc93bc0fafb15e0c5209486cfa23",
+        "routing_time_ns": 4652435,
+        "stabilization_iterations": 3,
+        "startup_time_ns": 320619,
+        "tracemalloc_current_bytes": 57430,
+        "tracemalloc_peak_bytes": 87216,
+        "triggered_nodes_unique": 13,
+        "unresolved_conflicts_created": 2,
+        "wall_time_ns": 26034955
+      }
+    },
+    {
+      "comparison": {
+        "baseline_duplicated_context_bytes": 46842000,
+        "baseline_final_state_hash": "2e95f4974218f35d814d57a95cda6f3b20cdbcec9c39e23a356c836406c9cf4f",
+        "final_state_output_equivalence": true,
+        "note": "Sparse runtime shares a guarded read-only state view; zero here means no per-node context serialization, not zero memory traffic.",
+        "sparse_duplicated_context_bytes": 0,
+        "sparse_final_state_hash": "2e95f4974218f35d814d57a95cda6f3b20cdbcec9c39e23a356c836406c9cf4f",
+        "specialist_evaluation_reduction_percentage": 98.2667,
+        "wall_time_ratio_baseline_over_sparse": 49.8152
+      },
+      "naive_baseline": {
+        "accepted_state_deltas": 11,
+        "conflict_objects_created": 2,
+        "cpu_time_ns": 3962993807,
+        "deduplicated_deltas": 37,
+        "duplicated_context_bytes_cumulative": 46842000,
+        "final_state_bytes": 13834,
+        "full_scan_and_copy_time_ns": 3941108145,
+        "handler_invocations": 52,
+        "handler_time_ns": 9717738,
+        "max_iterations_reached": false,
+        "merge_time_ns": 8287621,
+        "nodes_changing_state_unique": 9,
+        "nodes_producing_deltas_unique": 31,
+        "process_rss_after_run_bytes": 16089088,
+        "quiescent": true,
+        "registered_nodes": 1000,
+        "specialist_evaluations": 3000,
+        "stabilization_iterations": 3,
+        "tracemalloc_current_bytes": 99597,
+        "tracemalloc_peak_bytes": 290396,
+        "triggered_nodes_unique": 31,
+        "unresolved_conflicts_created": 2,
+        "wall_time_ns": 3968625158
+      },
+      "registered_vs_triggered_vs_changing": {
+        "changing_state": 9,
+        "producing_deltas": 31,
+        "registered": 1000,
+        "triggered": 31
+      },
+      "scale": 1000,
+      "sparse": {
+        "accepted_state_deltas": 11,
+        "bytes_per_registered_node_estimate": 415.648,
+        "conflict_objects_created": 2,
+        "cpu_time_ns": 79602539,
+        "deduplicated_deltas": 37,
+        "deterministic_replay_success": true,
+        "dormant_nodes": 969,
+        "dormant_percentage": 96.9,
+        "execution_order_invariance_success": true,
+        "final_state_bytes": 13834,
+        "handler_time_ns": 13931058,
+        "max_iterations_reached": false,
+        "merge_time_ns": 15588923,
+        "node_executions": 52,
+        "nodes_changing_state_unique": 9,
+        "nodes_producing_deltas_unique": 31,
+        "process_rss_after_run_bytes": 16089088,
+        "quiescent": true,
+        "receipt_file": "receipts_1000.jsonl",
+        "registered_nodes": 1000,
+        "registry_and_router_retained_bytes": 415648,
+        "replay_final_state_hashes": [
+          "2e95f4974218f35d814d57a95cda6f3b20cdbcec9c39e23a356c836406c9cf4f",
+          "2e95f4974218f35d814d57a95cda6f3b20cdbcec9c39e23a356c836406c9cf4f",
+          "2e95f4974218f35d814d57a95cda6f3b20cdbcec9c39e23a356c836406c9cf4f"
+        ],
+        "replay_fingerprints": [
+          "c8ba2782ad6476d70e4c8d80cc70fe9fc210f2e2f5de1b9e818316ee9b7f32b0",
+          "c8ba2782ad6476d70e4c8d80cc70fe9fc210f2e2f5de1b9e818316ee9b7f32b0",
+          "c8ba2782ad6476d70e4c8d80cc70fe9fc210f2e2f5de1b9e818316ee9b7f32b0"
+        ],
+        "replay_runs": 3,
+        "reverse_order_final_state_hash": "2e95f4974218f35d814d57a95cda6f3b20cdbcec9c39e23a356c836406c9cf4f",
+        "routing_time_ns": 13438511,
+        "stabilization_iterations": 3,
+        "startup_time_ns": 4782452,
+        "tracemalloc_current_bytes": 91181,
+        "tracemalloc_peak_bytes": 141829,
+        "triggered_nodes_unique": 31,
+        "unresolved_conflicts_created": 2,
+        "wall_time_ns": 79667025
+      }
+    },
+    {
+      "comparison": {
+        "baseline_duplicated_context_bytes": 1091770000,
+        "baseline_final_state_hash": "903ae4ddfd117d0e955cbd982356e1aabc6158ff9d50e51fe68248f617b25871",
+        "final_state_output_equivalence": true,
+        "note": "Sparse runtime shares a guarded read-only state view; zero here means no per-node context serialization, not zero memory traffic.",
+        "sparse_duplicated_context_bytes": 0,
+        "sparse_final_state_hash": "903ae4ddfd117d0e955cbd982356e1aabc6158ff9d50e51fe68248f617b25871",
+        "specialist_evaluation_reduction_percentage": 99.3733,
+        "wall_time_ratio_baseline_over_sparse": 341.1409
+      },
+      "naive_baseline": {
+        "accepted_state_deltas": 11,
+        "conflict_objects_created": 2,
+        "cpu_time_ns": 53924737407,
+        "deduplicated_deltas": 169,
+        "duplicated_context_bytes_cumulative": 1091770000,
+        "final_state_bytes": 38491,
+        "full_scan_and_copy_time_ns": 53881213578,
+        "handler_invocations": 188,
+        "handler_time_ns": 36824520,
+        "max_iterations_reached": false,
+        "merge_time_ns": 26589957,
+        "nodes_changing_state_unique": 9,
+        "nodes_producing_deltas_unique": 159,
+        "process_rss_after_run_bytes": 25464832,
+        "quiescent": true,
+        "registered_nodes": 10000,
+        "specialist_evaluations": 30000,
+        "stabilization_iterations": 3,
+        "tracemalloc_current_bytes": 273847,
+        "tracemalloc_peak_bytes": 794444,
+        "triggered_nodes_unique": 159,
+        "unresolved_conflicts_created": 2,
+        "wall_time_ns": 53936095851
+      },
+      "registered_vs_triggered_vs_changing": {
+        "changing_state": 9,
+        "producing_deltas": 159,
+        "registered": 10000,
+        "triggered": 159
+      },
+      "scale": 10000,
+      "sparse": {
+        "accepted_state_deltas": 11,
+        "bytes_per_registered_node_estimate": 365.82,
+        "conflict_objects_created": 2,
+        "cpu_time_ns": 158084312,
+        "deduplicated_deltas": 169,
+        "deterministic_replay_success": true,
+        "dormant_nodes": 9841,
+        "dormant_percentage": 98.41,
+        "execution_order_invariance_success": true,
+        "final_state_bytes": 38491,
+        "handler_time_ns": 23215438,
+        "max_iterations_reached": false,
+        "merge_time_ns": 33690046,
+        "node_executions": 188,
+        "nodes_changing_state_unique": 9,
+        "nodes_producing_deltas_unique": 159,
+        "process_rss_after_run_bytes": 25464832,
+        "quiescent": true,
+        "receipt_file": "receipts_10000.jsonl",
+        "registered_nodes": 10000,
+        "registry_and_router_retained_bytes": 3658200,
+        "replay_final_state_hashes": [
+          "903ae4ddfd117d0e955cbd982356e1aabc6158ff9d50e51fe68248f617b25871",
+          "903ae4ddfd117d0e955cbd982356e1aabc6158ff9d50e51fe68248f617b25871",
+          "903ae4ddfd117d0e955cbd982356e1aabc6158ff9d50e51fe68248f617b25871"
+        ],
+        "replay_fingerprints": [
+          "2ba994573782099a438cde18de79435dcdf4751c0b5fcccac641a8262f55fba4",
+          "2ba994573782099a438cde18de79435dcdf4751c0b5fcccac641a8262f55fba4",
+          "2ba994573782099a438cde18de79435dcdf4751c0b5fcccac641a8262f55fba4"
+        ],
+        "replay_runs": 3,
+        "reverse_order_final_state_hash": "903ae4ddfd117d0e955cbd982356e1aabc6158ff9d50e51fe68248f617b25871",
+        "routing_time_ns": 32569162,
+        "stabilization_iterations": 3,
+        "startup_time_ns": 35088838,
+        "tracemalloc_current_bytes": 259423,
+        "tracemalloc_peak_bytes": 427266,
+        "triggered_nodes_unique": 159,
+        "unresolved_conflicts_created": 2,
+        "wall_time_ns": 158105041
+      }
+    }
+  ],
+  "schema": "axm.state-floor-benchmark/v1",
+  "state_vs_history": {
+    "cases": 500,
+    "current_state_equivalence_percentage": 18.6,
+    "enriched_state_equivalence_percentage": 100.0,
+    "examples": [
+      {
+        "case_id": 0,
+        "final_current_state": {
+          "load_n": 755,
+          "material": "aluminum"
+        },
+        "full_history_output": {
+          "material_churn": true,
+          "overload_ever": true
+        },
+        "lost_aggregates": {
+          "material_change_count": 3,
+          "max_load_seen_n": 1174
+        },
+        "state_only_output": {
+          "material_churn": false,
+          "overload_ever": true
+        }
+      },
+      {
+        "case_id": 1,
+        "final_current_state": {
+          "load_n": 480,
+          "material": "pine"
+        },
+        "full_history_output": {
+          "material_churn": true,
+          "overload_ever": true
+        },
+        "lost_aggregates": {
+          "material_change_count": 4,
+          "max_load_seen_n": 981
+        },
+        "state_only_output": {
+          "material_churn": false,
+          "overload_ever": false
+        }
+      },
+      {
+        "case_id": 2,
+        "final_current_state": {
+          "load_n": 582,
+          "material": "pine"
+        },
+        "full_history_output": {
+          "material_churn": true,
+          "overload_ever": true
+        },
+        "lost_aggregates": {
+          "material_change_count": 3,
+          "max_load_seen_n": 1044
+        },
+        "state_only_output": {
+          "material_churn": false,
+          "overload_ever": true
+        }
+      },
+      {
+        "case_id": 3,
+        "final_current_state": {
+          "load_n": 1117,
+          "material": "aluminum"
+        },
+        "full_history_output": {
+          "material_churn": true,
+          "overload_ever": true
+        },
+        "lost_aggregates": {
+          "material_change_count": 4,
+          "max_load_seen_n": 1117
+        },
+        "state_only_output": {
+          "material_churn": false,
+          "overload_ever": true
+        }
+      },
+      {
+        "case_id": 5,
+        "final_current_state": {
+          "load_n": 681,
+          "material": "steel"
+        },
+        "full_history_output": {
+          "material_churn": true,
+          "overload_ever": true
+        },
+        "lost_aggregates": {
+          "material_change_count": 6,
+          "max_load_seen_n": 1200
+        },
+        "state_only_output": {
+          "material_churn": false,
+          "overload_ever": false
+        }
+      }
+    ],
+    "full_history_vs_current_state_mismatches": 407,
+    "full_history_vs_enriched_state_mismatches": 0,
+    "lost_information_reasons": {
+      "material transition count absent": 353,
+      "maximum historical load absent": 223
+    },
+    "scope_note": "Equivalence is established only for these two decision predicates and generated cases.",
+    "seed": 20260901
+  },
+  "suite_wall_time_seconds": 58.915684
+}
