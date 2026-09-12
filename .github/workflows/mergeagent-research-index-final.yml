@@ -1,0 +1,42 @@
+name: MergeAgent final research source index
+
+on:
+  push:
+    branches:
+      - integration/research-source-index-final-20260912
+
+permissions:
+  contents: write
+
+jobs:
+  regenerate:
+    if: github.event.head_commit.message != 'MergeAgent regenerate final research source index'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: integration/research-source-index-final-20260912
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Restore proven indexer contract from donor lane
+        run: |
+          git fetch origin automation/capability-weaver-state-research-index-v0.1
+          for path in .axm/discovery-public.json tests/test_research_index.py tools/generate_research_index.py; do
+            mkdir -p "$(dirname "$path")"
+            git show "origin/automation/capability-weaver-state-research-index-v0.1:$path" > "$path"
+          done
+      - name: Regenerate from current repository truth
+        run: |
+          python -m py_compile tools/generate_research_index.py tests/test_research_index.py
+          python tools/generate_research_index.py
+          python tools/generate_research_index.py --check
+          python -m unittest -v tests/test_research_index.py
+      - name: Commit final source-backed index without workflow ancestry
+        run: |
+          git config user.name 'AXM MergeAgent'
+          git config user.email 'actions@users.noreply.github.com'
+          git add .axm/discovery-public.json tools/generate_research_index.py tests/test_research_index.py registry/capabilities.jsonl registry/research-sources.jsonl registry/research-sources.receipt.json
+          git commit -m 'MergeAgent regenerate final research source index'
+          git push origin HEAD:integration/research-source-index-final-20260912
