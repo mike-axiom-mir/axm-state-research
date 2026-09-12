@@ -1,0 +1,66 @@
+name: MergeAgent Stateborn integration
+
+on:
+  push:
+    branches:
+      - integration/stateborn-current-main-20260912
+
+permissions:
+  contents: write
+
+jobs:
+  integrate:
+    if: github.event.head_commit.message != 'MergeAgent integrate Stateborn chain'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: integration/stateborn-current-main-20260912
+          fetch-depth: 0
+      - name: Merge checkpoint/restart ancestry and experience lane
+        run: |
+          git config user.name 'AXM MergeAgent'
+          git config user.email 'actions@users.noreply.github.com'
+          git fetch origin ai/stateborn-checkpoint-process-verifier-2026-09-11 ai/stateborn-transport-feedback-2026-09-09
+
+          set +e
+          git merge --no-ff --no-commit origin/ai/stateborn-checkpoint-process-verifier-2026-09-11
+          status=$?
+          set -e
+          if [ "$status" -ne 0 ]; then
+            git checkout --ours README.md || true
+            git add README.md
+            git checkout --ours AGENTS.md || true
+            git add AGENTS.md
+            git checkout --ours LICENSE || true
+            git add LICENSE
+            git checkout --ours .gitignore || true
+            git add .gitignore
+          fi
+          git checkout --ours .github/workflows/tests.yml || true
+          git add .github/workflows/tests.yml || true
+          if test -e .github/workflows/stateborn-checkpoint-process-verifier.yml; then
+            git rm -f .github/workflows/stateborn-checkpoint-process-verifier.yml
+          fi
+          unresolved="$(git diff --name-only --diff-filter=U)"
+          if [ -n "$unresolved" ]; then
+            printf 'Unresolved checkpoint-chain paths:\n%s\n' "$unresolved"
+            exit 1
+          fi
+          git diff --cached --check
+          git commit -m 'MergeAgent integrate Stateborn checkpoint chain'
+
+          set +e
+          git merge --no-ff --no-commit origin/ai/stateborn-transport-feedback-2026-09-09
+          status=$?
+          set -e
+          if [ "$status" -ne 0 ]; then
+            unresolved="$(git diff --name-only --diff-filter=U)"
+            if [ -n "$unresolved" ]; then
+              printf 'Unresolved experience paths:\n%s\n' "$unresolved"
+              exit 1
+            fi
+          fi
+          git diff --cached --check
+          git commit -m 'MergeAgent integrate Stateborn transport experience'
+          git push origin HEAD:integration/stateborn-current-main-20260912
