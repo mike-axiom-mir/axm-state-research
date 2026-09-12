@@ -1,0 +1,68 @@
+name: Genesis admission experience
+
+on:
+  pull_request:
+    paths:
+      - 'experiments/genesis-admission-contract-v1/**'
+      - '.github/workflows/genesis-admission-experience.yml'
+  push:
+    branches:
+      - 'automation/experience-genesis-admission-observer-20260910'
+    paths:
+      - 'experiments/genesis-admission-contract-v1/**'
+      - '.github/workflows/genesis-admission-experience.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  observer:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Compile observer sources
+        working-directory: experiments/genesis-admission-contract-v1
+        run: python -m py_compile build_genesis_observer.py test_genesis_observer.py
+
+      - name: Focused observer contracts
+        working-directory: experiments/genesis-admission-contract-v1
+        run: python -m unittest -v test_genesis_observer.py
+
+      - name: Build deterministic single-file observer
+        working-directory: experiments/genesis-admission-contract-v1
+        run: |
+          mkdir -p "$RUNNER_TEMP/genesis-observer-evidence"
+          python build_genesis_observer.py \
+            --check-determinism \
+            --output "$RUNNER_TEMP/genesis-observer.html"
+          sha256sum "$RUNNER_TEMP/genesis-observer.html" | tee "$RUNNER_TEMP/genesis-observer-evidence/observer-html.sha256"
+
+      - name: Install CI-only Chromium harness
+        run: |
+          npm install --prefix "$RUNNER_TEMP/playwright" playwright@1.55.0
+          "$RUNNER_TEMP/playwright/node_modules/.bin/playwright" install --with-deps chromium
+
+      - name: Exercise real generated observer in Chromium
+        working-directory: experiments/genesis-admission-contract-v1
+        env:
+          NODE_PATH: ${{ runner.temp }}/playwright/node_modules
+          GENESIS_OBSERVER_PATH: ${{ runner.temp }}/genesis-observer.html
+          GENESIS_OBSERVER_EVIDENCE: ${{ runner.temp }}/genesis-observer-evidence
+        run: |
+          node genesis_observer_browser.cjs
+          sha256sum "$GENESIS_OBSERVER_EVIDENCE/browser-receipt.json" | tee "$GENESIS_OBSERVER_EVIDENCE/browser-receipt.sha256"
+
+      - name: Upload exact-head visual evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: genesis-admission-observer-evidence
+          path: ${{ runner.temp }}/genesis-observer-evidence
+          if-no-files-found: error

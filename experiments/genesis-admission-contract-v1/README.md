@@ -32,13 +32,33 @@ There is deliberately no `latest` pointer and no overwrite path. Same-content pu
 
 `verify_local_genesis_bundle()` additionally compares a later `GENESIS`/`ACTIVE` bundle with the exact prepared artifact. This binds the final configuration, instance inputs, candidate, validation, and admitting identity back to the evidence that was persisted before G0 appeared. Its authority is `EVIDENCE_ONLY_NO_MERGE_NO_CANON`.
 
+## Human observer
+
+`build_genesis_observer.py` turns one real deterministic admission run into a standalone local HTML observer. It executes the existing `GenesisAdmissionMachine`, obtains commit evidence through `LocalGenesisCommitStore`, verifies the resulting local Genesis bundle, and only then serializes read-only presentation frames.
+
+The observer makes the human boundary explicit:
+
+- `UNFORMED` through `VALIDATED` stay labelled **PRE-GENESIS EVIDENCE** with no canonical ID;
+- `GENESIS` is the first frame that can show the machine-issued `g0:<lineage>:<sha256>` identity;
+- local file and directory `fsync` observations appear as evidence, not as power-loss or hardware proof;
+- selecting a phase changes only the display. The page has no state-transition, merge, promotion, deployment, or CANON capability.
+
+Build it locally with:
+
+```bash
+python3 build_genesis_observer.py --check-determinism --output genesis-admission-observer.html
+```
+
+The generated file contains its data, CSS, and JavaScript inline and needs no account, cloud, network, model, package install, or external asset at runtime.
+
 ## Run
 
 ```bash
 cd experiments/genesis-admission-contract-v1
-python3 -m py_compile genesis_admission.py local_commit_store.py test_genesis_admission.py test_local_commit_store.py run_probe.py
+python3 -m py_compile genesis_admission.py local_commit_store.py build_genesis_observer.py test_genesis_admission.py test_local_commit_store.py test_genesis_observer.py run_probe.py
 python3 -m unittest -v
 python3 run_probe.py
+python3 build_genesis_observer.py --check-determinism --output genesis-admission-observer.html
 ```
 
 ## Boundaries
