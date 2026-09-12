@@ -17,7 +17,7 @@ jobs:
         with:
           ref: integration/state-foundation-current-main-20260912
           fetch-depth: 0
-      - name: Merge verified foundation donor without reverting later front-door truth
+      - name: Merge verified foundation donor without reverting later top-level truth
         run: |
           git config user.name 'AXM MergeAgent'
           git config user.email 'actions@users.noreply.github.com'
@@ -31,6 +31,10 @@ jobs:
             git add README.md
             git checkout --ours LICENSE || true
             git add LICENSE
+            git checkout --ours AGENTS.md || true
+            git add AGENTS.md
+            git checkout --theirs .gitignore || true
+            git add .gitignore
           fi
           if git ls-files --error-unmatch .github/workflows/tests.yml >/dev/null 2>&1; then
             git rm -f .github/workflows/tests.yml
