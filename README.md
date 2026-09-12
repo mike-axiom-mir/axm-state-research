@@ -14,10 +14,11 @@ state, adaptive realization, routing, replay, and evidence-backed state change.
 - [05 — Real-Project Closure Trial](experiments/05-real-project-closure-trial/README.md) tests the closure approach against a more project-shaped controlled fixture and retains counterexamples.
 - [06 — Unlabeled Multi-Project Closure Challenge](experiments/06-unlabeled-multiproject-closure-challenge/README.md) tests transfer across frozen unlabeled project fixtures with explicit scoring/evidence boundaries.
 - [07 — Cross-Version Opaque Recovery Challenge](experiments/07-cross-version-opaque-recovery-challenge/README.md) tests recovery and evidence continuity across opaque/versioned evaluator boundaries.
+- [Stateborn RPG Lab — parallel stateborn chain](experiments/07-stateborn-rpg-lab/README.md) grows a deterministic state-first world through sparse relations, curiosity, coexistence, consent-bounded actor capsules, typed machine packets, hostile transport, checkpoint-owned recovery, fresh-process reconstruction, and a display-only consequence layer.
 - [Reference-state closure v1](experiments/reference-state-closure-v1/README.md) tests whether sparse execution can preserve dense canonical results when non-executed specialists still contribute to shared normalization state.
 - [Genesis admission contract v1](experiments/genesis-admission-contract-v1/README.md) separates pre-genesis evidence from the first admitted canonical G0 and includes the local commit-evidence continuation and observer surfaces where present.
 
-The repository intentionally retains failed variants, raw evidence, claim boundaries, and later repairs instead of presenting only winning results. See `docs/`, `research/`, `RESEARCH/`, `lanes/`, `logs/`, and `visuals/` for the preserved research trail.
+The repository intentionally retains failed variants, raw evidence, claim boundaries, and later repairs instead of presenting only winning results. See `docs/`, `research/`, `RESEARCH/`, `lanes/`, `logs/`, and `visuals/` for the preserved research trail. Stateborn donor provenance and flattening decisions are recorded in [docs/STATEBORN_INTEGRATION_2026-09-12.md](docs/STATEBORN_INTEGRATION_2026-09-12.md).
 
 ## Governance and truth boundary
 

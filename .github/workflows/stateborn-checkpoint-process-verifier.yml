@@ -1,0 +1,61 @@
+name: Stateborn checkpoint process verifier
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "experiments/07-stateborn-rpg-lab/**"
+      - ".github/workflows/stateborn-checkpoint-process-verifier.yml"
+      - "docs/STATEBORN_INTEGRATION_2026-09-12.md"
+  pull_request:
+    paths:
+      - "experiments/07-stateborn-rpg-lab/**"
+      - ".github/workflows/stateborn-checkpoint-process-verifier.yml"
+      - "docs/STATEBORN_INTEGRATION_2026-09-12.md"
+
+permissions:
+  contents: read
+
+jobs:
+  checkpoint-process-verifier:
+    name: Checkpoint process verifier / Node ${{ matrix.node }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node: [20, 22]
+    defaults:
+      run:
+        working-directory: experiments/07-stateborn-rpg-lab
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Assert exact review head and recorded donor provenance
+        working-directory: .
+        run: |
+          test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
+          grep -F '0cef53c3900c48a4d7cece62bcbfd6fa34f40fab' docs/STATEBORN_INTEGRATION_2026-09-12.md
+          grep -F 'e39687e8ff0cb89d69fa7b13fdda139185770a3e' docs/STATEBORN_INTEGRATION_2026-09-12.md
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Syntax check checkpoint boundary
+        run: |
+          node --check dist/state-transport.js
+          node --check dist/state-transport-checkpoint.js
+          node --check tools/verify-state-transport-checkpoint.mjs
+          node --check tests/state-transport-process-restart.test.mjs
+      - name: Run focused fresh-process checkpoint regressions
+        run: node --test tests/state-transport-process-restart.test.mjs
+      - name: Run complete Stateborn suite
+        run: npm test
+      - name: Validate offline surface
+        run: node tools/validate-static.mjs
+      - name: Replay retained probes
+        run: |
+          node tools/capsule-probe.mjs > /tmp/capsule-probe.json
+          node tools/state-language-probe.mjs > /tmp/state-language-probe.json
+          node tools/state-transport-probe.mjs > /tmp/state-transport-probe.json
+      - name: Require retained hostile-transport evidence to reproduce byte-for-byte
+        run: cmp /tmp/state-transport-probe.json results/raw/state_transport_probe.json
