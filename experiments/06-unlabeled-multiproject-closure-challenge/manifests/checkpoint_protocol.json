@@ -1,0 +1,11 @@
+{
+  "schema": "axm.unlabeled-closure.checkpoint-protocol/v1",
+  "required_bindings": ["project_id", "base_commit", "tree_sha", "snapshot_hash", "policy_hash"],
+  "required_hashes": ["outputs_hash", "payload_hash", "provenance_hash"],
+  "allow_untrusted_replay": false,
+  "trusted_recovery_source": "verified canonical repository subtree at the frozen Git tree",
+  "invalid_action": "quarantine_then_reconstruct",
+  "unresolved_action": "abstain_escalate",
+  "charged_work": ["checkpoint validation", "full reconstruction check executions"],
+  "cases": ["valid", "absent", "corrupt_payload", "unresolved_without_trusted_source"]
+}

@@ -1,0 +1,47 @@
+{
+  "schema": "axm.unlabeled-closure.post-score-connector-verifier-receipt/v1",
+  "date_utc": "2026-09-02",
+  "phase": "post-score exact connector-ref verification",
+  "failed_remote_commit": "a1c0234126006972032080369e32a2ae7d08de30",
+  "failed_remote_tree": "5587382254ed65be014d3c4e003acd363b0de876",
+  "semantic_freeze_local_commit": "d804cc5f4a2bc863f2f2177daa89d77c1dcdc524",
+  "semantic_freeze_remote_commit": "0ca3c69dfa8d278ef3c89e8779d59de9971ed868",
+  "semantic_freeze_tree": "007e947b466883ed74cba317a8195f2e962e3322",
+  "retained_failure": {
+    "experiments_01_through_05": "47/47 PASS",
+    "experiment_06": "8/11 PASS; 3 verifier errors",
+    "errors": [
+      "freeze and committed raw evidence crosscheck",
+      "repeat and reverse-order evidence verification",
+      "temporary evidence runner freeze verification"
+    ],
+    "cause": "The evidence verifier required the local semantic-freeze commit identifier as an ancestor although connector publication preserved the identical frozen tree under a different commit identifier."
+  },
+  "nonsemantic_correction": {
+    "freeze_identity": "Require the recorded semantic freeze tree in reachable HEAD ancestry and use that reachable commit for frozen-blob verification.",
+    "declared_commit_check": "When the declared local commit object exists, require its tree to equal the recorded semantic freeze tree.",
+    "ci_history": "Fetch full Git ancestry so the recorded semantic freeze tree is available to verification."
+  },
+  "correction_file_sha256": {
+    ".github/workflows/tests.yml": "0b4abc49c42b37fbd569b7383acd02ef711a086bb9bc200f0888fec2efe4f325",
+    "experiments/06-unlabeled-multiproject-closure-challenge/run_benchmarks.py": "974e200c140ab334da026a08f267eb243360a97e98c9840ede7e8498948d7869",
+    "experiments/06-unlabeled-multiproject-closure-challenge/tests/test_unlabeled_closure.py": "6f1d4ec5d23300c450eb479f7970719c266c664edf576a9408efe5ffc24d814c"
+  },
+  "prepublication_verification": {
+    "all_experiment_suites": "58/58 PASS",
+    "freeze_and_evidence_crosschecks": "PASS",
+    "ten_unique_minimized_counterexamples": "PASS",
+    "repeat_and_reversed_order": "PASS",
+    "normalized_current_tree_hash": "bde89f7f9316f1c3083b54cf26b0a754f327d157916da344f841a1df1820aef9"
+  },
+  "unchanged": [
+    "policy semantics",
+    "risk inference",
+    "project/version manifests",
+    "training set",
+    "held-out set",
+    "fixtures and labels",
+    "checkpoint protocol and behavior",
+    "first-score outputs and raw evidence"
+  ]
+}

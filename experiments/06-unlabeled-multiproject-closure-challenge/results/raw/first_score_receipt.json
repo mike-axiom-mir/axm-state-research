@@ -1,0 +1,18 @@
+{
+  "candidate_policy": "COMBINED_STRUCTURAL_OBSERVED",
+  "files": {
+    "BENCHMARK_RESULTS.md": "2e9bba8c827fab7601e7583395a8c8e249a5e08fd25d0e42fbd939ae9bab567f",
+    "benchmark_results.json": "dd609ce6efbc11e4de6b2e4bba04ea08afbb0331822ca7e5f5eb433637d4c929",
+    "checkpoint_receipts.json": "d00a6de47af6d3d07cf59c3fd85ee67921928b7d969061a71485140377b9ef62",
+    "counterexamples.json": "2df7cf74d61d7e5f2fbf2acd80b00202028b1e2b426a63c34c9f1f5666702125",
+    "provenance_receipts.jsonl": "ad32e25d0ad55aab6364f5ede4eefba97fbf75447a44e9b0df84854d28440d59",
+    "transition_receipts.jsonl": "cc7af3c8ea88f742d7b8dbe28146d9c5178cab3470b5e8f604df9d3a482f7503"
+  },
+  "gate_passed": true,
+  "held_out_manifest_hash": "2d3b07b3f5eaf5bac06c739d7ff3e3ac9a45f71daff757b7c18d37eb601da251",
+  "policy_hash": "00b5297ad713d91b2fac708ec814dcd24c950d0fe3071aacd78d0cea3c179900",
+  "pre_score_receipt_commit": "2c0731d846605f9b8f4e5b85d55e270fea5c277a",
+  "provenance_hash": "909db690444c33298ec3054eb5d95aa599aef866adb2496d0f01c4d9dd1a4c0f",
+  "schema": "axm.unlabeled-closure.first-score-receipt/v1",
+  "semantic_freeze_commit": "d804cc5f4a2bc863f2f2177daa89d77c1dcdc524"
+}

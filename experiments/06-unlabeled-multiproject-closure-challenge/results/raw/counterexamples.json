@@ -1,0 +1,562 @@
+[
+  {
+    "check_id": "zz-opaque-config-generator",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-adaptive-config-generator"
+    ],
+    "observed_mutation_id": "held-adaptive-config-generator",
+    "observed_transition": 0,
+    "original_prefix_length": 1,
+    "policy": "BROKEN_SPARSE_NO_AUDIT",
+    "project_id": "adaptive-closure-v0.1.0-at-7ba2b1d",
+    "reproduce_spec": "BROKEN_SPARSE_NO_AUDIT:adaptive-closure-v0.1.0-at-7ba2b1d:zz-opaque-config-generator:held-adaptive-config-generator",
+    "schema": "axm.unlabeled-closure.counterexample/v1"
+  },
+  {
+    "check_id": "zz-derived-stage-1",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-adaptive-derived-chain"
+    ],
+    "observed_mutation_id": "held-adaptive-derived-chain",
+    "observed_transition": 1,
+    "original_prefix_length": 2,
+    "policy": "BROKEN_SPARSE_NO_AUDIT",
+    "project_id": "adaptive-closure-v0.1.0-at-7ba2b1d",
+    "reproduce_spec": "BROKEN_SPARSE_NO_AUDIT:adaptive-closure-v0.1.0-at-7ba2b1d:zz-derived-stage-1:held-adaptive-derived-chain",
+    "schema": "axm.unlabeled-closure.counterexample/v1"
+  },
+  {
+    "check_id": "zz-derived-stage-2",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-adaptive-derived-chain"
+    ],
+    "observed_mutation_id": "held-adaptive-derived-chain",
+    "observed_transition": 1,
+    "original_prefix_length": 2,
+    "policy": "BROKEN_SPARSE_NO_AUDIT",
+    "project_id": "adaptive-closure-v0.1.0-at-7ba2b1d",
+    "reproduce_spec": "BROKEN_SPARSE_NO_AUDIT:adaptive-closure-v0.1.0-at-7ba2b1d:zz-derived-stage-2:held-adaptive-derived-chain",
+    "schema": "axm.unlabeled-closure.counterexample/v1"
+  },
+  {
+    "check_id": "zz-derived-stage-3",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-adaptive-derived-chain"
+    ],
+    "observed_mutation_id": "held-adaptive-derived-chain",
+    "observed_transition": 1,
+    "original_prefix_length": 2,
+    "policy": "BROKEN_SPARSE_NO_AUDIT",
+    "project_id": "adaptive-closure-v0.1.0-at-7ba2b1d",
+    "reproduce_spec": "BROKEN_SPARSE_NO_AUDIT:adaptive-closure-v0.1.0-at-7ba2b1d:zz-derived-stage-3:held-adaptive-derived-chain",
+    "schema": "axm.unlabeled-closure.counterexample/v1"
+  },
+  {
+    "check_id": "zz-opaque-config-generator",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-adaptive-config-generator"
+    ],
+    "observed_mutation_id": "held-adaptive-derived-chain",
+    "observed_transition": 1,
+    "original_prefix_length": 2,
+    "policy": "BROKEN_SPARSE_NO_AUDIT",
+    "project_id": "adaptive-closure-v0.1.0-at-7ba2b1d",
+    "reproduce_spec": "BROKEN_SPARSE_NO_AUDIT:adaptive-closure-v0.1.0-at-7ba2b1d:zz-opaque-config-generator:held-adaptive-config-generator",
+    "schema": "axm.unlabeled-closure.counterexample/v1"
+  },
+  {
+    "check_id": "zz-derived-stage-1",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-adaptive-derived-chain"
+    ],
+    "observed_mutation_id": "held-adaptive-rename",
+    "observed_transition": 2,
+    "original_prefix_length": 3,
+    "policy": "BROKEN_SPARSE_NO_AUDIT",
+    "project_id": "adaptive-closure-v0.1.0-at-7ba2b1d",
+    "reproduce_spec": "BROKEN_SPARSE_NO_AUDIT:adaptive-closure-v0.1.0-at-7ba2b1d:zz-derived-stage-1:held-adaptive-derived-chain",
+    "schema": "axm.unlabeled-closure.counterexample/v1"
+  },
+  {
+    "check_id": "zz-derived-stage-2",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-adaptive-derived-chain"
+    ],
+    "observed_mutation_id": "held-adaptive-rename",
+    "observed_transition": 2,
+    "original_prefix_length": 3,
+    "policy": "BROKEN_SPARSE_NO_AUDIT",
+    "project_id": "adaptive-closure-v0.1.0-at-7ba2b1d",
+    "reproduce_spec": "BROKEN_SPARSE_NO_AUDIT:adaptive-closure-v0.1.0-at-7ba2b1d:zz-derived-stage-2:held-adaptive-derived-chain",
+    "schema": "axm.unlabeled-closure.counterexample/v1"
+  },
+  {
+    "check_id": "zz-derived-stage-3",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-adaptive-derived-chain"
+    ],
+    "observed_mutation_id": "held-adaptive-rename",
+    "observed_transition": 2,
+    "original_prefix_length": 3,
+    "policy": "BROKEN_SPARSE_NO_AUDIT",
+    "project_id": "adaptive-closure-v0.1.0-at-7ba2b1d",
+    "reproduce_spec": "BROKEN_SPARSE_NO_AUDIT:adaptive-closure-v0.1.0-at-7ba2b1d:zz-derived-stage-3:held-adaptive-derived-chain",
+    "schema": "axm.unlabeled-closure.counterexample/v1"
+  },
+  {
+    "check_id": "zz-opaque-config-generator",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-adaptive-config-generator"
+    ],
+    "observed_mutation_id": "held-adaptive-rename",
+    "observed_transition": 2,
+    "original_prefix_length": 3,
+    "policy": "BROKEN_SPARSE_NO_AUDIT",
+    "project_id": "adaptive-closure-v0.1.0-at-7ba2b1d",
+    "reproduce_spec": "BROKEN_SPARSE_NO_AUDIT:adaptive-closure-v0.1.0-at-7ba2b1d:zz-opaque-config-generator:held-adaptive-config-generator",
+    "schema": "axm.unlabeled-closure.counterexample/v1"
+  },
+  {
+    "check_id": "zz-derived-stage-1",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-adaptive-derived-chain"
+    ],
+    "observed_mutation_id": "held-adaptive-delete-renamed",
+    "observed_transition": 3,
+    "original_prefix_length": 4,
+    "policy": "BROKEN_SPARSE_NO_AUDIT",
+    "project_id": "adaptive-closure-v0.1.0-at-7ba2b1d",
+    "reproduce_spec": "BROKEN_SPARSE_NO_AUDIT:adaptive-closure-v0.1.0-at-7ba2b1d:zz-derived-stage-1:held-adaptive-derived-chain",
+    "schema": "axm.unlabeled-closure.counterexample/v1"
+  },
+  {
+    "check_id": "zz-derived-stage-2",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-adaptive-derived-chain"
+    ],
+    "observed_mutation_id": "held-adaptive-delete-renamed",
+    "observed_transition": 3,
+    "original_prefix_length": 4,
+    "policy": "BROKEN_SPARSE_NO_AUDIT",
+    "project_id": "adaptive-closure-v0.1.0-at-7ba2b1d",
+    "reproduce_spec": "BROKEN_SPARSE_NO_AUDIT:adaptive-closure-v0.1.0-at-7ba2b1d:zz-derived-stage-2:held-adaptive-derived-chain",
+    "schema": "axm.unlabeled-closure.counterexample/v1"
+  },
+  {
+    "check_id": "zz-derived-stage-3",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-adaptive-derived-chain"
+    ],
+    "observed_mutation_id": "held-adaptive-delete-renamed",
+    "observed_transition": 3,
+    "original_prefix_length": 4,
+    "policy": "BROKEN_SPARSE_NO_AUDIT",
+    "project_id": "adaptive-closure-v0.1.0-at-7ba2b1d",
+    "reproduce_spec": "BROKEN_SPARSE_NO_AUDIT:adaptive-closure-v0.1.0-at-7ba2b1d:zz-derived-stage-3:held-adaptive-derived-chain",
+    "schema": "axm.unlabeled-closure.counterexample/v1"
+  },
+  {
+    "check_id": "zz-opaque-config-generator",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-adaptive-config-generator"
+    ],
+    "observed_mutation_id": "held-adaptive-delete-renamed",
+    "observed_transition": 3,
+    "original_prefix_length": 4,
+    "policy": "BROKEN_SPARSE_NO_AUDIT",
+    "project_id": "adaptive-closure-v0.1.0-at-7ba2b1d",
+    "reproduce_spec": "BROKEN_SPARSE_NO_AUDIT:adaptive-closure-v0.1.0-at-7ba2b1d:zz-opaque-config-generator:held-adaptive-config-generator",
+    "schema": "axm.unlabeled-closure.counterexample/v1"
+  },
+  {
+    "check_id": "zz-derived-stage-1",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-adaptive-derived-chain"
+    ],
+    "observed_mutation_id": "held-adaptive-config-value",
+    "observed_transition": 4,
+    "original_prefix_length": 5,
+    "policy": "BROKEN_SPARSE_NO_AUDIT",
+    "project_id": "adaptive-closure-v0.1.0-at-7ba2b1d",
+    "reproduce_spec": "BROKEN_SPARSE_NO_AUDIT:adaptive-closure-v0.1.0-at-7ba2b1d:zz-derived-stage-1:held-adaptive-derived-chain",
+    "schema": "axm.unlabeled-closure.counterexample/v1"
+  },
+  {
+    "check_id": "zz-derived-stage-2",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-adaptive-derived-chain"
+    ],
+    "observed_mutation_id": "held-adaptive-config-value",
+    "observed_transition": 4,
+    "original_prefix_length": 5,
+    "policy": "BROKEN_SPARSE_NO_AUDIT",
+    "project_id": "adaptive-closure-v0.1.0-at-7ba2b1d",
+    "reproduce_spec": "BROKEN_SPARSE_NO_AUDIT:adaptive-closure-v0.1.0-at-7ba2b1d:zz-derived-stage-2:held-adaptive-derived-chain",
+    "schema": "axm.unlabeled-closure.counterexample/v1"
+  },
+  {
+    "check_id": "zz-derived-stage-3",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-adaptive-derived-chain"
+    ],
+    "observed_mutation_id": "held-adaptive-config-value",
+    "observed_transition": 4,
+    "original_prefix_length": 5,
+    "policy": "BROKEN_SPARSE_NO_AUDIT",
+    "project_id": "adaptive-closure-v0.1.0-at-7ba2b1d",
+    "reproduce_spec": "BROKEN_SPARSE_NO_AUDIT:adaptive-closure-v0.1.0-at-7ba2b1d:zz-derived-stage-3:held-adaptive-derived-chain",
+    "schema": "axm.unlabeled-closure.counterexample/v1"
+  },
+  {
+    "check_id": "zz-opaque-config-generator",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-sentinel-config-generator"
+    ],
+    "observed_mutation_id": "held-sentinel-config-generator",
+    "observed_transition": 0,
+    "original_prefix_length": 1,
+    "policy": "BROKEN_SPARSE_NO_AUDIT",
+    "project_id": "workfloor-sentinel-v0.1.0-at-7ba2b1d",
+    "reproduce_spec": "BROKEN_SPARSE_NO_AUDIT:workfloor-sentinel-v0.1.0-at-7ba2b1d:zz-opaque-config-generator:held-sentinel-config-generator",
+    "schema": "axm.unlabeled-closure.counterexample/v1"
+  },
+  {
+    "check_id": "zz-derived-stage-1",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-sentinel-derived-chain"
+    ],
+    "observed_mutation_id": "held-sentinel-derived-chain",
+    "observed_transition": 1,
+    "original_prefix_length": 2,
+    "policy": "BROKEN_SPARSE_NO_AUDIT",
+    "project_id": "workfloor-sentinel-v0.1.0-at-7ba2b1d",
+    "reproduce_spec": "BROKEN_SPARSE_NO_AUDIT:workfloor-sentinel-v0.1.0-at-7ba2b1d:zz-derived-stage-1:held-sentinel-derived-chain",
+    "schema": "axm.unlabeled-closure.counterexample/v1"
+  },
+  {
+    "check_id": "zz-derived-stage-2",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-sentinel-derived-chain"
+    ],
+    "observed_mutation_id": "held-sentinel-derived-chain",
+    "observed_transition": 1,
+    "original_prefix_length": 2,
+    "policy": "BROKEN_SPARSE_NO_AUDIT",
+    "project_id": "workfloor-sentinel-v0.1.0-at-7ba2b1d",
+    "reproduce_spec": "BROKEN_SPARSE_NO_AUDIT:workfloor-sentinel-v0.1.0-at-7ba2b1d:zz-derived-stage-2:held-sentinel-derived-chain",
+    "schema": "axm.unlabeled-closure.counterexample/v1"
+  },
+  {
+    "check_id": "zz-derived-stage-3",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-sentinel-derived-chain"
+    ],
+    "observed_mutation_id": "held-sentinel-derived-chain",
+    "observed_transition": 1,
+    "original_prefix_length": 2,
+    "policy": "BROKEN_SPARSE_NO_AUDIT",
+    "project_id": "workfloor-sentinel-v0.1.0-at-7ba2b1d",
+    "reproduce_spec": "BROKEN_SPARSE_NO_AUDIT:workfloor-sentinel-v0.1.0-at-7ba2b1d:zz-derived-stage-3:held-sentinel-derived-chain",
+    "schema": "axm.unlabeled-closure.counterexample/v1"
+  },
+  {
+    "check_id": "zz-opaque-config-generator",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-sentinel-config-generator"
+    ],
+    "observed_mutation_id": "held-sentinel-derived-chain",
+    "observed_transition": 1,
+    "original_prefix_length": 2,
+    "policy": "BROKEN_SPARSE_NO_AUDIT",
+    "project_id": "workfloor-sentinel-v0.1.0-at-7ba2b1d",
+    "reproduce_spec": "BROKEN_SPARSE_NO_AUDIT:workfloor-sentinel-v0.1.0-at-7ba2b1d:zz-opaque-config-generator:held-sentinel-config-generator",
+    "schema": "axm.unlabeled-closure.counterexample/v1"
+  },
+  {
+    "check_id": "zz-derived-stage-1",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-sentinel-derived-chain"
+    ],
+    "observed_mutation_id": "held-sentinel-rename",
+    "observed_transition": 2,
+    "original_prefix_length": 3,
+    "policy": "BROKEN_SPARSE_NO_AUDIT",
+    "project_id": "workfloor-sentinel-v0.1.0-at-7ba2b1d",
+    "reproduce_spec": "BROKEN_SPARSE_NO_AUDIT:workfloor-sentinel-v0.1.0-at-7ba2b1d:zz-derived-stage-1:held-sentinel-derived-chain",
+    "schema": "axm.unlabeled-closure.counterexample/v1"
+  },
+  {
+    "check_id": "zz-derived-stage-2",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-sentinel-derived-chain"
+    ],
+    "observed_mutation_id": "held-sentinel-rename",
+    "observed_transition": 2,
+    "original_prefix_length": 3,
+    "policy": "BROKEN_SPARSE_NO_AUDIT",
+    "project_id": "workfloor-sentinel-v0.1.0-at-7ba2b1d",
+    "reproduce_spec": "BROKEN_SPARSE_NO_AUDIT:workfloor-sentinel-v0.1.0-at-7ba2b1d:zz-derived-stage-2:held-sentinel-derived-chain",
+    "schema": "axm.unlabeled-closure.counterexample/v1"
+  },
+  {
+    "check_id": "zz-derived-stage-3",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-sentinel-derived-chain"
+    ],
+    "observed_mutation_id": "held-sentinel-rename",
+    "observed_transition": 2,
+    "original_prefix_length": 3,
+    "policy": "BROKEN_SPARSE_NO_AUDIT",
+    "project_id": "workfloor-sentinel-v0.1.0-at-7ba2b1d",
+    "reproduce_spec": "BROKEN_SPARSE_NO_AUDIT:workfloor-sentinel-v0.1.0-at-7ba2b1d:zz-derived-stage-3:held-sentinel-derived-chain",
+    "schema": "axm.unlabeled-closure.counterexample/v1"
+  },
+  {
+    "check_id": "zz-opaque-config-generator",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-sentinel-config-generator"
+    ],
+    "observed_mutation_id": "held-sentinel-rename",
+    "observed_transition": 2,
+    "original_prefix_length": 3,
+    "policy": "BROKEN_SPARSE_NO_AUDIT",
+    "project_id": "workfloor-sentinel-v0.1.0-at-7ba2b1d",
+    "reproduce_spec": "BROKEN_SPARSE_NO_AUDIT:workfloor-sentinel-v0.1.0-at-7ba2b1d:zz-opaque-config-generator:held-sentinel-config-generator",
+    "schema": "axm.unlabeled-closure.counterexample/v1"
+  },
+  {
+    "check_id": "zz-derived-stage-1",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-sentinel-derived-chain"
+    ],
+    "observed_mutation_id": "held-sentinel-delete-renamed",
+    "observed_transition": 3,
+    "original_prefix_length": 4,
+    "policy": "BROKEN_SPARSE_NO_AUDIT",
+    "project_id": "workfloor-sentinel-v0.1.0-at-7ba2b1d",
+    "reproduce_spec": "BROKEN_SPARSE_NO_AUDIT:workfloor-sentinel-v0.1.0-at-7ba2b1d:zz-derived-stage-1:held-sentinel-derived-chain",
+    "schema": "axm.unlabeled-closure.counterexample/v1"
+  },
+  {
+    "check_id": "zz-derived-stage-2",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-sentinel-derived-chain"
+    ],
+    "observed_mutation_id": "held-sentinel-delete-renamed",
+    "observed_transition": 3,
+    "original_prefix_length": 4,
+    "policy": "BROKEN_SPARSE_NO_AUDIT",
+    "project_id": "workfloor-sentinel-v0.1.0-at-7ba2b1d",
+    "reproduce_spec": "BROKEN_SPARSE_NO_AUDIT:workfloor-sentinel-v0.1.0-at-7ba2b1d:zz-derived-stage-2:held-sentinel-derived-chain",
+    "schema": "axm.unlabeled-closure.counterexample/v1"
+  },
+  {
+    "check_id": "zz-derived-stage-3",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-sentinel-derived-chain"
+    ],
+    "observed_mutation_id": "held-sentinel-delete-renamed",
+    "observed_transition": 3,
+    "original_prefix_length": 4,
+    "policy": "BROKEN_SPARSE_NO_AUDIT",
+    "project_id": "workfloor-sentinel-v0.1.0-at-7ba2b1d",
+    "reproduce_spec": "BROKEN_SPARSE_NO_AUDIT:workfloor-sentinel-v0.1.0-at-7ba2b1d:zz-derived-stage-3:held-sentinel-derived-chain",
+    "schema": "axm.unlabeled-closure.counterexample/v1"
+  },
+  {
+    "check_id": "zz-opaque-config-generator",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-sentinel-config-generator"
+    ],
+    "observed_mutation_id": "held-sentinel-delete-renamed",
+    "observed_transition": 3,
+    "original_prefix_length": 4,
+    "policy": "BROKEN_SPARSE_NO_AUDIT",
+    "project_id": "workfloor-sentinel-v0.1.0-at-7ba2b1d",
+    "reproduce_spec": "BROKEN_SPARSE_NO_AUDIT:workfloor-sentinel-v0.1.0-at-7ba2b1d:zz-opaque-config-generator:held-sentinel-config-generator",
+    "schema": "axm.unlabeled-closure.counterexample/v1"
+  },
+  {
+    "check_id": "zz-derived-stage-1",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-sentinel-derived-chain"
+    ],
+    "observed_mutation_id": "held-sentinel-config-value",
+    "observed_transition": 4,
+    "original_prefix_length": 5,
+    "policy": "BROKEN_SPARSE_NO_AUDIT",
+    "project_id": "workfloor-sentinel-v0.1.0-at-7ba2b1d",
+    "reproduce_spec": "BROKEN_SPARSE_NO_AUDIT:workfloor-sentinel-v0.1.0-at-7ba2b1d:zz-derived-stage-1:held-sentinel-derived-chain",
+    "schema": "axm.unlabeled-closure.counterexample/v1"
+  },
+  {
+    "check_id": "zz-derived-stage-2",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-sentinel-derived-chain"
+    ],
+    "observed_mutation_id": "held-sentinel-config-value",
+    "observed_transition": 4,
+    "original_prefix_length": 5,
+    "policy": "BROKEN_SPARSE_NO_AUDIT",
+    "project_id": "workfloor-sentinel-v0.1.0-at-7ba2b1d",
+    "reproduce_spec": "BROKEN_SPARSE_NO_AUDIT:workfloor-sentinel-v0.1.0-at-7ba2b1d:zz-derived-stage-2:held-sentinel-derived-chain",
+    "schema": "axm.unlabeled-closure.counterexample/v1"
+  },
+  {
+    "check_id": "zz-derived-stage-3",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-sentinel-derived-chain"
+    ],
+    "observed_mutation_id": "held-sentinel-config-value",
+    "observed_transition": 4,
+    "original_prefix_length": 5,
+    "policy": "BROKEN_SPARSE_NO_AUDIT",
+    "project_id": "workfloor-sentinel-v0.1.0-at-7ba2b1d",
+    "reproduce_spec": "BROKEN_SPARSE_NO_AUDIT:workfloor-sentinel-v0.1.0-at-7ba2b1d:zz-derived-stage-3:held-sentinel-derived-chain",
+    "schema": "axm.unlabeled-closure.counterexample/v1"
+  },
+  {
+    "check_id": "zz-opaque-config-generator",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-adaptive-config-generator"
+    ],
+    "observed_mutation_id": "held-adaptive-config-generator",
+    "observed_transition": 0,
+    "original_prefix_length": 1,
+    "policy": "OBSERVED_READS",
+    "project_id": "adaptive-closure-v0.1.0-at-7ba2b1d",
+    "reproduce_spec": "OBSERVED_READS:adaptive-closure-v0.1.0-at-7ba2b1d:zz-opaque-config-generator:held-adaptive-config-generator",
+    "schema": "axm.unlabeled-closure.counterexample/v1"
+  },
+  {
+    "check_id": "zz-opaque-config-generator",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-adaptive-config-generator"
+    ],
+    "observed_mutation_id": "held-adaptive-derived-chain",
+    "observed_transition": 1,
+    "original_prefix_length": 2,
+    "policy": "OBSERVED_READS",
+    "project_id": "adaptive-closure-v0.1.0-at-7ba2b1d",
+    "reproduce_spec": "OBSERVED_READS:adaptive-closure-v0.1.0-at-7ba2b1d:zz-opaque-config-generator:held-adaptive-config-generator",
+    "schema": "axm.unlabeled-closure.counterexample/v1"
+  },
+  {
+    "check_id": "zz-opaque-config-generator",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-adaptive-config-generator"
+    ],
+    "observed_mutation_id": "held-adaptive-rename",
+    "observed_transition": 2,
+    "original_prefix_length": 3,
+    "policy": "OBSERVED_READS",
+    "project_id": "adaptive-closure-v0.1.0-at-7ba2b1d",
+    "reproduce_spec": "OBSERVED_READS:adaptive-closure-v0.1.0-at-7ba2b1d:zz-opaque-config-generator:held-adaptive-config-generator",
+    "schema": "axm.unlabeled-closure.counterexample/v1"
+  },
+  {
+    "check_id": "zz-opaque-config-generator",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-adaptive-config-generator"
+    ],
+    "observed_mutation_id": "held-adaptive-delete-renamed",
+    "observed_transition": 3,
+    "original_prefix_length": 4,
+    "policy": "OBSERVED_READS",
+    "project_id": "adaptive-closure-v0.1.0-at-7ba2b1d",
+    "reproduce_spec": "OBSERVED_READS:adaptive-closure-v0.1.0-at-7ba2b1d:zz-opaque-config-generator:held-adaptive-config-generator",
+    "schema": "axm.unlabeled-closure.counterexample/v1"
+  },
+  {
+    "check_id": "zz-opaque-config-generator",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-sentinel-config-generator"
+    ],
+    "observed_mutation_id": "held-sentinel-config-generator",
+    "observed_transition": 0,
+    "original_prefix_length": 1,
+    "policy": "OBSERVED_READS",
+    "project_id": "workfloor-sentinel-v0.1.0-at-7ba2b1d",
+    "reproduce_spec": "OBSERVED_READS:workfloor-sentinel-v0.1.0-at-7ba2b1d:zz-opaque-config-generator:held-sentinel-config-generator",
+    "schema": "axm.unlabeled-closure.counterexample/v1"
+  },
+  {
+    "check_id": "zz-opaque-config-generator",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-sentinel-config-generator"
+    ],
+    "observed_mutation_id": "held-sentinel-derived-chain",
+    "observed_transition": 1,
+    "original_prefix_length": 2,
+    "policy": "OBSERVED_READS",
+    "project_id": "workfloor-sentinel-v0.1.0-at-7ba2b1d",
+    "reproduce_spec": "OBSERVED_READS:workfloor-sentinel-v0.1.0-at-7ba2b1d:zz-opaque-config-generator:held-sentinel-config-generator",
+    "schema": "axm.unlabeled-closure.counterexample/v1"
+  },
+  {
+    "check_id": "zz-opaque-config-generator",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-sentinel-config-generator"
+    ],
+    "observed_mutation_id": "held-sentinel-rename",
+    "observed_transition": 2,
+    "original_prefix_length": 3,
+    "policy": "OBSERVED_READS",
+    "project_id": "workfloor-sentinel-v0.1.0-at-7ba2b1d",
+    "reproduce_spec": "OBSERVED_READS:workfloor-sentinel-v0.1.0-at-7ba2b1d:zz-opaque-config-generator:held-sentinel-config-generator",
+    "schema": "axm.unlabeled-closure.counterexample/v1"
+  },
+  {
+    "check_id": "zz-opaque-config-generator",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-sentinel-config-generator"
+    ],
+    "observed_mutation_id": "held-sentinel-delete-renamed",
+    "observed_transition": 3,
+    "original_prefix_length": 4,
+    "policy": "OBSERVED_READS",
+    "project_id": "workfloor-sentinel-v0.1.0-at-7ba2b1d",
+    "reproduce_spec": "OBSERVED_READS:workfloor-sentinel-v0.1.0-at-7ba2b1d:zz-opaque-config-generator:held-sentinel-config-generator",
+    "schema": "axm.unlabeled-closure.counterexample/v1"
+  }
+]

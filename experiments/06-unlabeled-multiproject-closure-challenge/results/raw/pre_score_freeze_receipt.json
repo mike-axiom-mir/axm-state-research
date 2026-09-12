@@ -1,0 +1,27 @@
+{
+  "schema": "axm.unlabeled-closure.pre-score-freeze/v1",
+  "date_utc": "2026-09-02",
+  "branch": "ai/unlabeled-multiproject-closure-2026-09-02",
+  "base_commit": "7ba2b1d42891074856ad274d00dc3985ef5e1d27",
+  "semantic_freeze_commit": "d804cc5f4a2bc863f2f2177daa89d77c1dcdc524",
+  "semantic_freeze_tree": "007e947b466883ed74cba317a8195f2e962e3322",
+  "sha256_manifest": "abfe922ad323d490dc856a2185a3d58ddd9a4c9edb680ee2b31131fe7933fea3",
+  "held_out_manifest_sha256": "2d3b07b3f5eaf5bac06c739d7ff3e3ac9a45f71daff757b7c18d37eb601da251",
+  "project_version_manifest_sha256": "e93c487d17dc3906fd51fb5722ba494a9edbfe2a7d8eba6ca0681fda7fbd0f03",
+  "first_scored_held_out_run_started": false,
+  "frozen_files": {
+    "manifests/checkpoint_protocol.json": "af9293c02dc59d969c4fdcd04d9356a055d6635bca22e70e32dcd2b3a5628fc4",
+    "manifests/held_out.json": "2d3b07b3f5eaf5bac06c739d7ff3e3ac9a45f71daff757b7c18d37eb601da251",
+    "manifests/projects.json": "e93c487d17dc3906fd51fb5722ba494a9edbfe2a7d8eba6ca0681fda7fbd0f03",
+    "manifests/training.json": "f1914eebe3f5c854a12972c8b42d548f3eaf443668a94bc0b553d8794a80adc7",
+    "pyproject.toml": "427c81ffec9b8e7f4277af12b8ba28d1e1d045b7e011373c4b85522a3fefae4f",
+    "unlabeled_closure/__init__.py": "b0d3880f681dd8223eb6a6cd6cfa2151b1e667e235c0dfc1e9d9dafd676e9b68",
+    "unlabeled_closure/checkpoint.py": "94745af1c6182280f9e29e9ef58be805d18a6b48f7e01736afa73854546149a6",
+    "unlabeled_closure/engine.py": "40a7395efd6637e02d638e063492753dc59230104d791ef422fd75ba496f5508",
+    "unlabeled_closure/foundation_loader.py": "031264b724c3bc3de3badf123ece207d2fa58534c65cdd90cf5cf2f50d1280eb",
+    "unlabeled_closure/model.py": "e9e46be77e6281e6344068e6d69377e8f4d5e2db6622e92ca21624d2643138a4",
+    "unlabeled_closure/policy.py": "7dba7d4383e0ddde6f1a9d5b6dee70748238d34f9d7d90b65554e830a0007e60"
+  },
+  "scope": "Policy semantics, project/version manifests, training set, held-out set, and checkpoint protocol are frozen before the first scored held-out run.",
+  "post_score_change_rule": "Only explicitly receipted non-semantic evidence, documentation, test, or packaging defect corrections are allowed."
+}

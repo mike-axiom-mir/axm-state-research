@@ -1,0 +1,275 @@
+[
+  {
+    "check_id": "boundary--software-not-hardware",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-direct-unseen-wording"
+    ],
+    "observed_mutation_id": "held-direct-unseen-wording",
+    "observed_transition": 0,
+    "original_prefix_length": 1,
+    "policy": "BROKEN_NO_AUDIT",
+    "reproduce_command": "python3 run_benchmarks.py --verify-counterexample BROKEN_NO_AUDIT:boundary--software-not-hardware:held-direct-unseen-wording",
+    "schema": "axm.real-project-closure.counterexample/v1"
+  },
+  {
+    "check_id": "boundary--software-not-hardware",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-direct-unseen-wording"
+    ],
+    "observed_mutation_id": "held-report-unseen-record",
+    "observed_transition": 1,
+    "original_prefix_length": 2,
+    "policy": "BROKEN_NO_AUDIT",
+    "reproduce_command": "python3 run_benchmarks.py --verify-counterexample BROKEN_NO_AUDIT:boundary--software-not-hardware:held-direct-unseen-wording",
+    "schema": "axm.real-project-closure.counterexample/v1"
+  },
+  {
+    "check_id": "cross--report-matches-raw-results",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-report-unseen-record"
+    ],
+    "observed_mutation_id": "held-report-unseen-record",
+    "observed_transition": 1,
+    "original_prefix_length": 2,
+    "policy": "BROKEN_NO_AUDIT",
+    "reproduce_command": "python3 run_benchmarks.py --verify-counterexample BROKEN_NO_AUDIT:cross--report-matches-raw-results:held-report-unseen-record",
+    "schema": "axm.real-project-closure.counterexample/v1"
+  },
+  {
+    "check_id": "boundary--software-not-hardware",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-direct-unseen-wording"
+    ],
+    "observed_mutation_id": "held-evidence-unseen-value",
+    "observed_transition": 2,
+    "original_prefix_length": 3,
+    "policy": "BROKEN_NO_AUDIT",
+    "reproduce_command": "python3 run_benchmarks.py --verify-counterexample BROKEN_NO_AUDIT:boundary--software-not-hardware:held-direct-unseen-wording",
+    "schema": "axm.real-project-closure.counterexample/v1"
+  },
+  {
+    "check_id": "cross--report-matches-raw-results",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-report-unseen-record"
+    ],
+    "observed_mutation_id": "held-evidence-unseen-value",
+    "observed_transition": 2,
+    "original_prefix_length": 3,
+    "policy": "BROKEN_NO_AUDIT",
+    "reproduce_command": "python3 run_benchmarks.py --verify-counterexample BROKEN_NO_AUDIT:cross--report-matches-raw-results:held-report-unseen-record",
+    "schema": "axm.real-project-closure.counterexample/v1"
+  },
+  {
+    "check_id": "toml-python--pyproject__toml",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-evidence-unseen-value"
+    ],
+    "observed_mutation_id": "held-evidence-unseen-value",
+    "observed_transition": 2,
+    "original_prefix_length": 3,
+    "policy": "BROKEN_NO_AUDIT",
+    "reproduce_command": "python3 run_benchmarks.py --verify-counterexample BROKEN_NO_AUDIT:toml-python--pyproject__toml:held-evidence-unseen-value",
+    "schema": "axm.real-project-closure.counterexample/v1"
+  },
+  {
+    "check_id": "boundary--software-not-hardware",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-direct-unseen-wording"
+    ],
+    "observed_mutation_id": "held-conditional-negative-timing",
+    "observed_transition": 3,
+    "original_prefix_length": 4,
+    "policy": "BROKEN_NO_AUDIT",
+    "reproduce_command": "python3 run_benchmarks.py --verify-counterexample BROKEN_NO_AUDIT:boundary--software-not-hardware:held-direct-unseen-wording",
+    "schema": "axm.real-project-closure.counterexample/v1"
+  },
+  {
+    "check_id": "cross--report-matches-raw-results",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-report-unseen-record"
+    ],
+    "observed_mutation_id": "held-conditional-negative-timing",
+    "observed_transition": 3,
+    "original_prefix_length": 4,
+    "policy": "BROKEN_NO_AUDIT",
+    "reproduce_command": "python3 run_benchmarks.py --verify-counterexample BROKEN_NO_AUDIT:cross--report-matches-raw-results:held-report-unseen-record",
+    "schema": "axm.real-project-closure.counterexample/v1"
+  },
+  {
+    "check_id": "json-timings--results__benchmark_results__json",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-conditional-negative-timing"
+    ],
+    "observed_mutation_id": "held-conditional-negative-timing",
+    "observed_transition": 3,
+    "original_prefix_length": 4,
+    "policy": "BROKEN_NO_AUDIT",
+    "reproduce_command": "python3 run_benchmarks.py --verify-counterexample BROKEN_NO_AUDIT:json-timings--results__benchmark_results__json:held-conditional-negative-timing",
+    "schema": "axm.real-project-closure.counterexample/v1"
+  },
+  {
+    "check_id": "toml-python--pyproject__toml",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-evidence-unseen-value"
+    ],
+    "observed_mutation_id": "held-conditional-negative-timing",
+    "observed_transition": 3,
+    "original_prefix_length": 4,
+    "policy": "BROKEN_NO_AUDIT",
+    "reproduce_command": "python3 run_benchmarks.py --verify-counterexample BROKEN_NO_AUDIT:toml-python--pyproject__toml:held-evidence-unseen-value",
+    "schema": "axm.real-project-closure.counterexample/v1"
+  },
+  {
+    "check_id": "boundary--software-not-hardware",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-direct-unseen-wording"
+    ],
+    "observed_mutation_id": "held-delete-license",
+    "observed_transition": 4,
+    "original_prefix_length": 5,
+    "policy": "BROKEN_NO_AUDIT",
+    "reproduce_command": "python3 run_benchmarks.py --verify-counterexample BROKEN_NO_AUDIT:boundary--software-not-hardware:held-direct-unseen-wording",
+    "schema": "axm.real-project-closure.counterexample/v1"
+  },
+  {
+    "check_id": "cross--report-matches-raw-results",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-report-unseen-record"
+    ],
+    "observed_mutation_id": "held-delete-license",
+    "observed_transition": 4,
+    "original_prefix_length": 5,
+    "policy": "BROKEN_NO_AUDIT",
+    "reproduce_command": "python3 run_benchmarks.py --verify-counterexample BROKEN_NO_AUDIT:cross--report-matches-raw-results:held-report-unseen-record",
+    "schema": "axm.real-project-closure.counterexample/v1"
+  },
+  {
+    "check_id": "json-timings--results__benchmark_results__json",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-conditional-negative-timing"
+    ],
+    "observed_mutation_id": "held-delete-license",
+    "observed_transition": 4,
+    "original_prefix_length": 5,
+    "policy": "BROKEN_NO_AUDIT",
+    "reproduce_command": "python3 run_benchmarks.py --verify-counterexample BROKEN_NO_AUDIT:json-timings--results__benchmark_results__json:held-conditional-negative-timing",
+    "schema": "axm.real-project-closure.counterexample/v1"
+  },
+  {
+    "check_id": "toml-python--pyproject__toml",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-evidence-unseen-value"
+    ],
+    "observed_mutation_id": "held-delete-license",
+    "observed_transition": 4,
+    "original_prefix_length": 5,
+    "policy": "BROKEN_NO_AUDIT",
+    "reproduce_command": "python3 run_benchmarks.py --verify-counterexample BROKEN_NO_AUDIT:toml-python--pyproject__toml:held-evidence-unseen-value",
+    "schema": "axm.real-project-closure.counterexample/v1"
+  },
+  {
+    "check_id": "boundary--software-not-hardware",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-direct-unseen-wording"
+    ],
+    "observed_mutation_id": "held-add-invalid-python",
+    "observed_transition": 5,
+    "original_prefix_length": 6,
+    "policy": "BROKEN_NO_AUDIT",
+    "reproduce_command": "python3 run_benchmarks.py --verify-counterexample BROKEN_NO_AUDIT:boundary--software-not-hardware:held-direct-unseen-wording",
+    "schema": "axm.real-project-closure.counterexample/v1"
+  },
+  {
+    "check_id": "cross--report-matches-raw-results",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-report-unseen-record"
+    ],
+    "observed_mutation_id": "held-add-invalid-python",
+    "observed_transition": 5,
+    "original_prefix_length": 6,
+    "policy": "BROKEN_NO_AUDIT",
+    "reproduce_command": "python3 run_benchmarks.py --verify-counterexample BROKEN_NO_AUDIT:cross--report-matches-raw-results:held-report-unseen-record",
+    "schema": "axm.real-project-closure.counterexample/v1"
+  },
+  {
+    "check_id": "json-timings--results__benchmark_results__json",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-conditional-negative-timing"
+    ],
+    "observed_mutation_id": "held-add-invalid-python",
+    "observed_transition": 5,
+    "original_prefix_length": 6,
+    "policy": "BROKEN_NO_AUDIT",
+    "reproduce_command": "python3 run_benchmarks.py --verify-counterexample BROKEN_NO_AUDIT:json-timings--results__benchmark_results__json:held-conditional-negative-timing",
+    "schema": "axm.real-project-closure.counterexample/v1"
+  },
+  {
+    "check_id": "toml-python--pyproject__toml",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-evidence-unseen-value"
+    ],
+    "observed_mutation_id": "held-add-invalid-python",
+    "observed_transition": 5,
+    "original_prefix_length": 6,
+    "policy": "BROKEN_NO_AUDIT",
+    "reproduce_command": "python3 run_benchmarks.py --verify-counterexample BROKEN_NO_AUDIT:toml-python--pyproject__toml:held-evidence-unseen-value",
+    "schema": "axm.real-project-closure.counterexample/v1"
+  },
+  {
+    "check_id": "json-timings--results__benchmark_results__json",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-conditional-negative-timing"
+    ],
+    "observed_mutation_id": "held-conditional-negative-timing",
+    "observed_transition": 3,
+    "original_prefix_length": 4,
+    "policy": "OBSERVED_READS",
+    "reproduce_command": "python3 run_benchmarks.py --verify-counterexample OBSERVED_READS:json-timings--results__benchmark_results__json:held-conditional-negative-timing",
+    "schema": "axm.real-project-closure.counterexample/v1"
+  },
+  {
+    "check_id": "json-timings--results__benchmark_results__json",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-conditional-negative-timing"
+    ],
+    "observed_mutation_id": "held-delete-license",
+    "observed_transition": 4,
+    "original_prefix_length": 5,
+    "policy": "OBSERVED_READS",
+    "reproduce_command": "python3 run_benchmarks.py --verify-counterexample OBSERVED_READS:json-timings--results__benchmark_results__json:held-conditional-negative-timing",
+    "schema": "axm.real-project-closure.counterexample/v1"
+  },
+  {
+    "check_id": "json-timings--results__benchmark_results__json",
+    "minimized_length": 1,
+    "minimized_mutation_ids": [
+      "held-conditional-negative-timing"
+    ],
+    "observed_mutation_id": "held-add-invalid-python",
+    "observed_transition": 5,
+    "original_prefix_length": 6,
+    "policy": "OBSERVED_READS",
+    "reproduce_command": "python3 run_benchmarks.py --verify-counterexample OBSERVED_READS:json-timings--results__benchmark_results__json:held-conditional-negative-timing",
+    "schema": "axm.real-project-closure.counterexample/v1"
+  }
+]

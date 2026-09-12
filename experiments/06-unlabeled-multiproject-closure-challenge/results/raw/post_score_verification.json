@@ -1,0 +1,35 @@
+{
+  "all_counterexamples_reproduce": true,
+  "counterexample_results": {
+    "BROKEN_SPARSE_NO_AUDIT:adaptive-closure-v0.1.0-at-7ba2b1d:zz-derived-stage-1:held-adaptive-derived-chain": true,
+    "BROKEN_SPARSE_NO_AUDIT:adaptive-closure-v0.1.0-at-7ba2b1d:zz-derived-stage-2:held-adaptive-derived-chain": true,
+    "BROKEN_SPARSE_NO_AUDIT:adaptive-closure-v0.1.0-at-7ba2b1d:zz-derived-stage-3:held-adaptive-derived-chain": true,
+    "BROKEN_SPARSE_NO_AUDIT:adaptive-closure-v0.1.0-at-7ba2b1d:zz-opaque-config-generator:held-adaptive-config-generator": true,
+    "BROKEN_SPARSE_NO_AUDIT:workfloor-sentinel-v0.1.0-at-7ba2b1d:zz-derived-stage-1:held-sentinel-derived-chain": true,
+    "BROKEN_SPARSE_NO_AUDIT:workfloor-sentinel-v0.1.0-at-7ba2b1d:zz-derived-stage-2:held-sentinel-derived-chain": true,
+    "BROKEN_SPARSE_NO_AUDIT:workfloor-sentinel-v0.1.0-at-7ba2b1d:zz-derived-stage-3:held-sentinel-derived-chain": true,
+    "BROKEN_SPARSE_NO_AUDIT:workfloor-sentinel-v0.1.0-at-7ba2b1d:zz-opaque-config-generator:held-sentinel-config-generator": true,
+    "OBSERVED_READS:adaptive-closure-v0.1.0-at-7ba2b1d:zz-opaque-config-generator:held-adaptive-config-generator": true,
+    "OBSERVED_READS:workfloor-sentinel-v0.1.0-at-7ba2b1d:zz-opaque-config-generator:held-sentinel-config-generator": true
+  },
+  "counterexample_unique_count": 10,
+  "embedded_flag_failure_cause": "checkpoint validation provenance hash included host timing",
+  "first_score_embedded_repeat_flag": false,
+  "first_score_embedded_reverse_flag": false,
+  "freeze_verified": true,
+  "held_out_manifest_sha256": "2d3b07b3f5eaf5bac06c739d7ff3e3ac9a45f71daff757b7c18d37eb601da251",
+  "normalization_boundary": "remove only timing/storage measurements, embedded logical hashes, and provenance hashes derived from validation timing",
+  "normalized_logical_hashes": {
+    "first": "e1e223a1570d6697f716c1a787a77d6d70e5e56ebeab9817fbb788f80facafcf",
+    "repeat": "e1e223a1570d6697f716c1a787a77d6d70e5e56ebeab9817fbb788f80facafcf",
+    "reverse_registration": "e1e223a1570d6697f716c1a787a77d6d70e5e56ebeab9817fbb788f80facafcf"
+  },
+  "normalized_registration_order_invariant": true,
+  "normalized_repeat_replay_equal": true,
+  "passed": true,
+  "project_versions_verified": true,
+  "raw_evidence_hashes_match_first_score_receipt": true,
+  "raw_report_crosscheck": true,
+  "schema": "axm.unlabeled-closure.post-score-verification/v1",
+  "semantic_freeze_commit": "d804cc5f4a2bc863f2f2177daa89d77c1dcdc524"
+}
