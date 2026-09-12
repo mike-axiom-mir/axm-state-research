@@ -1,0 +1,12 @@
+{
+  "files": {
+    "benchmark_results.json": "ce55ffa183f31ac2c285ec72da10a318ce2998a53964ae38d0049367c5658431",
+    "broken_repaired.json": "41afb9213aea3e4308c928e6dc83c631dfa6760b534568b50fc2a2fefd5de82b",
+    "cascade_results.json": "bb268340a56c8884ac6e2f1f7cc8ec6b5e3dc9dac711e9257f25c320d6e8775f",
+    "counterexample.json": "126f16293f3ffd350e4f9b3601fca3679c9583a6b0b29959a46a913cd231db17",
+    "fuzz_transitions_100.jsonl": "0f12bf90de4362523d155f2e95d7eb36ff66ae72a82c5a86f1f5487bc27635b8"
+  },
+  "logical_replay_hash": "3af2830356b984c4a318305d3305ae3f4a316bc45bb6c8b37043e7ffbc933fa0",
+  "schema": "axm.wakeup-fuzzer.evidence-receipt/v1",
+  "seed": 20260902
+}

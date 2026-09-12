@@ -1,0 +1,172 @@
+{
+  "broken_check": {
+    "actual_reads": [
+      "f000",
+      "f001"
+    ],
+    "bucket": 1,
+    "id": "check_00000",
+    "output_mode": "direct",
+    "perspective": "constraint",
+    "subscriptions": [
+      "f000"
+    ],
+    "version": "1",
+    "weights": [
+      1,
+      1
+    ]
+  },
+  "declared_sparse": {
+    "condition_probes": 1,
+    "cpu_time_ns": 443820,
+    "dormant_percent": 89.0625,
+    "executed": 7,
+    "false_wakes": 5,
+    "final_output_hash": "ee6a4bcefd1aa55dcd484cb1a39a0bffecbfa014ecb7884c11a6041d4174b01f",
+    "handler_time_ns": 45297,
+    "mismatch_transitions": 1,
+    "missed_wakes": 1,
+    "mode": "declared_sparse",
+    "mutations": 1,
+    "necessary": 3,
+    "negative_probes": 0,
+    "negative_probes_avoided": 0,
+    "observed_dependency_changes": 0,
+    "output_equivalence": false,
+    "peak_memory_bytes": 7043,
+    "producing_output_changes": 2,
+    "registered_nodes": 64,
+    "registry_bytes": 7386,
+    "replay_hash": "b0e8b5f2871dda998e4a1ccd6b8a8910dd8146290664dcb531a5eb5ee9483f96",
+    "routing_time_ns": 5809,
+    "startup_handler_evaluations": 0,
+    "startup_time_ns": 15694,
+    "total_time_ns": 438429,
+    "transitions": [
+      {
+        "awakened": [
+          "check_00001",
+          "check_00002",
+          "check_00003",
+          "check_00004",
+          "check_00005",
+          "check_00006",
+          "check_00007"
+        ],
+        "changed": [
+          "check_00004",
+          "check_00005"
+        ],
+        "false_wakes": [
+          "check_00001",
+          "check_00002",
+          "check_00003",
+          "check_00006",
+          "check_00007"
+        ],
+        "mismatched_outputs": [
+          "check_00000"
+        ],
+        "missed": [
+          "check_00000"
+        ],
+        "mutation": {
+          "field": "f001",
+          "reason": "generated",
+          "value": 80
+        },
+        "necessary": [
+          "check_00000",
+          "check_00004",
+          "check_00005"
+        ],
+        "output_hash": "ee6a4bcefd1aa55dcd484cb1a39a0bffecbfa014ecb7884c11a6041d4174b01f",
+        "transition": 0
+      }
+    ],
+    "triggered": 7,
+    "wall_time_ns": 335867
+  },
+  "failure_preserved": true,
+  "minimized_mutations": [
+    {
+      "field": "f001",
+      "reason": "generated",
+      "value": 80
+    }
+  ],
+  "minimized_sequence_size": 1,
+  "observed": {
+    "condition_probes": 1,
+    "cpu_time_ns": 747722,
+    "dormant_percent": 87.5,
+    "executed": 8,
+    "false_wakes": 5,
+    "final_output_hash": "b785e44a15a856a0c4a61e0e44afadbceee99839ce4f3a35c823ca7a2d53e6de",
+    "handler_time_ns": 119016,
+    "mismatch_transitions": 0,
+    "missed_wakes": 0,
+    "mode": "observed",
+    "mutations": 1,
+    "necessary": 3,
+    "negative_probes": 0,
+    "negative_probes_avoided": 0,
+    "observed_dependency_changes": 0,
+    "output_equivalence": true,
+    "peak_memory_bytes": 7323,
+    "producing_output_changes": 3,
+    "registered_nodes": 64,
+    "registry_bytes": 24053,
+    "replay_hash": "e928a8f28a6c44cbdcdde7fece79bd59c78ec107386db53ce3c7a0598d10dd82",
+    "routing_time_ns": 6951,
+    "startup_handler_evaluations": 64,
+    "startup_time_ns": 97334,
+    "total_time_ns": 742278,
+    "transitions": [
+      {
+        "awakened": [
+          "check_00000",
+          "check_00001",
+          "check_00002",
+          "check_00003",
+          "check_00004",
+          "check_00005",
+          "check_00006",
+          "check_00007"
+        ],
+        "changed": [
+          "check_00000",
+          "check_00004",
+          "check_00005"
+        ],
+        "false_wakes": [
+          "check_00001",
+          "check_00002",
+          "check_00003",
+          "check_00006",
+          "check_00007"
+        ],
+        "mismatched_outputs": [],
+        "missed": [],
+        "mutation": {
+          "field": "f001",
+          "reason": "generated",
+          "value": 80
+        },
+        "necessary": [
+          "check_00000",
+          "check_00004",
+          "check_00005"
+        ],
+        "output_hash": "b785e44a15a856a0c4a61e0e44afadbceee99839ce4f3a35c823ca7a2d53e6de",
+        "transition": 0
+      }
+    ],
+    "triggered": 8,
+    "wall_time_ns": 411219
+  },
+  "original_sequence_size": 32,
+  "schema": "axm.wakeup-fuzzer.counterexample/v1",
+  "seed": 20260902
+}

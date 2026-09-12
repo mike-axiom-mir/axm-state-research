@@ -1,0 +1,60 @@
+{
+  "oscillation_fixture": {
+    "cycle_start_iteration": 0,
+    "iterations": 2,
+    "replay_hash": "8f48c8ccc25a9b9757916d64599a7db567bc7fde13f811ac9468ce7942060d23",
+    "status": "oscillation_detected",
+    "stopped_before_limit": true,
+    "trace": [
+      "A",
+      "B"
+    ]
+  },
+  "runs": [
+    {
+      "active_steps": 10,
+      "condition_probes_avoided": 90,
+      "final_token": 10,
+      "output_equivalence": true,
+      "polling_active_steps": 10,
+      "polling_negative_probes": 90,
+      "polling_probes": 100,
+      "polling_wall_time_ns": 4757,
+      "quiescence_iterations": 10,
+      "replay_hash": "c63ce19d67800d0a41e2ad8aeab0ac280e9975757c16bdea0c72e26ee38361e8",
+      "routed_lookups": 10,
+      "routed_wall_time_ns": 871,
+      "stage_count": 10
+    },
+    {
+      "active_steps": 100,
+      "condition_probes_avoided": 9900,
+      "final_token": 100,
+      "output_equivalence": true,
+      "polling_active_steps": 100,
+      "polling_negative_probes": 9900,
+      "polling_probes": 10000,
+      "polling_wall_time_ns": 220486,
+      "quiescence_iterations": 100,
+      "replay_hash": "5ba136c9dd1f7aa3def47661ec5a83fd39d54fb34b928460ac00f142cc1f6397",
+      "routed_lookups": 100,
+      "routed_wall_time_ns": 4096,
+      "stage_count": 100
+    },
+    {
+      "active_steps": 1000,
+      "condition_probes_avoided": 999000,
+      "final_token": 1000,
+      "output_equivalence": true,
+      "polling_active_steps": 1000,
+      "polling_negative_probes": 999000,
+      "polling_probes": 1000000,
+      "polling_wall_time_ns": 31868691,
+      "quiescence_iterations": 1000,
+      "replay_hash": "570271dddc2c459b81443639b07b03dd4c1648e1cfbaf5b9d51a051c6709da62",
+      "routed_lookups": 1000,
+      "routed_wall_time_ns": 68221,
+      "stage_count": 1000
+    }
+  ]
+}
