@@ -37,6 +37,34 @@ The CLI exits zero only when B exactly matches A, C demonstrably diverges,
 body work decreases, and the derived reference encoding is smaller. Tests also
 inject a dropped reference-summary update and require the gate to hold.
 
+## Portable one-file runner
+
+The existing experiment can also be packaged without copying or rewriting its
+model code:
+
+```sh
+python experiments/reference-state-closure-v1/portable.py build \
+  --output reference-state-closure.pyz
+python experiments/reference-state-closure-v1/portable.py verify \
+  reference-state-closure.pyz
+python reference-state-closure.pyz verify
+python reference-state-closure.pyz describe
+python reference-state-closure.pyz run
+```
+
+The deterministic ZIP application carries the exact experiment source, default
+fixture, Apache-2.0 license bytes, and a member-hash descriptor. It can be copied
+to an unrelated local directory and run with Python alone. Provider-side
+`portable.py verify` additionally requires those packaged bytes to match the
+current repository source.
+
+Standalone `verify` proves the archive is internally consistent with its own
+embedded descriptor; it is not a signature and cannot authenticate a producer
+that deliberately substitutes and re-seals every member. A caller that needs
+source identity must keep an independently trusted artifact/source digest or
+run the provider-side verifier against a trusted checkout. Packaging grants no
+automatic execution, installation, selection, merge, or CANON authority.
+
 ## Interpretation boundary
 
 A pass demonstrates reference-state closure for this inspectable software
