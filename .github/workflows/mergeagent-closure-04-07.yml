@@ -1,0 +1,42 @@
+name: MergeAgent closure experiments 04-07 integration
+
+on:
+  push:
+    branches:
+      - integration/closure-experiments-04-07-20260912
+
+permissions:
+  contents: write
+
+jobs:
+  integrate:
+    if: github.event.head_commit.message != 'MergeAgent integrate closure experiments 04-07'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: integration/closure-experiments-04-07-20260912
+          fetch-depth: 0
+      - name: Merge verified experiment ancestry without reverting current front door
+        run: |
+          git config user.name 'AXM MergeAgent'
+          git config user.email 'actions@users.noreply.github.com'
+          git fetch origin ai/unlabeled-multiproject-closure-2026-09-02
+          set +e
+          git merge --no-ff --no-commit origin/ai/unlabeled-multiproject-closure-2026-09-02
+          status=$?
+          set -e
+          if [ "$status" -ne 0 ]; then
+            git checkout --ours README.md || true
+            git add README.md
+          fi
+          git checkout --ours .github/workflows/tests.yml
+          git add .github/workflows/tests.yml
+          unresolved="$(git diff --name-only --diff-filter=U)"
+          if [ -n "$unresolved" ]; then
+            printf 'Unresolved merge paths:\n%s\n' "$unresolved"
+            exit 1
+          fi
+          git diff --cached --check
+          git commit -m 'MergeAgent integrate closure experiments 04-07'
+          git push origin HEAD:integration/closure-experiments-04-07-20260912
