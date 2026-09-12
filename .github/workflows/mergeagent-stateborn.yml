@@ -28,14 +28,10 @@ jobs:
           status=$?
           set -e
           if [ "$status" -ne 0 ]; then
-            git checkout --ours README.md || true
-            git add README.md
-            git checkout --ours AGENTS.md || true
-            git add AGENTS.md
-            git checkout --ours LICENSE || true
-            git add LICENSE
-            git checkout --ours .gitignore || true
-            git add .gitignore
+            for path in README.md AGENTS.md LICENSE .gitignore docs/CLAIM_BOUNDARIES.md docs/RESEARCH_INDEX.md docs/STATE_RESEARCH_MAP.md; do
+              git checkout --ours "$path" || true
+              git add "$path" || true
+            done
           fi
           git checkout --ours .github/workflows/tests.yml || true
           git add .github/workflows/tests.yml || true
