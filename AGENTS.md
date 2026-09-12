@@ -31,3 +31,59 @@ When useful, separate **what exists** from **how it is expressed on a particular
 - Do not force this split where representation itself is the canonical truth; apply it where truth and realization can honestly be separated.
 
 **Working rule:** degrade expression, never truth; upgrade expression, never invent truth. One body may wake up differently on different machines while remaining the same thing.
+
+## State Research lane governance
+
+The following rules preserve the original State Research lane discipline without replacing the broader AXM principles above.
+
+### One AI chat instance, one PR lane
+
+A **PR lane** is one working branch and one pull request for one bounded AI chat instance while that experiment is active.
+
+1. Claim a unique branch before writing.
+2. Keep the same chat on that branch and pull request until the work is merged, closed, or explicitly handed off.
+3. Do not open a second concurrent branch or pull request for the same bounded lane.
+4. Never push into a branch owned by another active lane without an explicit handoff.
+5. Do not push experimental work directly to `main`; integrate through an inspectable merge path.
+6. A later chat may continue an existing lane only with explicit continuation context; otherwise it starts a new lane.
+7. Prefer descriptive bounded-purpose branch names.
+8. Keep a lane receipt under `lanes/` when the experiment uses the lane-receipt convention, identifying branch/base, scope, evidence, limitations, and handoff state.
+
+This is a coordination rule, not a claim that a chat is an autonomous identity. Branches, receipts, commits, tests, and evidence are the durable coordination record.
+
+### Truth and evidence rules
+
+- Do not protect a hypothesis from failure.
+- Never silently rewrite or delete failed variants, raw results, receipts, or known counterexamples. Superseding evidence must link back to the evidence it supersedes.
+- Keep evidence and provenance attached to reported results.
+- Generated node variants are scale fixtures, not thousands of unique expert disciplines.
+- Call software nodes software nodes. Do not call them CPU, GPU, hardware, brain, neuron, or sub-software nodes unless a measured implementation genuinely maps to that substrate.
+- Bound state-versus-history claims to the tested predicates and state schema. A passing test is not proof that history is universally unnecessary.
+- Do not resolve truth by majority vote. Preserve genuine conflicts as explicit state until a declared authority or later capability resolves them.
+- Treat timing and memory measurements as host-specific observations unless repeated across named environments.
+- Treat AI as an optional expensive capability above the deterministic state floor, not as a hidden dependency of deterministic tests.
+
+### Required lane workflow
+
+1. Read this file, the root README, relevant experiment documentation, and applicable lane receipts.
+2. Reverify the base branch and commit before editing.
+3. State the bounded hypothesis or maintenance objective.
+4. Preserve a runnable failure when the experiment is meant to discover one.
+5. Add or update tests, raw results, receipts, limitations, and claim boundaries together.
+6. Run narrow tests first, then all affected experiment suites.
+7. Record exact commands and results in the pull request and lane receipt when that lane uses receipts.
+8. Integrate through an inspectable pull request or equivalent evidence-preserving merge lane.
+
+### Merge gate
+
+Before promotion, the lane should have:
+
+- a bounded claim;
+- reproducible commands;
+- passing tests for affected experiments, or explicit unresolved/failed evidence;
+- raw measurements or an explicit statement that no benchmark was run;
+- failures and limitations retained;
+- no unexplained generated files or duplicated source trees; and
+- provenance sufficient to reconstruct what changed and why.
+
+The constitutional merge gate is the AXM roots: **Truth, Agency / non-domination, Continuity, and Wisdom before speed.** Technical permission to execute a GitHub merge is not CANON authority by itself. A lane that cannot satisfy those roots remains held, regardless of who or what can click the merge button.
