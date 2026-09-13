@@ -1,5 +1,7 @@
 # axm-state-research
 
+**Current public stage:** active experimental research collection. The repository contains multiple bounded executable state/closure experiments and retained counterexamples; it is not one finished product and does not turn any individual experiment into a universal or CANON claim.
+
 Research into the chain from state to output: readjusting nodes, exposing
 unknowns, and finding the limits and memory-reduction potential. The repository
 holds both research notes and bounded executable experiments about canonical
