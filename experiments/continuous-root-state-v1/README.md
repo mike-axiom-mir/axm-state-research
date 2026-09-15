@@ -21,6 +21,8 @@ The experiment computes its own SHA-256 over canonical JSON for the frozen donor
 
 That is this experiment's donor digest. It is **not** claimed to be Mirror's internal `State.digest` value.
 
+The donor fixture is retained verbatim as source evidence, including its historical `amendmentAuthority` field. This experiment does not import that field as current State Research governance; repository governance remains the AXM-root merge gate declared in `AGENTS.md`.
+
 ## Bounded hypothesis
 
 For the modeled predicates and event types in this experiment:
