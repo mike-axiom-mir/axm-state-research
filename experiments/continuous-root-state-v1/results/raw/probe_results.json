@@ -1,0 +1,680 @@
+{
+  "claim": "incremental-vs-full-equivalence-for-this-bounded-event-sequence",
+  "events": 12,
+  "final": {
+    "aggregate_status": "INCOMPLETE",
+    "checks": {
+      "agency-non-domination": {
+        "detail": "All declared required permissions are present.",
+        "status": "PASS"
+      },
+      "continuity": {
+        "detail": "The donor bundle declares this root, but this experiment has no executable predicate for it.",
+        "status": "UNMODELLED"
+      },
+      "no-fake-done": {
+        "detail": "The donor bundle declares this root, but this experiment has no executable predicate for it.",
+        "status": "UNMODELLED"
+      },
+      "no-silent-rewrite": {
+        "detail": "No declared supporting evidence is currently contradicted.",
+        "status": "PASS"
+      },
+      "repairability": {
+        "detail": "No mutation is pending or a recovery path is declared.",
+        "status": "PASS"
+      },
+      "restraint": {
+        "detail": "Declared risk high is within accepted maximum high.",
+        "status": "PASS"
+      },
+      "source-integrity": {
+        "detail": "Declared support is present or no mutating action is pending.",
+        "status": "PASS"
+      },
+      "truth-before-story": {
+        "detail": "All declared required evidence is present.",
+        "status": "PASS"
+      },
+      "wisdom-over-speed": {
+        "detail": "The donor bundle declares this root, but this experiment has no executable predicate for it.",
+        "status": "UNMODELLED"
+      }
+    },
+    "machine_state_digest": "abc6d826d67bbd805507fac06a6af74d218b0e03b69aeebea4fa2a018b1c9677",
+    "root_bundle_digest": "59651fbab19647713ea4f94aff98adab1c0a539cb3b61a7ad3f0b3374b4838cd",
+    "sequence": 12
+  },
+  "incremental_full_verified_every_event": true,
+  "limitations": [
+    "The fixture models only the root predicates already represented by the bounded experiment.",
+    "UNMODELLED roots are not promoted to PASS.",
+    "This is deterministic software evidence, not a production safety proof.",
+    "No hardware, power-loss, hostile-process, cryptographic-authorship, or neural-runtime claim is made."
+  ],
+  "restart_equal": true,
+  "root_donor_digest": "59651fbab19647713ea4f94aff98adab1c0a539cb3b61a7ad3f0b3374b4838cd",
+  "schema": "axm.state-research.continuous-root-state/probe-v1",
+  "trace": [
+    {
+      "aggregate_status": "INCOMPLETE",
+      "checks": {
+        "agency-non-domination": {
+          "detail": "All declared required permissions are present.",
+          "status": "PASS"
+        },
+        "continuity": {
+          "detail": "The donor bundle declares this root, but this experiment has no executable predicate for it.",
+          "status": "UNMODELLED"
+        },
+        "no-fake-done": {
+          "detail": "The donor bundle declares this root, but this experiment has no executable predicate for it.",
+          "status": "UNMODELLED"
+        },
+        "no-silent-rewrite": {
+          "detail": "No declared supporting evidence is currently contradicted.",
+          "status": "PASS"
+        },
+        "repairability": {
+          "detail": "No mutation is pending or a recovery path is declared.",
+          "status": "PASS"
+        },
+        "restraint": {
+          "detail": "Declared risk low is within accepted maximum severe.",
+          "status": "PASS"
+        },
+        "source-integrity": {
+          "detail": "Declared support is present or no mutating action is pending.",
+          "status": "PASS"
+        },
+        "truth-before-story": {
+          "detail": "All declared required evidence is present.",
+          "status": "PASS"
+        },
+        "wisdom-over-speed": {
+          "detail": "The donor bundle declares this root, but this experiment has no executable predicate for it.",
+          "status": "UNMODELLED"
+        }
+      },
+      "machine_state_digest": "078974ce7105589f10707c6b4fd8a890487cc3dfc2166ebd03fb7a3912385718",
+      "root_bundle_digest": "59651fbab19647713ea4f94aff98adab1c0a539cb3b61a7ad3f0b3374b4838cd",
+      "sequence": 0
+    },
+    {
+      "aggregate_status": "REFUSE",
+      "checks": {
+        "agency-non-domination": {
+          "detail": "Missing permissions: world.write",
+          "status": "REFUSE"
+        },
+        "continuity": {
+          "detail": "The donor bundle declares this root, but this experiment has no executable predicate for it.",
+          "status": "UNMODELLED"
+        },
+        "no-fake-done": {
+          "detail": "The donor bundle declares this root, but this experiment has no executable predicate for it.",
+          "status": "UNMODELLED"
+        },
+        "no-silent-rewrite": {
+          "detail": "No declared supporting evidence is currently contradicted.",
+          "status": "PASS"
+        },
+        "repairability": {
+          "detail": "No mutation is pending or a recovery path is declared.",
+          "status": "PASS"
+        },
+        "restraint": {
+          "detail": "Declared risk low is within accepted maximum severe.",
+          "status": "PASS"
+        },
+        "source-integrity": {
+          "detail": "Declared support is present or no mutating action is pending.",
+          "status": "PASS"
+        },
+        "truth-before-story": {
+          "detail": "All declared required evidence is present.",
+          "status": "PASS"
+        },
+        "wisdom-over-speed": {
+          "detail": "The donor bundle declares this root, but this experiment has no executable predicate for it.",
+          "status": "UNMODELLED"
+        }
+      },
+      "event": {
+        "type": "require_permission",
+        "value": "world.write"
+      },
+      "machine_state_digest": "a5d9fe46f8c13ac2dfd01f5ab4a9229b07b0a9db15a598c2055df1733d42755b",
+      "root_bundle_digest": "59651fbab19647713ea4f94aff98adab1c0a539cb3b61a7ad3f0b3374b4838cd",
+      "sequence": 1
+    },
+    {
+      "aggregate_status": "INCOMPLETE",
+      "checks": {
+        "agency-non-domination": {
+          "detail": "All declared required permissions are present.",
+          "status": "PASS"
+        },
+        "continuity": {
+          "detail": "The donor bundle declares this root, but this experiment has no executable predicate for it.",
+          "status": "UNMODELLED"
+        },
+        "no-fake-done": {
+          "detail": "The donor bundle declares this root, but this experiment has no executable predicate for it.",
+          "status": "UNMODELLED"
+        },
+        "no-silent-rewrite": {
+          "detail": "No declared supporting evidence is currently contradicted.",
+          "status": "PASS"
+        },
+        "repairability": {
+          "detail": "No mutation is pending or a recovery path is declared.",
+          "status": "PASS"
+        },
+        "restraint": {
+          "detail": "Declared risk low is within accepted maximum severe.",
+          "status": "PASS"
+        },
+        "source-integrity": {
+          "detail": "Declared support is present or no mutating action is pending.",
+          "status": "PASS"
+        },
+        "truth-before-story": {
+          "detail": "All declared required evidence is present.",
+          "status": "PASS"
+        },
+        "wisdom-over-speed": {
+          "detail": "The donor bundle declares this root, but this experiment has no executable predicate for it.",
+          "status": "UNMODELLED"
+        }
+      },
+      "event": {
+        "type": "grant_permission",
+        "value": "world.write"
+      },
+      "machine_state_digest": "1affde58c0eeec2b00899a23e8f7e61d8358644f03a89cf52e6a62e4090cd2a1",
+      "root_bundle_digest": "59651fbab19647713ea4f94aff98adab1c0a539cb3b61a7ad3f0b3374b4838cd",
+      "sequence": 2
+    },
+    {
+      "aggregate_status": "HOLD",
+      "checks": {
+        "agency-non-domination": {
+          "detail": "All declared required permissions are present.",
+          "status": "PASS"
+        },
+        "continuity": {
+          "detail": "The donor bundle declares this root, but this experiment has no executable predicate for it.",
+          "status": "UNMODELLED"
+        },
+        "no-fake-done": {
+          "detail": "The donor bundle declares this root, but this experiment has no executable predicate for it.",
+          "status": "UNMODELLED"
+        },
+        "no-silent-rewrite": {
+          "detail": "No declared supporting evidence is currently contradicted.",
+          "status": "PASS"
+        },
+        "repairability": {
+          "detail": "No mutation is pending or a recovery path is declared.",
+          "status": "PASS"
+        },
+        "restraint": {
+          "detail": "Declared risk low is within accepted maximum severe.",
+          "status": "PASS"
+        },
+        "source-integrity": {
+          "detail": "Declared support is present or no mutating action is pending.",
+          "status": "PASS"
+        },
+        "truth-before-story": {
+          "detail": "Required evidence missing: receipt:1",
+          "status": "HOLD"
+        },
+        "wisdom-over-speed": {
+          "detail": "The donor bundle declares this root, but this experiment has no executable predicate for it.",
+          "status": "UNMODELLED"
+        }
+      },
+      "event": {
+        "type": "require_evidence",
+        "value": "receipt:1"
+      },
+      "machine_state_digest": "5f4f95a0236fe0ad463d40556dc10b73364818b757d4353616f7004135248e8b",
+      "root_bundle_digest": "59651fbab19647713ea4f94aff98adab1c0a539cb3b61a7ad3f0b3374b4838cd",
+      "sequence": 3
+    },
+    {
+      "aggregate_status": "INCOMPLETE",
+      "checks": {
+        "agency-non-domination": {
+          "detail": "All declared required permissions are present.",
+          "status": "PASS"
+        },
+        "continuity": {
+          "detail": "The donor bundle declares this root, but this experiment has no executable predicate for it.",
+          "status": "UNMODELLED"
+        },
+        "no-fake-done": {
+          "detail": "The donor bundle declares this root, but this experiment has no executable predicate for it.",
+          "status": "UNMODELLED"
+        },
+        "no-silent-rewrite": {
+          "detail": "No declared supporting evidence is currently contradicted.",
+          "status": "PASS"
+        },
+        "repairability": {
+          "detail": "No mutation is pending or a recovery path is declared.",
+          "status": "PASS"
+        },
+        "restraint": {
+          "detail": "Declared risk low is within accepted maximum severe.",
+          "status": "PASS"
+        },
+        "source-integrity": {
+          "detail": "Declared support is present or no mutating action is pending.",
+          "status": "PASS"
+        },
+        "truth-before-story": {
+          "detail": "All declared required evidence is present.",
+          "status": "PASS"
+        },
+        "wisdom-over-speed": {
+          "detail": "The donor bundle declares this root, but this experiment has no executable predicate for it.",
+          "status": "UNMODELLED"
+        }
+      },
+      "event": {
+        "type": "add_evidence",
+        "value": "receipt:1"
+      },
+      "machine_state_digest": "9abc653295916ac4073549aedb1d17b1e030d9d9cb01631af87dd39c4dc44542",
+      "root_bundle_digest": "59651fbab19647713ea4f94aff98adab1c0a539cb3b61a7ad3f0b3374b4838cd",
+      "sequence": 4
+    },
+    {
+      "aggregate_status": "INCOMPLETE",
+      "checks": {
+        "agency-non-domination": {
+          "detail": "All declared required permissions are present.",
+          "status": "PASS"
+        },
+        "continuity": {
+          "detail": "The donor bundle declares this root, but this experiment has no executable predicate for it.",
+          "status": "UNMODELLED"
+        },
+        "no-fake-done": {
+          "detail": "The donor bundle declares this root, but this experiment has no executable predicate for it.",
+          "status": "UNMODELLED"
+        },
+        "no-silent-rewrite": {
+          "detail": "No declared supporting evidence is currently contradicted.",
+          "status": "PASS"
+        },
+        "repairability": {
+          "detail": "No mutation is pending or a recovery path is declared.",
+          "status": "PASS"
+        },
+        "restraint": {
+          "detail": "Declared risk low is within accepted maximum severe.",
+          "status": "PASS"
+        },
+        "source-integrity": {
+          "detail": "Declared support is present or no mutating action is pending.",
+          "status": "PASS"
+        },
+        "truth-before-story": {
+          "detail": "All declared required evidence is present.",
+          "status": "PASS"
+        },
+        "wisdom-over-speed": {
+          "detail": "The donor bundle declares this root, but this experiment has no executable predicate for it.",
+          "status": "UNMODELLED"
+        }
+      },
+      "event": {
+        "type": "support_evidence",
+        "value": "receipt:1"
+      },
+      "machine_state_digest": "81256eb4133635a675147528651a74be28d6a98015eb96cc5c900f8b5c0e125",
+      "root_bundle_digest": "59651fbab19647713ea4f94aff98adab1c0a539cb3b61a7ad3f0b3374b4838cd",
+      "sequence": 5
+    },
+    {
+      "aggregate_status": "HOLD",
+      "checks": {
+        "agency-non-domination": {
+          "detail": "All declared required permissions are present.",
+          "status": "PASS"
+        },
+        "continuity": {
+          "detail": "The donor bundle declares this root, but this experiment has no executable predicate for it.",
+          "status": "UNMODELLED"
+        },
+        "no-fake-done": {
+          "detail": "The donor bundle declares this root, but this experiment has no executable predicate for it.",
+          "status": "UNMODELLED"
+        },
+        "no-silent-rewrite": {
+          "detail": "Supporting evidence remains contradicted: receipt:1",
+          "status": "HOLD"
+        },
+        "repairability": {
+          "detail": "No mutation is pending or a recovery path is declared.",
+          "status": "PASS"
+        },
+        "restraint": {
+          "detail": "Declared risk low is within accepted maximum severe.",
+          "status": "PASS"
+        },
+        "source-integrity": {
+          "detail": "Declared support is present or no mutating action is pending.",
+          "status": "PASS"
+        },
+        "truth-before-story": {
+          "detail": "All declared required evidence is present.",
+          "status": "PASS"
+        },
+        "wisdom-over-speed": {
+          "detail": "The donor bundle declares this root, but this experiment has no executable predicate for it.",
+          "status": "UNMODELLED"
+        }
+      },
+      "event": {
+        "type": "mark_contradicted",
+        "value": "receipt:1"
+      },
+      "machine_state_digest": "6418282973a1de2b4cd0e42139047534356179355700866c8d3b1e2f21c60f34",
+      "root_bundle_digest": "59651fbab19647713ea4f94aff98adab1c0a539cb3b61a7ad3f0b3374b4838cd",
+      "sequence": 6
+    },
+    {
+      "aggregate_status": "INCOMPLETE",
+      "checks": {
+        "agency-non-domination": {
+          "detail": "All declared required permissions are present.",
+          "status": "PASS"
+        },
+        "continuity": {
+          "detail": "The donor bundle declares this root, but this experiment has no executable predicate for it.",
+          "status": "UNMODELLED"
+        },
+        "no-fake-done": {
+          "detail": "The donor bundle declares this root, but this experiment has no executable predicate for it.",
+          "status": "UNMODELLED"
+        },
+        "no-silent-rewrite": {
+          "detail": "No declared supporting evidence is currently contradicted.",
+          "status": "PASS"
+        },
+        "repairability": {
+          "detail": "No mutation is pending or a recovery path is declared.",
+          "status": "PASS"
+        },
+        "restraint": {
+          "detail": "Declared risk low is within accepted maximum severe.",
+          "status": "PASS"
+        },
+        "source-integrity": {
+          "detail": "Declared support is present or no mutating action is pending.",
+          "status": "PASS"
+        },
+        "truth-before-story": {
+          "detail": "All declared required evidence is present.",
+          "status": "PASS"
+        },
+        "wisdom-over-speed": {
+          "detail": "The donor bundle declares this root, but this experiment has no executable predicate for it.",
+          "status": "UNMODELLED"
+        }
+      },
+      "event": {
+        "type": "clear_contradicted",
+        "value": "receipt:1"
+      },
+      "machine_state_digest": "81256eb4133635a675147528651a74be28d6a98015eb96cc5c900f8b5c0e125",
+      "root_bundle_digest": "59651fbab19647713ea4f94aff98adab1c0a539cb3b61a7ad3f0b3374b4838cd",
+      "sequence": 7
+    },
+    {
+      "aggregate_status": "HOLD",
+      "checks": {
+        "agency-non-domination": {
+          "detail": "All declared required permissions are present.",
+          "status": "PASS"
+        },
+        "continuity": {
+          "detail": "The donor bundle declares this root, but this experiment has no executable predicate for it.",
+          "status": "UNMODELLED"
+        },
+        "no-fake-done": {
+          "detail": "The donor bundle declares this root, but this experiment has no executable predicate for it.",
+          "status": "UNMODELLED"
+        },
+        "no-silent-rewrite": {
+          "detail": "No declared supporting evidence is currently contradicted.",
+          "status": "PASS"
+        },
+        "repairability": {
+          "detail": "Mutating candidate has no declared recovery path.",
+          "status": "HOLD"
+        },
+        "restraint": {
+          "detail": "Declared risk low is within accepted maximum severe.",
+          "status": "PASS"
+        },
+        "source-integrity": {
+          "detail": "Declared support is present or no mutating action is pending.",
+          "status": "PASS"
+        },
+        "truth-before-story": {
+          "detail": "All declared required evidence is present.",
+          "status": "PASS"
+        },
+        "wisdom-over-speed": {
+          "detail": "The donor bundle declares this root, but this experiment has no executable predicate for it.",
+          "status": "UNMODELLED"
+        }
+      },
+      "event": {
+        "type": "set_mutating",
+        "value": true
+      },
+      "machine_state_digest": "b4534bc19f7d8acc223a79d69e434076b840049a25d26c4f11f6d48b6161287d",
+      "root_bundle_digest": "59651fbab19647713ea4f94aff98adab1c0a539cb3b61a7ad3f0b3374b4838cd",
+      "sequence": 8
+    },
+    {
+      "aggregate_status": "INCOMPLETE",
+      "checks": {
+        "agency-non-domination": {
+          "detail": "All declared required permissions are present.",
+          "status": "PASS"
+        },
+        "continuity": {
+          "detail": "The donor bundle declares this root, but this experiment has no executable predicate for it.",
+          "status": "UNMODELLED"
+        },
+        "no-fake-done": {
+          "detail": "The donor bundle declares this root, but this experiment has no executable predicate for it.",
+          "status": "UNMODELLED"
+        },
+        "no-silent-rewrite": {
+          "detail": "No declared supporting evidence is currently contradicted.",
+          "status": "PASS"
+        },
+        "repairability": {
+          "detail": "No mutation is pending or a recovery path is declared.",
+          "status": "PASS"
+        },
+        "restraint": {
+          "detail": "Declared risk low is within accepted maximum severe.",
+          "status": "PASS"
+        },
+        "source-integrity": {
+          "detail": "Declared support is present or no mutating action is pending.",
+          "status": "PASS"
+        },
+        "truth-before-story": {
+          "detail": "All declared required evidence is present.",
+          "status": "PASS"
+        },
+        "wisdom-over-speed": {
+          "detail": "The donor bundle declares this root, but this experiment has no executable predicate for it.",
+          "status": "UNMODELLED"
+        }
+      },
+      "event": {
+        "type": "set_recovery",
+        "value": true
+      },
+      "machine_state_digest": "ad5d6ed0e3b3db8aa207199176391084a858d5b0ef2c180f90ef807333c4e978",
+      "root_bundle_digest": "59651fbab19647713ea4f94aff98adab1c0a539cb3b61a7ad3f0b3374b4838cd",
+      "sequence": 9
+    },
+    {
+      "aggregate_status": "INCOMPLETE",
+      "checks": {
+        "agency-non-domination": {
+          "detail": "All declared required permissions are present.",
+          "status": "PASS"
+        },
+        "continuity": {
+          "detail": "The donor bundle declares this root, but this experiment has no executable predicate for it.",
+          "status": "UNMODELLED"
+        },
+        "no-fake-done": {
+          "detail": "The donor bundle declares this root, but this experiment has no executable predicate for it.",
+          "status": "UNMODELLED"
+        },
+        "no-silent-rewrite": {
+          "detail": "No declared supporting evidence is currently contradicted.",
+          "status": "PASS"
+        },
+        "repairability": {
+          "detail": "No mutation is pending or a recovery path is declared.",
+          "status": "PASS"
+        },
+        "restraint": {
+          "detail": "Declared risk low is within accepted maximum medium.",
+          "status": "PASS"
+        },
+        "source-integrity": {
+          "detail": "Declared support is present or no mutating action is pending.",
+          "status": "PASS"
+        },
+        "truth-before-story": {
+          "detail": "All declared required evidence is present.",
+          "status": "PASS"
+        },
+        "wisdom-over-speed": {
+          "detail": "The donor bundle declares this root, but this experiment has no executable predicate for it.",
+          "status": "UNMODELLED"
+        }
+      },
+      "event": {
+        "type": "set_max_risk",
+        "value": "medium"
+      },
+      "machine_state_digest": "09bdb7b9002685f3dd2c36d56083c93e41626ce67f4b4032356c6f17de65f3b0",
+      "root_bundle_digest": "59651fbab19647713ea4f94aff98adab1c0a539cb3b61a7ad3f0b3374b4838cd",
+      "sequence": 10
+    },
+    {
+      "aggregate_status": "REFUSE",
+      "checks": {
+        "agency-non-domination": {
+          "detail": "All declared required permissions are present.",
+          "status": "PASS"
+        },
+        "continuity": {
+          "detail": "The donor bundle declares this root, but this experiment has no executable predicate for it.",
+          "status": "UNMODELLED"
+        },
+        "no-fake-done": {
+          "detail": "The donor bundle declares this root, but this experiment has no executable predicate for it.",
+          "status": "UNMODELLED"
+        },
+        "no-silent-rewrite": {
+          "detail": "No declared supporting evidence is currently contradicted.",
+          "status": "PASS"
+        },
+        "repairability": {
+          "detail": "No mutation is pending or a recovery path is declared.",
+          "status": "PASS"
+        },
+        "restraint": {
+          "detail": "Declared risk high exceeds accepted maximum medium.",
+          "status": "REFUSE"
+        },
+        "source-integrity": {
+          "detail": "Declared support is present or no mutating action is pending.",
+          "status": "PASS"
+        },
+        "truth-before-story": {
+          "detail": "All declared required evidence is present.",
+          "status": "PASS"
+        },
+        "wisdom-over-speed": {
+          "detail": "The donor bundle declares this root, but this experiment has no executable predicate for it.",
+          "status": "UNMODELLED"
+        }
+      },
+      "event": {
+        "type": "set_risk",
+        "value": "high"
+      },
+      "machine_state_digest": "1dfe67c88ea484489f01639991570844beb36203fd3359757187148c924b087a",
+      "root_bundle_digest": "59651fbab19647713ea4f94aff98adab1c0a539cb3b61a7ad3f0b3374b4838cd",
+      "sequence": 11
+    },
+    {
+      "aggregate_status": "INCOMPLETE",
+      "checks": {
+        "agency-non-domination": {
+          "detail": "All declared required permissions are present.",
+          "status": "PASS"
+        },
+        "continuity": {
+          "detail": "The donor bundle declares this root, but this experiment has no executable predicate for it.",
+          "status": "UNMODELLED"
+        },
+        "no-fake-done": {
+          "detail": "The donor bundle declares this root, but this experiment has no executable predicate for it.",
+          "status": "UNMODELLED"
+        },
+        "no-silent-rewrite": {
+          "detail": "No declared supporting evidence is currently contradicted.",
+          "status": "PASS"
+        },
+        "repairability": {
+          "detail": "No mutation is pending or a recovery path is declared.",
+          "status": "PASS"
+        },
+        "restraint": {
+          "detail": "Declared risk high is within accepted maximum high.",
+          "status": "PASS"
+        },
+        "source-integrity": {
+          "detail": "Declared support is present or no mutating action is pending.",
+          "status": "PASS"
+        },
+        "truth-before-story": {
+          "detail": "All declared required evidence is present.",
+          "status": "PASS"
+        },
+        "wisdom-over-speed": {
+          "detail": "The donor bundle declares this root, but this experiment has no executable predicate for it.",
+          "status": "UNMODELLED"
+        }
+      },
+      "event": {
+        "type": "set_max_risk",
+        "value": "high"
+      },
+      "machine_state_digest": "abc6d826d67bbd805507fac06a6af74d218b0e03b69aeebea4fa2a018b1c9677",
+      "root_bundle_digest": "59651fbab19647713ea4f94aff98adab1c0a539cb3b61a7ad3f0b3374b4838cd",
+      "sequence": 12
+    }
+  ]
+}
