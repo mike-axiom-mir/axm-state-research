@@ -25,3 +25,7 @@ The repository intentionally retains failed variants, raw evidence, claim bounda
 ## Governance and truth boundary
 
 Repository-specific lane discipline and AXM-wide state/realization principles live in [AGENTS.md](AGENTS.md). These experiments are bounded software evidence, not universal machine, hardware, biological, or CANON claims unless separately demonstrated.
+
+## Reusable simulation method
+
+[Simulation experience and reuse](docs/SIMULATION_AS_REUSABLE_EXPERIENCE.md) connects the shared method to this repository, with existing machinery, proposed experiments and explicit evidence limits.

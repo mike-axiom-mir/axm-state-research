@@ -72,7 +72,7 @@ jobs:
           ids = {row['id'] for row in repo['capabilities']['records']}
           assert 'axm.state-research.source-index/v1' in ids, ids
           receipt = json.loads(Path('registry/research-sources.receipt.json').read_text('utf-8'))
-          assert receipt['record_count'] == 27, receipt
+          assert receipt['record_count'] == 28, receipt
           assert receipt['authority']['source_discovery_only'] is True
           assert receipt['authority']['research_claim_verified'] is False
           print('discovery-consumer: PASS', payload['content_sha256'], receipt['records_sha256'])
