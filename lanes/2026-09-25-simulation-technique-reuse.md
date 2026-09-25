@@ -22,3 +22,17 @@ retained raw comparison. Exact commands and observed results belong in the PR.
 Existing experiment implementations, tests and retained evidence are unchanged.
 No benchmark, neural training, new simulator or receiving-domain experiment is
 run or claimed for this documentation lane. Historical failures remain intact.
+
+## 2026-09-25 integration amendment
+
+Initial source-discovery CI on head `5e6a3a6f2b44e0318264b1911fbc9c1a00e69cf4`
+failed because adding this lane receipt requires regenerating the discovery
+registry. Run `36195161899` retains that failure. The ordinary State Research
+test workflow passed. This amendment includes the two regenerated registry
+outputs and updates the compatibility probe's exact source count from 27 to 28.
+The generator, source-root policy and authority semantics are unchanged.
+
+Focused recovery commands: `python tools/generate_research_index.py`,
+`python -m unittest -v tests/test_research_index.py`, and
+`python tools/generate_research_index.py --check`. Final observed results and
+the exact corrected tree are recorded on the same PR #30.
